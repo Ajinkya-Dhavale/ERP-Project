@@ -831,6 +831,155 @@
 
           
           
+          <div class="card">
+            <div class="border-bottom title-part-padding">
+              <h4 class="card-title mb-0 text-center text-danger " style="font-size: 23px;font-weight: bold;">Student Admission</h4>
+            </div>
+            <div class="card-body">
+              <form class="needs-validation" novalidate>
+                <div class="row border-bottom">
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label" for="validationCustom01">First Name</label>
+                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label" for="validationCustom02">Middle Name</label>
+                    <input type="text" class="form-control" id="validationCustom02" placeholder="Middle name" required />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label" for="validationCustom03">Last Name</label>
+                    <input type="text" class="form-control" id="validationCustom03" placeholder="Last name"  required />
+                    <div class="valid-feedback">Looks good!</div>
+                  </div>
+                  
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label" for="validationemail">Email</label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-envelope" style="font-size: 20px;"></i> </span>
+
+                      <input type="text" class="form-control" id="validationCustom04" placeholder="Enter Email" aria-describedby="inputGroupPrepend" required />
+
+                      <div class="valid-feedback">Looks good!</div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label" for="validationCustomUsername">Aadhar Number</label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-id-card" style="font-size: 20px;"></i> </span>
+
+                      <input type="text" class="form-control" id="validationCustom05" placeholder="Aadhar Number" aria-describedby="inputGroupPrepend" required />
+
+                      <div class="valid-feedback">Looks good!</div>
+                     
+                    </div>
+                  </div>
+
+                  <div class="col-md-4 mb-3">
+                    <label class="form-label" for="validationCustomUsername">Password</label>
+                    <div class="input-group">
+                      <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-lock" style="font-size: 20px;"></i> </span>
+
+                      <input type="text" class="form-control" id="validationCustom05" value="student" disabled readonly aria-describedby="inputGroupPrepend" required />
+
+                      <div class="valid-feedback">Looks good!</div>
+                      
+                    </div>
+                  </div>
+                 
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <button class="text-center btn btn-primary mt-3" type="submit">
+                      Submit Form
+                    </button>
+                  </div>
+                </div>
+                  
+                
+                
+              </form>
+            </div>
+          </div>
+          
+
+          <!-- validation javascript -->
+           <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".needs-validation");
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission for validation check
+        event.stopPropagation();
+
+        let isValid = true;
+
+        // Get form fields
+        const firstName = document.getElementById("validationCustom01");
+        const middleName = document.getElementById("validationCustom02");
+        const lastName = document.getElementById("validationCustom03");
+        const email = document.getElementById("validationCustom04");
+        const aadhar = document.getElementById("validationCustom05");
+
+        // Validation checks
+        if (!firstName.value.trim()) {
+            isValid = false;
+            firstName.classList.add("is-invalid");
+        } else {
+            firstName.classList.remove("is-invalid");
+            firstName.classList.add("is-valid");
+        }
+
+        if (!middleName.value.trim()) {
+            isValid = false;
+            middleName.classList.add("is-invalid");
+        } else {
+            middleName.classList.remove("is-invalid");
+            middleName.classList.add("is-valid");
+        }
+
+        if (!lastName.value.trim()) {
+            isValid = false;
+            lastName.classList.add("is-invalid");
+        } else {
+            lastName.classList.remove("is-invalid");
+            lastName.classList.add("is-valid");
+        }
+
+        // Email validation using regex
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email.value.trim())) {
+            isValid = false;
+            email.classList.add("is-invalid");
+        } else {
+            email.classList.remove("is-invalid");
+            email.classList.add("is-valid");
+        }
+
+        // Aadhar Number Validation (Must be exactly 12 digits)
+        const aadharPattern = /^\d{12}$/;
+        if (!aadharPattern.test(aadhar.value.trim())) {
+            isValid = false;
+            aadhar.classList.add("is-invalid");
+        } else {
+            aadhar.classList.remove("is-invalid");
+            aadhar.classList.add("is-valid");
+        }
+
+        // If form is valid, allow submission
+        if (isValid) {
+            alert("Form submitted successfully!");
+            form.submit(); // Proceed with form submission
+        }
+    });
+});
+
+           </script>
+
 
 
           <!-- End Main part -->

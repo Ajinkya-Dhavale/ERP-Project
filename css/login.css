@@ -410,6 +410,9 @@ footer a:hover {
         padding: 10px;
         font-size: 14px;
     }
+    .underline {
+       display: none;
+    }
 
     .forgot-password {
         font-size: 12px;
@@ -453,6 +456,9 @@ footer a:hover {
         padding: 8px;
         font-size: 12px;
     }
+    .underline {
+        display: none;
+     }
 
     footer {
         font-size: 12px;
