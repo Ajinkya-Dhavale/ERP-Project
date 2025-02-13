@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ERP
+  datasource:
+    url: jdbc:mysql://localhost:3306/erp
+    username: root
+    password: ''
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+

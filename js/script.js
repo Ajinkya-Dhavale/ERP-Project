@@ -35,7 +35,7 @@ function showDepartmentLogin(dept) {
     document.getElementById('department-title').innerText = dept + " Login";
     toggleVisibility('department-login');
     setActiveButton(document.querySelector('.btn-department'));
-    previousSection = 'student-login'; 
+    previousSection = 'student-login'; // Update to department login
 }
 
 function showAdminLogin() {
@@ -89,7 +89,7 @@ function setActiveButton(button) {
 function moveUnderline(button, underline) {
     const buttonRect = button.getBoundingClientRect();
     const containerRect = button.parentElement.getBoundingClientRect();
-    underline.style.width = ${buttonRect.width}px;
-    underline.style.left = ${buttonRect.left - containerRect.left}px;
-    underline.style.transition = "left 0.3s ease, width 0.3s ease"; // Add transition for smooth movement
+    underline.style.width = `${buttonRect.width}px`;
+    underline.style.left = `${buttonRect.left - containerRect.left}px`;
+    underline.style.transition = "left 0.3s ease, width 0.3s ease"; // Add transition for smooth movement
 }
