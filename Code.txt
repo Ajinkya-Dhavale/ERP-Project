@@ -1,0 +1,4 @@
+run = mvn spring-boot:run 
+maven update = mvn update/upgrade
+to solve dependency error = mvn clean
+install all dependencies = mvn install

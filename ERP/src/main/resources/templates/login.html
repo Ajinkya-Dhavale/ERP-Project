@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Academic Certificate Generator</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+	<header class="college-header">
+		<div class="logo">
+			<img src="public/fc.jpeg" alt="Fergusson College Logo">
+		</div>
+		<div class="header-content">
+			<h2>Deccan Education Society's</h2>
+			<h1>FERGUSSON COLLEGE</h1>
+			<h3>(AUTONOMOUS)</h3>
+			<p>PUNE - 411004, MAHARASHTRA, INDIA.</p>
+			<p><strong>UGC Special Heritage Status | UGC - College of Excellence (CE) | Reaccredited with "A++" Grade by
+					NAAC (4th Cycle)</strong></p>
+		</div>
+		<div class="college-image">
+			<img src="public/banner-main-1595569301.jpg" alt="Fergusson College Building">
+		</div>
+	</header>
+
+	<div class="certificate-bar">
+		Certificate Generation Desk
+	</div>
+
+	<div class="container">
+		<div class="role-selection">
+			<div class="role-button-container">
+				<button class="btn btn-student" onclick="showStudentLogin()"><svg height="19px" width="19px"
+						version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.00 512.00" xml:space="preserve"
+						fill="#ffffff">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<style type="text/css">
+								.st0 {
+									fill: #ffffff;
+								}
+							</style>
+							<g>
+								<path class="st0"
+									d="M116.738,231.551c0,23.245,14.15,43.315,34.513,49.107c15.262,42.368,55.574,70.776,100.582,70.776 s85.32-28.408,100.58-70.776c20.365-5.792,34.515-25.854,34.515-49.107c0-15.691-6.734-30.652-18.061-40.248l1.661-8.921 c0-3.323-0.229-6.568-0.491-9.821l-0.212-2.593l-2.213,1.374c-30.871,19.146-80.885,27.71-116.754,27.71 c-34.85,0-83.895-8.214-114.902-26.568l-2.259-0.59l-0.188,2.554c-0.192,2.632-0.384,5.256-0.357,8.23l1.632,8.649 C123.466,200.923,116.738,215.876,116.738,231.551z">
+								</path>
+								<path class="st0"
+									d="M356.151,381.077c-9.635-5.97-18.734-11.607-26.102-17.43l-0.937-0.738l-0.972,0.691 c-6.887,4.914-31.204,30.17-51.023,51.172l-10.945-21.273l5.697-4.076v-20.854h-40.07v20.854l5.697,4.076l-10.949,21.281 c-19.825-21.009-44.154-46.265-51.034-51.18l-0.973-0.691l-0.937,0.738c-7.368,5.823-16.469,11.46-26.102,17.43 c-30.029,18.61-64.062,39.697-64.062,77.344c0,22.244,52.241,53.579,168.388,53.579c116.146,0,168.388-31.335,168.388-53.579 C420.213,420.774,386.178,399.687,356.151,381.077z">
+								</path>
+								<path class="st0"
+									d="M131.67,131.824c0,18.649,56.118,42.306,119.188,42.306s119.188-23.656,119.188-42.306v-25.706l43.503-17.702 v55.962c-5.068,0.792-8.964,5.186-8.964,10.45c0,4.503,2.966,8.432,7.242,9.852l-8.653,57.111h40.704l-8.651-57.111 c4.27-1.421,7.232-5.35,7.232-9.852c0-5.295-3.919-9.697-9.014-10.466l-0.21-67.197c0.357-0.621,0.357-1.266,0.357-1.607 c0-0.342,0-0.978-0.149-0.978h-0.002c-0.262-2.446-2.011-4.612-4.56-5.652l-11.526-4.72L267.551,3.238 C262.361,1.118,256.59,0,250.858,0s-11.502,1.118-16.69,3.238L72.834,68.936c-2.863,1.172-4.713,3.773-4.713,6.622 c0,2.842,1.848,5.443,4.716,6.63l58.833,23.928V131.824z">
+								</path>
+							</g>
+						</g>
+					</svg>Student Login</button>
+				<button class="btn btn-department" onclick="showDepartmentOptions()"><svg fill="#ffffff" height="17px"
+						width="17px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<g>
+								<g>
+									<polygon
+										points="458.97,95.229 256,13.104 53.029,95.229 0,95.229 0,149.391 30.417,149.391 31.187,149.391 480.813,149.391 481.583,149.391 512,149.391 512,95.229 ">
+									</polygon>
+								</g>
+							</g>
+							<g>
+								<g>
+									<polygon
+										points="481.583,444.734 480.813,444.734 31.187,444.734 30.417,444.734 0,444.734 0,498.896 512,498.896 512,444.734 ">
+									</polygon>
+								</g>
+							</g>
+							<g>
+								<g>
+									<path
+										d="M480.813,221.945v-42.138h-30.417H61.604H31.187v42.138h15.209v150.234H31.187v42.138h30.417h388.792h30.417v-42.138 h-15.209V221.945H480.813z M157.27,372.179h-24.291V221.945h24.291V372.179z M268.146,372.179h-24.292V221.945h24.292V372.179z M379.02,372.179h-24.291V221.945h24.291V372.179z">
+									</path>
+								</g>
+							</g>
+						</g>
+					</svg>Department Login</button>
+				<button class="btn btn-admin" onclick="showAdminLogin()"><svg fill="#ffffff" height="19px" width="19px"
+						version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 474.565 474.565" xml:space="preserve">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<g>
+								<path
+									d="M255.204,102.3c-0.606-11.321-12.176-9.395-23.465-9.395C240.078,95.126,247.967,98.216,255.204,102.3z">
+								</path>
+								<path
+									d="M134.524,73.928c-43.825,0-63.997,55.471-28.963,83.37c11.943-31.89,35.718-54.788,66.886-63.826 C163.921,81.685,150.146,73.928,134.524,73.928z">
+								</path>
+								<path
+									d="M43.987,148.617c1.786,5.731,4.1,11.229,6.849,16.438L36.44,179.459c-3.866,3.866-3.866,10.141,0,14.015l25.375,25.383 c1.848,1.848,4.38,2.888,7.019,2.888c2.61,0,5.125-1.04,7.005-2.888l14.38-14.404c2.158,1.142,4.55,1.842,6.785,2.827 c0-0.164-0.016-0.334-0.016-0.498c0-11.771,1.352-22.875,3.759-33.302c-17.362-11.174-28.947-30.57-28.947-52.715 c0-34.592,28.139-62.739,62.723-62.739c23.418,0,43.637,13.037,54.43,32.084c11.523-1.429,22.347-1.429,35.376,1.033 c-1.676-5.07-3.648-10.032-6.118-14.683l14.396-14.411c1.878-1.856,2.918-4.38,2.918-7.004c0-2.625-1.04-5.148-2.918-7.004 l-25.361-25.367c-1.94-1.941-4.472-2.904-7.003-2.904c-2.532,0-5.063,0.963-6.989,2.904l-14.442,14.411 c-5.217-2.764-10.699-5.078-16.444-6.825V9.9c0-5.466-4.411-9.9-9.893-9.9h-35.888c-5.451,0-9.909,4.434-9.909,9.9v20.359 c-5.73,1.747-11.213,4.061-16.446,6.825L75.839,22.689c-1.942-1.941-4.473-2.904-7.005-2.904c-2.531,0-5.077,0.963-7.003,2.896 L36.44,48.048c-1.848,1.864-2.888,4.379-2.888,7.012c0,2.632,1.04,5.148,2.888,7.004l14.396,14.403 c-2.75,5.218-5.063,10.708-6.817,16.438H23.675c-5.482,0-9.909,4.441-9.909,9.915v35.889c0,5.458,4.427,9.908,9.909,9.908H43.987z">
+								</path>
+								<path
+									d="M354.871,340.654c15.872-8.705,26.773-25.367,26.773-44.703c0-28.217-22.967-51.168-51.184-51.168 c-9.923,0-19.118,2.966-26.975,7.873c-4.705,18.728-12.113,36.642-21.803,52.202C309.152,310.022,334.357,322.531,354.871,340.654z ">
+								</path>
+								<path
+									d="M460.782,276.588c0-5.909-4.799-10.693-10.685-10.693H428.14c-1.896-6.189-4.411-12.121-7.393-17.75l15.544-15.544 c2.02-2.004,3.137-4.721,3.137-7.555c0-2.835-1.118-5.553-3.137-7.563l-27.363-27.371c-2.08-2.09-4.829-3.138-7.561-3.138 c-2.734,0-5.467,1.048-7.547,3.138l-15.576,15.552c-5.623-2.982-11.539-5.481-17.751-7.369v-21.958 c0-5.901-4.768-10.685-10.669-10.685H311.11c-2.594,0-4.877,1.04-6.739,2.578c3.26,11.895,5.046,24.793,5.046,38.552 c0,8.735-0.682,17.604-1.956,26.423c7.205-2.656,14.876-4.324,22.999-4.324c36.99,0,67.086,30.089,67.086,67.07 c0,23.637-12.345,44.353-30.872,56.303c13.48,14.784,24.195,32.324,31.168,51.976c1.148,0.396,2.344,0.684,3.54,0.684 c2.733,0,5.467-1.04,7.563-3.13l27.379-27.371c2.004-2.004,3.106-4.721,3.106-7.555s-1.102-5.551-3.106-7.563l-15.576-15.552 c2.982-5.621,5.497-11.555,7.393-17.75h21.957c2.826,0,5.575-1.118,7.563-3.138c2.004-1.996,3.138-4.72,3.138-7.555 L460.782,276.588z">
+								</path>
+								<path
+									d="M376.038,413.906c-16.602-48.848-60.471-82.445-111.113-87.018c-16.958,17.958-37.954,29.351-61.731,29.351 c-23.759,0-44.771-11.392-61.713-29.351c-50.672,4.573-94.543,38.17-111.145,87.026l-9.177,27.013 c-2.625,7.773-1.368,16.338,3.416,23.007c4.783,6.671,12.486,10.631,20.685,10.631h315.853c8.215,0,15.918-3.96,20.702-10.631 c4.767-6.669,6.041-15.234,3.4-23.007L376.038,413.906z">
+								</path>
+								<path
+									d="M120.842,206.782c0,60.589,36.883,125.603,82.352,125.603c45.487,0,82.368-65.014,82.368-125.603 C285.563,81.188,120.842,80.939,120.842,206.782z">
+								</path>
+							</g>
+						</g>
+					</svg>Admin Login</button>
+				<div class="underline"></div>
+			</div>
+		</div>
+
+		
+		<div class="login-container fade-in" id="student-login">
+			<form th:action="@{/student/login}" method="post">
+			<h2>Student Login</h2>
+			<div class="input-container">
+				<svg width="16px" height="16px" viewBox="0 0 16 16" fill="#0b0e47" xmlns="http://www.w3.org/2000/svg">
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+					<g id="SVGRepo_iconCarrier">
+						<path
+							d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z"
+							fill="#0b0e47"></path>
+						<path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="#0b0e47">
+						</path>
+					</g>
+				</svg>
+				<input type="text" name="username" class="input-student-userId" placeholder="Enter User Id"
+					id="student-id">
+			</div>
+
+			<div class="input-container">
+				<svg width="15px" height="15px" viewBox="0 0 16 16" fill="#0b0e47" xmlns="http://www.w3.org/2000/svg">
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+					<g id="SVGRepo_iconCarrier">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M16 5.5C16 8.53757 13.5376 11 10.5 11H7V13H5V15L4 16H0V12L5.16351 6.83649C5.0567 6.40863 5 5.96094 5 5.5C5 2.46243 7.46243 0 10.5 0C13.5376 0 16 2.46243 16 5.5ZM13 4C13 4.55228 12.5523 5 12 5C11.4477 5 11 4.55228 11 4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z"
+							fill="#0b0e47"></path>
+					</g>
+				</svg>
+				<input type="password" name="password" class="input-student-password"
+					placeholder="Enter Password" id="student-password">
+			</div>
+
+			<div class="checkbox-container">
+				<svg fill="" version="1.1" baseProfile="tiny" id="Layer_1" xmlns:x="&amp;ns_extend;"
+					xmlns:i="&amp;ns_ai;" xmlns:graph="&amp;ns_graphs;" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" width="15px" height="15px"
+					viewBox="-0.5 0.5 42 42" xml:space="preserve" stroke="#000000">#0b0e47&lt;#0b0e47g#0b0e47
+					#0b0e47i#0b0e47d#0b0e47=#0b0e47"#0b0e47S#0b0e47V#0b0e47G#0b0e47R#0b0e47e#0b0e47p#0b0e47o#0b0e47_#0b0e47b#0b0e47g#0b0e47C#0b0e47a#0b0e47r#0b0e47r#0b0e47i#0b0e47e#0b0e47r#0b0e47"#0b0e47
+					#0b0e47s#0b0e47t#0b0e47r#0b0e47o#0b0e47k#0b0e47e#0b0e47-#0b0e47w#0b0e47i#0b0e47d#0b0e47t#0b0e47h#0b0e47=#0b0e47"#0b0e470#0b0e47"#0b0e47&gt;#0b0e47&lt;#0b0e47/#0b0e47g#0b0e47&gt;#0b0e47&lt;#0b0e47g#0b0e47
+					#0b0e47i#0b0e47d#0b0e47=#0b0e47"#0b0e47S#0b0e47V#0b0e47G#0b0e47R#0b0e47e#0b0e47p#0b0e47o#0b0e47_#0b0e47t#0b0e47r#0b0e47a#0b0e47c#0b0e47e#0b0e47r#0b0e47C#0b0e47a#0b0e47r#0b0e47r#0b0e47i#0b0e47e#0b0e47r#0b0e47"#0b0e47
+					#0b0e47s#0b0e47t#0b0e47r#0b0e47o#0b0e47k#0b0e47e#0b0e47-#0b0e47l#0b0e47i#0b0e47n#0b0e47e#0b0e47c#0b0e47a#0b0e47p#0b0e47=#0b0e47"#0b0e47r#0b0e47o#0b0e47u#0b0e47n#0b0e47d#0b0e47"#0b0e47
+					#0b0e47s#0b0e47t#0b0e47r#0b0e47o#0b0e47k#0b0e47e#0b0e47-#0b0e47l#0b0e47i#0b0e47n#0b0e47e#0b0e47j#0b0e47o#0b0e47i#0b0e47n#0b0e47=#0b0e47"#0b0e47r#0b0e47o#0b0e47u#0b0e47n#0b0e47d#0b0e47"#0b0e47&gt;#0b0e47&lt;#0b0e47/#0b0e47g#0b0e47&gt;#0b0e47&lt;#0b0e47g#0b0e47
+					#0b0e47i#0b0e47d#0b0e47=#0b0e47"#0b0e47S#0b0e47V#0b0e47G#0b0e47R#0b0e47e#0b0e47p#0b0e47o#0b0e47_#0b0e47i#0b0e47c#0b0e47o#0b0e47n#0b0e47C#0b0e47a#0b0e47r#0b0e47r#0b0e47i#0b0e47e#0b0e47r#0b0e47"#0b0e47&gt;#0b0e47
+					#0b0e47&lt;#0b0e47p#0b0e47a#0b0e47t#0b0e47h#0b0e47
+					#0b0e47d#0b0e47=#0b0e47"#0b0e47M#0b0e474#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e473#0b0e471#0b0e47.#0b0e475#0b0e47v#0b0e47-#0b0e471#0b0e478#0b0e47c#0b0e470#0b0e47,#0b0e470#0b0e47-#0b0e471#0b0e478#0b0e47.#0b0e472#0b0e47,#0b0e471#0b0e472#0b0e47.#0b0e477#0b0e47-#0b0e471#0b0e479#0b0e47.#0b0e479#0b0e477#0b0e47,#0b0e471#0b0e473#0b0e47.#0b0e473#0b0e475#0b0e479#0b0e47C#0b0e471#0b0e478#0b0e47.#0b0e477#0b0e479#0b0e47,#0b0e472#0b0e476#0b0e47.#0b0e472#0b0e473#0b0e47,#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e471#0b0e473#0b0e47.#0b0e475#0b0e47,#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e471#0b0e473#0b0e47.#0b0e475#0b0e47v#0b0e471#0b0e478#0b0e47c#0b0e470#0b0e47,#0b0e472#0b0e47.#0b0e475#0b0e47,#0b0e470#0b0e47.#0b0e475#0b0e473#0b0e47,#0b0e473#0b0e47,#0b0e473#0b0e47,#0b0e473#0b0e47h#0b0e473#0b0e474#0b0e47
+					#0b0e47C#0b0e474#0b0e470#0b0e47.#0b0e470#0b0e472#0b0e479#0b0e47,#0b0e473#0b0e474#0b0e47.#0b0e475#0b0e47,#0b0e474#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e473#0b0e474#0b0e47.#0b0e470#0b0e476#0b0e471#0b0e47,#0b0e474#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e473#0b0e471#0b0e47.#0b0e475#0b0e47z#0b0e47
+					#0b0e47M#0b0e474#0b0e470#0b0e47.#0b0e474#0b0e477#0b0e471#0b0e47,#0b0e479#0b0e47.#0b0e479#0b0e477#0b0e471#0b0e47c#0b0e470#0b0e47-#0b0e471#0b0e47.#0b0e478#0b0e472#0b0e471#0b0e47-#0b0e470#0b0e47.#0b0e475#0b0e473#0b0e471#0b0e47-#0b0e472#0b0e47.#0b0e474#0b0e477#0b0e471#0b0e47-#0b0e472#0b0e47.#0b0e479#0b0e477#0b0e471#0b0e47-#0b0e472#0b0e47.#0b0e474#0b0e477#0b0e471#0b0e47h#0b0e47-#0b0e473#0b0e474#0b0e47c#0b0e47-#0b0e472#0b0e47.#0b0e475#0b0e471#0b0e47,#0b0e470#0b0e47-#0b0e473#0b0e47,#0b0e470#0b0e47.#0b0e477#0b0e478#0b0e47-#0b0e473#0b0e47,#0b0e472#0b0e47.#0b0e476#0b0e47l#0b0e470#0b0e47.#0b0e470#0b0e473#0b0e47,#0b0e470#0b0e47.#0b0e472#0b0e478#0b0e47
+					#0b0e47c#0b0e470#0b0e47,#0b0e470#0b0e47,#0b0e471#0b0e478#0b0e47.#0b0e470#0b0e476#0b0e479#0b0e47,#0b0e471#0b0e472#0b0e47.#0b0e474#0b0e474#0b0e47,#0b0e472#0b0e470#0b0e47,#0b0e471#0b0e473#0b0e47.#0b0e471#0b0e472#0b0e47C#0b0e472#0b0e472#0b0e47.#0b0e475#0b0e477#0b0e47,#0b0e472#0b0e472#0b0e47.#0b0e477#0b0e471#0b0e47,#0b0e474#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e471#0b0e470#0b0e47.#0b0e471#0b0e47,#0b0e474#0b0e470#0b0e47.#0b0e475#0b0e47,#0b0e471#0b0e470#0b0e47.#0b0e471#0b0e47L#0b0e474#0b0e470#0b0e47.#0b0e474#0b0e477#0b0e471#0b0e47,#0b0e479#0b0e47.#0b0e479#0b0e477#0b0e471#0b0e47z#0b0e47"#0b0e47&gt;#0b0e47&lt;#0b0e47/#0b0e47p#0b0e47a#0b0e47t#0b0e47h#0b0e47&gt;#0b0e47
+					#0b0e47&lt;#0b0e47/#0b0e47g#0b0e47&gt;#0b0e47</svg>
+				<div class="forgot-password" onclick="showForgotPassword()">Forgot Password?</div>
+			</div>
+
+			<button class="btn btn-student">Login</button>
+			</form>
+		</div>
+		</form>
+
+		<div class="login-container hidden fade-in" id="forgot-password">
+		    <h2>Forgot Password</h2>
+		    <p>Please enter your User ID to reset your password.</p>
+
+		    <!-- User ID Input -->
+		    <div class="input-container">
+		        <input type="text" id="email" class="input-email" placeholder="Enter User ID">
+		    </div>
+
+		    <!-- Get OTP Button -->
+		    <button class="btn btn-student" onclick="getOTP()">Get OTP</button>
+
+		    <!-- OTP Input (Hidden initially) -->
+		    <div class="input-container hidden" id="otp-container">
+		        <input type="text" id="otp" class="input-otp" placeholder="Enter OTP">
+		        <button class="btn btn-student" onclick="validateOTP()">Validate OTP</button>
+		    </div>
+
+		    <!-- New Password Fields (Hidden initially) -->
+		    <div class="hidden" id="password-container">
+		        <div class="input-container">
+		            <input type="password" id="newPassword" class="input-password" placeholder="New Password">
+		        </div>
+		        <div class="input-container">
+		            <input type="password" id="confirmPassword" class="input-password" placeholder="Confirm Password">
+		        </div>
+		        <button class="btn btn-student" onclick="changePassword()">Change Password</button>
+		    </div>
+		</div>
+
+		<script>
+
+			function getOTP() {
+			    let email = document.getElementById("email").value;
+
+			    fetch("/forgot-password/generate-otp", {
+			        method: "POST",
+			        headers: { "Content-Type": "application/json" },
+			        body: JSON.stringify({ email: email }) // Changed from admissionId to email
+			    })
+			    .then(response => response.text())
+			    .then(data => {
+			        alert(data);
+					if(data=="OTP sent to your registered email.")
+			        	document.getElementById("otp-container").classList.remove("hidden");
+			    })
+			    .catch(error => console.error("Error:", error));
+			}
+
+			function validateOTP() {
+			    let email = document.getElementById("email").value;
+			    let otp = document.getElementById("otp").value;
+
+			    fetch("/forgot-password/validate-otp", {
+			        method: "POST",
+			        headers: { "Content-Type": "application/json" },
+			        body: JSON.stringify({ email: email, otp: otp })
+			    })
+			    .then(response => {
+			        if (response.ok) {
+			            alert("OTP Verified");
+			            document.getElementById("password-container").classList.remove("hidden");
+			        } else {
+			            alert("Invalid OTP");
+			        }
+			    })
+			    .catch(error => console.error("Error:", error));
+			}
+
+			function changePassword() {
+			    let email = document.getElementById("email").value;
+			    let newPassword = document.getElementById("newPassword").value;
+			    let confirmPassword = document.getElementById("confirmPassword").value;
+
+			    if (newPassword !== confirmPassword) {
+			        alert("Passwords do not match!");
+			        return;
+			    }
+
+			    fetch("/forgot-password/change-password", {
+			        method: "POST",
+			        headers: { "Content-Type": "application/json" },
+			        body: JSON.stringify({ email: email, newPassword: newPassword })
+			    })
+			    .then(response => response.text())
+			    .then(data => {
+			        alert(data);
+			        window.location.href = "/"; // Redirect to Login Page
+			    })
+			    .catch(error => console.error("Error:", error));
+			}
+
+		</script>
+
+		<style>
+		    .hidden { display: none; }
+		</style>
+
+
+
+
+		<div class="login-container hidden fade-in" id="department-selection">
+			<h2>Select Department</h2>
+			<div class="btn-container">
+
+				<button class="btn btn-department" onclick="showDepartmentLogin('Library','library')">
+					<svg fill="#ffffff" width="23px" height="23px" viewBox="0 0 15 15" version="1.1" id="library"
+						xmlns="http://www.w3.org/2000/svg">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<path
+								d="M1.0819,9.9388C0.9871,9.867,1.0007,9.7479,1.0007,9.7479L1.5259,3.5c0,0,0.0082-0.0688,0.0388-0.104C1.584,3.374,1.6084,3.342,1.6544,3.3232C2.1826,3.1072,5.0537,1.5519,6.5,3c0.2397,0.2777,0.4999,0.6876,0.4999,1v5.2879c0,0,0.0062,0.1122-0.0953,0.1801c-0.0239,0.016-0.124,0.0616-0.242,0.0026c-2.2253-1.1134-4.711,0.1546-5.3381,0.4871C1.1987,10.0244,1.1006,9.9531,1.0819,9.9388z M13.6754,9.9577c-0.6271-0.3325-3.1128-1.6005-5.3381-0.4871c-0.118,0.059-0.2181,0.0134-0.242-0.0026C7.9939,9.4001,8.0001,9.2879,8.0001,9.2879V4c0-0.3124,0.2602-0.7223,0.4999-1c1.4463-1.4481,4.2991,0.1071,4.8273,0.3232c0.046,0.0188,0.0704,0.0508,0.0897,0.0728C13.4476,3.4312,13.4558,3.5,13.4558,3.5l0.5435,6.2479c0,0,0.0136,0.1191-0.0812,0.1909C13.8994,9.9531,13.8013,10.0244,13.6754,9.9577z M8.8647,12.6863c0.0352-0.0085,0.0964-0.0443,0.1179-0.0775c0.0236-0.0364,0.0378-0.0617,0.0423-0.1088c0.0495-0.9379,1.6245-1.8119,4.6477-0.0298 c0.0775,0.0441,0.1666,0.0396,0.2425-0.0155C14.0014,12.392,14,12.2859,14,12.2859v-0.5542c0,0,0.0003-0.0764-0.0272-0.1184c-0.0205-0.0312-0.0476-0.0643-0.0926-0.0858c-2.0254-1.3145-4.5858-1.8972-5.8854-0.1592 c-0.0181,0.0423-0.0353,0.0613-0.0728,0.0905C7.8654,11.5028,7.7964,11.5,7.7964,11.5H7.2109c0,0-0.069,0.0028-0.1256-0.0412c-0.0375-0.0292-0.0547-0.0482-0.0728-0.0905c-1.2996-1.738-3.86-1.1828-5.8854,0.1317c-0.045,0.0215-0.0721,0.0546-0.0926,0.0858 c-0.0275,0.042-0.0272,0.1184-0.0272,0.1184v0.5542c0,0-0.0014,0.1061,0.0849,0.1688c0.0759,0.0551,0.165,0.0596,0.2425,0.0155c3.0232-1.7821,4.5982-0.8806,4.6477,0.0573c0.0045,0.0471,0.0187,0.0724,0.0423,0.1088c0.0215,0.0332,0.0827,0.069,0.1179,0.0775 C6.8645,12.8656,7.9112,12.9363,8.8647,12.6863z">
+							</path>
+						</g>
+					</svg>
+
+					Library</button>
+
+				<button class="btn btn-department" onclick="showDepartmentLogin('Scholarship','scholarship')"><svg fill="#ffffff"
+						width="23px" height="23px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<path
+								d="M14.573 2.729c-0.729 0.484-4.292 2.849-7.917 5.255s-6.589 4.396-6.589 4.422c0 0.026 0.182 0.146 0.406 0.266 0.224 0.13 3.797 2.109 7.953 4.411l7.542 4.193 0.193-0.099c0.109-0.052 2.891-1.641 6.188-3.521l5.99-3.427 0.036 10.599h3.557v-12.401l-4.615-3.094c-6.219-4.167-11.188-7.448-11.307-7.474-0.063-0.010-0.703 0.38-1.438 0.87zM7.141 22.177l0.016 2.672 8.828 5.292 8.891-5.339v-2.641c0-1.458-0.016-2.646-0.031-2.646-0.021 0-1.76 1.042-3.87 2.323l-4.406 2.661-0.578 0.339-1.755-1.052c-1.464-0.875-2.927-1.755-4.385-2.641l-2.672-1.615c-0.031-0.010-0.042 1.177-0.036 2.646z">
+							</path>
+						</g>
+					</svg>Scholarship</button>
+
+
+				<button class="btn btn-department" onclick="showDepartmentLogin('Account','account')"><svg fill="#ffffff"
+						height="23px" width="23px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<g id="XMLID_71_">
+								<path id="XMLID_85_"
+									d="M280,263.768V195c0-51.241-33.69-94.756-80.08-109.574l34.684-28.903C238.022,53.673,240,49.452,240,45 c0-24.813-20.188-45-45-45h-60c-24.813,0-45,20.187-45,45c0,4.452,1.977,8.673,5.396,11.523l34.684,28.903 C83.689,100.244,50,143.759,50,195v68.768C34.394,275.988,25,294.906,25,315c0,8.284,6.716,15,15,15h250c8.284,0,15-6.716,15-15 C305,294.906,295.605,275.988,280,263.768z M174.729,261.476v5.352c0,3.655-3.49,6.86-7.469,6.86c-4.119,0-7.471-3.078-7.471-6.86 v-4.46c-18.539-1.526-30.162-12.478-30.162-20.108c0-4.339,3.803-9.579,8.524-9.579c2.818,0,4.656,1.912,6.602,3.936 c2.715,2.824,6.637,6.902,15.035,8.1v-36.731c-12.663-4.493-27.449-10.609-27.449-31.34c0-16.518,9.945-27.131,27.449-29.551 v-3.912c0-3.789,3.352-6.871,7.471-6.871c3.979,0,7.469,3.211,7.469,6.871v3.509c9.55,1.016,22.928,4.554,22.928,12.906 c0,4.002-3.188,9.584-8.377,9.584c-1.887,0-3.525-0.835-5.422-1.803c-2.178-1.109-4.97-2.533-9.129-3.298v30.134 c10.191,3.845,25.645,11.352,25.645,34.317C200.373,246.212,191.082,258.048,174.729,261.476z">
+								</path>
+								<path id="XMLID_88_"
+									d="M149.84,175.744c0,6.788,3.209,10.102,10.258,13.165v-24.543 C149.839,166.638,149.84,173.359,149.84,175.744z">
+								</path>
+								<path id="XMLID_89_"
+									d="M174.28,213.971v29.6c5.669-2.262,8.439-6.922,8.439-14.133 C182.719,221.503,179.695,217.209,174.28,213.971z">
+								</path>
+							</g>
+						</g>
+					</svg>Account</button>
+
+			</div>
+		</div>
+		
+		
+		<!--toast message is start-->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+		<style>
+		    /* Custom Toast Styles */
+		    .swal2-popup {
+		        width: 240px !important; /* Smaller width */
+		        font-size: 14px !important; /* Smaller font size */
+		        border-radius: 6px !important;
+		        text-align: left;
+		        padding: 9px;
+		        margin-top: 52px;
+		        margin-right: 18px;
+		    }
+
+		    /* Error Toast */
+		    .swal2-toast-error {
+		        background-color: rgb(255, 0, 0) !important; /* Red */
+		        color: white !important;
+		    }
+
+		    /* Icon and text color */
+		    .swal2-toast-error .swal2-title {
+		        color: white !important;
+		    }
+
+		    /* Force change error icon to white */
+		    .swal2-icon.swal2-error [class^="swal2-error-x-mark"] {
+		        background-color: white !important;
+		    }
+		    .swal2-icon.swal2-error {
+		        border-color: white !important;
+		    }
+
+		    /* Pagination Line (Timer Progress) */
+		    .swal2-timer-progress-bar {
+		        height: 3px !important; /* Thinner line */
+		        background-color: white !important; /* White progress line */
+		    }
+		</style>
+
+		<script>
+		    // Function to show Toast with error message
+		    function showToast(message) {
+		        Swal.fire({
+		            toast: true,
+		            position: 'top-right',
+		            icon: 'error', // Always show error icon
+		            title: message,
+		            showConfirmButton: false,
+		            timer: 2000, // Toast disappears after 2 seconds
+		            timerProgressBar: true,
+		            customClass: {
+		                popup: 'swal2-toast-error'
+		            }
+		        });
+		    }
+
+		    // Get error message from backend
+		    document.addEventListener("DOMContentLoaded", function () {
+		        let errorMessage = `[[${error}]]`; // Get error message
+
+		        if (errorMessage && errorMessage !== 'null') {
+		            showToast(errorMessage);
+		        }
+		    });
+		</script>
+		<!--toast message is end-->
+
+
+		
+		<div class="login-container hidden fade-in" id="department-login">
+			<h2 id="department-title">Department Login</h2>
+
+			<form th:action="@{/admin/login}" method="post">
+
+				<input type="hidden" name="role"  id="decide_role" value="">
+
+				<div class="input-container">
+					<svg fill="#0b0e47" height="17px" width="17px" version="1.1" id="Layer_1"
+						xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+						viewBox="0 0 512 512" xml:space="preserve">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<g>
+								<g>
+									<polygon
+										points="458.97,95.229 256,13.104 53.029,95.229 0,95.229 0,149.391 30.417,149.391 31.187,149.391 480.813,149.391 481.583,149.391 512,149.391 512,95.229 ">
+									</polygon>
+								</g>
+							</g>
+							<g>
+								<g>
+									<polygon
+										points="481.583,444.734 480.813,444.734 31.187,444.734 30.417,444.734 0,444.734 0,498.896 512,498.896 512,444.734 ">
+									</polygon>
+								</g>
+							</g>
+							<g>
+								<g>
+									<path
+										d="M480.813,221.945v-42.138h-30.417H61.604H31.187v42.138h15.209v150.234H31.187v42.138h30.417h388.792h30.417v-42.138 h-15.209V221.945H480.813z M157.27,372.179h-24.291V221.945h24.291V372.179z M268.146,372.179h-24.292V221.945h24.292V372.179z M379.02,372.179h-24.291V221.945h24.291V372.179z">
+									</path>
+								</g>
+							</g>
+						</g>
+					</svg>
+					<input type="text" name="username" class="input-dept-username" placeholder="Enter User Id"
+						id="dept-username">
+				</div>
+
+				<div class="input-container">
+					<svg width="15px" height="15px" viewBox="0 0 16 16" fill="#0b0e47"
+						xmlns="http://www.w3.org/2000/svg">
+						<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+						<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+						<g id="SVGRepo_iconCarrier">
+							<path fill-rule="evenodd" clip-rule="evenodd"
+								d="M16 5.5C16 8.53757 13.5376 11 10.5 11H7V13H5V15L4 16H0V12L5.16351 6.83649C5.0567 6.40863 5 5.96094 5 5.5C5 2.46243 7.46243 0 10.5 0C13.5376 0 16 2.46243 16 5.5ZM13 4C13 4.55228 12.5523 5 12 5C11.4477 5 11 4.55228 11 4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z"
+								fill="#0b0e47"></path>
+						</g>
+					</svg>
+					<input type="password" name="password" class="input-dept-password" placeholder="Enter Password"
+						id="dept-password">
+				</div>
+
+				<button class="btn btn-department">Login</button>
+				<button class="btn btn-department" type="button" onclick="goBack()">Back</button>
+
+			</form>
+
+		</div>
+
+
+		<!-- this is admin form -->
+
+		
+		<div class="login-container hidden fade-in" id="admin-login">
+		
+			<form th:action="@{/admin/login}" method="post">
+				<h2>Admin Login</h2>
+
+				<input type="hidden" value="admin" name="role">
+				
+			<div class="input-container">
+				<svg fill="#0b0e47" height="19px" width="19px" version="1.1" id="Capa_1"
+					xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+					viewBox="0 0 474.565 474.565" xml:space="preserve">
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+					<g id="SVGRepo_iconCarrier">
+						<g>
+							<path
+								d="M255.204,102.3c-0.606-11.321-12.176-9.395-23.465-9.395C240.078,95.126,247.967,98.216,255.204,102.3z">
+							</path>
+							<path
+								d="M134.524,73.928c-43.825,0-63.997,55.471-28.963,83.37c11.943-31.89,35.718-54.788,66.886-63.826 C163.921,81.685,150.146,73.928,134.524,73.928z">
+							</path>
+							<path
+								d="M43.987,148.617c1.786,5.731,4.1,11.229,6.849,16.438L36.44,179.459c-3.866,3.866-3.866,10.141,0,14.015l25.375,25.383 c1.848,1.848,4.38,2.888,7.019,2.888c2.61,0,5.125-1.04,7.005-2.888l14.38-14.404c2.158,1.142,4.55,1.842,6.785,2.827 c0-0.164-0.016-0.334-0.016-0.498c0-11.771,1.352-22.875,3.759-33.302c-17.362-11.174-28.947-30.57-28.947-52.715 c0-34.592,28.139-62.739,62.723-62.739c23.418,0,43.637,13.037,54.43,32.084c11.523-1.429,22.347-1.429,35.376,1.033 c-1.676-5.07-3.648-10.032-6.118-14.683l14.396-14.411c1.878-1.856,2.918-4.38,2.918-7.004c0-2.625-1.04-5.148-2.918-7.004 l-25.361-25.367c-1.94-1.941-4.472-2.904-7.003-2.904c-2.532,0-5.063,0.963-6.989,2.904l-14.442,14.411 c-5.217-2.764-10.699-5.078-16.444-6.825V9.9c0-5.466-4.411-9.9-9.893-9.9h-35.888c-5.451,0-9.909,4.434-9.909,9.9v20.359 c-5.73,1.747-11.213,4.061-16.446,6.825L75.839,22.689c-1.942-1.941-4.473-2.904-7.005-2.904c-2.531,0-5.077,0.963-7.003,2.896 L36.44,48.048c-1.848,1.864-2.888,4.379-2.888,7.012c0,2.632,1.04,5.148,2.888,7.004l14.396,14.403 c-2.75,5.218-5.063,10.708-6.817,16.438H23.675c-5.482,0-9.909,4.441-9.909,9.915v35.889c0,5.458,4.427,9.908,9.909,9.908H43.987z">
+							</path>
+							<path
+								d="M354.871,340.654c15.872-8.705,26.773-25.367,26.773-44.703c0-28.217-22.967-51.168-51.184-51.168 c-9.923,0-19.118,2.966-26.975,7.873c-4.705,18.728-12.113,36.642-21.803,52.202C309.152,310.022,334.357,322.531,354.871,340.654z ">
+							</path>
+							<path
+								d="M460.782,276.588c0-5.909-4.799-10.693-10.685-10.693H428.14c-1.896-6.189-4.411-12.121-7.393-17.75l15.544-15.544 c2.02-2.004,3.137-4.721,3.137-7.555c0-2.835-1.118-5.553-3.137-7.563l-27.363-27.371c-2.08-2.09-4.829-3.138-7.561-3.138 c-2.734,0-5.467,1.048-7.547,3.138l-15.576,15.552c-5.623-2.982-11.539-5.481-17.751-7.369v-21.958 c0-5.901-4.768-10.685-10.669-10.685H311.11c-2.594,0-4.877,1.04-6.739,2.578c3.26,11.895,5.046,24.793,5.046,38.552 c0,8.735-0.682,17.604-1.956,26.423c7.205-2.656,14.876-4.324,22.999-4.324c36.99,0,67.086,30.089,67.086,67.07 c0,23.637-12.345,44.353-30.872,56.303c13.48,14.784,24.195,32.324,31.168,51.976c1.148,0.396,2.344,0.684,3.54,0.684 c2.733,0,5.467-1.04,7.563-3.13l27.379-27.371c2.004-2.004,3.106-4.721,3.106-7.555s-1.102-5.551-3.106-7.563l-15.576-15.552 c2.982-5.621,5.497-11.555,7.393-17.75h21.957c2.826,0,5.575-1.118,7.563-3.138c2.004-1.996,3.138-4.72,3.138-7.555 L460.782,276.588z">
+							</path>
+							<path
+								d="M376.038,413.906c-16.602-48.848-60.471-82.445-111.113-87.018c-16.958,17.958-37.954,29.351-61.731,29.351 c-23.759,0-44.771-11.392-61.713-29.351c-50.672,4.573-94.543,38.17-111.145,87.026l-9.177,27.013 c-2.625,7.773-1.368,16.338,3.416,23.007c4.783,6.671,12.486,10.631,20.685,10.631h315.853c8.215,0,15.918-3.96,20.702-10.631 c4.767-6.669,6.041-15.234,3.4-23.007L376.038,413.906z">
+							</path>
+							<path
+								d="M120.842,206.782c0,60.589,36.883,125.603,82.352,125.603c45.487,0,82.368-65.014,82.368-125.603 C285.563,81.188,120.842,80.939,120.842,206.782z">
+							</path>
+						</g>
+					</g>
+				</svg>
+				<input type="text" name="username" class="input-admin-username" placeholder="Enter Username"
+					id="admin-username">
+			</div>
+
+			<div class="input-container">
+				<svg width="15px" height="15px" viewBox="0 0 16 16" fill="#0b0e47" xmlns="http://www.w3.org/2000/svg">
+					<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+					<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+					<g id="SVGRepo_iconCarrier">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							d="M16 5.5C16 8.53757 13.5376 11 10.5 11H7V13H5V15L4 16H0V12L5.16351 6.83649C5.0567 6.40863 5 5.96094 5 5.5C5 2.46243 7.46243 0 10.5 0C13.5376 0 16 2.46243 16 5.5ZM13 4C13 4.55228 12.5523 5 12 5C11.4477 5 11 4.55228 11 4C11 3.44772 11.4477 3 12 3C12.5523 3 13 3.44772 13 4Z"
+							fill="#0b0e47"></path>
+					</g>
+				</svg>
+				<input type="password" name="password" class="input-dept-password" placeholder="Enter Password"
+					id="dept-password">
+			</div>
+
+			<button type="submit" class="btn btn-admin">Login</button>
+			<button type="button" class="btn btn-admin" onclick="goBack()">Back</button>
+			</form>
+		</div>
+		
+		
+
+	</div>
+
+
+	<footer>
+		<p>&copy; 2025 Fergusson College. All rights reserved.</p><BR>
+		<p>Contact us: <a href="mailto:info@fergusson.edu.in">info@fergusson.edu.in</a></p>
+	</footer>
+
+
+	<script src="login.js" ></script>
+</body>
+
+</html>

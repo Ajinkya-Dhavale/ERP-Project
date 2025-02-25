@@ -5,869 +5,486 @@
 <!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Favicon icon-->
-  <link rel="shortcut icon" type="image/png"
-    href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
 
-  <!-- Core Css -->
-  <!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
-  <link rel="stylesheet" href="style.css" />
-  <title>Admin Pannel</title>
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" href="style.css" />
+	<title>Student Personal Details</title>
 
 
-  <!-- font awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
 
 <body>
-  <!-- Preloader -->
-  <div class="preloader">
-    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-      class="lds-ripple img-fluid" />
-  </div>
-  <div id="main-wrapper">
-    <!-- Sidebar Start -->
-    <aside class="left-sidebar with-vertical">
-      <div><!-- ---------------------------------- -->
-        <!-- Start Vertical Layout Sidebar -->
-        <!-- ---------------------------------- -->
-        <!-- Sidebar scroll-->
-        <nav class="sidebar-nav scroll-sidebar" data-simplebar>
-          <ul id="sidebarnav">
-            <!-----------Profile------------------>
-            <li class="sidebar-item sidebar-profile pt-2">
-              <a class="sidebar-link has-arrow opacity-100 gap-2" href="javascript:void(0)" aria-expanded="false">
-                <span class="d-flex">
-                  <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
-                    class="rounded" width="30" alt="user" />
-                </span>
-                <span class="hide-menu fw-medium">James White </span>
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a href="javascript:void(0)" class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">My Profile</span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="javascript:void(0)" class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Logout</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <!-- ---------------------------------- -->
-            <!-- Home -->
-            <!-- ---------------------------------- -->
-
-            <li class="sidebar-item">
-              <a class="sidebar-link" href="#" id="get-url">
-                <iconify-icon icon="solar:screencast-2-linear" class="aside-icon"></iconify-icon>
-                <span class="hide-menu">Dashboard</span>
-              </a>
-            </li>
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">student</span>
-            </li>
-
-            <li class="sidebar-item">
-              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex">
-                  <iconify-icon icon="solar:pie-chart-3-broken"></iconify-icon>
-                </div>
-                <span class="hide-menu">Student Management</span>
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a href="add_student.html" class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Addmission</span>
-                  </a>
-                </li>
-
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">View Student</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Certificate</span>
-            </li>
-
-            <li class="sidebar-item">
-              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex">
-                  <iconify-icon icon="solar:pie-chart-3-broken"></iconify-icon>
-                </div>
-                <span class="hide-menu">Transfer Certificate</span>
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Approved Certificate</span>
-                  </a>
-                </li>
-
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Pending Certificate</span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Rejected Certificate</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-
-            <li class="sidebar-item">
-              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex">
-                  <iconify-icon icon="solar:pie-chart-3-broken"></iconify-icon>
-                </div>
-                <span class="hide-menu">Bonafide Certificate</span>
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Approved Certificate</span>
-                  </a>
-                </li>
-
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Pending Certificate</span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Rejected Certificate</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="sidebar-item">
-              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex">
-                  <iconify-icon icon="solar:pie-chart-3-broken"></iconify-icon>
-                </div>
-                <span class="hide-menu">Attendance Certificate</span>
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Approved Certificate</span>
-                  </a>
-                </li>
-
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Pending Certificate</span>
-                  </a>
-                </li>
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <iconify-icon icon="solar:stop-circle-line-duotone"></iconify-icon>
-                    </div>
-                    <span class="hide-menu">Rejected Certificate</span>
-                  </a>
-                </li>
-              </ul>
-            </li>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
+			class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+		
+		<!--imported side bar here-->
+		<div th:replace="Student/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+			<div th:replace="Student/fragments/navbar :: navbar"></div>
 
 
 
 
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<!-- Main Part -->
+
+					  <div class="card">
+					    <div class="border-bottom title-part-padding">
+					        <h4 class="card-title mb-0 text-center text-danger" style="font-size: 23px;font-weight: bold;">Personal Details</h4>
+					    </div>
+
+					    <div class="card-body">
+					        <form class="needs-validation" novalidate>
+					            <div class="row border-bottom">
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="validationCustom01">First Name</label>
+					                    <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid first name.</div>
+					                </div>
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="validationCustom02">Middle Name</label>
+					                    <input type="text" class="form-control" id="validationCustom02" placeholder="Middle name" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid middle name.</div>
+					                </div>
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="validationCustom03">Last Name</label>
+					                    <input type="text" class="form-control" id="validationCustom03" placeholder="Last name" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid last name.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="validationemail">Email</label>
+					                    <div class="input-group">
+					                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-envelope" style="font-size: 20px;"></i> </span>
+					                        <input type="text" class="form-control" id="validationCustom04" placeholder="Enter Email" aria-describedby="inputGroupPrepend" required />
+					                        <div class="valid-feedback">Looks good!</div>
+					                        <div class="invalid-feedback">Please enter a valid email.</div>
+					                    </div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="mobile">Mobile Number</label>
+					                    <div class="input-group">
+					                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-phone" style="font-size: 18px;"></i> </span>
+					                        <input type="text" class="form-control" id="mobile" placeholder="Enter Mobile" required />
+					                        <div class="valid-feedback">Looks good!</div>
+					                        <div class="invalid-feedback">Please enter a valid mobile number.</div>
+					                    </div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="parentMobile">Parent Mobile Number</label>
+					                    <div class="input-group">
+					                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-phone" style="font-size: 18px;"></i> </span>
+					                        <input type="text" class="form-control" id="parentMobile" placeholder="Enter Parent Mobile" required />
+					                        <div class="valid-feedback">Looks good!</div>
+					                        <div class="invalid-feedback">Please enter a valid parent mobile number.</div>
+					                    </div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="gender">Gender</label>
+					                    <select class="form-control" id="gender" required>
+					                        <option value="">Select Gender</option>
+					                        <option value="Male">Male</option>
+					                        <option value="Female">Female</option>
+					                        <option value="Other">Other</option>
+					                    </select>
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please select a gender.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="dob">Date of Birth</label>
+					                    <input type="date" class="form-control" id="dob" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid date of birth.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="placeOfBirth">Place of Birth</label>
+					                    <input type="text" class="form-control" id="placeOfBirth" placeholder="Place of Birth" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid place of birth.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="bloodGroup">Blood Group</label>
+					                    <select class="form-control" id="bloodGroup" required>
+					                        <option value="">Select Blood Group</option>
+					                        <option value="A+">A+</option>
+					                        <option value="A-">A-</option>
+					                        <option value="B+">B+</option>
+					                        <option value="B-">B-</option>
+					                        <option value="O+">O+</option>
+					                        <option value="O-">O-</option>
+					                        <option value="AB+">AB+</option>
+					                        <option value="AB-">AB-</option>
+					                    </select>
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please select a blood group.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="maritalStatus">Marital Status</label>
+					                    <select class="form-control" id="maritalStatus" required>
+					                        <option value="">Select Marital Status</option>
+					                        <option value="Single">Single</option>
+					                        <option value="Married">Married</option>
+					                    </select>
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please select a marital status.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="motherTongue">Mother Tongue</label>
+					                    <input type="text" class="form-control" id="motherTongue" placeholder="Mother Tongue" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid mother tongue.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="occupation">Occupation</label>
+					                    <input type="text" class="form-control" id="occupation" placeholder="Occupation" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid occupation.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="fatherName">Father's Name</label>
+					                    <input type="text" class="form-control" id="fatherName" placeholder="Father's Name" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid father's name.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="motherName">Mother's Name</label>
+					                    <input type="text" class="form-control" id="motherName" placeholder="Mother's Name" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid mother's name.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="motherOccupation">Mother's Occupation</label>
+					                    <input type="text" class="form-control" id="motherOccupation" placeholder="Mother's Occupation" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid mother's occupation.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="fatherOccupation">Father's Occupation</label>
+					                    <input type="text" class="form-control" id="fatherOccupation" placeholder="Father's Occupation" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid father's occupation.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="motherOrganization">Mother's Organization</label>
+					                    <input type="text" class="form-control" id="motherOrganization" placeholder="Mother's Organization" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid mother's organization.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="fatherOrganization">Father's Organization</label>
+					                    <input type="text" class="form-control" id="fatherOrganization" placeholder="Father's Organization" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid father's organization.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="caste">Caste</label>
+					                    <input type="text" class="form-control" id="caste" placeholder="Caste" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid caste.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="subcaste">Subcaste</label>
+					                    <input type="text" class="form-control" id="subcaste" placeholder="Subcaste" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid subcaste.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="nationality">Nationality</label>
+					                    <input type="text" class="form-control" id="nationality" placeholder="Nationality" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid nationality.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="religion">Religion</label>
+					                    <input type="text" class="form-control" id="religion" placeholder="Religion" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid religion.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="handicap">Handicap</label>
+					                    <input type="text" class="form-control" id="handicap" placeholder="Handicap" />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid handicap.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="handicapPercentage">Handicap Percentage</label>
+					                    <input type="text" class="form-control" id="handicapPercentage" placeholder="Handicap Percentage" />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid handicap percentage.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="validationCustom05">Aadhar Number</label>
+					                    <div class="input-group">
+					                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-id-card" style="font-size: 20px;"></i> </span>
+					                        <input type="text" class="form-control" id="validationCustom05" placeholder="Aadhar Number" aria-describedby="inputGroupPrepend" required />
+					                        <div class="valid-feedback">Looks good!</div>
+					                        <div class="invalid-feedback">Please enter a valid Aadhar number.</div>
+					                    </div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="panNumber">PAN Number</label>
+					                    <div class="input-group">
+					                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-id-card" style="font-size: 20px;"></i> </span>
+					                        <input type="text" class="form-control" id="panNumber" placeholder="PAN Number" aria-describedby="inputGroupPrepend" required />
+					                        <div class="valid-feedback">Looks good!</div>
+					                        <div class="invalid-feedback">Please enter a valid PAN number.</div>
+					                    </div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="accountNumber">Account Number</label>
+					                    <input type="text" class="form-control" id="accountNumber" placeholder="Account Number" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid account number.</div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="validationCustom06">Family Income</label>
+					                    <div class="input-group">
+					                        <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-indian-rupee-sign" style="font-size: 20px;"></i></span>
+					                        <input type="text" class="form-control" id="validationCustom06" placeholder="Enter Total Income" aria-describedby="inputGroupPrepend" required />
+					                        <div class="valid-feedback">Looks good!</div>
+					                        <div class="invalid-feedback">Please enter a valid family income.</div>
+					                    </div>
+					                </div>
+
+					                <div class="col-md-4 mb-3">
+					                    <label class="form-label" for="abcNumber">ABC Number</label>
+					                    <input type="text" class="form-control" id="abcNumber" placeholder="ABC Number" required />
+					                    <div class="valid-feedback">Looks good!</div>
+					                    <div class="invalid-feedback">Please enter a valid ABC number.</div>
+					                </div>
+					            </div>
+
+					            <div class="row">
+					                <div class="col-md-12 text-center">
+					                    <button class="text-center btn btn-primary mt-3" type="submit">
+					                        Submit Form
+					                    </button>
+					                </div>
+					            </div>
+					        </form>
+					    </div>
+					</div>
+
+					<script>
+					document.addEventListener("DOMContentLoaded", function () {
+					    const form = document.querySelector(".needs-validation");
+
+					    function validateField(field, pattern, isRequired = true) {
+					        // Use trim() here for validation only, not for display.
+					        const value = field.value.trim();
+					        let valid = true;
+
+					        if (isRequired && !value) {
+					            valid = false;
+					            field.classList.add("is-invalid");
+					            field.classList.remove("is-valid");
+					            field.setCustomValidity("This field is required.");
+					        } else if (pattern && !pattern.test(value)) {
+					            valid = false;
+					            field.classList.add("is-invalid");
+					            field.classList.remove("is-valid");
+					            field.setCustomValidity("Invalid input.");
+					        } else {
+					            field.classList.remove("is-invalid");
+					            field.classList.add("is-valid");
+					            field.setCustomValidity("");
+					        }
+
+					        return valid;
+					    }
+
+					    function capitalizeFirstLetter(field) {
+					        // This function preserves spaces during typing.
+					        const value = field.value;
+					        if (value) {
+					            field.value = value.charAt(0).toUpperCase() + value.slice(1);
+					        }
+					    }
+
+					    // Declare the fields array first
+					    const fields = [
+							{ id: "validationCustom01", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)?$/, required: true },
+						    { id: "validationCustom02", pattern: /^[a-zA-Z\s]+$/, required: true },
+						    { id: "validationCustom03", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "validationCustom04", pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, required: true },
+					        { id: "mobile", pattern: /^\d{10}$/, required: true },
+					        { id: "parentMobile", pattern: /^\d{10}$/, required: true },
+					        { id: "validationCustom05", pattern: /^\d{12}$/, required: true },
+					        { id: "panNumber", pattern: /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/, required: true },
+					        { id: "dob", pattern: null, required: true },
+					        { id: "placeOfBirth", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "bloodGroup", pattern: null, required: true },
+					        { id: "gender", pattern: null, required: true },
+					        { id: "maritalStatus", pattern: null, required: true },
+					        { id: "motherTongue", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "occupation", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "fatherName", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "motherName", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "motherOccupation", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "fatherOccupation", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "motherOrganization", pattern: null, required: false },
+					        { id: "fatherOrganization", pattern: null, required: false },
+					        { id: "caste", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "subcaste", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "nationality", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "religion", pattern: /^[a-zA-Z\s]+$/, required: true },
+					        { id: "handicap", pattern: /^[a-zA-Z\s]*$/, required: false },
+					        { id: "handicapPercentage", pattern: /^[0-9]*%?$/, required: false },
+					        { id: "accountNumber", pattern: /^\d{15}$/, required: true },
+					        { id: "validationCustom06", pattern: /^\d*\.?\d+$/, required: true },
+					        { id: "abcNumber", pattern: /^\d{12}$/, required: true }
+					    ];
+
+					    // Loop through each field to attach event listeners
+					    fields.forEach(({ id, pattern, required }) => {
+					        const field = document.getElementById(id);
+					        if (!field) return; // Skip if the element isn't found
+
+					        // Input event: perform validation and, for numeric fields, clean up unwanted characters.
+					        field.addEventListener("input", function () {
+					            if (id === "handicapPercentage") {
+					                field.value = field.value.replace(/[^0-9%]/g, '');
+					            } else if (id === "abcNumber") {
+					                field.value = field.value.replace(/\D/g, '');
+					            }
+					            validateField(field, pattern, required);
+					        });
+
+					        // Blur event: capitalize the first letter after the user leaves the field.
+					        field.addEventListener("blur", function () {
+					            // Only capitalize if the field is not one that requires numeric input.
+					            if (id !== "handicapPercentage" && id !== "abcNumber") {
+					                capitalizeFirstLetter(field);
+					            }
+					        });
+					    });
+
+					    // Attach change event listener for select fields (if any)
+					    const selectFields = ["gender", "maritalStatus"];
+					    selectFields.forEach(id => {
+					        const field = document.getElementById(id);
+					        if (!field) return;
+					        field.addEventListener("change", function () {
+					            validateField(field, null, true);
+					        });
+					    });
+
+					    // Form submission handling
+					    form.addEventListener("submit", function (event) {
+					        event.preventDefault();
+					        event.stopPropagation();
+
+					        let formIsValid = true;
+
+					        // Validate all fields
+					        fields.forEach(({ id, pattern, required }) => {
+					            const field = document.getElementById(id);
+					            if (field) {
+					                // Use logical AND to combine boolean values.
+					                formIsValid = formIsValid && validateField(field, pattern, required);
+					            }
+					        });
+
+					        if (formIsValid) {
+					            alert("Form submitted successfully!");
+					            form.submit();
+					        } else {
+					            alert("Please fill the empty or invalid fields.");
+					        }
+					    });
+					});
+					</script>
 
 
 
+					<!-- End Main part -->
+				</div>
+				
+				
+				<!--import footer here-->
+				<div th:replace="Student/fragments/footer :: footer"></div>
+			</div>
 
-            <!----Charts---->
-            <li class="nav-small-cap">
-              <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
-              <span class="hide-menu">Charts</span>
-            </li>
-            <li class="sidebar-item">
-              <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
-                <div class="d-flex">
-                  <iconify-icon icon="solar:pie-chart-3-broken"></iconify-icon>
-                </div>
-                <span class="hide-menu">Apex Charts</span>
-              </a>
-              <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                  <a href="#"
-                    class="sidebar-link sublink">
-                    <div class="round-16 d-flex align-items-center justify-content-center">
-                      <i class="fa-solid fa-circle-stop"></i>
-                    </div>
-                    <span class="hide-menu">Line Chart</span>
-                  </a>
-                </li>
-
-              </ul>
-            </li>
+			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
 
-          </ul>
-        </nav>
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+			<div class="dark-transparent sidebartoggler"></div>
 
-        <!-- End Sidebar scroll-->
-      </div>
-    </aside>
-    <!--  Sidebar End -->
-    <div class="page-wrapper">
-      <!--  Header Start -->
-      <header class="topbar card rounded-0 border-0">
-        <div class="with-vertical"><!-- ---------------------------------- -->
-          <!-- Start Vertical Layout Header -->
-          <!-- ---------------------------------- -->
-          <nav class="navbar navbar-expand-lg px-0 py-0">
-            <div class="d-none d-lg-block">
-              <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
-                  <b class="logo-icon">
-                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                    <!-- Dark Logo icon -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
-                      alt="homepage" class="dark-logo" />
-                    <!-- Light Logo icon -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
-                      alt="homepage" class="light-logo" />
-                  </b>
-                  <!--End Logo icon -->
-                  <!-- Logo text -->
-                  <span class="logo-text">
-                    <!-- dark Logo text -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
-                      alt="homepage" class="dark-logo" />
-                    <!-- Light Logo text -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
-                      class="light-logo" alt="homepage" />
-                  </span>
-                </a>
-              </div>
-            </div>
+		</div>
+	</div>
 
-            <ul class="navbar-nav align-items-center">
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+	<!-- Import Js Files -->
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
 
-              <li class="nav-item nav-icon-hover-bg rounded-circle">
-                <a class="nav-link sidebartoggler" id="headerCollapse" href="javascript:void(0)">
-                  <i class="fa-solid fa-bars-staggered"></i>
-                </a>
-              </li>
-              <!-- ------------------------------- -->
-              <!-- start notification Dropdown -->
-              <!-- ------------------------------- -->
-              <li class="nav-item dropdown nav-icon-hover-bg rounded-circle d-none d-lg-flex">
-                <a class="nav-link" href="#" id="drop2" role="button">
-                  <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
-
-                </a>
-
-                <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden" aria-labelledby="drop2">
-                  <div class="py-3 px-4 bg-primary">
-                    <div class="fs-6 fw-bold text-white">Notifications</div>
-                    <div class="fs-2 fw-medium text-white">You have 4 Notifications</div>
-                  </div>
-                  <div class="message-body" data-simplebar>
-                    <a href="javascript:void(0)"
-                      class="p-3 d-flex align-items-center justify-content-between dropdown-item gap-3   justify-content-between border-bottom">
-                      <span
-                        class="flex-shrink-0 bg-secondary-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-secondary">
-                        <iconify-icon icon="solar:widget-3-line-duotone"></iconify-icon>
-                      </span>
-                      <div class="w-80">
-                        <div class="d-flex align-items-center justify-content-between">
-                          <h6 class="mb-0 ">Luanch Admin</h6>
-                          <span class="fs-2 text-nowrap d-block text-muted ">9:30 AM</span>
-                        </div>
-                        <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
-                      </div>
-                    </a>
-
-                  </div>
-
-                </div>
-              </li>
-
-
-
-            </ul>
-
-            <div class="d-block d-lg-none">
-              <div class="brand-logo d-flex align-items-center justify-content-between">
-                <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
-                  <b class="logo-icon">
-                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                    <!-- Dark Logo icon -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
-                      alt="homepage" class="dark-logo" />
-                    <!-- Light Logo icon -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
-                      alt="homepage" class="light-logo" />
-                  </b>
-                  <!--End Logo icon -->
-                  <!-- Logo text -->
-                  <span class="logo-text">
-                    <!-- dark Logo text -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
-                      alt="homepage" class="dark-logo" />
-                    <!-- Light Logo text -->
-                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
-                      class="light-logo" alt="homepage" />
-                  </span>
-                </a>
-              </div>
-            </div>
-            <a class="navbar-toggler p-0 border-0 nav-icon-hover-bg rounded-circle" href="javascript:void(0)"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="p-2">
-                <i class="ti ti-dots fs-7"></i>
-              </span>
-            </a>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <div class="d-flex align-items-center justify-content-between">
-                <ul class="navbar-nav flex-row align-items-center justify-content-center d-flex d-lg-none">
-                  
-                  <li class="ml-4 nav-item dropdown nav-icon-hover-bg rounded-circle">
-                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
-                      <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
-
-                      <!-- for blinks -->
-                      <div class="notify">
-                        <span class="heartbit"></span>
-                        <span class="point"></span>
-                      </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-start py-0 content-dd overflow-hidden"
-                      aria-labelledby="drop2">
-
-
-                      <div class="p-3">
-                        <a class="d-flex btn btn-primary rounded align-items-center justify-content-center gap-2"
-                          href="javascript:void(0);">
-                          <span>Check all Notifications</span>
-                          <iconify-icon icon="solar:alt-arrow-right-outline" class="iconify-sm"></iconify-icon>
-                        </a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-                  <li class="nav-item nav-icon-hover-bg rounded-circle">
-                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
-                      <iconify-icon icon="solar:moon-line-duotone" class="moon"></iconify-icon>
-                    </a>
-                    <a class="nav-link sun light-layout" href="javascript:void(0)">
-                      <iconify-icon icon="solar:sun-2-line-duotone" class="sun"></iconify-icon>
-                    </a>
-                  </li>
-
-                  <!-- ------------------------------- -->
-                  <!-- end notification Dropdown -->
-                  <!-- ------------------------------- -->
-                  <!-- ------------------------------- -->
-                  <!-- start profile Dropdown -->
-                  <!-- ------------------------------- -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
-                        alt="user" class="profile-pic rounded round-30" />
-                    </a>
-                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
-                      aria-labelledby="drop2">
-                      <div class="profile-dropdown position-relative" data-simplebar>
-                        <div class=" py-3 border-bottom">
-                          <div class="d-flex align-items-center px-3">
-                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
-                              class="rounded" width="50" height="50" alt="ample-img" />
-                            <div class="ms-3">
-                              <h5 class="mb-0 fs-4">James White</h5>
-                              <p class="mb-0 d-flex align-items-center text-muted">
-                                info@ampleadmin.com
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="message-body">
-                          <div class="px-3 pt-3">
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="#"
-                                class=" d-flex  align-items-center ">
-                                My Profile
-                              </a>
-                            </div>
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="javascript:void(0)" class=" d-flex  align-items-center ">
-                                Logout
-                              </a>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                  </li>
-
-
-                  <!-- ------------------------------- -->
-                  <!-- end profile Dropdown -->
-                  <!-- ------------------------------- -->
-                </ul>
-              </div>
-            </div>
-          </nav>
-          <!-- ---------------------------------- -->
-          <!-- End Vertical Layout Header -->
-          <!-- ---------------------------------- -->
-
-          
-        </div>
-        <div class="app-header with-horizontal">
-          <nav class="navbar navbar-expand-xl container-fluid">
-            <ul class="navbar-nav align-items-center">
-              <li class="nav-item nav-icon-hover-bg rounded-circle d-flex d-xl-none">
-                <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse" href="javascript:void(0)">
-                  <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
-                </a>
-              </li>
-              <li class="nav-item d-none d-xl-block">
-                <div class="brand-logo d-flex align-items-center justify-content-between">
-                  <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
-                    <b class="logo-icon">
-                      <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                      <!-- Dark Logo icon -->
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
-                        alt="homepage" class="dark-logo" />
-                      <!-- Light Logo icon -->
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
-                        alt="homepage" class="light-logo" />
-                    </b>
-                    <!--End Logo icon -->
-                    <!-- Logo text -->
-                    <span class="logo-text">
-                      <!-- dark Logo text -->
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
-                        alt="homepage" class="dark-logo" />
-                      <!-- Light Logo text -->
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
-                        class="light-logo" alt="homepage" />
-                    </span>
-                  </a>
-                </div>
-              </li>
-              <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
-                <div class="hover-dd">
-                  <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
-                    <iconify-icon icon="solar:bell-bing-line-duotone"></iconify-icon>
-                    <div class="notify">
-                      <span class="heartbit"></span>
-                      <span class="point"></span>
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
-                <div class="hover-dd">
-                  <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
-                    <iconify-icon icon="solar:inbox-line-line-duotone"></iconify-icon>
-                    <div class="notify">
-                      <span class="heartbit"></span>
-                      <span class="point"></span>
-                    </div>
-                  </a>
-                  <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
-                    aria-labelledby="drop2">
-                    <div class="py-3 px-4 bg-secondary">
-                      <div class="fs-6 fw-bold text-white">Messages</div>
-                      <div class="fs-2 fw-medium text-white">You have 5 new messages</div>
-                    </div>
-                    <div class="message-body" data-simplebar>
-                      <a href="javascript:void(0)"
-                        class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
-                        <span class="user-img position-relative d-inline-block">
-                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-2.jpg"
-                            alt="user" class="rounded w-100 round-40" />
-                          <span class="profile-status bg-success position-absolute rounded"></span>
-                        </span>
-                        <div class="w-80">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="mb-0 lh-base">Genelia Roshan</h6>
-                            <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
-                          </div>
-                          <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
-                        </div>
-                      </a>
-                      <a href="javascript:void(0)"
-                        class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
-                        <span class="user-img position-relative d-inline-block">
-                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-3.jpg"
-                            alt="user" class="rounded w-100 round-40" />
-                          <span class="profile-status bg-success position-absolute rounded"></span>
-                        </span>
-                        <div class="w-80">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="mb-0 lh-base">Bianca Anderson</h6>
-                            <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
-                          </div>
-
-                          <span class="fs-3 d-block text-truncate text-muted">Just a reminder that you have event</span>
-                        </div>
-                      </a>
-                      <a href="javascript:void(0)"
-                        class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
-                        <span class="user-img position-relative d-inline-block">
-                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-4.jpg"
-                            alt="user" class="rounded w-100 round-40" />
-                          <span class="profile-status bg-success position-absolute rounded"></span>
-                        </span>
-                        <div class="w-80">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="mb-0 lh-base">Andrew Johnson</h6>
-                            <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
-                          </div>
-                          <span class="fs-3 d-block text-truncate text-muted">You can customize this template as you
-                            want</span>
-                        </div>
-                      </a>
-                      <a href="javascript:void(0)"
-                        class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
-                        <span class="user-img position-relative d-inline-block">
-                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-5.jpg"
-                            alt="user" class="rounded w-100 round-40" />
-                          <span class="profile-status bg-success position-absolute rounded"></span>
-                        </span>
-                        <div class="w-80">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="mb-0 lh-base">Mark Strokes</h6>
-                            <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
-                          </div>
-                          <span class="fs-3 d-block text-truncate text-muted">Just see the my new admin!</span>
-                        </div>
-                      </a>
-                      <a href="javascript:void(0)"
-                        class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
-                        <span class="user-img position-relative d-inline-block">
-                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-6.jpg"
-                            alt="user" class="rounded w-100 round-40" />
-                          <span class="profile-status bg-success position-absolute rounded"></span>
-                        </span>
-                        <div class="w-80">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="mb-0 lh-base">Mark, Stoinus & Rishvi..</h6>
-                            <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
-                          </div>
-                          <span class="fs-3 d-block text-truncate text-muted">Just a reminder that you have event</span>
-                        </div>
-                      </a>
-                      <a href="javascript:void(0)"
-                        class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
-                        <span class="user-img position-relative d-inline-block">
-                          <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-7.jpg"
-                            alt="user" class="rounded w-100 round-40" />
-                          <span class="profile-status bg-success position-absolute rounded"></span>
-                        </span>
-                        <div class="w-80">
-                          <div class="d-flex align-items-center justify-content-between">
-                            <h6 class="mb-0 lh-base">Settings</h6>
-                            <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
-                          </div>
-                          <span class="fs-3 d-block text-truncate text-muted">You can customize this template as you
-                            want</span>
-                        </div>
-                      </a>
-                    </div>
-                    <div class="p-3">
-                      <a class="d-flex btn btn-secondary rounded align-items-center justify-content-center gap-2"
-                        href="javascript:void(0);">
-                        <span>Check all Messages</span>
-                        <iconify-icon icon="solar:alt-arrow-right-outline" class="iconify-sm"></iconify-icon>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-           
-            </ul>
-
-
-            <a class="navbar-toggler nav-icon-hover-bg rounded-circle p-0 border-0" href="javascript:void(0)"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="p-2">
-                <i class="ti ti-dots fs-7"></i>
-              </span>
-            </a>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-              <div class="d-flex align-items-center justify-content-between">
-                <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
-                  <li class="nav-item nav-icon-hover-bg rounded-circle">
-                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
-                      <iconify-icon icon="solar:moon-line-duotone" class="moon"></iconify-icon>
-                    </a>
-                    <a class="nav-link sun light-layout" href="javascript:void(0)">
-                      <iconify-icon icon="solar:sun-2-line-duotone" class="sun"></iconify-icon>
-                    </a>
-                  </li>
-
-                  <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex search-box">
-                    <a class="nav-link d-none d-md-flex" href="javascript:void(0)" data-bs-toggle="modal"
-                      data-bs-target="#exampleModal">
-                      <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
-                    </a>
-                  </li>
-                  <!-- ------------------------------- -->
-                  <!-- end notification Dropdown -->
-                  <!-- ------------------------------- -->
-                  <!-- ------------------------------- -->
-                  <!-- start language Dropdown -->
-                  <!-- ------------------------------- -->
-                  <li class="nav-item dropdown nav-icon-hover-bg rounded-circle">
-                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
-                        alt="ample-img" width="20px" height="20px" class="round-20" />
-                    </a>
-                    <div class="dropdown-menu pt-0 dropdown-menu-end" aria-labelledby="drop2">
-                      <div class="message-body">
-                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
-                          <div class="position-relative">
-                            <img
-                              src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
-                              alt="ample-img" width="20px" height="20px" class="round-20" />
-                          </div>
-                          <p class="mb-0 fs-3">English</p>
-                        </a>
-                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
-                          <div class="position-relative">
-                            <img
-                              src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-cn.svg"
-                              alt="ample-img" width="20px" height="20px" class="round-20" />
-                          </div>
-                          <p class="mb-0 fs-3">Chinese</p>
-                        </a>
-                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
-                          <div class="position-relative">
-                            <img
-                              src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-fr.svg"
-                              alt="ample-img" width="20px" height="20px" class="round-20" />
-                          </div>
-                          <p class="mb-0 fs-3">French</p>
-                        </a>
-                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
-                          <div class="position-relative">
-                            <img
-                              src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-sa.svg"
-                              alt="ample-img" width="20px" height="20px" class="round-20" />
-                          </div>
-                          <p class="mb-0 fs-3">Arabic</p>
-                        </a>
-                      </div>
-                    </div>
-                  </li>
-                  <!-- ------------------------------- -->
-                  <!-- end language Dropdown -->
-                  <!-- ------------------------------- -->
-
-                  <!-- ------------------------------- -->
-                  <!-- start profile Dropdown -->
-                  <!-- ------------------------------- -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
-                      <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
-                        alt="user" width="30" class="profile-pic rounded" />
-                    </a>
-                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
-                      aria-labelledby="drop2">
-                      <div class="profile-dropdown position-relative" data-simplebar>
-                        <div class=" py-3 border-bottom">
-                          <div class="d-flex align-items-center px-3">
-                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
-                              class="rounded" width="50" height="50" alt="ample-img" />
-                            <div class="ms-3">
-                              <h5 class="mb-0 fs-4">James White</h5>
-                              <p class="mb-0 d-flex align-items-center text-muted">
-                                info@ampleadmin.com
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="message-body pb-3">
-                          <div class="px-3 pt-3">
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="#"
-                                class=" d-flex  align-items-center ">
-                                My Profile
-                              </a>
-                            </div>
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="javascript:void(0)" class=" d-flex  align-items-center ">
-                                My Projects
-                              </a>
-                            </div>
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-email.html"
-                                class=" d-flex  align-items-center ">
-                                Inbox
-                              </a>
-                            </div>
-                          </div>
-                          <hr>
-                          <div class="px-3">
-                            <div
-                              class="py-8 px-3 d-flex justify-content-between dropdown-item align-items-center h6 mb-0  rounded-2 link">
-                              <a href="javascript:void(0)" class="">
-                                Mode
-                              </a>
-                              <div>
-                                <a class="moon dark-layout" href="javascript:void(0)">
-                                  <iconify-icon icon="solar:moon-line-duotone" class="moon"></iconify-icon>
-                                </a>
-                                <a class="sun light-layout" href="javascript:void(0)">
-                                  <iconify-icon icon="solar:sun-2-line-duotone" class="sun"></iconify-icon>
-                                </a>
-                              </div>
-                            </div>
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html"
-                                class=" d-flex  align-items-center  ">
-                                Account Settings
-                              </a>
-                            </div>
-                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
-                              <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html"
-                                class=" d-flex  align-items-center ">
-                                Sign Out
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <!-- ------------------------------- -->
-                  <!-- end profile Dropdown -->
-                  <!-- ------------------------------- -->
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!--  Header End -->
-      <aside class="left-sidebar with-horizontal">
-        <!-- Sidebar scroll-->
-        <!-- End Sidebar scroll-->
-      </aside>
-
-
-      <div class="body-wrapper">
-        <div class="container-fluid">
-          <!-- Main Part -->
-
-          <h2>aldkhk</h2>
-
-
-          <!-- End Main part -->
-        </div>
-        <footer class="footer py-3 bg-white border-top text-center">
-          @copyrights 2025   &nbsp;&nbsp;&nbsp; ajinkyadhavale9604@gmail.com 
-        </footer>
-      </div>
-
-      <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-
-
-      <script>
-        function handleColorTheme(e) {
-          document.documentElement.setAttribute("data-color-theme", e);
-        }
-      </script>
-      <div class="dark-transparent sidebartoggler"></div>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
-      <!-- Import Js Files -->
-      <script
-        src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-      <script
-        src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
-
-      <!-- solar icons -->
-      <script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
-      <script
-        src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-      <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
 </body>
 
 
-<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
 
 </html>

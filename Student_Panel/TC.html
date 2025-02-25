@@ -1,0 +1,2152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/form-wizard.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 19 Feb 2025 05:17:25 GMT -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon icon-->
+  <link rel="shortcut icon" type="image/png" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+  <!-- Core Css -->
+  <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" />
+  <title>Ample Template by WrapPixel</title>
+</head>
+
+<body class="link-sidebar">
+  <!-- Preloader -->
+  <div class="preloader">
+    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader" class="lds-ripple img-fluid" />
+  </div>
+  <div id="main-wrapper">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar with-vertical">
+      <div><!-- ---------------------------------- -->
+        <!-- Start Vertical Layout Sidebar -->
+        <!-- ---------------------------------- -->
+        <!-- Sidebar scroll-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+            <ul id="sidebarnav">
+                <!-----------Profile------------------>
+                <li class="sidebar-item sidebar-profile pt-2">
+                    <a class="sidebar-link has-arrow opacity-100 gap-2" href="javascript:void(0)" aria-expanded="false">
+                        <span class="d-flex">
+                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                class="rounded" width="30" alt="user" />
+                        </span>
+                        <span class="hide-menu fw-medium">James White </span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="javascript:void(0)" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-user-circle" style="font-size: 16px;"></i>
+                                  </div>
+                                <span class="hide-menu">My Profile</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="javascript:void(0)" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
+                                  </div>
+                                <span class="hide-menu">Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- ---------------------------------- -->
+                <!-- Home -->
+                <!-- ---------------------------------- -->
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" th:href="@{/admin/}" id="get-url">
+                        <i class="fa-solid fa-list" style="font-size: 22px;"></i>
+                        <span class="hide-menu">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-small-cap">
+                    <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                    <span class="hide-menu">Student</span>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <div class="d-flex">
+                            <i class="fa-solid fa-user" style="font-size: 16px;"></i>    
+                          </div>
+                        <span class="hide-menu">Profile</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <!--a th:href="@{/admin/PersonalDetails}" class="sidebar-link sublink"-->
+                            <a href="PersonalDetails.html" class="sidebar-link sublink">
+
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-address-card"  style="font-size: 16px;" ></i>                    
+                                  </div>
+                                <span class="hide-menu">Personal Details</span>
+                            </a>
+                        </li>
+                        
+
+                        <li class="sidebar-item">
+                            <!--a th:href="@{/admin/view_student}" class="sidebar-link sublink"-->
+                            <a href="Address.html" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-location-dot" aria-hidden="true"  style="font-size: 16px;"></i>
+                                </div>
+                                <span class="hide-menu">Address</span>
+                            </a>
+                            
+
+                        </li>
+
+                        <li class="sidebar-item">
+                            <!-- <a th:href="@{/admin/view_student}" class="sidebar-link sublink"> -->
+                                <a href="AcademicDetails.html" class="sidebar-link sublink">
+
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-graduation-cap"  style="font-size: 16px;" ></i>
+                                                   
+                                  </div>
+                                <span class="hide-menu">Academic Details</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <!-- <a th:href="@{/admin/add_student}" class="sidebar-link sublink"> -->
+                                <a href="photo&sign.html" class="sidebar-link sublink">
+
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-file-image" style="font-size:16px"></i>                    
+                                  </div>
+                                <span class="hide-menu">Photo & Sign</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-small-cap">
+                    <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                    <span class="hide-menu">My Documents</span>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <div class="d-flex">
+                            <i class="fa-solid fa-folder" style="font-size: 16px;"></i>    
+                          </div>
+                        <span class="hide-menu">My Document</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <!--a th:href="@{/admin/academicDetails}" class="sidebar-link sublink"-->
+                            <a href="#" class="sidebar-link sublink">
+
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-upload"  style="font-size: 16px;" ></i>                    
+                                  </div>
+                                <span class="hide-menu">Upload Document</span>
+                            </a>
+                        </li>
+                        
+
+                        <li class="sidebar-item">
+                            <!--a th:href="@{/admin/view_student}" class="sidebar-link sublink"-->
+                            <a href="#" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-pencil-square" aria-hidden="true"  style="font-size: 16px;" ></i>
+                                </div>
+                                <span class="hide-menu">View & Edit Document</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                
+
+                <li class="nav-small-cap">
+                    <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                    <span class="hide-menu">Certificate</span>
+                </li>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <div class="d-flex">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48"><g fill="#fafafa"><path fill-rule="evenodd" d="M10 7v30a3 3 0 0 0 3 3h13v-3.535a4 4 0 1 1 4 0V40h5a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H13a3 3 0 0 0-3 3m18 28a2 2 0 1 0 0-4a2 2 0 0 0 0 4M18 11a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H19a1 1 0 0 1-1-1m-3 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2zm-1 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H15a1 1 0 0 1-1-1m1 3a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z" clip-rule="evenodd"/><path d="M26 44v-4h4v4l-2-1.5z"/></g></svg>
+                          </div>
+                        <span class="hide-menu">My Certificate</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+
+
+                        <li class="sidebar-item">
+                            <a href="applyforCertificate.html" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-file-lines" style="font-size: 18px;"></i>
+                                  </div>
+                                <span class="hide-menu">Request Certificate</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-check-circle" style="font-size: 18px;"></i>
+                                  </div>
+                                <span class="hide-menu">Approved Certificate</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa fa-clock" style="font-size: 18px;"></i>
+                                  </div>
+                                <span class="hide-menu">Pending Certificate</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fas fa-times-circle" style="font-size: 18px;"></i>
+                                  </div>
+                                <span class="hide-menu">Rejected Certificate</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+              
+
+
+
+
+
+
+                <!----Charts---->
+                <li class="nav-small-cap">
+                    <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                    <span class="hide-menu">Charts</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                        <div class="d-flex">
+                            <iconify-icon icon="solar:pie-chart-3-broken"></iconify-icon>
+                        </div>
+                        <span class="hide-menu">Apex Charts</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link sublink">
+                                <div class="round-16 d-flex align-items-center justify-content-center">
+                                    <i class="fa-solid fa-circle-stop"></i>
+                                </div>
+                                <span class="hide-menu">Line Chart</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+
+
+            </ul>
+        </nav>
+
+        <!-- End Sidebar scroll-->
+      </div>
+    </aside>
+    <!--  Sidebar End -->
+    <div class="page-wrapper">
+			<!--  imported navbar here -->
+            <div th:fragment="navbar">
+                <header class="topbar card rounded-0 border-0">
+                            <div class="with-vertical"><!-- ---------------------------------- -->
+                                <!-- Start Vertical Layout Header -->
+                                <!-- ---------------------------------- -->
+                                <nav class="navbar navbar-expand-lg px-0 py-0">
+                                    <div class="d-none d-lg-block">
+                                        <div class="brand-logo d-flex align-items-center justify-content-between">
+                                            <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                                <b class="logo-icon">
+                                                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                    <!-- Dark Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                        alt="homepage" class="light-logo" />
+                                                </b>
+                                                <!--End Logo icon -->
+                                                <!-- Logo text -->
+                                                <span class="logo-text">
+                                                    <!-- dark Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                        class="light-logo" alt="homepage" />
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+            
+                                    <ul class="navbar-nav align-items-center">
+            
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                            <a class="nav-link sidebartoggler" id="headerCollapse" href="javascript:void(0)">
+                                                <i class="fa-solid fa-bars-staggered"></i>
+                                            </a>
+                                        </li>
+                                        <!-- ------------------------------- -->
+                                        <!-- start notification Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <li class="nav-item dropdown nav-icon-hover-bg rounded-circle d-none d-lg-flex">
+                                            <a class="nav-link" href="#" id="drop2" role="button">
+                                                <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
+            
+                                            </a>
+            
+                                            <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
+                                                aria-labelledby="drop2">
+                                                <div class="py-3 px-4 bg-primary">
+                                                    <div class="fs-6 fw-bold text-white">Notifications</div>
+                                                    <div class="fs-2 fw-medium text-white">You have 4 Notifications</div>
+                                                </div>
+                                                <div class="message-body" data-simplebar>
+                                                    <a href="javascript:void(0)"
+                                                        class="p-3 d-flex align-items-center justify-content-between dropdown-item gap-3   justify-content-between border-bottom">
+                                                        <span
+                                                            class="flex-shrink-0 bg-secondary-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-secondary">
+                                                            <iconify-icon icon="solar:widget-3-line-duotone"></iconify-icon>
+                                                        </span>
+                                                        <div class="w-80">
+                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                <h6 class="mb-0 ">Luanch Admin</h6>
+                                                                <span class="fs-2 text-nowrap d-block text-muted ">9:30 AM</span>
+                                                            </div>
+                                                            <span class="fs-3 d-block text-truncate text-muted">Just see the my new
+                                                                admin!</span>
+                                                        </div>
+                                                    </a>
+            
+                                                </div>
+            
+                                            </div>
+                                        </li>
+            
+            
+            
+                                    </ul>
+            
+                                    <div class="d-block d-lg-none">
+                                        <div class="brand-logo d-flex align-items-center justify-content-between">
+                                            <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                                <b class="logo-icon">
+                                                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                    <!-- Dark Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                        alt="homepage" class="light-logo" />
+                                                </b>
+                                                <!--End Logo icon -->
+                                                <!-- Logo text -->
+                                                <span class="logo-text">
+                                                    <!-- dark Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                        class="light-logo" alt="homepage" />
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <a class="navbar-toggler p-0 border-0 nav-icon-hover-bg rounded-circle"
+                                        href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="p-2">
+                                            <i class="ti ti-dots fs-7"></i>
+                                        </span>
+                                    </a>
+                                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <ul
+                                                class="navbar-nav flex-row align-items-center justify-content-center d-flex d-lg-none">
+            
+                                                <li class="ml-4 nav-item dropdown nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
+            
+                                                        <!-- for blinks -->
+                                                        <div class="notify">
+                                                            <span class="heartbit"></span>
+                                                            <span class="point"></span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-start py-0 content-dd overflow-hidden"
+                                                        aria-labelledby="drop2">
+            
+            
+                                                        <div class="p-3">
+                                                            <a class="d-flex btn btn-primary rounded align-items-center justify-content-center gap-2"
+                                                                href="javascript:void(0);">
+                                                                <span>Check all Notifications</span>
+                                                                <iconify-icon icon="solar:alt-arrow-right-outline"
+                                                                    class="iconify-sm"></iconify-icon>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                                                <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                                                        <i class="fas fa-moon"></i> <!-- Font Awesome moon icon -->
+                                                    </a>
+                                                    <a class="nav-link sun light-layout" href="javascript:void(0)">
+                                                        <i class="fas fa-sun"></i> <!-- Font Awesome sun icon -->
+                                                    </a>
+                                                </li>
+                                                
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- end notification Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <!-- ------------------------------- -->
+                                                <!-- start profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                            alt="user" class="profile-pic rounded round-30" />
+                                                    </a>
+                                                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
+                                                        aria-labelledby="drop2">
+                                                        <div class="profile-dropdown position-relative" data-simplebar>
+                                                            <div class=" py-3 border-bottom">
+                                                                <div class="d-flex align-items-center px-3">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                                        class="rounded" width="50" height="50" alt="ample-img" />
+                                                                    <div class="ms-3">
+                                                                        <h5 class="mb-0 fs-4">James White</h5>
+                                                                        <p class="mb-0 d-flex align-items-center text-muted">
+                                                                            info@ampleadmin.com
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="message-body">
+                                                                <div class="px-3 pt-3">
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="#" class=" d-flex  align-items-center ">
+                                                                            My Profile
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="javascript:void(0)"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            Logout
+                                                                        </a>
+                                                                    </div>
+            
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </li>
+            
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- end profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <!-- ---------------------------------- -->
+                                <!-- End Vertical Layout Header -->
+                                <!-- ---------------------------------- -->
+            
+            
+                            </div>
+                            <div class="app-header with-horizontal">
+                                <nav class="navbar navbar-expand-xl container-fluid">
+                                    <ul class="navbar-nav align-items-center">
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle d-flex d-xl-none">
+                                            <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse" href="javascript:void(0)">
+                                                <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item d-none d-xl-block">
+                                            <div class="brand-logo d-flex align-items-center justify-content-between">
+                                                <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                                    <b class="logo-icon">
+                                                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                        <!-- Dark Logo icon -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                            alt="homepage" class="dark-logo" />
+                                                        <!-- Light Logo icon -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                            alt="homepage" class="light-logo" />
+                                                    </b>
+                                                    <!--End Logo icon -->
+                                                    <!-- Logo text -->
+                                                    <span class="logo-text">
+                                                        <!-- dark Logo text -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                            alt="homepage" class="dark-logo" />
+                                                        <!-- Light Logo text -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                            class="light-logo" alt="homepage" />
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                                            <div class="hover-dd">
+                                                <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                    <iconify-icon icon="solar:bell-bing-line-duotone"></iconify-icon>
+                                                    <div class="notify">
+                                                        <span class="heartbit"></span>
+                                                        <span class="point"></span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+            
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                                            <div class="hover-dd">
+                                                <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                    <iconify-icon icon="solar:inbox-line-line-duotone"></iconify-icon>
+                                                    <div class="notify">
+                                                        <span class="heartbit"></span>
+                                                        <span class="point"></span>
+                                                    </div>
+                                                </a>
+                                                <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
+                                                    aria-labelledby="drop2">
+                                                    <div class="py-3 px-4 bg-secondary">
+                                                        <div class="fs-6 fw-bold text-white">Messages</div>
+                                                        <div class="fs-2 fw-medium text-white">You have 5 new messages</div>
+                                                    </div>
+                                                    <div class="message-body" data-simplebar>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-2.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Genelia Roshan</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just see the my
+                                                                    new admin!</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-3.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Bianca Anderson</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
+                                                                </div>
+            
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just a reminder
+                                                                    that you have event</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-4.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Andrew Johnson</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">You can
+                                                                    customize this template as you
+                                                                    want</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-5.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Mark Strokes</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just see the my
+                                                                    new admin!</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-6.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Mark, Stoinus & Rishvi..</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just a reminder
+                                                                    that you have event</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-7.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Settings</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">You can
+                                                                    customize this template as you
+                                                                    want</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="p-3">
+                                                        <a class="d-flex btn btn-secondary rounded align-items-center justify-content-center gap-2"
+                                                            href="javascript:void(0);">
+                                                            <span>Check all Messages</span>
+                                                            <iconify-icon icon="solar:alt-arrow-right-outline"
+                                                                class="iconify-sm"></iconify-icon>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+            
+            
+                                    </ul>
+            
+            
+                                    <a class="navbar-toggler nav-icon-hover-bg rounded-circle p-0 border-0"
+                                        href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="p-2">
+                                            <i class="ti ti-dots fs-7"></i>
+                                        </span>
+                                    </a>
+                                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                                                <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                                                        <i class="fas fa-moon"></i> <!-- Moon icon -->
+                                                    </a>
+                                                    <a class="nav-link sun light-layout" href="javascript:void(0)">
+                                                        <i class="far fa-sun"></i> <!-- Alternative sun icon -->
+                                                    </a>
+                                                </li>
+                                                
+            
+                                                <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex search-box">
+                                                    <a class="nav-link d-none d-md-flex" href="javascript:void(0)"
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
+                                                    </a>
+                                                </li>
+                                                <!-- ------------------------------- -->
+                                                <!-- end notification Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <!-- ------------------------------- -->
+                                                <!-- start language Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <li class="nav-item dropdown nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
+                                                            alt="ample-img" width="20px" height="20px" class="round-20" />
+                                                    </a>
+                                                    <div class="dropdown-menu pt-0 dropdown-menu-end" aria-labelledby="drop2">
+                                                        <div class="message-body">
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">English</p>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-cn.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">Chinese</p>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-fr.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">French</p>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-sa.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">Arabic</p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- ------------------------------- -->
+                                                <!-- end language Dropdown -->
+                                                <!-- ------------------------------- -->
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- start profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                            alt="user" width="30" class="profile-pic rounded" />
+                                                    </a>
+                                                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
+                                                        aria-labelledby="drop2">
+                                                        <div class="profile-dropdown position-relative" data-simplebar>
+                                                            <div class=" py-3 border-bottom">
+                                                                <div class="d-flex align-items-center px-3">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                                        class="rounded" width="50" height="50" alt="ample-img" />
+                                                                    <div class="ms-3">
+                                                                        <h5 class="mb-0 fs-4">James White</h5>
+                                                                        <p class="mb-0 d-flex align-items-center text-muted">
+                                                                            info@ampleadmin.com
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="message-body pb-3">
+                                                                <div class="px-3 pt-3">
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="#" class=" d-flex  align-items-center ">
+                                                                            My Profile
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="javascript:void(0)"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            My Projects
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-email.html"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            Inbox
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="px-3">
+                                                                    <div
+                                                                        class="py-8 px-3 d-flex justify-content-between dropdown-item align-items-center h6 mb-0  rounded-2 link">
+                                                                        <a href="javascript:void(0)" class="">
+                                                                            Mode
+                                                                        </a>
+                                                                        <div>
+                                                                            <a class="moon dark-layout" href="javascript:void(0)">
+                                                                                <iconify-icon icon="solar:moon-line-duotone"
+                                                                                    class="moon"></iconify-icon>
+                                                                            </a>
+                                                                            <a class="sun light-layout" href="javascript:void(0)">
+                                                                                <iconify-icon icon="solar:sun-2-line-duotone"
+                                                                                    class="sun"></iconify-icon>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html"
+                                                                            class=" d-flex  align-items-center  ">
+                                                                            Account Settings
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            Sign Out
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- end profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </header>
+                        <!--  Header End -->
+            </div>
+			<!--  End navbar here -->
+
+
+      <div class="body-wrapper">
+        <div class="container-fluid">
+          <!-- <div class="shadow-none position-relative overflow-hidden mb-4">
+            <div class="d-sm-flex d-block justify-content-between align-items-center">
+              <h5 class="mb-0 fw-semibold text-uppercase"> Form Wizard</h5>
+              <nav aria-label="breadcrumb" class="d-flex align-items-center">
+                <ol class="breadcrumb d-flex align-items-center">
+                  <li class="breadcrumb-item">
+                    <a class="text-decoration-none" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/index.html">Home
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item text-primary" aria-current="page">
+                    Form Wizard
+                  </li>
+                </ol>
+
+              </nav>
+            </div>
+          </div> -->
+         
+          <div class="card">
+            <div class="card-body wizard-content">
+              <h4 class="card-title mb-1 text-center text-danger" style="font-size: 25px;font-weight:bolder;">Transference Certificate Application</h4>
+              <h6 class="card-subtitle mb-3"></h6>
+              <form action="#" class="tab-wizard wizard-circle">
+                <!-- Step 1 -->
+                <h6>Personal Information</h6>
+                    <section>
+                      
+                      <div class="mb-3">
+                        <label class="form-label" for="applicationType">Application For:</label>
+                        <select id="applicationType" name="applicationType" class="form-select">
+                          <option value="">Select Transference Certificate Type</option>
+                          <option value="Only Transference Certificate">General Transference Certificate</option>
+                          <option value="Migration Certificate">Migration Certificate</option>
+                        </select>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please select a Transference Certificate Type.</div>
+                      </div>
+                
+                      
+                      <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label class="form-label" for="validationCustom01">First Name</label>
+                            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter a valid first name.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="validationCustom02">Middle Name</label>
+                            <input type="text" class="form-control" id="validationCustom02" placeholder="Middle name" required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter a valid middle name.</div>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label" for="validationCustom03">Last Name</label>
+                            <input type="text" class="form-control" id="validationCustom03" placeholder="Last name" required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter a valid last name.</div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="contactNo">Mobile No</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <i class="fa-solid fa-phone" style="font-size: 20px;"></i>
+                                </span>
+                                <input type="text" class="form-control" id="contactNo" placeholder="Enter Mobile No." aria-describedby="inputGroupPrepend" required />
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter a valid contact number.</div>
+                            </div>                    
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <label class="form-label" for="alternateNo">Alternate Mobile No</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="inputGroupPrepend">
+                                    <i class="fa-solid fa-phone" style="font-size: 20px;"></i>
+                                </span>
+                                <input type="text" class="form-control" id="alternateNo" placeholder="Enter Alternate No." aria-describedby="inputGroupPrepend" required />
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter a valid alternate number.</div>                 
+                        </div>
+                    </div>
+                    
+                  <div class="row mb-3 mt-3">
+                        <div class="col-md-6">
+                            <label class="form-label" for="dob">Date of Birth</label>
+                            <input type="date" class="form-control" id="dob"  placeholder="Choose Date of Birth" required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter valid one.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label" for="dobInWords">Date of Birth In Words</label>
+                            <input type="text" class="form-control" id="dobInWords" placeholder="Enter date of birth in words" required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter valid one.</div>
+                        </div>
+                   </div>
+
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="emailId">Email Id</label>
+                        <div class="input-group">
+                            <span class="input-group-text" id="inputGroupPrepend"> <i class="fa-solid fa-envelope" style="font-size: 20px;"></i> </span>
+                            <input type="text" class="form-control" id="validationCustom04" placeholder="Enter Email" aria-describedby="inputGroupPrepend" required />
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>  
+                        <div class="valid-feedback">Looks good!</div>
+                       <div class="invalid-feedback">Please enter Email..</div>                  
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label" for="gender">Gender:</label>
+                      <select id="gender" name="gender" class="form-select" required>
+                          <option value="">Select Gender</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="Other">Other</option>
+                      </select>
+                      <div class="valid-feedback">Looks good!</div>
+                      <div class="invalid-feedback">Please select a gender.</div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="casteCategory">Enter Cast</label>
+                  <input type="text" class="form-control" id="casteCategory" placeholder="Enter Caste Category" required />
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please select a gender.</div>
+              
+                </div>
+                
+                <div class="col-md-12 mb-3">
+                  <label class="form-label" for="Address">Address </label>
+                  <textarea class="form-control" id="Address" placeholder=" Enter your Address" rows="3" required></textarea>
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please enter a valid address.</div>
+              </div>
+              </section>
+                <!-- Step 2 -->
+                <h6>Qualification & New Admission Details</h6>
+                
+                <section>
+                    <div class="row border-bottom">
+                        <h6 class="text-center card-subtitle mb-3 mr-5" >Previous Qualification Details</h6>
+                        </div>
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                        <!-- Department Select -->
+                        <div class="mb-3 mt-3">
+                            <label class="form-label" for="department">Department</label>
+                            <select class="form-control" id="department" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="Agriculture & Allied Sciences">Agriculture & Allied Sciences</option>
+                                <option value="Anthropology">Anthropology</option>
+                                <option value="Architecture & Planning">Architecture & Planning</option>
+                                <option value="Biotechnology">Biotechnology</option>
+                                <option value="Botany">Botany</option>
+                                <option value="Business Administration & Management">Business Administration & Management</option>
+                                <option value="Chemistry">Chemistry</option>
+                                <option value="Commerce & Accounting">Commerce & Accounting</option>
+                                <option value="Computer Science & Applications">Computer Science & Applications</option>
+                                <option value="Data Science & Artificial Intelligence">Data Science & Artificial Intelligence</option>
+                                <option value="Defence & Strategic Studies">Defence & Strategic Studies</option>
+                                <option value="Design (Fashion, Interior, Graphic, Industrial)">Design (Fashion, Interior, Graphic, Industrial)</option>
+                                <option value="Economics">Economics</option>
+                                <option value="Education & Teaching">Education & Teaching</option>
+                                <option value="Engineering (Mechanical, Civil, Electrical, etc.)">Engineering (Mechanical, Civil, Electrical, etc.)</option>
+                                <option value="English & Literature">English & Literature</option>
+                                <option value="Environmental Science">Environmental Science</option>
+                                <option value="Fine Arts & Performing Arts">Fine Arts & Performing Arts</option>
+                                <option value="Forensic Science">Forensic Science</option>
+                                <option value="Geography">Geography</option>
+                                <option value="Geology">Geology</option>
+                                <option value="History">History</option>
+                                <option value="Hospitality & Tourism">Hospitality & Tourism</option>
+                                <option value="Journalism & Mass Communication">Journalism & Mass Communication</option>
+                                <option value="Law & Legal Studies">Law & Legal Studies</option>
+                                <option value="Library & Information Science">Library & Information Science</option>
+                                <option value="Linguistics">Linguistics</option>
+                                <option value="Mathematics & Statistics">Mathematics & Statistics</option>
+                                <option value="Medical & Paramedical Sciences">Medical & Paramedical Sciences</option>
+                                <option value="Microbiology">Microbiology</option>
+                                <option value="Music & Dance">Music & Dance</option>
+                                <option value="Nanotechnology">Nanotechnology</option>
+                                <option value="Philosophy">Philosophy</option>
+                                <option value="Physical Education & Sports">Physical Education & Sports</option>
+                                <option value="Physics">Physics</option>
+                                <option value="Political Science">Political Science</option>
+                                <option value="Psychology">Psychology</option>
+                                <option value="Public Administration">Public Administration</option>
+                                <option value="Sociology & Social Work">Sociology & Social Work</option>
+                                <option value="Zoology">Zoology</option>
+                            </select>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please select a department.</div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6 mt-3">
+                        <div class="mb-3">
+                            <label class="form-label" for="course">Course</label>
+                            <select class="form-control" id="course" required>
+                                <option value="" disabled selected>Select Course</option>
+                            </select>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please select a course.</div>
+                        </div>
+                    </div>
+
+                    <label class="form-label" for="course">Examination Details</label>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Sr. No.</th>
+                                    <th>Examination Name</th>
+                                    <th>Examination Month</th>
+                                    <th>Examination Year</th>
+                                    <th>Examination Seat No.</th>
+                                    <th>Result (Passed/Fail)</th>
+                                    <th>CGPA</th>
+                                    <th>Grade</th>
+                                    <th>Reset</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1 -->
+                                <tr>
+                                    <td>1</td>
+                                    <td>F. Y.</td>
+                                    <td>
+                                        <select class="form-select" name="exam_month[]" required>
+                                            <option value="" disabled selected>Select Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="exam_year[]" placeholder="YYYY" required></td>
+                                    <td><input type="text" class="form-control text-center" name="seat_no[]" placeholder="Enter Seat No." required></td>
+                                    <td>
+                                        <select class="form-select" name="result[]">
+                                            <option value="" disabled selected>Select Result</option>
+                                            <option value="Passed">Passed</option>
+                                            <option value="Fail">Fail</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="cgpa[]" placeholder="Enter CGPA" required></td>
+                                    <td>
+                                        <select class="form-select" name="grade[]" required>
+                                            <option value="" disabled selected>Select Grade</option>
+                                            <option>O</option>
+                                            <option>A+</option>
+                                            <option>A</option>
+                                            <option>B+</option>
+                                            <option>B</option>
+                                            <option>F</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="button" class="btn btn-success btn-sm" onclick="resetRow(this)">Reset</button></td>
+                                </tr>
+                                <!-- Row 2 -->
+                                <tr>
+                                    <td>2</td>
+                                    <td>S. Y.</td>
+                                    <td>
+                                        <select class="form-select" name="exam_month[]" required>
+                                            <option value="" disabled selected>Select Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="exam_year[]" placeholder="YYYY" required></td>
+                                    <td><input type="text" class="form-control text-center" name="seat_no[]" placeholder="Enter Seat No." required></td>
+                                    <td>
+                                        <select class="form-select" name="result[]">
+                                            <option value="" disabled selected>Select Result</option>
+                                            <option value="Passed">Passed</option>
+                                            <option value="Fail">Fail</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="cgpa[]" placeholder="Enter CGPA" required></td>
+                                    <td>
+                                        <select class="form-select" name="grade[]" required>
+                                            <option value="" disabled selected>Select Grade</option>
+                                            <option>O</option>
+                                            <option>A+</option>
+                                            <option>A</option>
+                                            <option>B+</option>
+                                            <option>B</option>
+                                            <option>F</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="button" class="btn btn-success btn-sm" onclick="resetRow(this)">Reset</button></td>
+                                </tr>
+                                <!-- Row 3 -->
+                                <tr>
+                                    <td>3</td>
+                                    <td>T. Y.</td>
+                                    <td>
+                                        <select class="form-select" name="exam_month[]" required>
+                                            <option value="" disabled selected>Select Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="exam_year[]" placeholder="YYYY" required></td>
+                                    <td><input type="text" class="form-control text-center" name="seat_no[]" placeholder="Enter Seat No." required></td>
+                                    <td>
+                                        <select class="form-select" name="result[]">
+                                            <option value="" disabled selected>Select Result</option>
+                                            <option value="Passed">Passed</option>
+                                            <option value="Fail">Fail</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="cgpa[]" placeholder="Enter CGPA" required></td>
+                                    <td>
+                                        <select class="form-select" name="grade[]" required>
+                                            <option value="" disabled selected>Select Grade</option>
+                                            <option>O</option>
+                                            <option>A+</option>
+                                            <option>A</option>
+                                            <option>B+</option>
+                                            <option>B</option>
+                                            <option>F</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="button" class="btn btn-success btn-sm" onclick="resetRow(this)">Reset</button></td>
+                                </tr>
+                                <!-- Row 4 -->
+                                <tr>
+                                    <td>4</td>
+                                    <td>M. Sc. / MA I / MCom I</td>
+                                    <td>
+                                        <select class="form-select" name="exam_month[]" required>
+                                            <option value="" disabled selected>Select Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="exam_year[]" placeholder="YYYY" required></td>
+                                    <td><input type="text" class="form-control text-center" name="seat_no[]" placeholder="Enter Seat No." required></td>
+                                    <td>
+                                        <select class="form-select" name="result[]">
+                                            <option value="" disabled selected>Select Result</option>
+                                            <option value="Passed">Passed</option>
+                                            <option value="Fail">Fail</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="cgpa[]" placeholder="Enter CGPA" required></td>
+                                    <td>
+                                        <select class="form-select" name="grade[]" required>
+                                            <option value="" disabled selected>Select Grade</option>
+                                            <option>O</option>
+                                            <option>A+</option>
+                                            <option>A</option>
+                                            <option>B+</option>
+                                            <option>B</option>
+                                            <option>F</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="button" class="btn btn-success btn-sm" onclick="resetRow(this)">Reset</button></td>
+                                </tr>
+                                <!-- Row 5 -->
+                                <tr>
+                                    <td>5</td>
+                                    <td>M. Sc. / MA II / MCom II</td>
+                                    <td>
+                                        <select class="form-select" name="exam_month[]" required>
+                                            <option value="" disabled selected>Select Month</option>
+                                            <option>January</option>
+                                            <option>February</option>
+                                            <option>March</option>
+                                            <option>April</option>
+                                            <option>May</option>
+                                            <option>June</option>
+                                            <option>July</option>
+                                            <option>August</option>
+                                            <option>September</option>
+                                            <option>October</option>
+                                            <option>November</option>
+                                            <option>December</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="exam_year[]" placeholder="YYYY" required></td>
+                                    <td><input type="text" class="form-control text-center" name="seat_no[]" placeholder="Enter Seat No." required></td>
+                                    <td>
+                                        <select class="form-select" name="result[]">
+                                            <option value="" disabled selected>Select Result</option>
+                                            <option value="Passed">Passed</option>
+                                            <option value="Fail">Fail</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="text" class="form-control text-center" name="cgpa[]" placeholder="Enter CGPA" required></td>
+                                    <td>
+                                        <select class="form-select" name="grade[]" required>
+                                            <option value="" disabled selected>Select Grade</option>
+                                            <option>O</option>
+                                            <option>A+</option>
+                                            <option>A</option>
+                                            <option>B+</option>
+                                            <option>B</option>
+                                            <option>F</option>
+                                        </select>
+                                    </td>
+                                    <td><button type="button" class="btn btn-success btn-sm" onclick="resetRow(this)">Reset</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                            <div class="row border-bottom" >
+                                <h6 class="text-center  card-subtitle mb-3 mr-3 mt-3" >New Admission Details</h6>
+                            </div>
+
+                        <div class="col-md-6 mb-3 mt-3">
+                            <label class="form-label" for="newCourse">New Course</label>
+                            <select class="form-control" id="newCourse" required>
+                                <option value="">Select New Course</option>
+                                <option value="B.Sc. Physics">B.Sc. Physics</option>
+                                <option value="B.Sc. Chemistry">B.Sc. Chemistry</option>
+                                <option value="B.Sc. Mathematics">B.Sc. Mathematics</option>
+                                <option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
+                                <option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
+                                <option value="B.Sc. Biotechnology">B.Sc. Biotechnology</option>
+                                <option value="B.Sc. Microbiology">B.Sc. Microbiology</option>
+                                <option value="B.Sc. Zoology">B.Sc. Zoology</option>
+                                <option value="B.Sc. Botany">B.Sc. Botany</option>
+                                <option value="B.Sc. Environmental Science">B.Sc. Environmental Science</option>
+                                <option value="B.Sc. Forensic Science">B.Sc. Forensic Science</option>
+                                <option value="B.Sc. Statistics">B.Sc. Statistics</option>
+                                <option value="B.Sc. Data Science">B.Sc. Data Science</option>
+                                <option value="B.Sc. Electronics">B.Sc. Electronics</option>
+                                <option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
+                                <option value="B.Sc. Geology">B.Sc. Geology</option>
+                                <option value="B.Sc. Nutrition & Dietetics">B.Sc. Nutrition & Dietetics</option>
+                                <option value="B.Sc. Food Technology">B.Sc. Food Technology</option>
+                                <option value="B.Sc. Biomedical Science">B.Sc. Biomedical Science</option>
+                                <option value="B.Sc. Genetics">B.Sc. Genetics</option>
+                                <option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology & Imaging Technology</option>
+                                <option value="M.Sc. Physics">M.Sc. Physics</option>
+                                <option value="M.Sc. Chemistry">M.Sc. Chemistry</option>
+                                <option value="M.Sc. Mathematics">M.Sc. Mathematics</option>
+                                <option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
+                                <option value="M.Sc. Information Technology">M.Sc. Information Technology</option>
+                                <option value="M.Sc. Biotechnology">M.Sc. Biotechnology</option>
+                                <option value="M.Sc. Microbiology">M.Sc. Microbiology</option>
+                                <option value="M.Sc. Zoology">M.Sc. Zoology</option>
+                                <option value="M.Sc. Botany">M.Sc. Botany</option>
+                                <option value="M.Sc. Environmental Science">M.Sc. Environmental Science</option>
+                                <option value="M.Sc. Forensic Science">M.Sc. Forensic Science</option>
+                                <option value="M.Sc. Statistics">M.Sc. Statistics</option>
+                                <option value="M.Sc. Data Science">M.Sc. Data Science</option>
+                                <option value="M.Sc. Electronics">M.Sc. Electronics</option>
+                                <option value="M.Sc. Agriculture">M.Sc. Agriculture</option>
+                                <option value="M.Sc. Geology">M.Sc. Geology</option>
+                                <option value="M.Sc. Nutrition & Dietetics">M.Sc. Nutrition & Dietetics</option>
+                                <option value="M.Sc. Food Technology">M.Sc. Food Technology</option>
+                                <option value="M.Sc. Biomedical Science">M.Sc. Biomedical Science</option>
+                                <option value="M.Sc. Genetics">M.Sc. Genetics</option>
+                                <option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology & Imaging Technology</option>
+                                <option value="B.Com. General">B.Com. General</option>
+                                <option value="B.Com. Accounting & Finance">B.Com. Accounting & Finance</option>
+                                <option value="B.Com. Banking & Insurance">B.Com. Banking & Insurance</option>
+                                <option value="B.Com. Financial Markets">B.Com. Financial Markets</option>
+                                <option value="B.Com. Taxation">B.Com. Taxation</option>
+                                <option value="B.Com. Business Analytics">B.Com. Business Analytics</option>
+                                <option value="B.Com. International Business">B.Com. International Business</option>
+                                <option value="B.Com. E-Commerce">B.Com. E-Commerce</option>
+                                <option value="B.Com. Cost & Management Accounting">B.Com. Cost & Management Accounting</option>
+                                <option value="M.Com. General">M.Com. General</option>
+                                <option value="M.Com. Accounting & Finance">M.Com. Accounting & Finance</option>
+                                <option value="M.Com. Banking & Insurance">M.Com. Banking & Insurance</option>
+                                <option value="M.Com. Financial Markets">M.Com. Financial Markets</option>
+                                <option value="M.Com. Taxation">M.Com. Taxation</option>
+                                <option value="M.Com. Business Analytics">M.Com. Business Analytics</option>
+                                <option value="M.Com. International Business">M.Com. International Business</option>
+                                <option value="M.Com. E-Commerce">M.Com. E-Commerce</option>
+                                <option value="M.Com. Cost & Management Accounting">M.Com. Cost & Management Accounting</option>
+                                <option value="B.A. English Literature">B.A. English Literature</option>
+                                <option value="B.A. History">B.A. History</option>
+                                <option value="B.A. Political Science">B.A. Political Science</option>
+                                <option value="B.A. Psychology">B.A. Psychology</option>
+                                <option value="B.A. Sociology">B.A. Sociology</option>
+                                <option value="B.A. Philosophy">B.A. Philosophy</option>
+                                <option value="B.A. Economics">B.A. Economics</option>
+                                <option value="B.A. Public Administration">B.A. Public Administration</option>
+                                <option value="B.A. Journalism & Mass Communication">B.A. Journalism & Mass Communication</option>
+                                <option value="B.A. Geography">B.A. Geography</option>
+                                <option value="B.A. Anthropology">B.A. Anthropology</option>
+                                <option value="B.A. Linguistics">B.A. Linguistics</option>
+                                <option value="B.A. Fine Arts">B.A. Fine Arts</option>
+                                <option value="B.A. Music & Dance">B.A. Music & Dance</option>
+                                <option value="B.A. Performing Arts">B.A. Performing Arts</option>
+                                <option value="B.A. Archaeology">B.A. Archaeology</option>
+                                <option value="B.A. International Relations">B.A. International Relations</option>
+                                <option value="B.A. Gender Studies">B.A. Gender Studies</option>
+                                <option value="M.A. English Literature">M.A. English Literature</option>
+                                <option value="M.A. History">M.A. History</option>
+                                <option value="M.A. Political Science">M.A. Political Science</option>
+                                <option value="M.A. Psychology">M.A. Psychology</option>
+                                <option value="M.A. Sociology">M.A. Sociology</option>
+                                <option value="M.A. Philosophy">M.A. Philosophy</option>
+                                <option value="M.A. Economics">M.A. Economics</option>
+                                <option value="M.A. Public Administration">M.A. Public Administration</option>
+                                <option value="M.A. Journalism & Mass Communication">M.A. Journalism & Mass Communication</option>
+                                <option value="M.A. Geography">M.A. Geography</option>
+                                <option value="M.A. Anthropology">M.A. Anthropology</option>
+                                <option value="M.A. Linguistics">M.A. Linguistics</option>
+                                <option value="M.A. Fine Arts">M.A. Fine Arts</option>
+                                <option value="M.A. Music & Dance">M.A. Music & Dance</option>
+                                <option value="M.A. Performing Arts">M.A. Performing Arts</option>
+                                <option value="M.A. Archaeology">M.A. Archaeology</option>
+                                <option value="M.A. International Relations">M.A. International Relations</option>
+                                <option value="M.A. Gender Studies">M.A. Gender Studies</option>
+                                <option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+                                <option value="Bachelor of Management Studies (BMS)">Bachelor of Management Studies (BMS)</option>
+                                <option value="Bachelor of International Business (BIB)">Bachelor of International Business (BIB)</option>
+                                <option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
+                                <option value="Master of Management Studies (MMS)">Master of Management Studies (MMS)</option>
+                                <option value="Master of International Business (MIB)">Master of International Business (MIB)</option>
+                                <option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer Applications (BCA)</option>
+                                <option value="Master of Computer Applications (MCA)">Master of Computer Applications (MCA)</option>
+                                <option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
+                                <option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
+                                <option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
+                                <option value="M.Sc. Information Technology">M.Sc. Information Technology</option>
+                                <option value="Undergraduate (UG) Bachelor of Laws (LLB)">Undergraduate (UG) Bachelor of Laws (LLB)</option>
+                                <option value="Postgraduate (PG) Master of Laws (LLM)">Postgraduate (PG) Master of Laws (LLM)</option>
+                                <option value="Bachelor of Education (B.Ed.)">Bachelor of Education (B.Ed.)</option>
+                                <option value="Bachelor of Physical Education (B.P.Ed.)">Bachelor of Physical Education (B.P.Ed.)</option>
+                                <option value="Master of Education (M.Ed.)">Master of Education (M.Ed.)</option>
+                                <option value="Master of Physical Education (M.P.Ed.)">Master of Physical Education (M.P.Ed.)</option>
+                                <option value="MBBS (Bachelor of Medicine & Surgery)">MBBS (Bachelor of Medicine & Surgery)</option>
+                                <option value="BDS (Bachelor of Dental Surgery)">BDS (Bachelor of Dental Surgery)</option>
+                                <option value="BAMS (Ayurveda)">BAMS (Ayurveda)</option>
+                                <option value="BHMS (Homeopathy)">BHMS (Homeopathy)</option>
+                                <option value="BPT (Physiotherapy)">BPT (Physiotherapy)</option>
+                                <option value="B.Sc. Nursing">B.Sc. Nursing</option>
+                                <option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology & Imaging Technology</option>
+                                <option value="B.Sc. Medical Laboratory Technology">B.Sc. Medical Laboratory Technology</option>
+                                <option value="MD (Doctor of Medicine)">MD (Doctor of Medicine)</option>
+                                <option value="MDS (Master of Dental Surgery)">MDS (Master of Dental Surgery)</option>
+                                <option value="MPT (Master of Physiotherapy)">MPT (Master of Physiotherapy)</option>
+                                <option value="M.Sc. Nursing">M.Sc. Nursing</option>
+                                <option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology & Imaging Technology</option>
+                                <option value="M.Sc. Medical Laboratory Technology">M.Sc. Medical Laboratory Technology</option>
+                                <option value="Bachelor of Technology (B.Tech.)">Bachelor of Technology (B.Tech.)</option>
+                                <option value="Bachelor of Engineering (B.E.)">Bachelor of Engineering (B.E.)</option>
+                                <option value="Master of Technology (M.Tech.)">Master of Technology (M.Tech.)</option>
+                                <option value="Master of Engineering (M.E.)">Master of Engineering (M.E.)</option>
+                                <option value="Diploma in Computer Applications">Diploma in Computer Applications</option>
+                                <option value="Diploma in Hotel Management">Diploma in Hotel Management</option>
+                                <option value="Diploma in Fashion Designing">Diploma in Fashion Designing</option>
+                                <option value="Diploma in Event Management">Diploma in Event Management</option>
+                                <option value="Diploma in Journalism & Mass Communication">Diploma in Journalism & Mass Communication</option>
+                                <option value="Diploma in Animation & Multimedia">Diploma in Animation & Multimedia</option>
+                            </select>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please select a previous course.</div>
+                        </div>
+
+                             <div class="col-md-6 mt-3">
+                                <label class="form-label">New College Name</label>
+                                <input type="text" class="form-control" name="college_name" id="college_name" placeholder="Enter College Name" required>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please add new college name.</div>
+                            </div>
+                        
+                            <div class="col-md-6 mt-3">
+                                <label class="form-label">Affiliated University</label>
+                                <input type="text" class="form-control" name="university_name" id="university_name" placeholder="Enter University Name" required>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please select Affiliated University.</div>
+                            </div>
+                        
+                        
+
+                        <div class="col-md-6 mt-3">
+                            <label for="admissionType" class="form-label">Admission Type</label>
+                            <select class="form-select" id="admissionType" required>
+                                <option value="" disabled selected>Select Admission Type</option>
+                                <option value="Maharashtra Student">Maharashtra Student</option>
+                                <option value="Non-Maharashtra Student">Non-Maharashtra Student</option>
+                                <option value="Foreigner Student">Foreigner Student</option>
+                            </select>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please select an admission type.</div>
+                        </div>
+                </div>
+
+                <div class="row g-3 mt-3">
+                    <label class="form-label">Send for Departments Approval:</label>
+                    
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="accountApproval">
+                            <label class="form-check-label" for="accountApproval">
+                                Account Department
+                            </label>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="libraryApproval">
+                            <label class="form-check-label" for="libraryApproval">
+                                Library Department
+                            </label>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="scholarshipApproval">
+                            <label class="form-check-label" for="scholarshipApproval">
+                                Scholarship Department
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                 </section>
+                <!-- Step 3 -->
+                <h6>Documents</h6>
+                <section>
+       
+                  <!-- Add FontAwesome CDN -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+                    <div class="mb-3">
+                        <label for="latestMarksheet" class="form-label">Latest Passing Marksheet</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="latestMarksheet" accept=".jpeg, .jpg, .png" required>
+                            <button type="button" class="btn btn-secondary" onclick="editFile('latestMarksheet')">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="cancelFile('latestMarksheet')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="viewFile('latestMarksheet')">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please Select Document.</div>
+                    
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="passingCertificate" class="form-label">Passing Certificate</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="passingCertificate" accept=".jpeg, .jpg, .png" required>
+                            <button type="button" class="btn btn-secondary" onclick="editFile('passingCertificate')">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="cancelFile('passingCertificate')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="viewFile('passingCertificate')">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please Select Document.</div>
+                    
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="proofOfAdmission" class="form-label">Proof of New Admission</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="proofOfAdmission" accept=".jpeg, .jpg, .png" required>
+                            <button type="button" class="btn btn-secondary" onclick="editFile('proofOfAdmission')">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="cancelFile('proofOfAdmission')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="viewFile('proofOfAdmission')">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please Select Document.</div>
+                    
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="birthDateProof" class="form-label">Birth Date Proof</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="birthDateProof" accept=".jpeg, .jpg, .png" required>
+                            <button type="button" class="btn btn-secondary" onclick="editFile('birthDateProof')">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="cancelFile('birthDateProof')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="viewFile('birthDateProof')">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please Select Document.</div>
+                    
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="identityProof" class="form-label">Identity Proof</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" id="identityProof" accept=".jpeg, .jpg, .png" required>
+                            <button type="button" class="btn btn-secondary" onclick="editFile('identityProof')">
+                                <i class="fa-solid fa-pen"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger" onclick="cancelFile('identityProof')">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="viewFile('identityProof')">
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+                        </div>
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please Select Document.</div>
+                    
+                    </div>
+                </section>
+
+                <!-- Step 4 -->
+                <h6>Payment</h6>
+                <section>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card p-3">
+                                <h4 class="mb-3">Payment Summary</h4>
+                                <p><strong>Student Name:Vaibhavi Pasalkar</strong> </p>
+                                <p><strong>Roll Number:</strong> </p>
+                                <p><strong>Application ID:</strong> </p>
+                                <hr>
+                                <p><strong>Application Fee:</strong> ₹250</p>
+                                <p><strong>Processing Fee:</strong> ₹50</p>
+                                <p><strong>Total Payable:</strong> <span class="fw-bold text-success">₹300</span></p>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-6">
+                            <div class="card p-3">
+                                <h4>Select Payment Method</h4>
+                                <form>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" value="upi" checked>
+                                        <label class="form-check-label">UPI (Google Pay, PhonePe, Paytm)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" value="card">
+                                        <label class="form-check-label">Credit/Debit Card</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" value="netbanking">
+                                        <label class="form-check-label">Net Banking</label>
+                                    </div>
+                                    <hr>
+                                    <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+              </form>
+            </div>
+          </div>
+         
+         
+
+
+          <style>
+            .toast {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                font-size: 14px;
+                z-index: 1000;
+                animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+            }
+            
+            .toast.error {
+                background-color: #ff4444; 
+            }
+            
+            .toast.success {
+                background-color: #4CAF50; 
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+          </style>
+          <script>document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            const inputs = document.querySelectorAll("input, select, checkbox");
+        
+
+            function showToast(message, type = "error") {
+                const toast = document.createElement("div");
+                toast.className = `toast ${type}`;
+                toast.textContent = message;
+        
+                document.body.appendChild(toast);
+        
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 3000);
+            }
+        
+            function validateField(field, pattern, isRequired = true) {
+                const value = field.type === "checkbox" ? field.checked : field.value.trim();
+                let valid = true;
+        
+                if (isRequired && !value) {
+                    valid = false;
+                    field.classList.add("is-invalid");
+                    field.classList.remove("is-valid");
+                    field.setCustomValidity("This field is required.");
+                    showToast(`${field.labels[0].textContent} is required.`);
+                } else if (pattern && !pattern.test(value)) {
+                    valid = false;
+                    field.classList.add("is-invalid");
+                    field.classList.remove("is-valid");
+                    field.setCustomValidity("Invalid input.");
+                    showToast(`Invalid input for ${field.labels[0].textContent}.`);
+                } else {
+                    field.classList.remove("is-invalid");
+                    field.classList.add("is-valid");
+                    field.setCustomValidity("");
+                }
+        
+                return valid;
+            }
+        
+            function capitalizeFirstLetter(field) {
+                field.value = field.value
+                    .toLowerCase()
+                    .replace(/\b\w/g, (char) => char.toUpperCase());
+            }
+        
+            const fields = [
+                { id: "applicationType", pattern: null, required: true },
+                { id: "validationCustom01", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)?$/, required: true },
+                { id: "validationCustom02", pattern: /^[a-zA-Z\s]+$/, required: true },
+                { id: "validationCustom03", pattern: /^[a-zA-Z\s]+$/, required: true },
+                { id: "contactNo", pattern: /^\d{10}$/, required: true },
+                { id: "alternateNo", pattern: /^\d{10}$/, required: true },
+                { id: "dob", pattern: null, required: true },
+                { id: "dobInWords", pattern: /^[A-Z\s]+$/, required: true },
+                { id: "validationCustom04",pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,required: true },
+                { id: "gender", pattern: null, required: true },
+                { id: "casteCategory", pattern: /^[a-zA-Z\s]+$/, required: true },
+                { id: "Address", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true },
+                { id: "department", pattern: null, required: true },
+                { id: "course", pattern: null, required: true },
+                { id: "newCourse", pattern: /^[a-zA-Z\s]+$/, required: true },
+                { id: "college_name", pattern: /^[a-zA-Z\s]+$/, required: true },
+                { id: "university_name", pattern: /^[a-zA-Z\s]+$/, required: true },
+                { id: "admissionType", pattern: null, required: true },
+                { id: "accountApproval", pattern: null, required: false },
+                { id: "libraryApproval", pattern: null, required: false },
+                { id: "scholarshipApproval", pattern: null, required: false },
+                { id: "identityProof", pattern: null, required: true }, 
+                { id: "latestMarksheet", pattern: null, required: true }, 
+                { id: "proofOfAdmission", pattern: null, required: true },
+                { id: "birthDateProof", pattern: null, required: true }, 
+                { id: "passingCertificate", pattern: null, required: true }, 
+            
+            ];
+        
+            fields.forEach(({ id, pattern, required }) => {
+                const field = document.getElementById(id);
+                if (!field) return;
+        
+                field.addEventListener("input", function () {
+                    if (id === "contactNo" || id === "alternateNo") {
+                        field.value = field.value.replace(/\D/g, ''); 
+                    } else if (id === "dobInWords") {
+                        field.value = field.value.toUpperCase(); 
+                    } else {
+                        capitalizeFirstLetter(field); 
+                    }
+                    validateField(field, pattern, required);
+                });
+            });
+        
+            const selectFields = ["gender", "department", "course", "newCourse", "admissionType"];
+            selectFields.forEach(id => {
+                const field = document.getElementById(id);
+                if (!field) return;
+                field.addEventListener("change", function () {
+                    validateField(field, null, true);
+                });
+            });
+        
+            const checkboxes = ["accountApproval", "libraryApproval", "scholarshipApproval"];
+            checkboxes.forEach(id => {
+                const checkbox = document.getElementById(id);
+                if (!checkbox) return;
+                checkbox.addEventListener("change", function () {
+                    validateField(checkbox, null, false);
+                });
+            });
+        
+            const examYearInputs = document.querySelectorAll('input[name="exam_year[]"]');
+            const seatNoInputs = document.querySelectorAll('input[name="seat_no[]"]');
+            const cgpaInputs = document.querySelectorAll('input[name="cgpa[]"]');
+            const gradeSelects = document.querySelectorAll('select[name="grade[]"]');
+            const resultSelects = document.querySelectorAll('select[name="result[]"]');
+            const examMonthSelects = document.querySelectorAll('select[name="exam_month[]"]');
+        
+            examYearInputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    const currentYear = new Date().getFullYear(); 
+                    const yearPattern = /^(19|20)\d{2}$/; 
+        
+                  
+                    if (!yearPattern.test(input.value)) {
+                        validateField(input, yearPattern, true);
+                        return;
+                    }
+        
+                    const inputYear = parseInt(input.value, 10);
+        
+                    if (inputYear > currentYear) {
+                        input.setCustomValidity(`Year cannot be greater than ${currentYear}.`);
+                        input.classList.add("is-invalid");
+                        input.classList.remove("is-valid");
+                        showToast(`Year cannot be greater than ${currentYear}.`);
+                    } else {
+                        input.setCustomValidity("");
+                        input.classList.remove("is-invalid");
+                        input.classList.add("is-valid");
+                    }
+                });
+            });
+        
+            seatNoInputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    const seatNoPattern = /^\d+$/;
+                    validateField(input, seatNoPattern, true);
+                });
+            });
+        
+            cgpaInputs.forEach(input => {
+                input.addEventListener("input", function () {
+                    const cgpaPattern = /^\d*\.?\d+$/; 
+                    validateField(input, cgpaPattern, true);
+                });
+            });
+        
+            gradeSelects.forEach(select => {
+                select.addEventListener("change", function () {
+                    validateField(select, null, true);
+                });
+            });
+        
+            resultSelects.forEach(select => {
+                select.addEventListener("change", function () {
+                    validateField(select, null, true);
+                });
+            });
+        
+            examMonthSelects.forEach(select => {
+                select.addEventListener("change", function () {
+                    validateField(select, null, true);
+                });
+            });
+
+              const fileInputs = ["identityProof", "latestMarksheet", "proofOfAdmission","passingCertificate","birthDateProof"];
+              fileInputs.forEach(id => {
+                  const field = document.getElementById(id);
+                  if (!field) return;
+                  field.addEventListener("change", function () {
+                      validateField(field, null, true);
+                  });
+              });
+          
+        
+        
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                event.stopPropagation();
+        
+                let formIsValid = true;
+        
+          
+                fields.forEach(({ id, pattern, required }) => {
+                    const field = document.getElementById(id);
+                    if (field) {
+                        formIsValid = formIsValid && validateField(field, pattern, required);
+                    }
+                });
+        
+             
+                examYearInputs.forEach(input => {
+                    const yearPattern = /^(19|20)\d{2}$/; 
+                    formIsValid = formIsValid && validateField(input, yearPattern, true);
+                });
+        
+                seatNoInputs.forEach(input => {
+                    const seatNoPattern = /^\d+$/;
+                    formIsValid = formIsValid && validateField(input, seatNoPattern, true);
+                });
+        
+                function validateCGPA(input) {
+                    const cgpaPattern = /^(10(\.0{1,2})?|([0-9](\.[0-9]{1,2})?))$/;
+                    const value = input.value.trim();
+        
+                    if (!cgpaPattern.test(value)) {
+                        input.setCustomValidity("CGPA must be in the format X.Y or X.YZ (e.g., 5.0, 7.5, 9.75).");
+                        input.classList.add("is-invalid");
+                        input.classList.remove("is-valid");
+                        showToast("CGPA must be in the format X.Y or X.YZ (e.g., 5.0, 7.5, 9.75).");
+                        return false;
+                    } else {
+                        const numericValue = parseFloat(value);
+                        if (numericValue < 0.0 || numericValue > 10.0) {
+                            input.setCustomValidity("CGPA must be between 0.0 and 10.0.");
+                            input.classList.add("is-invalid");
+                            input.classList.remove("is-valid");
+                            showToast("CGPA must be between 0.0 and 10.0.");
+                            return false;
+                        } else {
+                            input.setCustomValidity("");
+                            input.classList.remove("is-invalid");
+                            input.classList.add("is-valid");
+                            return true;
+                        }
+                    }
+                }
+        
+                gradeSelects.forEach(select => {
+                    formIsValid = formIsValid && validateField(select, null, true);
+                });
+        
+                resultSelects.forEach(select => {
+                    formIsValid = formIsValid && validateField(select, null, true);
+                });
+        
+                examMonthSelects.forEach(select => {
+                    formIsValid = formIsValid && validateField(select, null, true);
+                });
+        
+                if (formIsValid) {
+                    alert("Form submitted successfully!");
+                    form.submit();
+                } else {
+                    showToast("Please fill in the empty or invalid fields.");
+                }
+            });
+        });
+</script>
+                        <script>
+                            
+                        function resetRow(button) {
+                                let row = button.closest("tr");
+                                row.querySelectorAll("input, select").forEach(field => {
+                                    if (field.tagName === "SELECT") {
+                                        field.selectedIndex = 0;
+                                    } else {
+                                        field.value = "";
+                                    }
+                                });
+                            }
+
+                            function editFile(inputId) {
+                                const fileInput = document.getElementById(inputId);
+                                fileInput.click(); 
+
+                                fileInput.addEventListener("change", function () {
+                                    if (fileInput.files.length > 0) {
+                                        showSuccessMessage("File attached successfully!");
+                                    }
+                                });
+                            }
+
+                            
+                            function cancelFile(inputId) {
+                                const fileInput = document.getElementById(inputId);
+                                fileInput.value = '';
+                                showSuccessMessage("File attachment cancelled.");
+                            }
+
+                        
+                            function viewFile(inputId) {
+                                const fileInput = document.getElementById(inputId);
+                                const fileLabel = document.querySelector(`label[for="${inputId}"]`);
+
+                                if (fileInput.files.length > 0) {
+                                    const file = fileInput.files[0];
+                                    const fileType = file.type;
+
+                                    if (!fileType.startsWith("image/")) {
+                                        alert("Please upload an image file to preview.");
+                                        return;
+                                    }
+
+                                    const documentName = fileLabel ? fileLabel.textContent : "Uploaded Document";
+
+                                    
+                                    const fileURL = URL.createObjectURL(file);
+
+                                    const popupWidth = 600;
+                                    const popupHeight = 500;
+                                    const screenWidth = window.screen.width;
+                                    const screenHeight = window.screen.height;
+                                    const left = (screenWidth - popupWidth) / 2;
+                                    const top = (screenHeight - popupHeight) / 2;
+
+                                    const popup = window.open(
+                                        "",
+                                        "ImagePreview",
+                                        `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=yes,scrollbars=no`
+                                    );
+
+                                    if (popup) {
+                                        
+                                        popup.document.write(`
+                                            <html>
+                                            <head>
+                                                <title>Image Preview - ${documentName}</title>
+                                                <style>
+                                                    body { 
+                                                        text-align: center; font-family: Arial, sans-serif; 
+                                                        margin: 0; padding: 20px; background-color: #f4f4f4; 
+                                                    }
+                                                    .container {
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        height: 100vh;
+                                                    }
+                                                    .image-box {
+                                                        background: white;
+                                                        padding: 15px;
+                                                        border-radius: 8px;
+                                                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                                                        max-width: 100%;
+                                                        max-height: 80vh;
+                                                        display: flex;
+                                                        flex-direction: column;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+                                                    img {
+                                                        max-width: 100%;
+                                                        max-height: 70vh;
+                                                        border-radius: 8px;
+                                                    }
+                                                    h3 {
+                                                        margin-bottom: 10px;
+                                                        color: #333;
+                                                    }
+                                                    button { 
+                                                        margin-top: 15px; padding: 10px 16px; background-color: red; 
+                                                        color: white; border: none; border-radius: 5px; cursor: pointer; 
+                                                        font-size: 16px;
+                                                    }
+                                                    button:hover {
+                                                        background-color: darkred;
+                                                    }
+                                                </style>
+                                            </head>
+                                            <body>
+                                                <div class="container">
+                                                    <h3>${documentName}</h3>
+                                                    <div class="image-box">
+                                                        <img src="${fileURL}" alt="Uploaded Image">
+                                                    </div>
+                                                    <button onclick="window.close()">Close</button>
+                                                </div>
+                                            </body>
+                                            </html>
+                                        `);
+                                        popup.document.close();
+                                    } else {
+                                        alert("Popup blocked! Please allow popups for this site.");
+                                    }
+                                } else {
+                                    alert("No file uploaded.");
+                                }
+                            }
+
+                            function showSuccessMessage(message) {
+                                const successMessage = document.createElement("div");
+                                successMessage.textContent = message;
+                                successMessage.style.position = "fixed";
+                                successMessage.style.bottom = "20px";
+                                successMessage.style.right = "20px";
+                                successMessage.style.backgroundColor = "#4CAF50"; 
+                                successMessage.style.color = "white";
+                                successMessage.style.padding = "10px 20px";
+                                successMessage.style.borderRadius = "5px";
+                                successMessage.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+                                successMessage.style.zIndex = "1000";
+                                successMessage.style.animation = "fadeIn 0.5s, fadeOut 0.5s 2.5s";
+
+                                document.body.appendChild(successMessage);
+
+                                setTimeout(() => {
+                                    document.body.removeChild(successMessage);
+                                }, 3000);
+                            }
+
+                            const style = document.createElement("style");
+                            style.textContent = `
+                                @keyframes fadeIn {
+                                    from { opacity: 0; }
+                                    to { opacity: 1; }
+                                }
+                                @keyframes fadeOut {
+                                    from { opacity: 1; }
+                                    to { opacity: 0; }
+                                }
+                            `;
+                            document.head.appendChild(style);
+
+                        </script>
+        </div>
+       <footer class="footer py-3 bg-white border-top text-center">
+            @copyrights 2025   &nbsp;&nbsp;&nbsp; ajinkyadhavale9604@gmail.com 
+          </footer>
+      </div>
+      <script>
+  function handleColorTheme(e) {
+    document.documentElement.setAttribute("data-color-theme", e);
+  }
+</script>
+      
+        
+
+   
+    
+  <div class="dark-transparent sidebartoggler"></div>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+
+  <script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
+  <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/forms/form-wizard.js"></script>
+</body>
+
+
+</html>
+
+

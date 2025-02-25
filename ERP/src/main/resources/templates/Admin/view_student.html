@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Student List</title>
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" th:href="@{/admin_pannel.css}" />
+
+    <!-- Tabler Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.22.0/css/tabler-icons.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+</head>
+
+<body>
+    <div id="main-wrapper">
+        <!-- Sidebar -->
+        <div th:replace="Admin/fragments/side_bar :: side_bar"></div>
+
+        <div class="page-wrapper">
+            <!-- Navbar -->
+            <div th:replace="Admin/fragments/navbar :: navbar"></div>
+
+            <div class="body-wrapper">
+                <div class="container-fluid">
+                    <h2>Student List</h2>
+
+                    <div class="table-responsive bg-white pt-4 pl-2 pr-2">
+                        <table id="studentTable" class="display nowrap" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>First Name</th>
+                                    <th>Middle Name</th>
+                                    <th>Last Name</th>
+                                    <th>Aadhar No</th>
+                                    <th>Email</th>
+                                    <th>Start Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Thymeleaf Loop for Data -->
+                                <tr th:each="student : ${admission_list}">
+                                    <td th:text="${student.admissionId}"></td>
+                                    <td th:text="${student.firstName}"></td>
+                                    <td th:text="${student.middleName}"></td>
+                                    <td th:text="${student.lastName}"></td>
+                                    <td th:text="${student.aadharNo}"></td>
+                                    <td th:text="${student.email}"></td>
+                                    <td th:text="${student.startDate}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+						
+						<!-- ✅ Load jQuery FIRST (Check if Bootstrap includes it already) -->
+						<script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+						<!-- ✅ Load DataTables AFTER jQuery -->
+						<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" defer></script>
+						<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js" defer></script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js" defer></script>
+						<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js" defer></script>
+						<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js" defer></script>
+						<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js" defer></script>
+
+						<script>
+						    document.addEventListener("DOMContentLoaded", function () {
+						        console.log("Initializing DataTable...");
+						        
+						        if ($("#studentTable").length) {
+						            $('#studentTable').DataTable({
+						                dom: 'Bfrtip', // Adds export buttons
+						                buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+						                responsive: true,
+						                paging: true,
+						                searching: true,
+						                ordering: true
+						            });
+
+						            console.log("DataTable Initialized Successfully ✅");
+						        } else {
+						            console.error("Error: #studentTable not found! ❌");
+						        }
+						    });
+						</script>
+
+						
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div th:replace="Admin/fragments/footer :: footer"></div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Bootstrap & Theme Scripts -->
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+    <!-- Fix Iconify Icons 404 Error -->
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
+    <!-- Fix ApexCharts Error -->
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script>
+        setTimeout(function () {
+            if (document.getElementById('chartContainer')) {
+                console.log("Initializing ApexCharts...");
+                new ApexCharts(document.getElementById('chartContainer'), options).render();
+            } else {
+                console.error("Error: Chart container not found! ❌");
+            }
+        }, 500);
+    </script>
+
+</body>
+
+</html>

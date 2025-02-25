@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
+	<title>Admin Pannel</title>
+
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
+			class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+
+		<!--imported side bar here-->
+		<div th:replace="Student/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+			<div th:replace="Student/fragments/navbar :: navbar"></div>
+
+
+
+
+			<div class="body-wrapper">
+				<div class="container-fluid">
+				          <!-- <div class="shadow-none position-relative overflow-hidden mb-4">
+				            <div class="d-sm-flex d-block justify-content-between align-items-center">
+				              <h5 class="mb-0 fw-semibold text-uppercase"> Form Wizard</h5>
+				              <nav aria-label="breadcrumb" class="d-flex align-items-center">
+				                <ol class="breadcrumb d-flex align-items-center">
+				                  <li class="breadcrumb-item">
+				                    <a class="text-decoration-none" href="https://bootstrapdemos.wrappixel.com/ample/dist/main/index.html">Home
+				                    </a>
+				                  </li>
+				                  <li class="breadcrumb-item text-primary" aria-current="page">
+				                    Form Wizard
+				                  </li>
+				                </ol>
+
+				              </nav>
+				            </div>
+				          </div> -->
+				          <!-- start Basic Example -->
+				          
+				          <!-- end Basic Example -->
+				          <!-- start Custom Design Example -->
+				          <div class="card">
+				            <div class="card-body wizard-content">
+				                <h4 class="card-title mb-1 text-center text-danger" style="font-size: 25px;font-weight:bolder;">Bonafide Certificate Application</h4>
+				                <h6 class="card-subtitle mb-3"></h6>
+				                <form action="#" class="tab-wizard wizard-circle">
+				                    <!-- Step 1 -->
+				                    <h6>Personal Information</h6>
+				                    <section>
+				                        <div class="row mb-3">
+				                            <div class="col-md-6">
+				                                <label class="form-label">Full Name</label>
+				                                <input type="text" class="form-control" id="fullName" placeholder="Surname YourName FatherName">
+				                                <div class="valid-feedback">Looks good!</div>
+				                                <div class="invalid-feedback">Please enter a valid full name.</div>
+				                            </div>
+				                            <div class="col-md-6">
+				                                <label class="form-label">Roll Number</label>
+				                                <input type="text" class="form-control" id="rollNumber" placeholder="Enter Roll No" required>
+				                                <div class="valid-feedback">Looks good!</div>
+				                                <div class="invalid-feedback">Please enter a valid roll number.</div>
+				                            </div>
+				                        </div>
+				        
+				                        
+				                        <div class="row mb-3">
+				                            <div class="col-md-6">
+				                                <label class="form-label">Gender</label>
+				                                <select class="form-control" id="gender" required>
+				                                    <option value="">Select Gender</option>
+				                                    <option value="Male">Male</option>
+				                                    <option value="Female">Female</option>
+				                                    <option value="Other">Other</option>
+				                                </select>
+				                                <div class="valid-feedback">Looks good!</div>
+				                                <div class="invalid-feedback">Please select a valid gender.</div>
+				                            </div>
+				                            <div class="col-md-6">
+				                                <label class="form-label">Year</label>
+				                                <select class="form-control" id="yearRangeSelect" required>
+				                                    <option value="">Select Year Range</option>
+				                                </select>
+				                                <div class="valid-feedback">Looks good!</div>
+				                                <div class="invalid-feedback">Please select a valid year range.</div>
+				                            </div>
+				                            
+				                            
+				                        </div>
+				        
+
+				                        
+				                        <div class="row mb-3">
+				                            <div class="col-md-6">
+				                                <label class="form-label">Department</label>
+				                                <input type="text" class="form-control" id="department" required>
+				                                <div class="valid-feedback">Looks good!</div>
+				                                <div class="invalid-feedback">Please enter a valid department.</div>
+				                            </div>
+				                            <div class="col-md-6">
+				                                <label class="form-label">Course</label>
+				                                <input type="text" class="form-control" id="course" required>
+				                                <div class="valid-feedback">Looks good!</div>
+				                                <div class="invalid-feedback">Please enter a valid course.</div>
+				                            </div>
+				                        </div>
+				        
+				                        
+				        
+				                        <div class="mb-3">
+				                            <label class="form-label">Purpose of Certificate</label>
+				                            <textarea class="form-control" id="purposeOfCertificate" placeholder="Write Reason for Certificate" rows="3" required></textarea>
+				                            <div class="valid-feedback">Looks good!</div>
+				                            <div class="invalid-feedback">Please enter a valid purpose.</div>
+				                        </div>
+				        
+				                        <div class="mb-3">
+				                            <label class="form-label">Local Address</label>
+				                            <textarea class="form-control" id="localAddress" rows="3"placeholder="Enter temporary Address" required></textarea>
+				                            <div class="valid-feedback">Looks good!</div>
+				                            <div class="invalid-feedback">Please enter a valid local address.</div>
+				                        </div>
+				        
+				                        <div class="mb-3">
+				                            <label class="form-label">Permanent Address</label>
+				                            <textarea class="form-control" id="permanentAddress" placeholder="Enter Permanant Address" rows="3" required></textarea>
+				                            <div class="valid-feedback">Looks good!</div>
+				                            <div class="invalid-feedback">Please enter a valid permanent address.</div>
+				                        </div>
+				                    </section>
+				        
+				                    <!-- Step 2: Documents -->
+				                    <h6>Documents</h6>
+				                    <section>
+				                        <div class="mb-3">
+				                            <label for="identityProof" class="form-label">Identity Proof</label>
+				                            <div class="input-group">
+				                                <input type="file" class="form-control" id="identityProof" accept=".jpeg, .jpg, .png" required>
+				                                <button type="button" class="btn btn-secondary" onclick="editFile('identityProof')">
+				                                    <i class="fa-solid fa-pen"></i>
+				                                </button>
+				                                <button type="button" class="btn btn-danger" onclick="cancelFile('identityProof')">
+				                                    <i class="fa-solid fa-xmark"></i>
+				                                </button>
+				                                <button type="button" class="btn btn-info" onclick="viewFile('identityProof')">
+				                                    <i class="fa-solid fa-eye"></i>
+				                                </button>
+				                            </div>
+				                            <div class="valid-feedback">Looks good!</div>
+				                            <div class="invalid-feedback">Please upload a valid identity proof.</div>
+				                        </div>
+				        
+				                        <div class="mb-3">
+				                            <label for="latestMarksheet" class="form-label">Birth Proof (Birth Certificate, Aadhar Card)</label>
+				                            <div class="input-group">
+				                                <input type="file" class="form-control" id="latestMarksheet" accept=".jpeg, .jpg, .png" required>
+				                                <button type="button" class="btn btn-secondary" onclick="editFile('latestMarksheet')">
+				                                    <i class="fa-solid fa-pen"></i>
+				                                </button>
+				                                <button type="button" class="btn btn-danger" onclick="cancelFile('latestMarksheet')">
+				                                    <i class="fa-solid fa-xmark"></i>
+				                                </button>
+				                                <button type="button" class="btn btn-info" onclick="viewFile('latestMarksheet')">
+				                                    <i class="fa-solid fa-eye"></i>
+				                                </button>
+				                            </div>
+				                            <div class="valid-feedback">Looks good!</div>
+				                            <div class="invalid-feedback">Please upload a valid birth proof.</div>
+				                        </div>
+				        
+				                        <div class="mb-3">
+				                            <label for="proofOfAdmission" class="form-label">Fee Receipt</label>
+				                            <div class="input-group">
+				                                <input type="file" class="form-control" id="proofOfAdmission" accept=".jpeg, .jpg, .png" required>
+				                                <button type="button" class="btn btn-secondary" onclick="editFile('proofOfAdmission')">
+				                                    <i class="fa-solid fa-pen"></i>
+				                                </button>
+				                                <button type="button" class="btn btn-danger" onclick="cancelFile('proofOfAdmission')">
+				                                    <i class="fa-solid fa-xmark"></i>
+				                                </button>
+				                                <button type="button" class="btn btn-info" onclick="viewFile('proofOfAdmission')">
+				                                    <i class="fa-solid fa-eye"></i>
+				                                </button>
+				                            </div>
+				                            <div class="valid-feedback">Looks good!</div>
+				                            <div class="invalid-feedback">Please upload a valid fee receipt.</div>
+				                        </div>
+				                    </section>
+				        
+				                    <!-- Step 3: Payment -->
+				                    <h6>Payment</h6>
+				                    <section>
+				                        <div class="row">
+				                            <div class="col-md-6">
+				                                <div class="card p-3">
+				                                    <h4 class="mb-3">Payment Summary</h4>
+				                                    <p><strong>Student Name: Vaibhavi Pasalkar</strong></p>
+				                                    <p><strong>Roll Number:</strong></p>
+				                                    <p><strong>Application ID:</strong></p>
+				                                    <hr>
+				                                    <p><strong>Application Fee:</strong> ₹50</p>
+				                                    <p><strong>Processing Fee:</strong> 0</p>
+				                                    <p><strong>Total Payable:</strong> <span class="fw-bold text-success">₹50</span></p>
+				                                </div>
+				                            </div>
+				        
+				                            <!-- Payment Options -->
+				                            <div class="col-md-6">
+				                                <div class="card p-3">
+				                                    <h4>Select Payment Method</h4>
+				                                    <form>
+				                                        <div class="form-check">
+				                                            <input class="form-check-input" type="radio" name="paymentMethod" value="upi" checked>
+				                                            <label class="form-check-label">UPI (Google Pay, PhonePe, Paytm)</label>
+				                                        </div>
+				                                        <div class="form-check">
+				                                            <input class="form-check-input" type="radio" name="paymentMethod" value="card">
+				                                            <label class="form-check-label">Credit/Debit Card</label>
+				                                        </div>
+				                                        <div class="form-check">
+				                                            <input class="form-check-input" type="radio" name="paymentMethod" value="netbanking">
+				                                            <label class="form-check-label">Net Banking</label>
+				                                        </div>
+				                                        <hr>
+				                                        <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
+				                                    </form>
+				                                </div>
+				                            </div>
+				                        </div>
+				                    </section>
+				                </form>
+				            </div>
+				        </div>
+				         
+				        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+				        <script>
+				            document.addEventListener("DOMContentLoaded", function () {
+				                const currentYear = new Date().getFullYear();
+				                const previousYear = currentYear - 1;
+				        
+				                const yearRange = `${previousYear}-${currentYear}`;
+				        
+				                const yearDropdown = document.getElementById("yearRangeSelect");
+				        
+				                const option = document.createElement("option");
+				                option.value = yearRange;
+				                option.textContent = yearRange;
+				                yearDropdown.appendChild(option);
+				            });
+				        </script>
+				         <script>
+				            document.addEventListener("DOMContentLoaded", function () {
+				                const form = document.querySelector("form"); 
+				            
+				                function showToast(message, type = "error") {
+				                    const toast = document.createElement("div");
+				                    toast.className = `toast ${type}`;
+				                    toast.textContent = message;
+				            
+				                    document.body.appendChild(toast);
+				            
+				                    setTimeout(() => {
+				                        document.body.removeChild(toast);
+				                    }, 3000);
+				                }
+				            
+
+				                function validateField(field, pattern, isRequired = true) {
+				                    const value = field.type === "checkbox" ? field.checked : field.value.trim();
+				                    let valid = true;
+				            
+				                    if (isRequired && !value) {
+				                        valid = false;
+				                        field.classList.add("is-invalid");
+				                        field.classList.remove("is-valid");
+				                        field.setCustomValidity("This field is required.");
+				                        showToast(`${field.labels[0].textContent} is required.`);
+				                    } else if (pattern && !pattern.test(value)) {
+				                        valid = false;
+				                        field.classList.add("is-invalid");
+				                        field.classList.remove("is-valid");
+				                        field.setCustomValidity("Invalid input.");
+				                        showToast(`Invalid input for ${field.labels[0].textContent}.`);
+				                    } else {
+				                        field.classList.remove("is-invalid");
+				                        field.classList.add("is-valid");
+				                        field.setCustomValidity("");
+				                    }
+				            
+				                    return valid;
+				                }
+				            
+				                function capitalizeFirstLetter(field) {
+				                    field.value = field.value
+				                        .toLowerCase()
+				                        .replace(/\b\w/g, (char) => char.toUpperCase());
+				                }
+				            
+				                const fields = [
+				                { id: "fullName", pattern: /^[a-zA-Z\s]+$/, required: true },
+				                { id: "rollNumber", pattern: /^\d+$/, required: true },
+				                { id: "course", pattern: /^[a-zA-Z\s]+$/, required: true },
+				                { id: "yearRangeSelect", pattern: null, required: true },
+				                { id: "department", pattern: /^[a-zA-Z\s]+$/, required: true },
+				                { id: "gender", pattern: null, required: true },
+				                { id: "dob", pattern: null, required: true },
+				                { id: "dobWords", pattern: /^[A-Z\s]+$/, required: true },
+				                { id: "purposeOfCertificate", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true },
+				                { id: "localAddress", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true },
+				                { id: "permanentAddress", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true },
+				                { id: "identityProof", pattern: null, required: true },
+				                { id: "latestMarksheet", pattern: null, required: true },
+				                { id: "proofOfAdmission", pattern: null, required: true }
+				            ];
+				            
+				                fields.forEach(({ id, pattern, required }) => {
+				                    const field = document.getElementById(id);
+				                    if (!field) return; 
+				            
+				                    field.addEventListener("input", function () {
+				                        if (id === "rollNumber") {
+				                            field.value = field.value.replace(/\D/g, ''); 
+				                        } else if (id === "dobWords") {
+				                            field.value = field.value.toUpperCase(); 
+				                        } else {
+				                            capitalizeFirstLetter(field); 
+				                        }
+				                        validateField(field, pattern, required);
+				                    });
+				                });
+				            
+				                const selectFields = ["gender", "yearRangeSelect"];
+				                selectFields.forEach(id => {
+				                    const field = document.getElementById(id);
+				                    if (!field) return;
+				                    field.addEventListener("change", function () {
+				                        validateField(field, null, true);
+				                    });
+				                });
+				            
+				                const fileInputs = ["identityProof", "latestMarksheet", "proofOfAdmission"];
+				                fileInputs.forEach(id => {
+				                    const field = document.getElementById(id);
+				                    if (!field) return;
+				                    field.addEventListener("change", function () {
+				                        validateField(field, null, true);
+				                    });
+				                });
+				            
+				                form.addEventListener("submit", function (event) {
+				                    event.preventDefault();
+				                    event.stopPropagation();
+				            
+				                    let formIsValid = true;
+				            
+				                    fields.forEach(({ id, pattern, required }) => {
+				                        const field = document.getElementById(id);
+				                        if (field) {
+				                            formIsValid = formIsValid && validateField(field, pattern, required);
+				                        }
+				                    });
+				            
+				                    if (formIsValid) {
+				                        alert("Form submitted successfully!");
+				                        form.submit();
+				                    } else {
+				                        showToast("Please fill in the empty or invalid fields.");
+				                    }
+				                });
+				            });
+				         </script>
+
+
+				          <script>
+				    
+				                function editFile(inputId) {
+				                    const fileInput = document.getElementById(inputId);
+				                    fileInput.click(); 
+				            
+				                    fileInput.addEventListener("change", function () {
+				                        if (fileInput.files.length > 0) {
+				                            showSuccessMessage("File attached successfully!");
+				                        }
+				                    });
+				                }
+				            
+				                
+				                function cancelFile(inputId) {
+				                    const fileInput = document.getElementById(inputId);
+				                    fileInput.value = '';
+				                    showSuccessMessage("File attachment cancelled.");
+				                }
+				            
+				               
+				                function viewFile(inputId) {
+				                    const fileInput = document.getElementById(inputId);
+				                    const fileLabel = document.querySelector(`label[for="${inputId}"]`); 
+				            
+				                    if (fileInput.files.length > 0) {
+				                        const file = fileInput.files[0];
+				                        const fileType = file.type;
+				            
+				                        if (!fileType.startsWith("image/")) {
+				                            alert("Please upload an image file to preview.");
+				                            return;
+				                        }
+				            
+				                        const documentName = fileLabel ? fileLabel.textContent : "Uploaded Document";
+				            
+				                        
+				                        const fileURL = URL.createObjectURL(file);
+				            
+				                        const popupWidth = 600;
+				                        const popupHeight = 500;
+				                        const screenWidth = window.screen.width;
+				                        const screenHeight = window.screen.height;
+				                        const left = (screenWidth - popupWidth) / 2;
+				                        const top = (screenHeight - popupHeight) / 2;
+				            
+				                        const popup = window.open(
+				                            "",
+				                            "ImagePreview",
+				                            `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=yes,scrollbars=no`
+				                        );
+				            
+				                        if (popup) {
+				                            
+				                            popup.document.write(`
+				                                <html>
+				                                <head>
+				                                    <title>Image Preview - ${documentName}</title>
+				                                    <style>
+				                                        body { 
+				                                            text-align: center; font-family: Arial, sans-serif; 
+				                                            margin: 0; padding: 20px; background-color: #f4f4f4; 
+				                                        }
+				                                        .container {
+				                                            display: flex;
+				                                            flex-direction: column;
+				                                            align-items: center;
+				                                            justify-content: center;
+				                                            height: 100vh;
+				                                        }
+				                                        .image-box {
+				                                            background: white;
+				                                            padding: 15px;
+				                                            border-radius: 8px;
+				                                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+				                                            max-width: 100%;
+				                                            max-height: 80vh;
+				                                            display: flex;
+				                                            flex-direction: column;
+				                                            justify-content: center;
+				                                            align-items: center;
+				                                        }
+				                                        img {
+				                                            max-width: 100%;
+				                                            max-height: 70vh;
+				                                            border-radius: 8px;
+				                                        }
+				                                        h3 {
+				                                            margin-bottom: 10px;
+				                                            color: #333;
+				                                        }
+				                                        button { 
+				                                            margin-top: 15px; padding: 10px 16px; background-color: red; 
+				                                            color: white; border: none; border-radius: 5px; cursor: pointer; 
+				                                            font-size: 16px;
+				                                        }
+				                                        button:hover {
+				                                            background-color: darkred;
+				                                        }
+				                                    </style>
+				                                </head>
+				                                <body>
+				                                    <div class="container">
+				                                        <h3>${documentName}</h3>
+				                                        <div class="image-box">
+				                                            <img src="${fileURL}" alt="Uploaded Image">
+				                                        </div>
+				                                        <button onclick="window.close()">Close</button>
+				                                    </div>
+				                                </body>
+				                                </html>
+				                            `);
+				                            popup.document.close();
+				                        } else {
+				                            alert("Popup blocked! Please allow popups for this site.");
+				                        }
+				                    } else {
+				                        alert("No file uploaded.");
+				                    }
+				                }
+				            
+				                function showSuccessMessage(message) {
+				                    const successMessage = document.createElement("div");
+				                    successMessage.textContent = message;
+				                    successMessage.style.position = "fixed";
+				                    successMessage.style.bottom = "20px";
+				                    successMessage.style.right = "20px";
+				                    successMessage.style.backgroundColor = "#4CAF50"; 
+				                    successMessage.style.color = "white";
+				                    successMessage.style.padding = "10px 20px";
+				                    successMessage.style.borderRadius = "5px";
+				                    successMessage.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+				                    successMessage.style.zIndex = "1000";
+				                    successMessage.style.animation = "fadeIn 0.5s, fadeOut 0.5s 2.5s";
+				            
+				                    document.body.appendChild(successMessage);
+				            
+				                    setTimeout(() => {
+				                        document.body.removeChild(successMessage);
+				                    }, 3000);
+				                }
+				            
+				                const style = document.createElement("style");
+				                style.textContent = `
+				                    @keyframes fadeIn {
+				                        from { opacity: 0; }
+				                        to { opacity: 1; }
+				                    }
+				                    @keyframes fadeOut {
+				                        from { opacity: 1; }
+				                        to { opacity: 0; }
+				                    }
+				                `;
+				                document.head.appendChild(style);
+				            
+				            </script>
+				        </div>
+
+
+				<!--import footer here-->
+				<div th:replace="Student/fragments/footer :: footer"></div>
+			</div>
+
+			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+			<div class="dark-transparent sidebartoggler"></div>
+
+		</div>
+	</div>
+
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+	<!-- Import Js Files -->
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>
