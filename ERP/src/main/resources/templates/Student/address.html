@@ -288,8 +288,8 @@
 								{id: "temporaryCity", pattern: /^[A-Za-z\s]*$/, required: true},
 								{id: "temporaryTaluka", pattern: /^[A-Za-z\s]*$/, required: true},
 								{id: "temporaryPincode", pattern: /^\d{6}$/, required: true},
-								{id: "temporaryAddress", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)?$/, required: true},
-								{id: "permanentAddress", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)?$/, required: true}
+								{id: "temporaryAddress", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/, required: true},
+								{id: "permanentAddress", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/, required: true}
 							];
 
 							fields.forEach(({id, pattern, required}) => {
