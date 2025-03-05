@@ -25,18 +25,18 @@
 						<div class="card-body">
 							<h4 class="card-title mb-1 text-center text-danger" style="font-size: 25px;font-weight:bolder;">Apply For Certificate</h4>
 						</div>
-						<form class="form-horizontal r-separator border-top needs-validation" novalidate>
+						<form class="form-horizontal r-separator border-top needs-validation" novalidate method="post" th:action="@{/student/check_certificate_type}">
 							<div class="form-group mb-3 mt-3 p-3 pt-0">
 								<div class="row">
 									<label for="inputSelect1" class="col-sm-3 text-end col-form-label form-label-responsive">Select Certificate</label>
 									<div class="col-sm-9">
-										<select class="form-select" id="inputSelect1" required>
+										<select class="form-select" id="inputSelect1" name="certificate_type" required>
 											<option value="" disabled selected>Please Select Certificate</option>
 											<option value="Transference Certificate">Transference Certificate</option>
 											<option value="Migration Certificate">Migration Certificate</option>										
 											<option value="Bonafide Certificate">Bonafide Certificate</option>
 											<option value="Attendance Certificate">Attendance Certificate</option>
-										</select>
+							s			</select>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please select a certificate type.</div>
 									</div>
@@ -48,11 +48,11 @@
 									<label for="cerType" class="col-12 col-sm-3 text-end col-form-label">Certificate Type</label>
 									<div class="col-12 col-sm-9">
 										<div class="form-check">
-											<input type="radio" class="form-check-input" id="customControlValidation2" name="radio-stacked" required />
+											<input type="radio" value="original" class="form-check-input" id="customControlValidation2" name="tc_type" />
 											<label class="form-check-label" for="customControlValidation2">Original</label>
 										</div>
 										<div class="form-check">
-											<input type="radio" class="form-check-input" id="customControlValidation3" name="radio-stacked" required />
+											<input type="radio" value="duplicate" class="form-check-input" id="customControlValidation3" name="tc_type" />
 											<label class="form-check-label" for="customControlValidation3">Duplicate</label>
 										</div>
 										<div class="invalid-feedback">Please select a certificate type.</div>
@@ -63,7 +63,7 @@
 								<div class="row">
 									<label for="inputText17" class="col-sm-3 text-end col-form-label form-label-responsive">Reason for Request</label>
 									<div class="col-sm-9">
-										<textarea class="form-control" id="inputText17" rows="3" placeholder="Enter Reason (Change School, Scholarship, Job, Further Studies, Internship Applications, etc.)" required></textarea>
+										<textarea name="certificate_reason" class="form-control" id="inputText17" rows="3" placeholder="Enter Reason (Change School, Scholarship, Job, Further Studies, Internship Applications, etc.)" required></textarea>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a reason for the request.</div>
 									</div>
@@ -93,8 +93,6 @@
 							});
 
 							form.addEventListener("submit", function (event) {
-								event.preventDefault();
-								event.stopPropagation();
 
 								if (!form.checkValidity()) {
 									alert("Please fill out all required fields correctly.");
@@ -103,6 +101,7 @@
 								}
 
 								const certificateType = selectCert.value;
+								/*
 								switch (certificateType) {
 									case "Transference Certificate":
 										window.location.href = "tc";
@@ -117,11 +116,14 @@
 										alert("Invalid certificate type selected.");
 										break;
 								}
+								*/
+								
+								return true;
 							});
 
 							// (Additional code for increment/decrement and field validation can go here if needed)
 							const fields = [
-								{ id: "inputSelect1", pattern: null, required: true },
+								{ id: "inputSelect1", pattern: null },
 								{ id: "inputText17", pattern: /^.+$/, required: true }
 							];
 							fields.forEach(({ id, pattern, required }) => {
