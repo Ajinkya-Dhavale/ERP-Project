@@ -1,10 +1,9 @@
 package com.erp.student.controller;
 
 
-import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
-import com.erp.student.entity.TCEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,9 +16,11 @@ import com.erp.admin.entity.Admission;
 import com.erp.student.entity.AcademicDetails;
 import com.erp.student.entity.PersonalDetails;
 import com.erp.student.entity.StudentAddress;
+import com.erp.student.entity.TCEntity;
 import com.erp.student.repo.AcademicDetailsRepo;
 import com.erp.student.repo.AddressRepo;
 import com.erp.student.repo.PersonalDetailRepository;
+import com.erp.student.repo.TCRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -37,14 +38,27 @@ public class CertificateController {
 	@Autowired
 	private AcademicDetailsRepo academicDetailsRepo;
 	
+	@Autowired
+	private TCRepository tcRepository;
+	
 	@GetMapping("/request_certificate")
 	public String openCertificatePage(HttpSession session,Model model) {
 		Admission student=(Admission)session.getAttribute("student");
 		model.addAttribute("student",student);
 		
+		
 		 if (student == null) {
 		        return "redirect:/"; // Redirect if session expired or student not found
 		    }
+		
+		Optional<TCEntity> tcEntity=tcRepository.findByStudentIdAndTcTypeAndCertificateType(student.getAdmissionId(),"original","Transference Certificate");
+		
+		if(tcEntity.isPresent())
+		{
+			model.addAttribute("tcPresent",true);
+		}
+		
+		
 		 
 		return "Student/request_certificate";
 	}
@@ -52,16 +66,28 @@ public class CertificateController {
 	@PostMapping("/check_certificate_type")
 	public String CheckCertificate(HttpServletRequest request,HttpSession httpSession,Model model,@RequestParam("certificate_type") String certficateType, @RequestParam("certificate_reason") String certificateReason)
 	{
-
+		
+		
 		Admission admission= (Admission) httpSession.getAttribute("student");
+		
+		if(admission==null)
+		{
+			return "redirect: /";
+		}
 		
 		String studentId=admission.getAdmissionId();
 		
 		
+		
+		
 		if(certficateType.equals("Transference Certificate"))
 		{  
+			
+			
 			String tcType=request.getParameter("tc_type");
 		    
+			System.out.println(certficateType+tcType+certificateReason);
+			
 			TCEntity tcEntity=new TCEntity();
 			
 		    // Fetch details from database
@@ -75,7 +101,14 @@ public class CertificateController {
 		    if(personalDetail.isPresent() && academicDetails.isPresent() && studentAddress.isPresent())
 		    {
 		    	personalDetails1=personalDetail.get();
-		    	studentAddress1=studentAddress.get();		    	
+		    	studentAddress1=studentAddress.get();
+		    	 tcEntity.setAddress(studentAddress1.getPermanentAddress());
+				 tcEntity.setContactNo(personalDetails1.getMobile());
+				 
+				 tcEntity.setGender(personalDetails1.getGender());
+				 tcEntity.setCasteCategory(personalDetails1.getCaste());
+				    
+				    
 		    }
 		    
 		    tcEntity.setStudentId(studentId);
@@ -86,13 +119,8 @@ public class CertificateController {
 		    tcEntity.setFirstName(admission.getFirstName());
 		    tcEntity.setMiddleName(admission.getMiddleName());
 		    tcEntity.setLastName(admission.getLastName());
-		    tcEntity.setAddress(studentAddress1.getPermanentAddress());
-		    
-		    tcEntity.setContactNo(personalDetails1.getMobile());
 		    tcEntity.setEmailId(admission.getEmail());
-		    tcEntity.setGender(personalDetails1.getGender());
-		    tcEntity.setCasteCategory(personalDetails1.getCaste());
-		    
+		   
 		    tcEntity.setApplicationFee(100.00);
 		    tcEntity.setProcessingFee(50.00);
 		    tcEntity.setTotalFee(150.00);
@@ -104,6 +132,47 @@ public class CertificateController {
 		}
 		else if(certficateType.equals("Migration Certificate"))
 		{
+			TCEntity tcEntity=new TCEntity();
+			
+		    // Fetch details from database
+		    Optional<PersonalDetails> personalDetail = personalDetailRepository.findByStudentId(studentId);
+		    Optional<AcademicDetails> academicDetails = academicDetailsRepo.findByStudentId(studentId);
+		    Optional<StudentAddress> studentAddress = addressRepo.findByStudentId(studentId);
+
+		    PersonalDetails personalDetails1=null;
+		    StudentAddress studentAddress1 = null;
+		    
+		    if(personalDetail.isPresent() && academicDetails.isPresent() && studentAddress.isPresent())
+		    {
+		    	personalDetails1=personalDetail.get();
+		    	studentAddress1=studentAddress.get();	
+		    	
+		    	tcEntity.setAddress(studentAddress1.getPermanentAddress());
+			    
+			    tcEntity.setContactNo(personalDetails1.getMobile());
+			    tcEntity.setGender(personalDetails1.getGender());
+			    tcEntity.setCasteCategory(personalDetails1.getCaste());
+			    
+			    
+		    }
+		    
+		    tcEntity.setStudentId(studentId);
+		    
+		    tcEntity.setCertificateType(certficateType);
+		    tcEntity.setTcType("original");
+		    tcEntity.setCertificateReason(certificateReason);
+		    tcEntity.setFirstName(admission.getFirstName());
+		    tcEntity.setMiddleName(admission.getMiddleName());
+		    tcEntity.setLastName(admission.getLastName());
+		    tcEntity.setEmailId(admission.getEmail());
+		    
+		    tcEntity.setApplicationFee(200.00);
+		    tcEntity.setProcessingFee(50.00);
+		    tcEntity.setTotalFee(250.00);
+
+		    
+			
+			model.addAttribute("tc",tcEntity);
 			return "Student/tc";
 		}
 		else if(certficateType.equals("Bonafide Certificate"))
@@ -115,24 +184,30 @@ public class CertificateController {
 			return "Student/attendance";
 		}
 		
-//		return "redirect:/student";
 	}
-
 	
-	
-	
-
-
-	@GetMapping("/bonafide")
-	public String openBonafideCertificate()
+	@GetMapping("/certificate_status")
+	public String openCertificateStatus(Model model,HttpSession session)
 	{
-		return "Student/bonafide";
+		Admission student=(Admission) session.getAttribute("student");
+		 if (student != null) {
+		        // Fetch certificates using studentId
+		        List<TCEntity> certificates = tcRepository.findByStudentId(student.getAdmissionId());
+		        
+		        
+
+		        // Add certificates to the model
+		        model.addAttribute("tcEntities", certificates);
+		    }
+		 else {
+			return "redirect:/";
+		}
+		return "Student/certificate_status";
 	}
+
 	
-	@GetMapping("/attendance")
-	public String openAttendenceCertificate()
-	{
-		return "Student/attendance";
-	}
+	
+	
+	
 	
 }

@@ -1,0 +1,67 @@
+<aside class="left-sidebar with-vertical" th:fragment="side_bar">
+            <div><!-- ---------------------------------- -->
+                <!-- Start Vertical Layout Sidebar -->
+                <!-- ---------------------------------- -->
+                <!-- Sidebar scroll-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+                    <ul id="sidebarnav">
+                        <!-----------Profile------------------>
+                        
+                        <!-- ---------------------------------- -->
+                        <!-- Home -->
+                        <!-- ---------------------------------- -->
+        
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" th:href="@{/library/}" id="get-url">
+                                <i class="fa-solid fa-list" style="font-size: 22px;"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+        
+                        <li class="nav-small-cap">
+                            <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                            <span class="hide-menu">Library Section</span>
+                        </li>
+        
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <div class="d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48"><g fill="#fafafa"><path fill-rule="evenodd" d="M10 7v30a3 3 0 0 0 3 3h13v-3.535a4 4 0 1 1 4 0V40h5a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H13a3 3 0 0 0-3 3m18 28a2 2 0 1 0 0-4a2 2 0 0 0 0 4M18 11a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H19a1 1 0 0 1-1-1m-3 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2zm-1 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H15a1 1 0 0 1-1-1m1 3a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z" clip-rule="evenodd"/><path d="M26 44v-4h4v4l-2-1.5z"/></g></svg>
+                                  </div>
+                                <span class="hide-menu">Transfer Certificate</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a th:href="@{/library/new_request_certificate}"  class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-check-circle" style="font-size: 18px;"></i>
+                                          </div>
+                                        <span class="hide-menu">New Request Certificate</span>
+                                    </a>
+                                </li>
+        
+                                <li class="sidebar-item">
+                                    <a th:href="@{/library/approved_certificate}" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fa fa-clock" style="font-size: 18px;"></i>
+                                          </div>
+                                        <span class="hide-menu">Approved Certificate</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a th:href="@{/library/rejected_certificate}" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-times-circle" style="font-size: 18px;"></i>
+                                          </div>
+                                        <span class="hide-menu">Rejected Certificate</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+        
+                    </ul>
+                </nav>
+        
+                <!-- End Sidebar scroll-->
+            </div>
+        </aside>

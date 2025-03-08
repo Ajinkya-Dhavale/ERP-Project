@@ -33,7 +33,9 @@
 										<select class="form-select" id="inputSelect1" name="certificate_type" required>
 											<option value="" disabled selected>Please Select Certificate</option>
 											<option value="Transference Certificate">Transference Certificate</option>
-											<option value="Migration Certificate">Migration Certificate</option>										
+											<th:block th:if="${tcPresent == null or !tcPresent}">
+											<option value="Migration Certificate">Migration Certificate</option>		
+											</th:block>								
 											<option value="Bonafide Certificate">Bonafide Certificate</option>
 											<option value="Attendance Certificate">Attendance Certificate</option>
 							s			</select>
@@ -47,15 +49,23 @@
 								<div class="row">
 									<label for="cerType" class="col-12 col-sm-3 text-end col-form-label">Certificate Type</label>
 									<div class="col-12 col-sm-9">
-										<div class="form-check">
-											<input type="radio" value="original" class="form-check-input" id="customControlValidation2" name="tc_type" />
-											<label class="form-check-label" for="customControlValidation2">Original</label>
-										</div>
-										<div class="form-check">
-											<input type="radio" value="duplicate" class="form-check-input" id="customControlValidation3" name="tc_type" />
-											<label class="form-check-label" for="customControlValidation3">Duplicate</label>
-										</div>
-										<div class="invalid-feedback">Please select a certificate type.</div>
+										<!-- Show "Original" option if tcPresent is NOT true -->
+										<th:block th:if="${tcPresent == null or !tcPresent}">
+										    <div class="form-check">
+										        <input type="radio" value="original" class="form-check-input" id="customControlValidation2" name="tc_type" />
+										        <label class="form-check-label" for="customControlValidation2">Original</label>
+										    </div>
+										</th:block>
+
+										<!-- Show "Duplicate" option if tcPresent is true -->
+										<th:block th:if="${tcPresent}">
+										    <div class="form-check">
+										        <input type="radio" value="duplicate" class="form-check-input" id="customControlValidation3" name="tc_type" />
+										        <label class="form-check-label" for="customControlValidation3">Duplicate</label>
+										    </div>
+										    <div class="invalid-feedback">Please select a certificate type.</div>
+										</th:block>
+
 									</div>
 								</div>
 							</div>
@@ -93,6 +103,8 @@
 							});
 
 							form.addEventListener("submit", function (event) {
+								
+								event.preventDefault();
 
 								if (!form.checkValidity()) {
 									alert("Please fill out all required fields correctly.");
@@ -117,8 +129,7 @@
 										break;
 								}
 								*/
-								
-								return true;
+								form.submit();
 							});
 
 							// (Additional code for increment/decrement and field validation can go here if needed)

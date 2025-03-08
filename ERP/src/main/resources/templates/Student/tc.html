@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
 
@@ -13,7 +12,7 @@
 
 	<!-- Favicon icon-->
 	<link rel="shortcut icon" type="image/png"
-		  href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
 
 	<!-- Core Css -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
@@ -21,21 +20,21 @@
 </head>
 
 <body class="link-sidebar">
-<!-- Preloader -->
-<div class="preloader">
-	<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-		 class="lds-ripple img-fluid" />
-</div>
-<div id="main-wrapper">
-	<!-- Sidebar Start -->
-	<div th:replace="Student/fragments/side_bar :: side_bar"></div>
-	<!--  Sidebar End -->
-	<div class="page-wrapper">
-		<div th:replace="Student/fragments/navbar :: navbar"></div>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
+			class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+		<div th:replace="Student/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<div th:replace="Student/fragments/navbar :: navbar"></div>
 
-		<div class="body-wrapper">
-			<div class="container-fluid">
-				<!-- <div class="shadow-none position-relative overflow-hidden mb-4">
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<!-- <div class="shadow-none position-relative overflow-hidden mb-4">
         <div class="d-sm-flex d-block justify-content-between align-items-center">
           <h5 class="mb-0 fw-semibold text-uppercase"> Form Wizard</h5>
           <nav aria-label="breadcrumb" class="d-flex align-items-center">
@@ -53,947 +52,1052 @@
         </div>
       </div> -->
 
-				<div class="card">
-					<div class="card-body wizard-content">
-						<h4 class="card-title mb-1 text-center text-danger"
-							style="font-size: 25px;font-weight:bolder;">Transference Certificate Application</h4>
-						<h6 class="card-subtitle mb-3"></h6>
-						<form th:action="@{/student/save_tc}" th:object="${tc}" class="tab-wizard wizard-circle">
-							<!-- Step 1 -->
-							<h6>Personal Information</h6>
-							<section>
-								<div class="row mb-3">
-									<div class="col-md-4">
-										<label class="form-label" for="validationCustom01">First Name</label>
-										<input type="text" class="form-control" id="validationCustom01"
-											   placeholder="First name" th:field="*{firstName}" required readonly />
+					<div class="card">
+						<div class="card-body wizard-content">
+							<h4 class="card-title mb-1 text-center text-danger"
+								style="font-size: 25px;font-weight:bolder;">Transference Certificate Application</h4>
+							<h6 class="card-subtitle mb-3"></h6>
+							<form enctype="multipart/form-data" th:action="@{/student/save_tc}" id="abra" th:object="${tc}"
+								class="tab-wizard wizard-circle" method="post">
+								<!-- Step 1 -->
+								<h6>Personal Information</h6>
+								<section>
+									<div class="row mb-3">
+										<div class="col-md-4">
+											<label class="form-label" for="validationCustom01">First Name</label>
+											<input type="text" class="form-control" id="validationCustom01"
+												placeholder="First name" th:field="*{firstName}" required readonly />
 
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please enter a valid first name.</div>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please enter a valid first name.</div>
+										</div>
+										<div class="col-md-4">
+											<label class="form-label" for="validationCustom02">Middle Name</label>
+											<input type="text" class="form-control" id="validationCustom02"
+												placeholder="Middle name" th:field="*{middleName}" required readonly />
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please enter a valid middle name.</div>
+										</div>
+										<div class="col-md-4">
+											<label class="form-label" for="validationCustom03">Last Name</label>
+											<input type="text" class="form-control" th:field="*{lastName}"
+												id="validationCustom03" placeholder="Last name" required readonly />
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please enter a valid last name.</div>
+										</div>
 									</div>
-									<div class="col-md-4">
-										<label class="form-label" for="validationCustom02">Middle Name</label>
-										<input type="text" class="form-control" id="validationCustom02"
-											   placeholder="Middle name" th:field="*{middleName}" required readonly />
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please enter a valid middle name.</div>
-									</div>
-									<div class="col-md-4">
-										<label class="form-label" for="validationCustom03">Last Name</label>
-										<input type="text" class="form-control" th:field="*{lastName}" id="validationCustom03"
-											   placeholder="Last name" required readonly />
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please enter a valid last name.</div>
-									</div>
-								</div>
-								<div class="row mb-3">
-									<div class="col-md-6">
-										<label class="form-label" for="contactNo">Mobile No</label>
-										<div class="input-group">
+									<div class="row mb-3">
+										<div class="col-md-6">
+											<label class="form-label" for="contactNo">Mobile No</label>
+											<div class="input-group">
 												<span class="input-group-text" id="inputGroupPrepend1">
 													<i class="fa-solid fa-phone" style="font-size: 20px;"></i>
 												</span>
-											<input th:field="*{contactNo}" type="text" class="form-control" id="contactNo"
-												   placeholder="Enter Mobile No." aria-describedby="inputGroupPrepend"
-												   required readonly />
-											<div class="valid-feedback">Looks good!</div>
-											<div class="invalid-feedback">Please enter a valid contact number.</div>
+												<input th:field="*{contactNo}" type="text" class="form-control"
+													id="contactNo" placeholder="Enter Mobile No."
+													aria-describedby="inputGroupPrepend" required readonly />
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please enter a valid contact number.</div>
+											</div>
 										</div>
-									</div>
-									<div class="col-md-6">
-										<label class="form-label" for="alternateNo">Alternate Mobile No</label>
-										<div class="input-group">
+										<div class="col-md-6">
+											<label class="form-label" for="alternateNo">Alternate Mobile No</label>
+											<div class="input-group">
 												<span class="input-group-text" id="inputGroupPrepend">
 													<i class="fa-solid fa-phone" style="font-size: 20px;"></i>
 												</span>
-											<input type="text" th:field="*{alternateNo}" class="form-control" id="alternateNo"
-												   placeholder="Enter Alternate No."
-												   aria-describedby="inputGroupPrepend" required />
-											<div class="valid-feedback">Looks good!</div>
-											<div class="invalid-feedback">Please enter a valid alternate number.
+												<input type="text" th:field="*{alternateNo}" class="form-control"
+													id="alternateNo" placeholder="Enter Alternate No."
+													aria-describedby="inputGroupPrepend" required />
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please enter a valid alternate number.
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="row mb-3 mt-3">
-									<div class="col-md-6">
-										<label class="form-label" for="dob">Date of Birth</label>
-										<input type="date" th:field="*{dob}" class="form-control" id="dob"
-											   placeholder="Choose Date of Birth" required />
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please enter a valid date.</div>
+									<div class="row mb-3 mt-3">
+										<div class="col-md-6">
+											<label class="form-label" for="dob">Date of Birth</label>
+											<input type="date" th:field="*{dob}" class="form-control" id="dob"
+												placeholder="Choose Date of Birth" required />
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please enter a valid date.</div>
+										</div>
+										<div class="col-md-6">
+											<label class="form-label" for="dobInWords">Date of Birth In Words</label>
+											<input type="text" th:field="*{dobInWords}" class="form-control"
+												id="dobInWords" placeholder="Date of Birth in words" required
+												readonly />
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please enter a valid date in words.</div>
+										</div>
 									</div>
-									<div class="col-md-6">
-										<label class="form-label" for="dobInWords">Date of Birth In Words</label>
-										<input type="text" th:field="*{dobInWords}" class="form-control" id="dobInWords"
-											   placeholder="Date of Birth in words" required readonly />
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please enter a valid date in words.</div>
-									</div>
-								</div>
-								<div class="row mb-3">
-									<div class="col-md-6">
-										<label class="form-label" >Email Id</label>
-										<div class="input-group">
+									<div class="row mb-3">
+										<div class="col-md-6">
+											<label class="form-label">Email Id</label>
+											<div class="input-group">
 												<span class="input-group-text" id="inputGroupPrepend2">
 													<i class="fa-solid fa-envelope" style="font-size: 20px;"></i>
 												</span>
-											<input th:field="*{emailId}" type="text" class="form-control"
-												   placeholder="Enter Email" aria-describedby="inputGroupPrepend"
-												   required readonly />
+												<input th:field="*{emailId}" type="text" class="form-control"
+													placeholder="Enter Email" aria-describedby="inputGroupPrepend"
+													required readonly />
+												<div class="valid-feedback">Looks good!</div>
+												<div class="invalid-feedback">Please enter a valid email.</div>
+											</div>
+										</div>
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="gender">Gender:</label>
+											<input th:field="*{gender}" type="text" class="form-control" id="gender"
+												placeholder="Enter Gender" aria-describedby="inputGroupPrepend" required
+												readonly />
 											<div class="valid-feedback">Looks good!</div>
-											<div class="invalid-feedback">Please enter a valid email.</div>
+											<div class="invalid-feedback">Please select a gender.</div>
 										</div>
 									</div>
-									<div class="col-md-6 mb-3">
-										<label class="form-label" for="gender">Gender:</label>
-										<input th:field="*{gender}" type="text" class="form-control" id="gender"
-											   placeholder="Enter Gender" aria-describedby="inputGroupPrepend"
-											   required readonly />
+									<div class="mb-3">
+										<label class="form-label" for="casteCategory">Enter Cast</label>
+										<input th:field="*{casteCategory}" type="text" class="form-control"
+											id="casteCategory" placeholder="Enter Caste Category" required readonly />
 										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please select a gender.</div>
+										<div class="invalid-feedback">Please select a caste.</div>
 									</div>
-								</div>
-								<div class="mb-3">
-									<label class="form-label" for="casteCategory">Enter Cast</label>
-									<input th:field="*{casteCategory}" type="text" class="form-control" id="casteCategory"
-										   placeholder="Enter Caste Category" required readonly />
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please select a caste.</div>
-								</div>
-								<div class="col-md-12 mb-3">
-									<label class="form-label" for="Address">Permanent Address </label>
-									<textarea th:field="*{address}" class="form-control" id="Address" placeholder="Enter your Address"
-											  rows="3" required readonly></textarea>
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please enter a valid address.</div>
-								</div>
-							</section>
-							<!-- Step 2 -->
-							<h6>Qualification & New Admission Details</h6>
-
-							<section>
-								<div class="row border-bottom">
-									<h6 class="text-center card-subtitle mb-3 mr-5">Previous Qualification Details</h6>
-								</div>
-								<div class="row mb-3 mt-3">
-									<!-- Department Select (Static) -->
-									<div class="col-md-6 mb-3 ">
-										<label class="form-label" for="department">Department</label>
-										
-										<select class="form-control" id="department" th:field="*{department}"   required>
-											<option value="" disabled selected>Select Department</option>
-											<option value="Agriculture & Allied Sciences">Agriculture & Allied Sciences</option>
-											<option value="Anthropology">Anthropology</option>
-											<option value="Architecture & Planning">Architecture & Planning</option>
-											<option value="Biotechnology">Biotechnology</option>
-											<option value="Botany">Botany</option>
-											<option value="Business Administration & Management">Business Administration & Management</option>
-											<option value="Chemistry">Chemistry</option>
-											<option value="Commerce & Accounting">Commerce & Accounting</option>
-											<option value="Computer Science & Applications">Computer Science & Applications</option>
-											<option value="Data Science & Artificial Intelligence">Data Science & Artificial Intelligence</option>
-											<option value="Defence & Strategic Studies">Defence & Strategic Studies</option>
-											<option value="Design (Fashion, Interior, Graphic, Industrial)">Design (Fashion, Interior, Graphic, Industrial)</option>
-											<option value="Economics">Economics</option>
-											<option value="Education & Teaching">Education & Teaching</option>
-											<option value="Engineering (Mechanical, Civil, Electrical, etc.)">Engineering (Mechanical, Civil, Electrical, etc.)</option>
-											<option value="English & Literature">English & Literature</option>
-											<option value="Environmental Science">Environmental Science</option>
-											<option value="Fine Arts & Performing Arts">Fine Arts & Performing Arts</option>
-											<option value="Forensic Science">Forensic Science</option>
-											<option value="Geography">Geography</option>
-											<option value="Geology">Geology</option>
-											<option value="History">History</option>
-											<option value="Hospitality & Tourism">Hospitality & Tourism</option>
-											<option value="Journalism & Mass Communication">Journalism & Mass Communication</option>
-											<option value="Law & Legal Studies">Law & Legal Studies</option>
-											<option value="Library & Information Science">Library & Information Science</option>
-											<option value="Linguistics">Linguistics</option>
-											<option value="Mathematics & Statistics">Mathematics & Statistics</option>
-											<option value="Medical & Paramedical Sciences">Medical & Paramedical Sciences</option>
-											<option value="Microbiology">Microbiology</option>
-											<option value="Music & Dance">Music & Dance</option>
-											<option value="Nanotechnology">Nanotechnology</option>
-											<option value="Philosophy">Philosophy</option>
-											<option value="Physical Education & Sports">Physical Education & Sports</option>
-											<option value="Physics">Physics</option>
-											<option value="Political Science">Political Science</option>
-											<option value="Psychology">Psychology</option>
-											<option value="Public Administration">Public Administration</option>
-											<option value="Sociology & Social Work">Sociology & Social Work</option>
-											<option value="Zoology">Zoology</option>
-										</select>
+									<div class="col-md-12 mb-3">
+										<label class="form-label" for="Address">Permanent Address </label>
+										<textarea th:field="*{address}" class="form-control" id="Address"
+											placeholder="Enter your Address" rows="3" required readonly></textarea>
 										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please select a department.</div>
+										<div class="invalid-feedback">Please enter a valid address.</div>
+									</div>
+								</section>
+								<!-- Step 2 -->
+								<h6>Qualification & New Admission Details</h6>
+
+								<section>
+									<div class="row border-bottom">
+										<h6 class="text-center card-subtitle mb-3 mr-5">Previous Qualification Details
+										</h6>
+									</div>
+									<div class="row mb-3 mt-3">
+										<!-- Department Select (Static) -->
+										<div class="col-md-6 mb-3 ">
+											<label class="form-label" for="department">Department</label>
+
+											<select class="form-control" id="department" th:field="*{department}"
+												required>
+												<option value="" disabled selected>Select Department</option>
+												<option value="Agriculture & Allied Sciences">Agriculture & Allied
+													Sciences</option>
+												<option value="Anthropology">Anthropology</option>
+												<option value="Architecture & Planning">Architecture & Planning</option>
+												<option value="Biotechnology">Biotechnology</option>
+												<option value="Botany">Botany</option>
+												<option value="Business Administration & Management">Business
+													Administration & Management</option>
+												<option value="Chemistry">Chemistry</option>
+												<option value="Commerce & Accounting">Commerce & Accounting</option>
+												<option value="Computer Science & Applications">Computer Science &
+													Applications</option>
+												<option value="Data Science & Artificial Intelligence">Data Science &
+													Artificial Intelligence</option>
+												<option value="Defence & Strategic Studies">Defence & Strategic Studies
+												</option>
+												<option value="Design (Fashion, Interior, Graphic, Industrial)">Design
+													(Fashion, Interior, Graphic, Industrial)</option>
+												<option value="Economics">Economics</option>
+												<option value="Education & Teaching">Education & Teaching</option>
+												<option value="Engineering (Mechanical, Civil, Electrical, etc.)">
+													Engineering (Mechanical, Civil, Electrical, etc.)</option>
+												<option value="English & Literature">English & Literature</option>
+												<option value="Environmental Science">Environmental Science</option>
+												<option value="Fine Arts & Performing Arts">Fine Arts & Performing Arts
+												</option>
+												<option value="Forensic Science">Forensic Science</option>
+												<option value="Geography">Geography</option>
+												<option value="Geology">Geology</option>
+												<option value="History">History</option>
+												<option value="Hospitality & Tourism">Hospitality & Tourism</option>
+												<option value="Journalism & Mass Communication">Journalism & Mass
+													Communication</option>
+												<option value="Law & Legal Studies">Law & Legal Studies</option>
+												<option value="Library & Information Science">Library & Information
+													Science</option>
+												<option value="Linguistics">Linguistics</option>
+												<option value="Mathematics & Statistics">Mathematics & Statistics
+												</option>
+												<option value="Medical & Paramedical Sciences">Medical & Paramedical
+													Sciences</option>
+												<option value="Microbiology">Microbiology</option>
+												<option value="Music & Dance">Music & Dance</option>
+												<option value="Nanotechnology">Nanotechnology</option>
+												<option value="Philosophy">Philosophy</option>
+												<option value="Physical Education & Sports">Physical Education & Sports
+												</option>
+												<option value="Physics">Physics</option>
+												<option value="Political Science">Political Science</option>
+												<option value="Psychology">Psychology</option>
+												<option value="Public Administration">Public Administration</option>
+												<option value="Sociology & Social Work">Sociology & Social Work</option>
+												<option value="Zoology">Zoology</option>
+											</select>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please select a department.</div>
+										</div>
+
+										<!-- Course Select (Populated Based on Department) -->
+										<div class="col-md-6 mb-3">
+											<label class="form-label" for="course">Course</label>
+											<select class="form-control" th:field="*{course}" id="course" required
+												onchange="updateClassOptions()">
+												<option value="">Select Course</option>
+												<!-- Options will be populated dynamically -->
+											</select>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please select a course.</div>
+										</div>
+
+										<!-- Class and Semester Dropdowns -->
+										<div class="col-md-6 mt-3">
+											<label class="form-label" for="classDropdown">Class</label>
+											<select class="form-select" th:field="*{lastClass}" id="classDropdown"
+												required onchange="updateExamOptions(); updateSemesterOptions()">
+												<option value="" disabled selected>Select Class</option>
+												<!-- Options will be set dynamically -->
+											</select>
+										</div>
+
+										<div class="col-md-6 mt-3">
+											<label class="form-label" for="semesterDropdown">Semester</label>
+											<select class="form-select" th:field="*{lastSem}" id="semesterDropdown"
+												required>
+												<option value="" disabled selected>Select Semester</option>
+												<!-- Options will be set dynamically -->
+											</select>
+										</div>
+
+										<!-- Examination Details Table -->
+										<label class="form-label mt-3">Examination Details</label>
+										<div class="table-responsive">
+											<table class="table table-bordered">
+												<thead>
+													<tr>
+														<th>Sr. No.</th>
+														<th>Examination Name</th>
+														<th>Examination Month</th>
+														<th>Examination Year</th>
+														<th>Examination Seat No.</th>
+														<th>Result (Passed/Fail)</th>
+														<th>CGPA</th>
+														<th>Grade</th>
+														<th>Reset</th>
+													</tr>
+												</thead>
+												<tbody>
+													<!-- Single Row Example -->
+													<tr>
+														<td>1</td>
+														<td>
+															<select th:field="*{lastExamName}" class="form-select"
+																name="last_exam" id="examNameDropdown" required>
+																<option value="" disabled selected>Select Last Exam
+																</option>
+																<!-- Options will be updated dynamically -->
+															</select>
+														</td>
+														<td>
+															<select th:field="*{lastExamMonth}" class="form-select"
+																name="exam_month[]" required>
+																<option value="" disabled selected>Select Month</option>
+																<option value="January">January</option>
+																<option value="February">February</option>
+																<option value="March">March</option>
+																<option value="April">April</option>
+																<option value="May">May</option>
+																<option value="June">June</option>
+																<option value="July">July</option>
+																<option value="August">August</option>
+																<option value="September">September</option>
+																<option value="October">October</option>
+																<option value="November">November</option>
+																<option value="December">December</option>
+															</select>
+														</td>
+														<td>
+															<input th:field="*{lastExamYear}" type="text"
+																class="form-control text-center" name="exam_year"
+																placeholder="YYYY" required>
+														</td>
+														<td>
+															<input th:field="*{lastSeatNo}" type="text"
+																class="form-control text-center" name="seat_no[]"
+																placeholder="Enter Seat No." required>
+														</td>
+														<td>
+															<select th:field="*{lastResult}" class="form-select"
+																name="result[]">
+																<option value="" disabled selected>Select Result
+																</option>
+																<option value="Passed">Passed</option>
+																<option value="Fail">Fail</option>
+															</select>
+														</td>
+														<td>
+															<input th:field="*{lastCgpa}" type="text"
+																class="form-control text-center" name="cgpa[]"
+																placeholder="Enter CGPA" required>
+														</td>
+														<td>
+															<select th:field="*{lastGrade}" class="form-select"
+																name="grade[]" required>
+																<option value="" disabled selected>Select Grade</option>
+																<option value="O">O</option>
+																<option value="A+">A+</option>
+																<option value="A">A</option>
+																<option value="B+">B+</option>
+																<option value="B">B</option>
+																<option value="F">F</option>
+															</select>
+														</td>
+														<td>
+															<button type="button" class="btn btn-success btn-sm"
+																onclick="resetRow(this)">Reset</button>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 									</div>
 
-									<!-- Course Select (Populated Based on Department) -->
-									<div class="col-md-6 mb-3">
-										<label class="form-label" for="course">Course</label>
-										<select class="form-control" th:field="*{course}" id="course" required onchange="updateClassOptions()">
-											<option value="">Select Course</option>
-											<!-- Options will be populated dynamically -->
-										</select>
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please select a course.</div>
+									<div class="row border-bottom">
+										<h6 class="text-center card-subtitle mb-3 mr-3 mt-3">New Admission Details</h6>
 									</div>
 
-									<!-- Class and Semester Dropdowns -->
-									<div class="col-md-6 mt-3">
-										<label class="form-label" for="classDropdown">Class</label>
-										<select class="form-select" th:field="*{lastClass}" id="classDropdown" required onchange="updateExamOptions(); updateSemesterOptions()">
-											<option value="" disabled selected>Select Class</option>
-											<!-- Options will be set dynamically -->
-										</select>
+									<div class="row">
+
+										<div class="col-md-6 mb-3 mt-3">
+											<label class="form-label" for="newCourse">New Course</label>
+											<select th:field="*{newCourse}" class="form-control" id="newCourse"
+												required>
+												<option value="">Select New Course</option>
+												<option value="B.Sc. Physics">B.Sc. Physics</option>
+												<option value="B.Sc. Chemistry">B.Sc. Chemistry</option>
+												<option value="B.Sc. Mathematics">B.Sc. Mathematics</option>
+												<option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
+												<option value="B.Sc. Information Technology">B.Sc. Information
+													Technology</option>
+												<option value="B.Sc. Biotechnology">B.Sc. Biotechnology</option>
+												<option value="B.Sc. Microbiology">B.Sc. Microbiology</option>
+												<option value="B.Sc. Zoology">B.Sc. Zoology</option>
+												<option value="B.Sc. Botany">B.Sc. Botany</option>
+												<option value="B.Sc. Environmental Science">B.Sc. Environmental Science
+												</option>
+												<option value="B.Sc. Forensic Science">B.Sc. Forensic Science</option>
+												<option value="B.Sc. Statistics">B.Sc. Statistics</option>
+												<option value="B.Sc. Data Science">B.Sc. Data Science</option>
+												<option value="B.Sc. Electronics">B.Sc. Electronics</option>
+												<option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
+												<option value="B.Sc. Geology">B.Sc. Geology</option>
+												<option value="B.Sc. Nutrition & Dietetics">B.Sc. Nutrition & Dietetics
+												</option>
+												<option value="B.Sc. Food Technology">B.Sc. Food Technology</option>
+												<option value="B.Sc. Biomedical Science">B.Sc. Biomedical Science
+												</option>
+												<option value="B.Sc. Genetics">B.Sc. Genetics</option>
+												<option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology &
+													Imaging Technology</option>
+												<option value="M.Sc. Physics">M.Sc. Physics</option>
+												<option value="M.Sc. Chemistry">M.Sc. Chemistry</option>
+												<option value="M.Sc. Mathematics">M.Sc. Mathematics</option>
+												<option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
+												<option value="M.Sc. Information Technology">M.Sc. Information
+													Technology</option>
+												<option value="M.Sc. Biotechnology">M.Sc. Biotechnology</option>
+												<option value="M.Sc. Microbiology">M.Sc. Microbiology</option>
+												<option value="M.Sc. Zoology">M.Sc. Zoology</option>
+												<option value="M.Sc. Botany">M.Sc. Botany</option>
+												<option value="M.Sc. Environmental Science">M.Sc. Environmental Science
+												</option>
+												<option value="M.Sc. Forensic Science">M.Sc. Forensic Science</option>
+												<option value="M.Sc. Statistics">M.Sc. Statistics</option>
+												<option value="M.Sc. Data Science">M.Sc. Data Science</option>
+												<option value="M.Sc. Electronics">M.Sc. Electronics</option>
+												<option value="M.Sc. Agriculture">M.Sc. Agriculture</option>
+												<option value="M.Sc. Geology">M.Sc. Geology</option>
+												<option value="M.Sc. Nutrition & Dietetics">M.Sc. Nutrition & Dietetics
+												</option>
+												<option value="M.Sc. Food Technology">M.Sc. Food Technology</option>
+												<option value="M.Sc. Biomedical Science">M.Sc. Biomedical Science
+												</option>
+												<option value="M.Sc. Genetics">M.Sc. Genetics</option>
+												<option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology &
+													Imaging Technology</option>
+												<option value="B.Com. General">B.Com. General</option>
+												<option value="B.Com. Accounting & Finance">B.Com. Accounting & Finance
+												</option>
+												<option value="B.Com. Banking & Insurance">B.Com. Banking & Insurance
+												</option>
+												<option value="B.Com. Financial Markets">B.Com. Financial Markets
+												</option>
+												<option value="B.Com. Taxation">B.Com. Taxation</option>
+												<option value="B.Com. Business Analytics">B.Com. Business Analytics
+												</option>
+												<option value="B.Com. International Business">B.Com. International
+													Business</option>
+												<option value="B.Com. E-Commerce">B.Com. E-Commerce</option>
+												<option value="B.Com. Cost & Management Accounting">B.Com. Cost &
+													Management Accounting</option>
+												<option value="M.Com. General">M.Com. General</option>
+												<option value="M.Com. Accounting & Finance">M.Com. Accounting & Finance
+												</option>
+												<option value="M.Com. Banking & Insurance">M.Com. Banking & Insurance
+												</option>
+												<option value="M.Com. Financial Markets">M.Com. Financial Markets
+												</option>
+												<option value="M.Com. Taxation">M.Com. Taxation</option>
+												<option value="M.Com. Business Analytics">M.Com. Business Analytics
+												</option>
+												<option value="M.Com. International Business">M.Com. International
+													Business</option>
+												<option value="M.Com. E-Commerce">M.Com. E-Commerce</option>
+												<option value="M.Com. Cost & Management Accounting">M.Com. Cost &
+													Management Accounting</option>
+												<option value="B.A. English Literature">B.A. English Literature</option>
+												<option value="B.A. History">B.A. History</option>
+												<option value="B.A. Political Science">B.A. Political Science</option>
+												<option value="B.A. Psychology">B.A. Psychology</option>
+												<option value="B.A. Sociology">B.A. Sociology</option>
+												<option value="B.A. Philosophy">B.A. Philosophy</option>
+												<option value="B.A. Economics">B.A. Economics</option>
+												<option value="B.A. Public Administration">B.A. Public Administration
+												</option>
+												<option value="B.A. Journalism & Mass Communication">B.A. Journalism &
+													Mass Communication</option>
+												<option value="B.A. Geography">B.A. Geography</option>
+												<option value="B.A. Anthropology">B.A. Anthropology</option>
+												<option value="B.A. Linguistics">B.A. Linguistics</option>
+												<option value="B.A. Fine Arts">B.A. Fine Arts</option>
+												<option value="B.A. Music & Dance">B.A. Music & Dance</option>
+												<option value="B.A. Performing Arts">B.A. Performing Arts</option>
+												<option value="B.A. Archaeology">B.A. Archaeology</option>
+												<option value="B.A. International Relations">B.A. International
+													Relations</option>
+												<option value="B.A. Gender Studies">B.A. Gender Studies</option>
+												<option value="M.A. English Literature">M.A. English Literature</option>
+												<option value="M.A. History">M.A. History</option>
+												<option value="M.A. Political Science">M.A. Political Science</option>
+												<option value="M.A. Psychology">M.A. Psychology</option>
+												<option value="M.A. Sociology">M.A. Sociology</option>
+												<option value="M.A. Philosophy">M.A. Philosophy</option>
+												<option value="M.A. Economics">M.A. Economics</option>
+												<option value="M.A. Public Administration">M.A. Public Administration
+												</option>
+												<option value="M.A. Journalism & Mass Communication">M.A. Journalism &
+													Mass Communication</option>
+												<option value="M.A. Geography">M.A. Geography</option>
+												<option value="M.A. Anthropology">M.A. Anthropology</option>
+												<option value="M.A. Linguistics">M.A. Linguistics</option>
+												<option value="M.A. Fine Arts">M.A. Fine Arts</option>
+												<option value="M.A. Music & Dance">M.A. Music & Dance</option>
+												<option value="M.A. Performing Arts">M.A. Performing Arts</option>
+												<option value="M.A. Archaeology">M.A. Archaeology</option>
+												<option value="M.A. International Relations">M.A. International
+													Relations</option>
+												<option value="M.A. Gender Studies">M.A. Gender Studies</option>
+												<option value="Bachelor of Business Administration (BBA)">Bachelor of
+													Business Administration (BBA)</option>
+												<option value="Bachelor of Management Studies (BMS)">Bachelor of
+													Management Studies (BMS)</option>
+												<option value="Bachelor of International Business (BIB)">Bachelor of
+													International Business (BIB)</option>
+												<option value="Master of Business Administration (MBA)">Master of
+													Business Administration (MBA)</option>
+												<option value="Master of Management Studies (MMS)">Master of Management
+													Studies (MMS)</option>
+												<option value="Master of International Business (MIB)">Master of
+													International Business (MIB)</option>
+												<option value="Bachelor of Computer Applications (BCA)">Bachelor of
+													Computer Applications (BCA)</option>
+												<option value="Master of Computer Applications (MCA)">Master of Computer
+													Applications (MCA)</option>
+												<option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
+												<option value="B.Sc. Information Technology">B.Sc. Information
+													Technology</option>
+												<option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
+												<option value="M.Sc. Information Technology">M.Sc. Information
+													Technology</option>
+												<option value="Undergraduate (UG) Bachelor of Laws (LLB)">Undergraduate
+													(UG) Bachelor of Laws (LLB)</option>
+												<option value="Postgraduate (PG) Master of Laws (LLM)">Postgraduate (PG)
+													Master of Laws (LLM)</option>
+												<option value="Bachelor of Education (B.Ed.)">Bachelor of Education
+													(B.Ed.)</option>
+												<option value="Bachelor of Physical Education (B.P.Ed.)">Bachelor of
+													Physical Education (B.P.Ed.)</option>
+												<option value="Master of Education (M.Ed.)">Master of Education (M.Ed.)
+												</option>
+												<option value="Master of Physical Education (M.P.Ed.)">Master of
+													Physical Education (M.P.Ed.)</option>
+												<option value="MBBS (Bachelor of Medicine & Surgery)">MBBS
+												</option>
+												<option value="Diploma in Animation & Multimedia">Diploma in Animation &
+													Multimedia</option>
+											</select>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please select a previous course.</div>
+										</div>
+
+										<div class="col-md-6 mt-3">
+											<label class="form-label">New College Name</label>
+											<input th:field="*{collegeName}" type="text" class="form-control"
+												name="college_name" id="college_name" placeholder="Enter College Name"
+												required>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please add new college name.</div>
+										</div>
+
+										<div class="col-md-6 mt-3">
+											<label class="form-label">Affiliated University</label>
+											<input th:field="*{universityName}" type="text" class="form-control"
+												name="university_name" id="university_name"
+												placeholder="Enter University Name" required>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please select Affiliated University.</div>
+										</div>
+
+										<div class="col-md-6 mt-3">
+											<label for="admissionType" class="form-label">Admission Type</label>
+											<select th:field="*{admissionType}" class="form-select" id="admissionType"
+												required>
+												<option value="" disabled selected>Select Admission Type</option>
+												<option value="Maharashtra Student">Maharashtra Student</option>
+												<option value="Non-Maharashtra Student">Non-Maharashtra Student</option>
+												<option value="Foreigner Student">Foreigner Student</option>
+											</select>
+											<div class="valid-feedback">Looks good!</div>
+											<div class="invalid-feedback">Please select an admission type.</div>
+										</div>
 									</div>
 
-									<div class="col-md-6 mt-3">
-										<label class="form-label" for="semesterDropdown">Semester</label>
-										<select class="form-select" th:field="*{lastSem}" id="semesterDropdown" required>
-											<option value="" disabled selected>Select Semester</option>
-											<!-- Options will be set dynamically -->
-										</select>
+									<div class="row g-3 mt-3">
+										<label class="form-label">Send for Departments Approval:</label>
+										<div class="col-md-4">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="accountApproval"
+													checked disabled>
+												<label class="form-check-label" for="accountApproval">Account
+													Department</label>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="libraryApproval"
+													checked disabled>
+												<label class="form-check-label" for="libraryApproval">Library
+													Department</label>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="scholarshipApproval"
+													checked disabled>
+												<label class="form-check-label" for="scholarshipApproval">Scholarship
+													Department</label>
+											</div>
+										</div>
 									</div>
-
-									<!-- Examination Details Table -->
-									<label class="form-label mt-3" >Examination Details</label>
-									<div class="table-responsive">
-										<table class="table table-bordered">
-											<thead>
-											<tr>
-												<th>Sr. No.</th>
-												<th>Examination Name</th>
-												<th>Examination Month</th>
-												<th>Examination Year</th>
-												<th>Examination Seat No.</th>
-												<th>Result (Passed/Fail)</th>
-												<th>CGPA</th>
-												<th>Grade</th>
-												<th>Reset</th>
-											</tr>
-											</thead>
-											<tbody>
-											<!-- Single Row Example -->
-											<tr>
-												<td>1</td>
-												<td>
-													<select th:field="*{lastExamName}" class="form-select" name="last_exam" id="examNameDropdown" required>
-														<option value=""  disabled selected>Select Last Exam</option>
-														<!-- Options will be updated dynamically -->
-													</select>
-												</td>
-												<td>
-													<select th:field="*{lastExamMonth}" class="form-select" name="exam_month[]" required>
-														<option value="" disabled selected>Select Month</option>
-														<option value="January">January</option>
-														<option value="February">February</option>
-														<option value="March">March</option>
-														<option value="April">April</option>
-														<option value="May">May</option>
-														<option value="June">June</option>
-														<option value="July">July</option>
-														<option value="August">August</option>
-														<option value="September">September</option>
-														<option value="October">October</option>
-														<option value="November">November</option>
-														<option value="December">December</option>
-													</select>
-												</td>
-												<td>
-													<input th:field="*{lastExamYear}" type="text" class="form-control text-center" name="exam_year" placeholder="YYYY" required>
-												</td>
-												<td>
-													<input th:field="*{lastSeatNo}" type="text" class="form-control text-center" name="seat_no[]" placeholder="Enter Seat No." required>
-												</td>
-												<td>
-													<select th:field="*{lastResult}" class="form-select" name="result[]">
-														<option value="" disabled selected>Select Result</option>
-														<option value="Passed">Passed</option>
-														<option value="Fail">Fail</option>
-													</select>
-												</td>
-												<td>
-													<input th:field="*{lastCgpa}" type="text" class="form-control text-center" name="cgpa[]" placeholder="Enter CGPA" required>
-												</td>
-												<td>
-													<select th:field="*{lastGrade}" class="form-select" name="grade[]" required>
-														<option value="" disabled selected>Select Grade</option>
-														<option value="O">O</option>
-														<option value="A+">A+</option>
-														<option value="A">A</option>
-														<option value="B+">B+</option>
-														<option value="B">B</option>
-														<option value="F">F</option>
-													</select>
-												</td>
-												<td>
-													<button type="button" class="btn btn-success btn-sm" onclick="resetRow(this)">Reset</button>
-												</td>
-											</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-
-								<div class="row border-bottom">
-									<h6 class="text-center card-subtitle mb-3 mr-3 mt-3">New Admission Details</h6>
-								</div>
-
-								<div class="row">
-
-									<div class="col-md-6 mb-3 mt-3">
-										<label class="form-label" for="newCourse">New Course</label>
-										<select th:field="*{newCourse}" class="form-control" id="newCourse" required>
-											<option value="">Select New Course</option>
-											<option value="B.Sc. Physics">B.Sc. Physics</option>
-											<option value="B.Sc. Chemistry">B.Sc. Chemistry</option>
-											<option value="B.Sc. Mathematics">B.Sc. Mathematics</option>
-											<option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
-											<option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
-											<option value="B.Sc. Biotechnology">B.Sc. Biotechnology</option>
-											<option value="B.Sc. Microbiology">B.Sc. Microbiology</option>
-											<option value="B.Sc. Zoology">B.Sc. Zoology</option>
-											<option value="B.Sc. Botany">B.Sc. Botany</option>
-											<option value="B.Sc. Environmental Science">B.Sc. Environmental Science</option>
-											<option value="B.Sc. Forensic Science">B.Sc. Forensic Science</option>
-											<option value="B.Sc. Statistics">B.Sc. Statistics</option>
-											<option value="B.Sc. Data Science">B.Sc. Data Science</option>
-											<option value="B.Sc. Electronics">B.Sc. Electronics</option>
-											<option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
-											<option value="B.Sc. Geology">B.Sc. Geology</option>
-											<option value="B.Sc. Nutrition & Dietetics">B.Sc. Nutrition & Dietetics</option>
-											<option value="B.Sc. Food Technology">B.Sc. Food Technology</option>
-											<option value="B.Sc. Biomedical Science">B.Sc. Biomedical Science</option>
-											<option value="B.Sc. Genetics">B.Sc. Genetics</option>
-											<option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology & Imaging Technology</option>
-											<option value="M.Sc. Physics">M.Sc. Physics</option>
-											<option value="M.Sc. Chemistry">M.Sc. Chemistry</option>
-											<option value="M.Sc. Mathematics">M.Sc. Mathematics</option>
-											<option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
-											<option value="M.Sc. Information Technology">M.Sc. Information Technology</option>
-											<option value="M.Sc. Biotechnology">M.Sc. Biotechnology</option>
-											<option value="M.Sc. Microbiology">M.Sc. Microbiology</option>
-											<option value="M.Sc. Zoology">M.Sc. Zoology</option>
-											<option value="M.Sc. Botany">M.Sc. Botany</option>
-											<option value="M.Sc. Environmental Science">M.Sc. Environmental Science</option>
-											<option value="M.Sc. Forensic Science">M.Sc. Forensic Science</option>
-											<option value="M.Sc. Statistics">M.Sc. Statistics</option>
-											<option value="M.Sc. Data Science">M.Sc. Data Science</option>
-											<option value="M.Sc. Electronics">M.Sc. Electronics</option>
-											<option value="M.Sc. Agriculture">M.Sc. Agriculture</option>
-											<option value="M.Sc. Geology">M.Sc. Geology</option>
-											<option value="M.Sc. Nutrition & Dietetics">M.Sc. Nutrition & Dietetics</option>
-											<option value="M.Sc. Food Technology">M.Sc. Food Technology</option>
-											<option value="M.Sc. Biomedical Science">M.Sc. Biomedical Science</option>
-											<option value="M.Sc. Genetics">M.Sc. Genetics</option>
-											<option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology & Imaging Technology</option>
-											<option value="B.Com. General">B.Com. General</option>
-											<option value="B.Com. Accounting & Finance">B.Com. Accounting & Finance</option>
-											<option value="B.Com. Banking & Insurance">B.Com. Banking & Insurance</option>
-											<option value="B.Com. Financial Markets">B.Com. Financial Markets</option>
-											<option value="B.Com. Taxation">B.Com. Taxation</option>
-											<option value="B.Com. Business Analytics">B.Com. Business Analytics</option>
-											<option value="B.Com. International Business">B.Com. International Business</option>
-											<option value="B.Com. E-Commerce">B.Com. E-Commerce</option>
-											<option value="B.Com. Cost & Management Accounting">B.Com. Cost & Management Accounting</option>
-											<option value="M.Com. General">M.Com. General</option>
-											<option value="M.Com. Accounting & Finance">M.Com. Accounting & Finance</option>
-											<option value="M.Com. Banking & Insurance">M.Com. Banking & Insurance</option>
-											<option value="M.Com. Financial Markets">M.Com. Financial Markets</option>
-											<option value="M.Com. Taxation">M.Com. Taxation</option>
-											<option value="M.Com. Business Analytics">M.Com. Business Analytics</option>
-											<option value="M.Com. International Business">M.Com. International Business</option>
-											<option value="M.Com. E-Commerce">M.Com. E-Commerce</option>
-											<option value="M.Com. Cost & Management Accounting">M.Com. Cost & Management Accounting</option>
-											<option value="B.A. English Literature">B.A. English Literature</option>
-											<option value="B.A. History">B.A. History</option>
-											<option value="B.A. Political Science">B.A. Political Science</option>
-											<option value="B.A. Psychology">B.A. Psychology</option>
-											<option value="B.A. Sociology">B.A. Sociology</option>
-											<option value="B.A. Philosophy">B.A. Philosophy</option>
-											<option value="B.A. Economics">B.A. Economics</option>
-											<option value="B.A. Public Administration">B.A. Public Administration</option>
-											<option value="B.A. Journalism & Mass Communication">B.A. Journalism & Mass Communication</option>
-											<option value="B.A. Geography">B.A. Geography</option>
-											<option value="B.A. Anthropology">B.A. Anthropology</option>
-											<option value="B.A. Linguistics">B.A. Linguistics</option>
-											<option value="B.A. Fine Arts">B.A. Fine Arts</option>
-											<option value="B.A. Music & Dance">B.A. Music & Dance</option>
-											<option value="B.A. Performing Arts">B.A. Performing Arts</option>
-											<option value="B.A. Archaeology">B.A. Archaeology</option>
-											<option value="B.A. International Relations">B.A. International Relations</option>
-											<option value="B.A. Gender Studies">B.A. Gender Studies</option>
-											<option value="M.A. English Literature">M.A. English Literature</option>
-											<option value="M.A. History">M.A. History</option>
-											<option value="M.A. Political Science">M.A. Political Science</option>
-											<option value="M.A. Psychology">M.A. Psychology</option>
-											<option value="M.A. Sociology">M.A. Sociology</option>
-											<option value="M.A. Philosophy">M.A. Philosophy</option>
-											<option value="M.A. Economics">M.A. Economics</option>
-											<option value="M.A. Public Administration">M.A. Public Administration</option>
-											<option value="M.A. Journalism & Mass Communication">M.A. Journalism & Mass Communication</option>
-											<option value="M.A. Geography">M.A. Geography</option>
-											<option value="M.A. Anthropology">M.A. Anthropology</option>
-											<option value="M.A. Linguistics">M.A. Linguistics</option>
-											<option value="M.A. Fine Arts">M.A. Fine Arts</option>
-											<option value="M.A. Music & Dance">M.A. Music & Dance</option>
-											<option value="M.A. Performing Arts">M.A. Performing Arts</option>
-											<option value="M.A. Archaeology">M.A. Archaeology</option>
-											<option value="M.A. International Relations">M.A. International Relations</option>
-											<option value="M.A. Gender Studies">M.A. Gender Studies</option>
-											<option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
-											<option value="Bachelor of Management Studies (BMS)">Bachelor of Management Studies (BMS)</option>
-											<option value="Bachelor of International Business (BIB)">Bachelor of International Business (BIB)</option>
-											<option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
-											<option value="Master of Management Studies (MMS)">Master of Management Studies (MMS)</option>
-											<option value="Master of International Business (MIB)">Master of International Business (MIB)</option>
-											<option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer Applications (BCA)</option>
-											<option value="Master of Computer Applications (MCA)">Master of Computer Applications (MCA)</option>
-											<option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
-											<option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
-											<option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
-											<option value="M.Sc. Information Technology">M.Sc. Information Technology</option>
-											<option value="Undergraduate (UG) Bachelor of Laws (LLB)">Undergraduate (UG) Bachelor of Laws (LLB)</option>
-											<option value="Postgraduate (PG) Master of Laws (LLM)">Postgraduate (PG) Master of Laws (LLM)</option>
-											<option value="Bachelor of Education (B.Ed.)">Bachelor of Education (B.Ed.)</option>
-											<option value="Bachelor of Physical Education (B.P.Ed.)">Bachelor of Physical Education (B.P.Ed.)</option>
-											<option value="Master of Education (M.Ed.)">Master of Education (M.Ed.)</option>
-											<option value="Master of Physical Education (M.P.Ed.)">Master of Physical Education (M.P.Ed.)</option>
-											<option value="MBBS (Bachelor of Medicine & Surgery)">MBBS
-											</option>
-											<option value="Diploma in Animation & Multimedia">Diploma in Animation & Multimedia</option>
-										</select>
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please select a previous course.</div>
-									</div>
-
-									<div class="col-md-6 mt-3">
-										<label class="form-label">New College Name</label>
-										<input th:field="*{collegeName}" type="text" class="form-control" name="college_name" id="college_name" placeholder="Enter College Name" required>
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please add new college name.</div>
-									</div>
-
-									<div class="col-md-6 mt-3">
-										<label class="form-label">Affiliated University</label>
-										<input th:field="*{universityName}" type="text" class="form-control" name="university_name" id="university_name" placeholder="Enter University Name" required>
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please select Affiliated University.</div>
-									</div>
-
-									<div class="col-md-6 mt-3">
-										<label for="admissionType" class="form-label">Admission Type</label>
-										<select th:field="*{admissionType}" class="form-select" id="admissionType" required>
-											<option value="" disabled selected>Select Admission Type</option>
-											<option value="Maharashtra Student">Maharashtra Student</option>
-											<option value="Non-Maharashtra Student">Non-Maharashtra Student</option>
-											<option value="Foreigner Student">Foreigner Student</option>
-										</select>
-										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please select an admission type.</div>
-									</div>
-								</div>
-
-					<div class="row g-3 mt-3">
-						<label class="form-label">Send for Departments Approval:</label>
-						<div class="col-md-4">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="accountApproval" checked disabled>
-								<label class="form-check-label" for="accountApproval">Account Department</label>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="libraryApproval" checked disabled>
-								<label class="form-check-label" for="libraryApproval">Library Department</label>
-							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="form-check">
-								<input class="form-check-input" type="checkbox" id="scholarshipApproval" checked disabled>
-								<label class="form-check-label" for="scholarshipApproval">Scholarship Department</label>
-							</div>
-						</div>
-					</div>
-					</section>
+								</section>
 
 
-							<script>
-								document.addEventListener('DOMContentLoaded', function() {
-                                  // Mapping of department to courses (static data for testing)
-                                  const departmentCourses = {
-                                    "Agriculture & Allied Sciences": ["B.Sc. Agriculture", "M.Sc. Horticulture", "B.Sc. Forestry"],
-                                    "Anthropology": ["B.A. Anthropology", "M.A. Anthropology"],
-                                    "Architecture & Planning": ["B.Arch", "M.Arch"],
-                                    "Biotechnology": ["B.Sc. Biotechnology", "M.Sc. Biotechnology"],
-                                    "Botany": ["B.Sc. Botany", "M.Sc. Botany"],
-                                    "Business Administration & Management": ["BBA", "MBA"],
-                                    "Chemistry": ["B.Sc. Chemistry", "M.Sc. Chemistry"],
-                                    "Commerce & Accounting": ["B.Com", "M.Com"],
-                                    "Computer Science & Applications": ["B.Sc. Computer Science", "M.Sc. Computer Science", "BCA", "MCA"],
-                                    "Data Science & Artificial Intelligence": ["B.Sc. Data Science", "M.Sc. Data Science"],
-                                    "Defence & Strategic Studies": ["B.A. Defence Studies", "M.A. Defence Studies"],
-                                    "Design (Fashion, Interior, Graphic, Industrial)": ["B.Des", "M.Des"],
-                                    "Economics": ["B.A. Economics", "M.A. Economics"],
-                                    "Education & Teaching": ["B.Ed", "M.Ed"],
-                                    "Engineering (Mechanical, Civil, Electrical, etc.)": [
-                                      "B.Tech in Mechanical",
-                                      "B.Tech in Civil",
-                                      "B.Tech in Electrical",
-                                      "B.Tech in Electronics",
-                                      "B.Tech in Computer Science",
-                                      "B.Tech in Information Technology",
-                                      "B.Tech in Chemical",
-                                      "B.Tech in Aerospace",
-                                      "B.Tech in Biotechnology",
-                                      "B.Tech in Structural Engineering",
-                                      "B.Tech in Environmental Engineering",
-                                      "B.Tech in Mining Engineering",
-                                      "B.Tech in Petroleum Engineering",
-                                      "B.Tech in Robotics",
-                                      "B.Tech in Software Engineering",
-                                      "B.Tech in Agricultural Engineering",
-                                      "B.Tech in Marine Engineering",
-                                      "B.Tech in Metallurgical Engineering",
-                                      "B.Tech in Civil Engineering (Construction Management)",
-                                      "B.Tech in Electrical Engineering (Power Systems)",
-                                      "M.Tech in Structural Engineering",
-                                      "M.Tech in Environmental Engineering",
-                                      "M.Tech in Computer Science",
-                                      "M.Tech in Software Engineering",
-                                      "M.Tech in VLSI Design",
-                                      "M.Tech in Power Systems",
-                                      "M.Tech in Thermal Engineering",
-                                      "M.Tech in Data Science",
-                                      "M.Tech in Robotics",
-                                      "M.Tech in Information Technology",
-                                      "M.Tech in Chemical Engineering",
-                                      "M.Tech in Biotechnology",
-                                      "M.Tech in Construction Management",
-                                      "M.Tech in Aerospace Engineering",
-                                      "M.Tech in Manufacturing Engineering"
-                                    ],
-                                    "English & Literature": ["B.A. English", "M.A. English"],
-                                    "Environmental Science": ["B.Sc. Environmental Science", "M.Sc. Environmental Science"],
-                                    "Fine Arts & Performing Arts": ["BFA", "MFA"],
-                                    "Forensic Science": ["B.Sc. Forensic Science", "M.Sc. Forensic Science"],
-                                    "Geography": ["B.A. Geography", "M.A. Geography"],
-                                    "Geology": ["B.Sc. Geology", "M.Sc. Geology"],
-                                    "History": ["B.A. History", "M.A. History"],
-                                    "Hospitality & Tourism": ["B.Sc. Hospitality", "M.Sc. Tourism"],
-                                    "Journalism & Mass Communication": ["B.JMC", "M.JMC"],
-                                    "Law & Legal Studies": ["LLB", "LLM"],
-                                    "Library & Information Science": ["B.Lib", "M.Lib"],
-                                    "Linguistics": ["B.A. Linguistics", "M.A. Linguistics"],
-                                    "Mathematics & Statistics": ["B.Sc. Mathematics", "M.Sc. Statistics"],
-                                    "Medical & Paramedical Sciences": ["B.Sc. Nursing", "BPT"],
-                                    "Microbiology": ["B.Sc. Microbiology", "M.Sc. Microbiology"],
-                                    "Music & Dance": ["B.A. Music", "M.A. Dance"],
-                                    "Nanotechnology": ["B.Sc. Nanotechnology", "M.Sc. Nanotechnology"],
-                                    "Philosophy": ["B.A. Philosophy", "M.A. Philosophy"],
-                                    "Physical Education & Sports": ["B.P.Ed", "M.P.Ed"],
-                                    "Physics": ["B.Sc. Physics", "M.Sc. Physics"],
-                                    "Political Science": ["B.A. Political Science", "M.A. Political Science"],
-                                    "Psychology": ["B.A. Psychology", "M.A. Psychology"],
-                                    "Public Administration": ["B.A. Public Administration", "M.A. Public Administration"],
-                                    "Sociology & Social Work": ["B.A. Sociology", "M.A. Social Work"],
-                                    "Zoology": ["B.Sc. Zoology", "M.Sc. Zoology"]
-                                  };
+								<script>
+									document.addEventListener('DOMContentLoaded', function () {
+										// Mapping of department to courses (static data for testing)
+										const departmentCourses = {
+											"Agriculture & Allied Sciences": ["B.Sc. Agriculture", "M.Sc. Horticulture", "B.Sc. Forestry"],
+											"Anthropology": ["B.A. Anthropology", "M.A. Anthropology"],
+											"Architecture & Planning": ["B.Arch", "M.Arch"],
+											"Biotechnology": ["B.Sc. Biotechnology", "M.Sc. Biotechnology"],
+											"Botany": ["B.Sc. Botany", "M.Sc. Botany"],
+											"Business Administration & Management": ["BBA", "MBA"],
+											"Chemistry": ["B.Sc. Chemistry", "M.Sc. Chemistry"],
+											"Commerce & Accounting": ["B.Com", "M.Com"],
+											"Computer Science & Applications": ["B.Sc. Computer Science", "M.Sc. Computer Science", "BCA", "MCA"],
+											"Data Science & Artificial Intelligence": ["B.Sc. Data Science", "M.Sc. Data Science"],
+											"Defence & Strategic Studies": ["B.A. Defence Studies", "M.A. Defence Studies"],
+											"Design (Fashion, Interior, Graphic, Industrial)": ["B.Des", "M.Des"],
+											"Economics": ["B.A. Economics", "M.A. Economics"],
+											"Education & Teaching": ["B.Ed", "M.Ed"],
+											"Engineering (Mechanical, Civil, Electrical, etc.)": [
+												"B.Tech in Mechanical",
+												"B.Tech in Civil",
+												"B.Tech in Electrical",
+												"B.Tech in Electronics",
+												"B.Tech in Computer Science",
+												"B.Tech in Information Technology",
+												"B.Tech in Chemical",
+												"B.Tech in Aerospace",
+												"B.Tech in Biotechnology",
+												"B.Tech in Structural Engineering",
+												"B.Tech in Environmental Engineering",
+												"B.Tech in Mining Engineering",
+												"B.Tech in Petroleum Engineering",
+												"B.Tech in Robotics",
+												"B.Tech in Software Engineering",
+												"B.Tech in Agricultural Engineering",
+												"B.Tech in Marine Engineering",
+												"B.Tech in Metallurgical Engineering",
+												"B.Tech in Civil Engineering (Construction Management)",
+												"B.Tech in Electrical Engineering (Power Systems)",
+												"M.Tech in Structural Engineering",
+												"M.Tech in Environmental Engineering",
+												"M.Tech in Computer Science",
+												"M.Tech in Software Engineering",
+												"M.Tech in VLSI Design",
+												"M.Tech in Power Systems",
+												"M.Tech in Thermal Engineering",
+												"M.Tech in Data Science",
+												"M.Tech in Robotics",
+												"M.Tech in Information Technology",
+												"M.Tech in Chemical Engineering",
+												"M.Tech in Biotechnology",
+												"M.Tech in Construction Management",
+												"M.Tech in Aerospace Engineering",
+												"M.Tech in Manufacturing Engineering"
+											],
+											"English & Literature": ["B.A. English", "M.A. English"],
+											"Environmental Science": ["B.Sc. Environmental Science", "M.Sc. Environmental Science"],
+											"Fine Arts & Performing Arts": ["BFA", "MFA"],
+											"Forensic Science": ["B.Sc. Forensic Science", "M.Sc. Forensic Science"],
+											"Geography": ["B.A. Geography", "M.A. Geography"],
+											"Geology": ["B.Sc. Geology", "M.Sc. Geology"],
+											"History": ["B.A. History", "M.A. History"],
+											"Hospitality & Tourism": ["B.Sc. Hospitality", "M.Sc. Tourism"],
+											"Journalism & Mass Communication": ["B.JMC", "M.JMC"],
+											"Law & Legal Studies": ["LLB", "LLM"],
+											"Library & Information Science": ["B.Lib", "M.Lib"],
+											"Linguistics": ["B.A. Linguistics", "M.A. Linguistics"],
+											"Mathematics & Statistics": ["B.Sc. Mathematics", "M.Sc. Statistics"],
+											"Medical & Paramedical Sciences": ["B.Sc. Nursing", "BPT"],
+											"Microbiology": ["B.Sc. Microbiology", "M.Sc. Microbiology"],
+											"Music & Dance": ["B.A. Music", "M.A. Dance"],
+											"Nanotechnology": ["B.Sc. Nanotechnology", "M.Sc. Nanotechnology"],
+											"Philosophy": ["B.A. Philosophy", "M.A. Philosophy"],
+											"Physical Education & Sports": ["B.P.Ed", "M.P.Ed"],
+											"Physics": ["B.Sc. Physics", "M.Sc. Physics"],
+											"Political Science": ["B.A. Political Science", "M.A. Political Science"],
+											"Psychology": ["B.A. Psychology", "M.A. Psychology"],
+											"Public Administration": ["B.A. Public Administration", "M.A. Public Administration"],
+											"Sociology & Social Work": ["B.A. Sociology", "M.A. Social Work"],
+											"Zoology": ["B.Sc. Zoology", "M.Sc. Zoology"]
+										};
 
-// Populate courses when a department is selected
-document.getElementById('department').addEventListener('change', function () {
-const selectedDept = this.value;
-const courseSelect = document.getElementById('course');
-courseSelect.innerHTML = '<option value="">Select Course</option>';
+										// Populate courses when a department is selected
+										document.getElementById('department').addEventListener('change', function () {
+											const selectedDept = this.value;
+											const courseSelect = document.getElementById('course');
+											courseSelect.innerHTML = '<option value="">Select Course</option>';
 
-if (departmentCourses[selectedDept]) {
-departmentCourses[selectedDept].forEach(function (course) {
-const option = document.createElement('option');
-option.value = course;
-option.text = course;
-courseSelect.appendChild(option);
-});
-}
+											if (departmentCourses[selectedDept]) {
+												departmentCourses[selectedDept].forEach(function (course) {
+													const option = document.createElement('option');
+													option.value = course;
+													option.text = course;
+													courseSelect.appendChild(option);
+												});
+											}
 
-// Reset Class, Exam, and Semester selections
-document.getElementById("classDropdown").innerHTML = '<option value="" disabled selected>Select Class</option>';
-document.getElementById("examNameDropdown").innerHTML = '<option value="" disabled selected>Select Last Exam</option>';
-document.getElementById("semesterDropdown").innerHTML = '<option value="" disabled selected>Select Semester</option>';
-});
+											// Reset Class, Exam, and Semester selections
+											document.getElementById("classDropdown").innerHTML = '<option value="" disabled selected>Select Class</option>';
+											document.getElementById("examNameDropdown").innerHTML = '<option value="" disabled selected>Select Last Exam</option>';
+											document.getElementById("semesterDropdown").innerHTML = '<option value="" disabled selected>Select Semester</option>';
+										});
 
-// Update class options when a course is selected
-document.getElementById('course').addEventListener('change', updateClassOptions);
+										// Update class options when a course is selected
+										document.getElementById('course').addEventListener('change', updateClassOptions);
 
-function updateClassOptions() {
-const course = document.getElementById("course").value;
-const classDropdown = document.getElementById("classDropdown");
-classDropdown.innerHTML = '<option value="" disabled selected>Select Class</option>';
+										function updateClassOptions() {
+											const course = document.getElementById("course").value;
+											const classDropdown = document.getElementById("classDropdown");
+											classDropdown.innerHTML = '<option value="" disabled selected>Select Class</option>';
 
-// For postgraduate courses
-if (course.startsWith("M.Sc.") || course.startsWith("M.A.") || course.startsWith("M.Com.") || course.startsWith("M.Arch")) {
-const firstYear = course.startsWith("M.Sc.") ? "M.Sc. I" :
-                (course.startsWith("M.A.") ? "M.A. I" :
-                (course.startsWith("M.Com.") ? "M.Com. I" : "M.Arch I"));
-const secondYear = course.startsWith("M.Sc.") ? "M.Sc. II" :
-                 (course.startsWith("M.A.") ? "M.A. II" :
-                 (course.startsWith("M.Com.") ? "M.Com. II" : "M.Arch II"));
-classDropdown.innerHTML += `<option value="${firstYear}">${firstYear}</option>
+											// For postgraduate courses
+											if (course.startsWith("M.Sc.") || course.startsWith("M.A.") || course.startsWith("M.Com.") || course.startsWith("M.Arch")) {
+												const firstYear = course.startsWith("M.Sc.") ? "M.Sc. I" :
+													(course.startsWith("M.A.") ? "M.A. I" :
+														(course.startsWith("M.Com.") ? "M.Com. I" : "M.Arch I"));
+												const secondYear = course.startsWith("M.Sc.") ? "M.Sc. II" :
+													(course.startsWith("M.A.") ? "M.A. II" :
+														(course.startsWith("M.Com.") ? "M.Com. II" : "M.Arch II"));
+												classDropdown.innerHTML += `<option value="${firstYear}">${firstYear}</option>
                           <option value="${secondYear}">${secondYear}</option>`;
-}
-// For undergraduate courses (including B.Arch)
-else if (course.startsWith("B.Sc.") || course.startsWith("B.A.") || course.startsWith("B.Com.") ||
-     course.startsWith("BBA") || course.startsWith("B.E.") || course.startsWith("B.Arch")) {
-classDropdown.innerHTML += `<option value="FY">FY</option>
+											}
+											// For undergraduate courses (including B.Arch)
+											else if (course.startsWith("B.Sc.") || course.startsWith("B.A.") || course.startsWith("B.Com.") ||
+												course.startsWith("BBA") || course.startsWith("B.E.") || course.startsWith("B.Arch")) {
+												classDropdown.innerHTML += `<option value="FY">FY</option>
                           <option value="SY">SY</option>
                           <option value="TY">TY</option>`;
-}
+											}
 
-// Update exam and semester options after class dropdown is populated
-updateExamOptions();
-updateSemesterOptions();
-}
+											// Update exam and semester options after class dropdown is populated
+											updateExamOptions();
+											updateSemesterOptions();
+										}
 
-// Update exam options based on selected class and course
-function updateExamOptions() {
-const selectedYear = document.getElementById("classDropdown").value;
-const examNameSelect = document.getElementById("examNameDropdown");
-examNameSelect.innerHTML = '<option value="" disabled selected>Select Last Exam</option>';
-const selectedCourse = document.getElementById("course").value;
+										// Update exam options based on selected class and course
+										function updateExamOptions() {
+											const selectedYear = document.getElementById("classDropdown").value;
+											const examNameSelect = document.getElementById("examNameDropdown");
+											examNameSelect.innerHTML = '<option value="" disabled selected>Select Last Exam</option>';
+											const selectedCourse = document.getElementById("course").value;
 
-let examText = "";
+											let examText = "";
 
-// For postgraduate courses, remove the prefix from course name to avoid duplication.
-if (selectedCourse.startsWith("M.A.") || selectedCourse.startsWith("M.Sc.") ||
-selectedCourse.startsWith("M.Com.") || selectedCourse.startsWith("M.Arch")) {
+											// For postgraduate courses, remove the prefix from course name to avoid duplication.
+											if (selectedCourse.startsWith("M.A.") || selectedCourse.startsWith("M.Sc.") ||
+												selectedCourse.startsWith("M.Com.") || selectedCourse.startsWith("M.Arch")) {
 
-let subject = selectedCourse;
-if(selectedCourse.startsWith("M.A.")) {
- subject = selectedCourse.substring(4).trim(); // remove "M.A."
-} else if(selectedCourse.startsWith("M.Sc.")) {
- subject = selectedCourse.substring(5).trim(); // remove "M.Sc."
-} else if(selectedCourse.startsWith("M.Com.")) {
- subject = selectedCourse.substring(6).trim(); // remove "M.Com."
-} else if(selectedCourse.startsWith("M.Arch")) {
- subject = selectedCourse.substring(6).trim(); // remove "M.Arch"
-}
-// Build exam option: class followed by subject
-examText = `${selectedYear} ${subject}`;
-} else {
-// For undergraduate courses, simply use the class and full course name
-examText = `${selectedYear} ${selectedCourse}`;
-}
+												let subject = selectedCourse;
+												if (selectedCourse.startsWith("M.A.")) {
+													subject = selectedCourse.substring(4).trim(); // remove "M.A."
+												} else if (selectedCourse.startsWith("M.Sc.")) {
+													subject = selectedCourse.substring(5).trim(); // remove "M.Sc."
+												} else if (selectedCourse.startsWith("M.Com.")) {
+													subject = selectedCourse.substring(6).trim(); // remove "M.Com."
+												} else if (selectedCourse.startsWith("M.Arch")) {
+													subject = selectedCourse.substring(6).trim(); // remove "M.Arch"
+												}
+												// Build exam option: class followed by subject
+												examText = `${selectedYear} ${subject}`;
+											} else {
+												// For undergraduate courses, simply use the class and full course name
+												examText = `${selectedYear} ${selectedCourse}`;
+											}
 
-examNameSelect.innerHTML += `<option value="${examText}">${examText}</option>`;
-}
+											examNameSelect.innerHTML += `<option value="${examText}">${examText}</option>`;
+										}
 
-// Update semester options based on the selected academic year
-function updateSemesterOptions() {
-const selectedYear = document.getElementById("classDropdown").value;
-const semesterDropdown = document.getElementById("semesterDropdown");
-semesterDropdown.innerHTML = '<option value="" disabled selected>Select Semester</option>';
+										// Update semester options based on the selected academic year
+										function updateSemesterOptions() {
+											const selectedYear = document.getElementById("classDropdown").value;
+											const semesterDropdown = document.getElementById("semesterDropdown");
+											semesterDropdown.innerHTML = '<option value="" disabled selected>Select Semester</option>';
 
-// Undergraduate mapping: FY, SY, TY
-if (selectedYear === "FY") {
-semesterDropdown.innerHTML += `<option value="SEM I">SEM I</option>
+											// Undergraduate mapping: FY, SY, TY
+											if (selectedYear === "FY") {
+												semesterDropdown.innerHTML += `<option value="SEM I">SEM I</option>
                              <option value="SEM II">SEM II</option>`;
-} else if (selectedYear === "SY") {
-semesterDropdown.innerHTML += `<option value="SEM III">SEM III</option>
+											} else if (selectedYear === "SY") {
+												semesterDropdown.innerHTML += `<option value="SEM III">SEM III</option>
                              <option value="SEM IV">SEM IV</option>`;
-} else if (selectedYear === "TY") {
-semesterDropdown.innerHTML += `<option value="SEM V">SEM V</option>
+											} else if (selectedYear === "TY") {
+												semesterDropdown.innerHTML += `<option value="SEM V">SEM V</option>
                              <option value="SEM VI">SEM VI</option>`;
-}
-// Postgraduate mapping
-else if (selectedYear === "M.Sc. I" || selectedYear === "M.A. I" || selectedYear === "M.Com. I" || selectedYear === "M.Arch I") {
-semesterDropdown.innerHTML += `<option value="SEM I">SEM I</option>
+											}
+											// Postgraduate mapping
+											else if (selectedYear === "M.Sc. I" || selectedYear === "M.A. I" || selectedYear === "M.Com. I" || selectedYear === "M.Arch I") {
+												semesterDropdown.innerHTML += `<option value="SEM I">SEM I</option>
                              <option value="SEM II">SEM II</option>`;
-} else if (selectedYear === "M.Sc. II" || selectedYear === "M.A. II" || selectedYear === "M.Com. II" || selectedYear === "M.Arch II") {
-semesterDropdown.innerHTML += `<option value="SEM III">SEM III</option>
+											} else if (selectedYear === "M.Sc. II" || selectedYear === "M.A. II" || selectedYear === "M.Com. II" || selectedYear === "M.Arch II") {
+												semesterDropdown.innerHTML += `<option value="SEM III">SEM III</option>
                              <option value="SEM IV">SEM IV</option>`;
-}
-}
+											}
+										}
 
-// Update exam and semester options when class is changed
-document.getElementById("classDropdown").addEventListener('change', function() {
-updateExamOptions();
-updateSemesterOptions();
-});
+										// Update exam and semester options when class is changed
+										document.getElementById("classDropdown").addEventListener('change', function () {
+											updateExamOptions();
+											updateSemesterOptions();
+										});
 
-// Function to reset a table row (for exam details)
-window.resetRow = function(button) {
-const row = button.closest('tr');
-row.querySelectorAll('input, select').forEach(input => {
-if (input.tagName === 'SELECT') {
-input.selectedIndex = 0;
-} else {
-input.value = '';
-}
-});
-};
-});										</script>
+										// Function to reset a table row (for exam details)
+										window.resetRow = function (button) {
+											const row = button.closest('tr');
+											row.querySelectorAll('input, select').forEach(input => {
+												if (input.tagName === 'SELECT') {
+													input.selectedIndex = 0;
+												} else {
+													input.value = '';
+												}
+											});
+										};
+									});										</script>
 
 
 
-							<!-- Step 3 -->
-							<h6>Documents</h6>
-							<section>
+								<!-- Step 3 -->
+								<h6>Documents</h6>
+								<section>
 
-								<!-- Add FontAwesome CDN -->
-								<link rel="stylesheet"
-									  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+									<!-- Add FontAwesome CDN -->
+									<link rel="stylesheet"
+										href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-								<div class="mb-3">
-									<label for="latestMarksheet" class="form-label">Latest Passing Marksheet</label>
-									<div class="input-group">
-										<input th:field="*{latestMarksheet}" type="file" class="form-control" id="latestMarksheet"
-											   accept=".jpeg, .jpg, .png" required>
-										<button type="button" class="btn btn-secondary"
+									<div class="mb-3">
+										<label for="latestMarksheet" class="form-label">Latest Passing Marksheet</label>
+										<div class="input-group">
+											<input name="latestMarksheetFile" type="file" class="form-control"
+												id="latestMarksheet" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
 												onclick="editFile('latestMarksheet')">
-											<i class="fa-solid fa-pen"></i>
-										</button>
-										<button type="button" class="btn btn-danger"
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
 												onclick="cancelFile('latestMarksheet')">
-											<i class="fa-solid fa-xmark"></i>
-										</button>
-										<button type="button" class="btn btn-info"
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
 												onclick="viewFile('latestMarksheet')">
-											<i class="fa-solid fa-eye"></i>
-										</button>
-									</div>
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please Select Document.</div>
-
-								</div>
-
-								<div class="mb-3">
-									<label for="passingCertificate" class="form-label">Passing Certificate</label>
-									<div class="input-group">
-										<input th:field="*{passingCertificate}" type="file" class="form-control" id="passingCertificate"
-											   accept=".jpeg, .jpg, .png" required>
-										<button type="button" class="btn btn-secondary"
-												onclick="editFile('passingCertificate')">
-											<i class="fa-solid fa-pen"></i>
-										</button>
-										<button type="button" class="btn btn-danger"
-												onclick="cancelFile('passingCertificate')">
-											<i class="fa-solid fa-xmark"></i>
-										</button>
-										<button type="button" class="btn btn-info"
-												onclick="viewFile('passingCertificate')">
-											<i class="fa-solid fa-eye"></i>
-										</button>
-									</div>
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please Select Document.</div>
-
-								</div>
-
-								<div class="mb-3">
-									<label for="proofOfAdmission" class="form-label">Proof of New Admission</label>
-									<div class="input-group">
-										<input th:field="*{proofOfAdmission}" type="file" class="form-control" id="proofOfAdmission"
-											   accept=".jpeg, .jpg, .png" required>
-										<button type="button" class="btn btn-secondary"
-												onclick="editFile('proofOfAdmission')">
-											<i class="fa-solid fa-pen"></i>
-										</button>
-										<button type="button" class="btn btn-danger"
-												onclick="cancelFile('proofOfAdmission')">
-											<i class="fa-solid fa-xmark"></i>
-										</button>
-										<button type="button" class="btn btn-info"
-												onclick="viewFile('proofOfAdmission')">
-											<i class="fa-solid fa-eye"></i>
-										</button>
-									</div>
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please Select Document.</div>
-
-								</div>
-
-								<div class="mb-3">
-									<label for="birthDateProof" class="form-label">Birth Date Proof</label>
-									<div class="input-group">
-										<input th:field="*{birthDateProof}" type="file" class="form-control" id="birthDateProof"
-											   accept=".jpeg, .jpg, .png" required>
-										<button type="button" class="btn btn-secondary"
-												onclick="editFile('birthDateProof')">
-											<i class="fa-solid fa-pen"></i>
-										</button>
-										<button type="button" class="btn btn-danger"
-												onclick="cancelFile('birthDateProof')">
-											<i class="fa-solid fa-xmark"></i>
-										</button>
-										<button type="button" class="btn btn-info"
-												onclick="viewFile('birthDateProof')">
-											<i class="fa-solid fa-eye"></i>
-										</button>
-									</div>
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please Select Document.</div>
-
-								</div>
-
-								<div class="mb-3">
-									<label for="identityProof" class="form-label">Identity Proof</label>
-									<div class="input-group">
-										<input th:field="*{identityProof}" type="file" class="form-control" id="identityProof"
-											   accept=".jpeg, .jpg, .png" required>
-										<button type="button" class="btn btn-secondary"
-												onclick="editFile('identityProof')">
-											<i class="fa-solid fa-pen"></i>
-										</button>
-										<button type="button" class="btn btn-danger"
-												onclick="cancelFile('identityProof')">
-											<i class="fa-solid fa-xmark"></i>
-										</button>
-										<button type="button" class="btn btn-info"
-												onclick="viewFile('identityProof')">
-											<i class="fa-solid fa-eye"></i>
-										</button>
-									</div>
-									<div class="valid-feedback">Looks good!</div>
-									<div class="invalid-feedback">Please Select Document.</div>
-
-									<input type="hidden" th:field="*{studentId}">
-								</div>
-							</section>
-
-							<!-- Step 4 -->
-							<h6>Payment</h6>
-							<section>
-								<div class="row">
-									<div class="col-md-6">
-										<div class="card p-3">
-											<h4 class="mb-3">Payment Summary</h4>
-											<p><strong>Student Name: <span th:text="*{firstName}"></span> <span th:text="*{lastName}"></span></strong></p>
-											<p><strong>Roll Number:  <span th:text="*{studentId}"></span> </strong> </p>
-											<hr>
-											<p><strong>Application Fee: ₹</strong><span th:text="*{applicationFee}"></span></p>
-											<p><strong>Processing Fee:</strong> ₹<span th:text="*{processingFee}"></span></p>
-											<p><strong>Total Payable:</strong> ₹<span
-													class="fw-bold text-success" th:text="*{totalFee}" id="totalFee"></span></p>
+												<i class="fa-solid fa-eye"></i>
+											</button>
 										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please Select Document.</div>
+
 									</div>
 
-									<div class="col-md-6">
-										<div class="card p-3">
-											<h4>Select Payment Method</h4>
+									<div class="mb-3">
+										<label for="passingCertificate" class="form-label">Passing Certificate</label>
+										<div class="input-group">
+											<input name="passingCertificateFile" type="file" class="form-control"
+												id="passingCertificate" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('passingCertificate')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('passingCertificate')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('passingCertificate')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please Select Document.</div>
 
-											<hr>
-											<input type="hidden" id="paymentStatus" th:field="*{paymentStatus}" required value="unpaid">
-											<input type="hidden" id="paymentId" th:field="*{paymentId}" name="payment_id" required value="">
-											
-											<button type="button" id="payment-button" class="btn btn-primary w-100">Proceed to
-												Payment</button>
-												
+									</div>
+
+									<div class="mb-3">
+										<label for="proofOfAdmission" class="form-label">Proof of New Admission</label>
+										<div class="input-group">
+											<input name="proofOfAdmissionFile" type="file" class="form-control"
+												id="proofOfAdmission" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('proofOfAdmission')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('proofOfAdmission')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('proofOfAdmission')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please Select Document.</div>
+
+									</div>
+
+									<div class="mb-3">
+										<label for="birthDateProof" class="form-label">Birth Date Proof</label>
+										<div class="input-group">
+											<input name="birthDateProofFile" type="file" class="form-control"
+												id="birthDateProof" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('birthDateProof')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('birthDateProof')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('birthDateProof')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please Select Document.</div>
+
+									</div>
+
+									<div class="mb-3">
+										<label for="identityProof" class="form-label">Identity Proof</label>
+										<div class="input-group">
+											<input name="identityProofFile" type="file" class="form-control"
+												id="identityProof" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('identityProof')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('identityProof')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('identityProof')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please Select Document.</div>
+
+										
+									</div>
+								</section>
+								
+								<!--Hidden input values-->
+								
+								<input type="hidden" th:field="*{studentId}">
+								<input type="hidden" id="totalFee" th:field="*{totalFee}">
+								<input type="hidden" th:field="*{processingFee}">
+								<input type="hidden" th:field="*{certificateReason}">
+								<input type="hidden" th:field="*{applicationFee}">
+								<input type="hidden" th:field="*{certificateType}">
+								<input type="hidden" th:field="*{tcType}">
+
+								<!-- Step 4 -->
+								<h6>Payment</h6>
+								<section>
+									<div class="row">
+										<div class="col-md-6">
+											<div class="card p-3">
+												<h4 class="mb-3">Payment Summary</h4>
+												<p><strong>Student Name: <span th:text="*{firstName}"></span> <span
+															th:text="*{lastName}"></span></strong></p>
+												<p><strong>Roll Number: <span th:text="*{studentId}"></span> </strong>
+												</p>
+												<hr>
+												<p><strong>Application Fee: ₹</strong><span
+														th:text="*{applicationFee}"></span></p>
+												<p><strong>Processing Fee:</strong> ₹<span
+														th:text="*{processingFee}"></span></p>
+												<p><strong>Total Payable:</strong> ₹<span class="fw-bold text-success"
+														th:text="*{totalFee}"></span></p>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="card p-3">
+												<h4>Select Payment Method</h4>
+
+												<hr>
+												<input type="hidden" id="paymentStatus" th:field="*{paymentStatus}"
+													required value="unpaid">
+												<input type="hidden" id="paymentId" th:field="*{paymentId}"
+													name="payment_id" required value="">
+
+												<button id="payment-button" class="btn btn-primary w-100" type="button">Proceed to
+													Payment</button>	
 												<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-												
+
 												<!--Integrate online payment-->
-												
+
 												<script>
 													document.addEventListener("DOMContentLoaded", function () {
-													    document.getElementById("payment-button").addEventListener("click", function () {
-													        // Get the total amount
-													
-													        var totalAmount=document.getElementById("totalFee").innerText;
-													        // Get user details from the form
-													        var firstName = document.getElementById("validationCustom01").value;
-													        var lastName = document.getElementById("validationCustom03").value;
-													        var contactNo = document.getElementById("contactNo").value;
-													
-													        // Full name concatenation
-													        var fullName = firstName + " "+ lastName;
+														document.getElementById("payment-button").addEventListener("click", function () {
+															// Get the total amount
 
-													        // Create Razorpay options
-													        var options = {
-													            "key": "rzp_test_AWbCxX14mGjWaN", // Replace with your Razorpay key
-													            "amount": totalAmount * 100, // Convert to paisa
-													            "currency": "INR",
-													            "name": "FC College Pune",
-													            "description": "Payment for certificate",
-													            "handler": function (response) {
-													                // Assign transaction ID to hidden input field
-													                document.getElementById("paymentId").value = response.razorpay_payment_id;
-																	document.getElementById("paymentStatus").value="Paid";
+															var totalAmount = document.getElementById("totalFee").value;
+															// Get user details from the form
+															var firstName = document.getElementById("validationCustom01").value;
+															var lastName = document.getElementById("validationCustom03").value;
+															var contactNo = document.getElementById("contactNo").value;
+
+															// Full name concatenation
+															var fullName = firstName + " " + lastName;
+
+															// Create Razorpay options
+															var options = {
+																"key": "rzp_test_AWbCxX14mGjWaN", // Replace with your Razorpay key
+																"amount": Number(totalAmount) * 100, // Convert to paisa
+																"currency": "INR",
+																"name": "FC College Pune",
+																"description": "Payment for certificate",
+																"handler": function (response) {
+																	// Assign transaction ID to hidden input field
+																	document.getElementById("paymentId").value = response.razorpay_payment_id;
+																	document.getElementById("paymentStatus").value = "Paid";
 																	document.getElementById("payment-button").disabled = true;
-													                alert("Payment Successful! Transaction ID: " + response.razorpay_payment_id);
-													            },
-													            "prefill": {
-													                "name": fullName, 
-													                "email": "",
-													                "contact": contactNo
-													            },
-													            "theme": {
-													                "color": "#3399cc"
-													            }
-													        };
+																	alert("Payment Successful! Transaction ID: " + response.razorpay_payment_id);
+																},
+																"prefill": {
+																	"name": fullName,
+																	"email": "",
+																	"contact": contactNo
+																},
+																"theme": {
+																	"color": "#3399cc"
+																}
+															};
 
-													        var rzp1 = new Razorpay(options);
-													        rzp1.open();
-													    });
+															var rzp1 = new Razorpay(options);
+															rzp1.open();
+														});
 													});
 
-													
-												</script>
-													
 
+												</script>
+
+
+											</div>
 										</div>
 									</div>
-								</div>
-							</section>
-						</form>
+								</section>
+							</form>
+						</div>
 					</div>
-				</div>
 
 
 
 
-				<style>
-					.toast {
-                        position: fixed;
-                        bottom: 20px;
-                        right: 20px;
-                        padding: 10px 20px;
-                        border-radius: 5px;
-                        color: white;
-                        font-size: 14px;
-                        z-index: 1000;
-                        animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
-                    }
+					<style>
+						.toast {
+							position: fixed;
+							bottom: 20px;
+							right: 20px;
+							padding: 10px 20px;
+							border-radius: 5px;
+							color: white;
+							font-size: 14px;
+							z-index: 1000;
+							animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+						}
 
-                    .toast.error {
-                        background-color: #ff4444;
-                    }
+						.toast.error {
+							background-color: #ff4444;
+						}
 
-                    .toast.success {
-                        background-color: #4CAF50;
-                    }
+						.toast.success {
+							background-color: #4CAF50;
+						}
 
-                    @keyframes fadeIn {
-                        from {
-                            opacity: 0;
-                        }
+						@keyframes fadeIn {
+							from {
+								opacity: 0;
+							}
 
-                        to {
-                            opacity: 1;
-                        }
-                    }
+							to {
+								opacity: 1;
+							}
+						}
 
-                    @keyframes fadeOut {
-                        from {
-                            opacity: 1;
-                        }
+						@keyframes fadeOut {
+							from {
+								opacity: 1;
+							}
 
-                        to {
-                            opacity: 0;
-                        }
-                    }
-				</style>
-				<script>
-					document.addEventListener("DOMContentLoaded", function () {
-							const form = document.querySelector("form");
+							to {
+								opacity: 0;
+							}
+						}
+					</style>
+					<script>
+						document.addEventListener("DOMContentLoaded", function () {
+							const form = document.getElementById("abra");
 							const inputs = document.querySelectorAll("input, select, checkbox");
 
 
@@ -1199,8 +1303,6 @@ input.value = '';
 
 
 							form.addEventListener("submit", function (event) {
-								event.preventDefault();
-								event.stopPropagation();
 
 								let formIsValid = true;
 
@@ -1262,81 +1364,76 @@ input.value = '';
 									formIsValid = formIsValid && validateField(select, null, true);
 								});
 
-								if (formIsValid) {
-									alert("Form submitted successfully!");
-									form.submit();
-								} else {
-									showToast("Please fill in the empty or invalid fields.");
-								}
+
 							});
 						});
-				</script>
-				<script>
+					</script>
+					<script>
 
-					function resetRow(button) {
-                        let row = button.closest("tr");
-                        row.querySelectorAll("input, select").forEach(field => {
-                            if (field.tagName === "SELECT") {
-                                field.selectedIndex = 0;
-                            } else {
-                                field.value = "";
-                            }
-                        });
-                    }
+						function resetRow(button) {
+							let row = button.closest("tr");
+							row.querySelectorAll("input, select").forEach(field => {
+								if (field.tagName === "SELECT") {
+									field.selectedIndex = 0;
+								} else {
+									field.value = "";
+								}
+							});
+						}
 
-                    function editFile(inputId) {
-                        const fileInput = document.getElementById(inputId);
-                        fileInput.click();
+						function editFile(inputId) {
+							const fileInput = document.getElementById(inputId);
+							fileInput.click();
 
-                        fileInput.addEventListener("change", function () {
-                            if (fileInput.files.length > 0) {
-                                showSuccessMessage("File attached successfully!");
-                            }
-                        });
-                    }
-
-
-                    function cancelFile(inputId) {
-                        const fileInput = document.getElementById(inputId);
-                        fileInput.value = '';
-                        showSuccessMessage("File attachment cancelled.");
-                    }
+							fileInput.addEventListener("change", function () {
+								if (fileInput.files.length > 0) {
+									showSuccessMessage("File attached successfully!");
+								}
+							});
+						}
 
 
-                    function viewFile(inputId) {
-                        const fileInput = document.getElementById(inputId);
-                        const fileLabel = document.querySelector(`label[for="${inputId}"]`);
-
-                        if (fileInput.files.length > 0) {
-                            const file = fileInput.files[0];
-                            const fileType = file.type;
-
-                            if (!fileType.startsWith("image/")) {
-                                alert("Please upload an image file to preview.");
-                                return;
-                            }
-
-                            const documentName = fileLabel ? fileLabel.textContent : "Uploaded Document";
+						function cancelFile(inputId) {
+							const fileInput = document.getElementById(inputId);
+							fileInput.value = '';
+							showSuccessMessage("File attachment cancelled.");
+						}
 
 
-                            const fileURL = URL.createObjectURL(file);
+						function viewFile(inputId) {
+							const fileInput = document.getElementById(inputId);
+							const fileLabel = document.querySelector(`label[for="${inputId}"]`);
 
-                            const popupWidth = 600;
-                            const popupHeight = 500;
-                            const screenWidth = window.screen.width;
-                            const screenHeight = window.screen.height;
-                            const left = (screenWidth - popupWidth) / 2;
-                            const top = (screenHeight - popupHeight) / 2;
+							if (fileInput.files.length > 0) {
+								const file = fileInput.files[0];
+								const fileType = file.type;
 
-                            const popup = window.open(
-                                "",
-                                "ImagePreview",
-                                `width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=yes,scrollbars=no`
-                            );
+								if (!fileType.startsWith("image/")) {
+									alert("Please upload an image file to preview.");
+									return;
+								}
 
-                            if (popup) {
+								const documentName = fileLabel ? fileLabel.textContent : "Uploaded Document";
 
-                                popup.document.write(`
+
+								const fileURL = URL.createObjectURL(file);
+
+								const popupWidth = 600;
+								const popupHeight = 500;
+								const screenWidth = window.screen.width;
+								const screenHeight = window.screen.height;
+								const left = (screenWidth - popupWidth) / 2;
+								const top = (screenHeight - popupHeight) / 2;
+
+								const popup = window.open(
+									"",
+									"ImagePreview",
+									`width=${popupWidth},height=${popupHeight},top=${top},left=${left},resizable=yes,scrollbars=no`
+								);
+
+								if (popup) {
+
+									popup.document.write(`
                                         <html>
                                         <head>
                                             <title>Image Preview - ${documentName}</title>
@@ -1394,38 +1491,38 @@ input.value = '';
                                         </body>
                                         </html>
                                     `);
-                                popup.document.close();
-                            } else {
-                                alert("Popup blocked! Please allow popups for this site.");
-                            }
-                        } else {
-                            alert("No file uploaded.");
-                        }
-                    }
+									popup.document.close();
+								} else {
+									alert("Popup blocked! Please allow popups for this site.");
+								}
+							} else {
+								alert("No file uploaded.");
+							}
+						}
 
-                    function showSuccessMessage(message) {
-                        const successMessage = document.createElement("div");
-                        successMessage.textContent = message;
-                        successMessage.style.position = "fixed";
-                        successMessage.style.bottom = "20px";
-                        successMessage.style.right = "20px";
-                        successMessage.style.backgroundColor = "#4CAF50";
-                        successMessage.style.color = "white";
-                        successMessage.style.padding = "10px 20px";
-                        successMessage.style.borderRadius = "5px";
-                        successMessage.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
-                        successMessage.style.zIndex = "1000";
-                        successMessage.style.animation = "fadeIn 0.5s, fadeOut 0.5s 2.5s";
+						function showSuccessMessage(message) {
+							const successMessage = document.createElement("div");
+							successMessage.textContent = message;
+							successMessage.style.position = "fixed";
+							successMessage.style.bottom = "20px";
+							successMessage.style.right = "20px";
+							successMessage.style.backgroundColor = "#4CAF50";
+							successMessage.style.color = "white";
+							successMessage.style.padding = "10px 20px";
+							successMessage.style.borderRadius = "5px";
+							successMessage.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.2)";
+							successMessage.style.zIndex = "1000";
+							successMessage.style.animation = "fadeIn 0.5s, fadeOut 0.5s 2.5s";
 
-                        document.body.appendChild(successMessage);
+							document.body.appendChild(successMessage);
 
-                        setTimeout(() => {
-                            document.body.removeChild(successMessage);
-                        }, 3000);
-                    }
+							setTimeout(() => {
+								document.body.removeChild(successMessage);
+							}, 3000);
+						}
 
-                    const style = document.createElement("style");
-                    style.textContent = `
+						const style = document.createElement("style");
+						style.textContent = `
                             @keyframes fadeIn {
                                 from { opacity: 0; }
                                 to { opacity: 1; }
@@ -1435,93 +1532,115 @@ input.value = '';
                                 to { opacity: 0; }
                             }
                         `;
-                    document.head.appendChild(style);
+						document.head.appendChild(style);
 
-				</script>
+					</script>
+				</div>
+				<div th:replace="Student/fragments/footer :: footer"></div>
 			</div>
-			<div th:replace="Student/fragments/footer :: footer"></div>
-		</div>
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+
+			<script>
+				// Convert a numeric year to words (supports numbers up to 9999)
+				function convertYearToWords(year) {
+					const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+					const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+					const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+					if (year < 10) return ones[year];
+					else if (year < 20) return teens[year - 10];
+					else if (year < 100) {
+						return tens[Math.floor(year / 10)] + (year % 10 !== 0 ? " " + ones[year % 10] : "");
+					} else if (year < 1000) {
+						let rem = year % 100;
+						let result = ones[Math.floor(year / 100)] + " hundred";
+						if (rem > 0) result += " " + convertYearToWords(rem);
+						return result;
+					} else if (year < 10000) {
+						let rem = year % 1000;
+						let result = convertYearToWords(Math.floor(year / 1000)) + " thousand";
+						if (rem > 0) result += " " + convertYearToWords(rem);
+						return result;
+					}
+					return year;
+				}
+
+				document.addEventListener("DOMContentLoaded", function () {
+					const dobInput = document.getElementById("dob");
+					const dobInWordsInput = document.getElementById("dobInWords");
+					const dayOrdinals = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
+						"eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth",
+						"twentieth", "twenty first", "twenty second", "twenty third", "twenty fourth", "twenty fifth", "twenty sixth", "twenty seventh",
+						"twenty eighth", "twenty ninth", "thirtieth", "thirty first"
+					];
+					const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+					dobInput.addEventListener("change", function () {
+						const dobValue = this.value; // Expected format: YYYY-MM-DD
+						if (dobValue) {
+							const parts = dobValue.split("-");
+							const year = parseInt(parts[0], 10);
+							const month = parseInt(parts[1], 10);
+							const day = parseInt(parts[2], 10);
+							const dayWord = dayOrdinals[day];
+							const monthWord = monthNames[month - 1];
+							const yearWord = convertYearToWords(year);
+							let DOB = dayWord + " " + monthWord + " " + yearWord;
+							dobInWordsInput.value = DOB.toUpperCase();
+						}
+					});
+				});
+				
+				
+			</script>
+			
+			
 		<script>
-			function handleColorTheme(e) {
-                document.documentElement.setAttribute("data-color-theme", e);
-            }
-		</script>
+			/*
+			let index = 1;
+			document.addEventListener("click", function (event) {
+			    if (event.target.matches('a[href="#next"]')) {
+			        event.preventDefault();
+					index
+			    }
+			});
 
-		<script>
-			// Convert a numeric year to words (supports numbers up to 9999)
-            function convertYearToWords(year) {
-                const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-                const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-                const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-                if (year < 10) return ones[year];
-                else if (year < 20) return teens[year - 10];
-                else if (year < 100) {
-                    return tens[Math.floor(year / 10)] + (year % 10 !== 0 ? " " + ones[year % 10] : "");
-                } else if (year < 1000) {
-                    let rem = year % 100;
-                    let result = ones[Math.floor(year / 100)] + " hundred";
-                    if (rem > 0) result += " " + convertYearToWords(rem);
-                    return result;
-                } else if (year < 10000) {
-                    let rem = year % 1000;
-                    let result = convertYearToWords(Math.floor(year / 1000)) + " thousand";
-                    if (rem > 0) result += " " + convertYearToWords(rem);
-                    return result;
-                }
-                return year;
-            }
+			*/
+				
+				function swal(){
+					
+					let form = document.getElementById("abra")
+					form.submit()
+				}
+			</script>
+			
+			<div class="dark-transparent sidebartoggler"></div>
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
 
-            document.addEventListener("DOMContentLoaded", function () {
-                const dobInput = document.getElementById("dob");
-                const dobInWordsInput = document.getElementById("dobInWords");
-                const dayOrdinals = ["", "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth",
-                    "eleventh", "twelfth", "thirteenth", "fourteenth", "fifteenth", "sixteenth", "seventeenth", "eighteenth", "nineteenth",
-                    "twentieth", "twenty first", "twenty second", "twenty third", "twenty fourth", "twenty fifth", "twenty sixth", "twenty seventh",
-                    "twenty eighth", "twenty ninth", "thirtieth", "thirty first"
-                ];
-                const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
-
-                dobInput.addEventListener("change", function () {
-                    const dobValue = this.value; // Expected format: YYYY-MM-DD
-                    if (dobValue) {
-                        const parts = dobValue.split("-");
-                        const year = parseInt(parts[0], 10);
-                        const month = parseInt(parts[1], 10);
-                        const day = parseInt(parts[2], 10);
-                        const dayWord = dayOrdinals[day];
-                        const monthWord = monthNames[month - 1];
-                        const yearWord = convertYearToWords(year);
-                        let DOB = dayWord + " " + monthWord + " " + yearWord;
-                        dobInWordsInput.value = DOB.toUpperCase();
-                    }
-                });
-            });
-		</script>
-
-
-
-		<div class="dark-transparent sidebartoggler"></div>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
-
-		<script
+			<script
 				src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-		<script
+			<script
 				src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
 
 
-		<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
-		<script
+			<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+			<script
 				src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
-		<script
+			<script
 				src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
-		<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/forms/form-wizard.js"></script>
+		
+				<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/forms/form-wizard.js"></script>
+						
+			</div>
 	</div>
-</div>
 </body>
 
 

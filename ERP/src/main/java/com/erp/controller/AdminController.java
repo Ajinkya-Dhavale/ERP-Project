@@ -114,4 +114,5 @@ public class AdminController {
         return "redirect:/admin/add_student";
     }
     
+    
 }

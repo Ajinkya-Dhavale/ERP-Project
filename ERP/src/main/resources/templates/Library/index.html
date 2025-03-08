@@ -17,10 +17,18 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Admin Pannel</title>
+	<title>Library Admin Pannel</title>
 
 
 	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 </head>
@@ -33,13 +41,13 @@
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
-		
+
 		<!--imported side bar here-->
-		<div th:replace="Admin/fragments/side_bar :: side_bar"></div>
+		<div th:replace="Library/fragments/side_bar :: side_bar"></div>
 		<!--  Sidebar End -->
 		<div class="page-wrapper">
 			<!--  imported navbar here -->
-			<div th:replace="Admin/fragments/navbar :: navbar"></div>
+			<div th:replace="Library/fragments/navbar :: navbar"></div>
 
 
 
@@ -48,15 +56,16 @@
 				<div class="container-fluid">
 					<!-- Main Part -->
 
-					<h2>aldkhk</h2>
-
+					<h1>Library Dashboard</h1>
+					<!-- ✅ Load jQuery -->
+					
 
 					<!-- End Main part -->
 				</div>
-				
-				
+
+
 				<!--import footer here-->
-				<div th:replace="Admin/fragments/footer :: footer"></div>
+				<div th:replace="Library/fragments/footer :: footer"></div>
 			</div>
 
 			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
@@ -72,8 +81,6 @@
 		</div>
 	</div>
 
-	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
-	<!-- Import Js Files -->
 	<script
 		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>

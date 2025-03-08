@@ -20,6 +20,101 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #f8f9fa;
+		}
+
+		.container {
+			margin-top: 20px;
+		}
+
+		h2 {
+			text-align: center;
+			font-weight: bold;
+			color: #dc3545;
+			margin-bottom: 20px;
+		}
+
+		.table-responsive {
+			background: white;
+			padding: 15px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		thead {
+			background-color: rgb(243, 75, 101);
+
+		}
+
+		th {
+			align-items: center !important;
+			text-align: center !important;
+			color: white !important;
+		}
+
+		.dataTables_wrapper .dataTables_filter input {
+		    width: 250px !important; /* Increase the width as needed */
+		    border: 0.5px solid darkgrey !important ;
+		    border-radius: 5px;
+		    padding: 5px;
+			height: 35px !important;
+		}
+
+		.dataTables_wrapper .dataTables_filter label{
+			font-size: 15px !important;
+		}
+
+
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			background: #dc3545;
+			color: white !important;
+			border: none;
+			padding: 5px 10px;
+		}
+
+		.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+			background: #c82333;
+		}
+
+		.dataTables_wrapper .dataTables_filter input {
+			border: 2px solid #dc3545;
+			border-radius: 5px;
+			padding: 5px;
+		}
+
+		.approved {
+			color: green;
+			font-weight: bold;
+		}
+
+		.pending {
+			color: orange;
+			font-weight: bold;
+		}
+
+		.not-approved {
+			color: red;
+			font-weight: bold;
+		}
+
+		.btn-view {
+			background-color: #007bff;
+			color: white;
+			border-radius: 5px;
+			padding: 5px 10px;
+			text-decoration: none;
+		}
+
+		td{
+			text-align: center;
+		}
+		.btn-view:hover {
+			background-color: #0056b3;
+		}
+	</style>
 </head>
 
 <body>
@@ -33,9 +128,11 @@
 
             <div class="body-wrapper">
                 <div class="container-fluid">
-                    <h2>Student List</h2>
+                   
 
                     <div class="table-responsive bg-white pt-4 pl-2 pr-2">
+						<h2>Student List</h2>
+						<hr>
                         <table id="studentTable" class="display nowrap" style="width:100%">
                             <thead>
                                 <tr>
@@ -74,7 +171,7 @@
 						<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js" defer></script>
 						<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js" defer></script>
 
-						<script>
+						<script defer>
 						    document.addEventListener("DOMContentLoaded", function () {
 						        console.log("Initializing DataTable...");
 						        

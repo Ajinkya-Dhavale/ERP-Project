@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon icon-->
+    <link rel="shortcut icon" type="image/png"
+        href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+    <!-- Core Css -->
+    <!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Student Panel</title>
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+    <style>
+        .body-wrapper {
+            font-family: Arial, sans-serif;
+            line-height: 1.3;
+            color: #000;
+
+        }
+
+        .main {
+            max-width: 1200px;
+            margin: auto auto;
+            margin-bottom: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(13, 93, 38, 0.821);
+            border-radius: 8px;
+        }
+
+        /* Header Section */
+        .header-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #00bcd4;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* .card-body
+        h4{
+            color: #00ff40;
+        } */
+
+        .header-img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Certificate Number */
+        .cert-no {
+            text-align: left;
+            margin-left: 50px;
+            font-size: 14px;
+
+        }
+
+        /* Header Text */
+        .header1 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .heading {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .ordinance-text {
+            font-family: 'Times New Roman', serif;
+            font-size: 14px;
+            margin-bottom: 5px;
+
+        }
+
+        .certificate-text {
+
+            margin-bottom: -85px;
+        }
+
+        .original-copy {
+            margin-bottom: -10px;
+        }
+
+        /* Certificate Content */
+        .certificate {
+
+            margin-bottom: 10px;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .indented {
+            margin-left: 20px;
+        }
+
+        /* Table Styles */
+        .cert-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            table-layout: auto;
+        }
+
+        .cert-table,
+        .table-header,
+        .table-data {
+            border: 1px solid #000;
+        }
+
+        .table-header,
+        .table-data {
+            padding: 9px;
+            text-align: center;
+        }
+
+        .table-header {
+            font-weight: bold;
+            font-size: 12px;
+
+        }
+
+        .table-data {
+            font-size: 12px;
+        }
+
+
+        /* Certificate Points */
+        .points {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .points li {
+            margin-bottom: 5px;
+        }
+
+        .point-label {
+
+            margin-right: 5px;
+        }
+
+        .indent {
+            display: block;
+            margin-left: 15px;
+        }
+
+        /* Footer Section */
+        .footer-tc {
+            margin-top: 10px;
+            font-size: 14px;
+            text-align: left;
+            padding-top: 5px;
+        }
+
+        .footer-tc p {
+            margin-bottom: 3px;
+        }
+
+        .endline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-evenly;
+            align-self: center;
+            gap: 10px;
+        }
+
+        .buttons button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #fb0f33, #ff5858);
+            color: #fff;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .buttons button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.132), rgba(255, 255, 255, 0));
+            transform: translate(-50%, -50%) scale(1);
+            transition: transform 0.5s ease;
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .buttons button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .buttons button:hover {
+            background: linear-gradient(45deg, #f14141, #ed1737);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .buttons button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .buttons button i {
+            font-size: 18px;
+        }
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .main {
+                padding: 5px;
+            }
+
+            .heading {
+                font-size: 16px;
+                color: #000
+            }
+
+            .ordinance-text {
+                font-size: 13px;
+            }
+
+            .certificate {
+                font-size: 13px;
+            }
+
+            .table-header,
+            .table-data {
+                font-size: 12px;
+                padding: 9px;
+            }
+
+            .points {
+                font-size: 13px;
+            }
+
+            .footer-tc {
+                font-size: 11px;
+            }
+        }
+
+        /* Print Settings */
+        @media print {
+            @page {
+                size: A4 portrait;
+                margin: 10mm;
+            }
+
+            body-wrapper {
+                margin: 0;
+                padding: 0;
+            }
+
+            /* Hide unnecessary elements */
+            .preloader,
+            .left-sidebar,
+            .topbar,
+            .buttons,
+            .footer,
+            .card-body {
+                display: none;
+            }
+
+            /* Ensure the body-wrapper content fits on one page */
+            .body-wrapper {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .main {
+                border: none;
+                margin: 0;
+                padding: 0;
+                max-width: none;
+                box-shadow: none;
+            }
+
+            /* Adjust font sizes and spacing for print */
+            .heading {
+                font-size: 18px;
+                font-weight: bold;
+                color: #000;
+            }
+
+            .cert-no {
+                margin-left: 25px;
+            }
+
+            .ordinance-text,
+            .certificate,
+            .points {
+                font-size: 14px;
+            }
+
+            .table-header,
+            .table-data {
+                font-size: 12px;
+                padding: 9px;
+            }
+
+            .footer-tc {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <a href="#">
+            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
+                class="lds-ripple img-fluid" />
+        </a>
+    </div>
+    <div id="main-wrapper">
+        <!-- Sidebar Start -->
+
+
+
+        <!--imported side bar here-->
+        <aside class="left-sidebar with-vertical" th:fragment="side_bar">
+            <div><!-- ---------------------------------- -->
+                <!-- Start Vertical Layout Sidebar -->
+                <!-- ---------------------------------- -->
+                <!-- Sidebar scroll-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+                    <ul id="sidebarnav">
+                        <!-----------Profile------------------>
+                        <li class="sidebar-item sidebar-profile pt-2">
+                            <a class="sidebar-link has-arrow opacity-100 gap-2" href="javascript:void(0)"
+                                aria-expanded="false">
+                                <span class="d-flex">
+                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                        class="rounded" width="30" alt="user" />
+                                </span>
+                                <span class="hide-menu fw-medium">James White </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fa fa-user-circle" style="font-size: 16px;"></i>
+                                        </div>
+                                        <span class="hide-menu">My Profile</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
+                                        </div>
+                                        <span class="hide-menu">Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- ---------------------------------- -->
+                        <!-- Home -->
+                        <!-- ---------------------------------- -->
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" th:href="@{/admin/}" id="get-url">
+                                <i class="fa-solid fa-list" style="font-size: 22px;"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-small-cap">
+                            <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                            <span class="hide-menu">Student</span>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+                        <li class="nav-small-cap">
+                            <iconify-icon icon="solar:menu-dots-bold" class="nav-small-cap-icon fs-4"></iconify-icon>
+                            <span class="hide-menu">Certificate</span>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                                <div class="d-flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
+                                        <g fill="#fafafa">
+                                            <path fill-rule="evenodd"
+                                                d="M10 7v30a3 3 0 0 0 3 3h13v-3.535a4 4 0 1 1 4 0V40h5a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H13a3 3 0 0 0-3 3m18 28a2 2 0 1 0 0-4a2 2 0 0 0 0 4M18 11a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H19a1 1 0 0 1-1-1m-3 5a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2zm-1 5a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H15a1 1 0 0 1-1-1m1 3a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2z"
+                                                clip-rule="evenodd" />
+                                            <path d="M26 44v-4h4v4l-2-1.5z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <span class="hide-menu">My Certificate</span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+
+
+                                <li class="sidebar-item">
+                                    <a href="applyforCertificate.html" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-file-lines" style="font-size: 18px;"></i>
+                                        </div>
+                                        <span class="hide-menu">Request Certificate</span>
+                                    </a>
+                                </li>
+
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-check-circle" style="font-size: 18px;"></i>
+                                        </div>
+                                        <span class="hide-menu">Approved Certificate</span>
+                                    </a>
+                                </li>
+
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fa fa-clock" style="font-size: 18px;"></i>
+                                        </div>
+                                        <span class="hide-menu">Pending Certificate</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-times-circle" style="font-size: 18px;"></i>
+                                        </div>
+                                        <span class="hide-menu">Rejected Certificate</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </nav>
+
+                <!-- End Sidebar scroll-->
+            </div>
+        </aside>
+        <!--End side bar here-->
+
+
+
+        <!--  Sidebar End -->
+        <div class="page-wrapper">
+            <!--  imported navbar here -->
+            <div th:fragment="navbar">
+                <header class="topbar card rounded-0 border-0">
+                    <div class="with-vertical"><!-- ---------------------------------- -->
+                        <!-- Start Vertical Layout Header -->
+                        <!-- ---------------------------------- -->
+                        <nav class="navbar navbar-expand-lg px-0 py-0">
+                            <div class="d-none d-lg-block">
+                                <div class="brand-logo d-flex align-items-center justify-content-between">
+                                    <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                        <b class="logo-icon">
+                                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                            <!-- Dark Logo icon -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                alt="homepage" class="dark-logo" />
+                                            <!-- Light Logo icon -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                alt="homepage" class="light-logo" />
+                                        </b>
+                                        <!--End Logo icon -->
+                                        <!-- Logo text -->
+                                        <span class="logo-text">
+                                            <!-- dark Logo text -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                alt="homepage" class="dark-logo" />
+                                            <!-- Light Logo text -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                class="light-logo" alt="homepage" />
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <ul class="navbar-nav align-items-center">
+
+                                <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                    <a class="nav-link sidebartoggler" id="headerCollapse" href="javascript:void(0)">
+                                        <i class="fa-solid fa-bars-staggered"></i>
+                                    </a>
+                                </li>
+                                <!-- ------------------------------- -->
+                                <!-- start notification Dropdown -->
+                                <!-- ------------------------------- -->
+                                <li class="nav-item dropdown nav-icon-hover-bg rounded-circle d-none d-lg-flex">
+                                    <a class="nav-link" href="#" id="drop2" role="button">
+                                        <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
+
+                                    </a>
+
+                                    <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
+                                        aria-labelledby="drop2">
+                                        <div class="py-3 px-4 bg-primary">
+                                            <div class="fs-6 fw-bold text-white">Notifications</div>
+                                            <div class="fs-2 fw-medium text-white">You have 4 Notifications</div>
+                                        </div>
+                                        <div class="message-body" data-simplebar>
+                                            <a href="javascript:void(0)"
+                                                class="p-3 d-flex align-items-center justify-content-between dropdown-item gap-3   justify-content-between border-bottom">
+                                                <span
+                                                    class="flex-shrink-0 bg-secondary-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-secondary">
+                                                    <iconify-icon icon="solar:widget-3-line-duotone"></iconify-icon>
+                                                </span>
+                                                <div class="w-80">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <h6 class="mb-0 ">Luanch Admin</h6>
+                                                        <span class="fs-2 text-nowrap d-block text-muted ">9:30
+                                                            AM</span>
+                                                    </div>
+                                                    <span class="fs-3 d-block text-truncate text-muted">Just see the my
+                                                        new
+                                                        admin!</span>
+                                                </div>
+                                            </a>
+
+                                        </div>
+
+                                    </div>
+                                </li>
+
+
+
+                            </ul>
+
+                            <div class="d-block d-lg-none">
+                                <div class="brand-logo d-flex align-items-center justify-content-between">
+                                    <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                        <b class="logo-icon">
+                                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                            <!-- Dark Logo icon -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                alt="homepage" class="dark-logo" />
+                                            <!-- Light Logo icon -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                alt="homepage" class="light-logo" />
+                                        </b>
+                                        <!--End Logo icon -->
+                                        <!-- Logo text -->
+                                        <span class="logo-text">
+                                            <!-- dark Logo text -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                alt="homepage" class="dark-logo" />
+                                            <!-- Light Logo text -->
+                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                class="light-logo" alt="homepage" />
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <a class="navbar-toggler p-0 border-0 nav-icon-hover-bg rounded-circle"
+                                href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="p-2">
+                                    <i class="ti ti-dots fs-7"></i>
+                                </span>
+                            </a>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <ul
+                                        class="navbar-nav flex-row align-items-center justify-content-center d-flex d-lg-none">
+
+                                        <li class="ml-4 nav-item dropdown nav-icon-hover-bg rounded-circle">
+                                            <a class="nav-link" href="javascript:void(0)" id="drop2"
+                                                aria-expanded="false">
+                                                <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
+
+                                                <!-- for blinks -->
+                                                <div class="notify">
+                                                    <span class="heartbit"></span>
+                                                    <span class="point"></span>
+                                                </div>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-start py-0 content-dd overflow-hidden"
+                                                aria-labelledby="drop2">
+
+
+                                                <div class="p-3">
+                                                    <a class="d-flex btn btn-primary rounded align-items-center justify-content-center gap-2"
+                                                        href="javascript:void(0);">
+                                                        <span>Check all Notifications</span>
+                                                        <iconify-icon icon="solar:alt-arrow-right-outline"
+                                                            class="iconify-sm"></iconify-icon>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                            <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                                                <i class="fas fa-moon"></i> <!-- Font Awesome moon icon -->
+                                            </a>
+                                            <a class="nav-link sun light-layout" href="javascript:void(0)">
+                                                <i class="fas fa-sun"></i> <!-- Font Awesome sun icon -->
+                                            </a>
+                                        </li>
+
+
+                                        <!-- ------------------------------- -->
+                                        <!-- end notification Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <!-- ------------------------------- -->
+                                        <!-- start profile Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="javascript:void(0)" id="drop2"
+                                                aria-expanded="false">
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                    alt="user" class="profile-pic rounded round-30" />
+                                            </a>
+                                            <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
+                                                aria-labelledby="drop2">
+                                                <div class="profile-dropdown position-relative" data-simplebar>
+                                                    <div class=" py-3 border-bottom">
+                                                        <div class="d-flex align-items-center px-3">
+                                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                                class="rounded" width="50" height="50"
+                                                                alt="ample-img" />
+                                                            <div class="ms-3">
+                                                                <h5 class="mb-0 fs-4">James White</h5>
+                                                                <p class="mb-0 d-flex align-items-center text-muted">
+                                                                    info@ampleadmin.com
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="message-body">
+                                                        <div class="px-3 pt-3">
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="#" class=" d-flex  align-items-center ">
+                                                                    My Profile
+                                                                </a>
+                                                            </div>
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="javascript:void(0)"
+                                                                    class=" d-flex  align-items-center ">
+                                                                    Logout
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                        </li>
+
+
+                                        <!-- ------------------------------- -->
+                                        <!-- end profile Dropdown -->
+                                        <!-- ------------------------------- -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!-- ---------------------------------- -->
+                        <!-- End Vertical Layout Header -->
+                        <!-- ---------------------------------- -->
+
+
+                    </div>
+                    <div class="app-header with-horizontal">
+                        <nav class="navbar navbar-expand-xl container-fluid">
+                            <ul class="navbar-nav align-items-center">
+                                <li class="nav-item nav-icon-hover-bg rounded-circle d-flex d-xl-none">
+                                    <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse"
+                                        href="javascript:void(0)">
+                                        <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
+                                    </a>
+                                </li>
+                                <li class="nav-item d-none d-xl-block">
+                                    <div class="brand-logo d-flex align-items-center justify-content-between">
+                                        <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                            <b class="logo-icon">
+                                                <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                <!-- Dark Logo icon -->
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                    alt="homepage" class="dark-logo" />
+                                                <!-- Light Logo icon -->
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                    alt="homepage" class="light-logo" />
+                                            </b>
+                                            <!--End Logo icon -->
+                                            <!-- Logo text -->
+                                            <span class="logo-text">
+                                                <!-- dark Logo text -->
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                    alt="homepage" class="dark-logo" />
+                                                <!-- Light Logo text -->
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                    class="light-logo" alt="homepage" />
+                                            </span>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                                    <div class="hover-dd">
+                                        <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                            <iconify-icon icon="solar:bell-bing-line-duotone"></iconify-icon>
+                                            <div class="notify">
+                                                <span class="heartbit"></span>
+                                                <span class="point"></span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+
+                                <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                                    <div class="hover-dd">
+                                        <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                            <iconify-icon icon="solar:inbox-line-line-duotone"></iconify-icon>
+                                            <div class="notify">
+                                                <span class="heartbit"></span>
+                                                <span class="point"></span>
+                                            </div>
+                                        </a>
+                                        <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
+                                            aria-labelledby="drop2">
+                                            <div class="py-3 px-4 bg-secondary">
+                                                <div class="fs-6 fw-bold text-white">Messages</div>
+                                                <div class="fs-2 fw-medium text-white">You have 5 new messages</div>
+                                            </div>
+                                            <div class="message-body" data-simplebar>
+                                                <a href="javascript:void(0)"
+                                                    class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                    <span class="user-img position-relative d-inline-block">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-2.jpg"
+                                                            alt="user" class="rounded w-100 round-40" />
+                                                        <span
+                                                            class="profile-status bg-success position-absolute rounded"></span>
+                                                    </span>
+                                                    <div class="w-80">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 lh-base">Genelia Roshan</h6>
+                                                            <span class="fs-2 text-nowrap d-block text-muted">9:30
+                                                                AM</span>
+                                                        </div>
+                                                        <span class="fs-3 d-block text-truncate text-muted">Just see the
+                                                            my
+                                                            new admin!</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0)"
+                                                    class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                    <span class="user-img position-relative d-inline-block">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-3.jpg"
+                                                            alt="user" class="rounded w-100 round-40" />
+                                                        <span
+                                                            class="profile-status bg-success position-absolute rounded"></span>
+                                                    </span>
+                                                    <div class="w-80">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 lh-base">Bianca Anderson</h6>
+                                                            <span class="fs-2 text-nowrap d-block text-muted">9:10
+                                                                AM</span>
+                                                        </div>
+
+                                                        <span class="fs-3 d-block text-truncate text-muted">Just a
+                                                            reminder
+                                                            that you have event</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0)"
+                                                    class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                    <span class="user-img position-relative d-inline-block">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-4.jpg"
+                                                            alt="user" class="rounded w-100 round-40" />
+                                                        <span
+                                                            class="profile-status bg-success position-absolute rounded"></span>
+                                                    </span>
+                                                    <div class="w-80">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 lh-base">Andrew Johnson</h6>
+                                                            <span class="fs-2 text-nowrap d-block text-muted">9:08
+                                                                AM</span>
+                                                        </div>
+                                                        <span class="fs-3 d-block text-truncate text-muted">You can
+                                                            customize this template as you
+                                                            want</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0)"
+                                                    class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                    <span class="user-img position-relative d-inline-block">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-5.jpg"
+                                                            alt="user" class="rounded w-100 round-40" />
+                                                        <span
+                                                            class="profile-status bg-success position-absolute rounded"></span>
+                                                    </span>
+                                                    <div class="w-80">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 lh-base">Mark Strokes</h6>
+                                                            <span class="fs-2 text-nowrap d-block text-muted">9:30
+                                                                AM</span>
+                                                        </div>
+                                                        <span class="fs-3 d-block text-truncate text-muted">Just see the
+                                                            my
+                                                            new admin!</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0)"
+                                                    class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                    <span class="user-img position-relative d-inline-block">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-6.jpg"
+                                                            alt="user" class="rounded w-100 round-40" />
+                                                        <span
+                                                            class="profile-status bg-success position-absolute rounded"></span>
+                                                    </span>
+                                                    <div class="w-80">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 lh-base">Mark, Stoinus & Rishvi..</h6>
+                                                            <span class="fs-2 text-nowrap d-block text-muted">9:10
+                                                                AM</span>
+                                                        </div>
+                                                        <span class="fs-3 d-block text-truncate text-muted">Just a
+                                                            reminder
+                                                            that you have event</span>
+                                                    </div>
+                                                </a>
+                                                <a href="javascript:void(0)"
+                                                    class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                    <span class="user-img position-relative d-inline-block">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-7.jpg"
+                                                            alt="user" class="rounded w-100 round-40" />
+                                                        <span
+                                                            class="profile-status bg-success position-absolute rounded"></span>
+                                                    </span>
+                                                    <div class="w-80">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <h6 class="mb-0 lh-base">Settings</h6>
+                                                            <span class="fs-2 text-nowrap d-block text-muted">9:08
+                                                                AM</span>
+                                                        </div>
+                                                        <span class="fs-3 d-block text-truncate text-muted">You can
+                                                            customize this template as you
+                                                            want</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="p-3">
+                                                <a class="d-flex btn btn-secondary rounded align-items-center justify-content-center gap-2"
+                                                    href="javascript:void(0);">
+                                                    <span>Check all Messages</span>
+                                                    <iconify-icon icon="solar:alt-arrow-right-outline"
+                                                        class="iconify-sm"></iconify-icon>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+
+
+                            <a class="navbar-toggler nav-icon-hover-bg rounded-circle p-0 border-0"
+                                href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="p-2">
+                                    <i class="ti ti-dots fs-7"></i>
+                                </span>
+                            </a>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                            <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                                                <i class="fas fa-moon"></i> <!-- Moon icon -->
+                                            </a>
+                                            <a class="nav-link sun light-layout" href="javascript:void(0)">
+                                                <i class="far fa-sun"></i> <!-- Alternative sun icon -->
+                                            </a>
+                                        </li>
+
+
+                                        <li
+                                            class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex search-box">
+                                            <a class="nav-link d-none d-md-flex" href="javascript:void(0)"
+                                                data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
+                                            </a>
+                                        </li>
+                                        <!-- ------------------------------- -->
+                                        <!-- end notification Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <!-- ------------------------------- -->
+                                        <!-- start language Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <li class="nav-item dropdown nav-icon-hover-bg rounded-circle">
+                                            <a class="nav-link" href="javascript:void(0)" id="drop2"
+                                                aria-expanded="false">
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
+                                                    alt="ample-img" width="20px" height="20px" class="round-20" />
+                                            </a>
+                                            <div class="dropdown-menu pt-0 dropdown-menu-end" aria-labelledby="drop2">
+                                                <div class="message-body">
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                        <div class="position-relative">
+                                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
+                                                                alt="ample-img" width="20px" height="20px"
+                                                                class="round-20" />
+                                                        </div>
+                                                        <p class="mb-0 fs-3">English</p>
+                                                    </a>
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                        <div class="position-relative">
+                                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-cn.svg"
+                                                                alt="ample-img" width="20px" height="20px"
+                                                                class="round-20" />
+                                                        </div>
+                                                        <p class="mb-0 fs-3">Chinese</p>
+                                                    </a>
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                        <div class="position-relative">
+                                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-fr.svg"
+                                                                alt="ample-img" width="20px" height="20px"
+                                                                class="round-20" />
+                                                        </div>
+                                                        <p class="mb-0 fs-3">French</p>
+                                                    </a>
+                                                    <a href="javascript:void(0)"
+                                                        class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                        <div class="position-relative">
+                                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-sa.svg"
+                                                                alt="ample-img" width="20px" height="20px"
+                                                                class="round-20" />
+                                                        </div>
+                                                        <p class="mb-0 fs-3">Arabic</p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- ------------------------------- -->
+                                        <!-- end language Dropdown -->
+                                        <!-- ------------------------------- -->
+
+                                        <!-- ------------------------------- -->
+                                        <!-- start profile Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link" href="javascript:void(0)" id="drop2"
+                                                aria-expanded="false">
+                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                    alt="user" width="30" class="profile-pic rounded" />
+                                            </a>
+                                            <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
+                                                aria-labelledby="drop2">
+                                                <div class="profile-dropdown position-relative" data-simplebar>
+                                                    <div class=" py-3 border-bottom">
+                                                        <div class="d-flex align-items-center px-3">
+                                                            <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                                class="rounded" width="50" height="50"
+                                                                alt="ample-img" />
+                                                            <div class="ms-3">
+                                                                <h5 class="mb-0 fs-4">James White</h5>
+                                                                <p class="mb-0 d-flex align-items-center text-muted">
+                                                                    info@ampleadmin.com
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="message-body pb-3">
+                                                        <div class="px-3 pt-3">
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="#" class=" d-flex  align-items-center ">
+                                                                    My Profile
+                                                                </a>
+                                                            </div>
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="javascript:void(0)"
+                                                                    class=" d-flex  align-items-center ">
+                                                                    My Projects
+                                                                </a>
+                                                            </div>
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-email.html"
+                                                                    class=" d-flex  align-items-center ">
+                                                                    Inbox
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="px-3">
+                                                            <div
+                                                                class="py-8 px-3 d-flex justify-content-between dropdown-item align-items-center h6 mb-0  rounded-2 link">
+                                                                <a href="javascript:void(0)" class="">
+                                                                    Mode
+                                                                </a>
+                                                                <div>
+                                                                    <a class="moon dark-layout"
+                                                                        href="javascript:void(0)">
+                                                                        <iconify-icon icon="solar:moon-line-duotone"
+                                                                            class="moon"></iconify-icon>
+                                                                    </a>
+                                                                    <a class="sun light-layout"
+                                                                        href="javascript:void(0)">
+                                                                        <iconify-icon icon="solar:sun-2-line-duotone"
+                                                                            class="sun"></iconify-icon>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html"
+                                                                    class=" d-flex  align-items-center  ">
+                                                                    Account Settings
+                                                                </a>
+                                                            </div>
+                                                            <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html"
+                                                                    class=" d-flex  align-items-center ">
+                                                                    Sign Out
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <!-- ------------------------------- -->
+                                        <!-- end profile Dropdown -->
+                                        <!-- ------------------------------- -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <!--  Header End -->
+            </div>
+            <!--  End navbar here -->
+
+
+
+
+<div class="body-wrapper">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title mb-3 text-center text-success" style="font-size: 25px;font-weight:bolder;">
+                    Transference Certificate Application
+                </h4>
+                <h4 class="card-title mb-3 text-center" style="font-size: 15px;font-weight:bolder;">
+                    <p style="display:flex;justify-content:space-evenly;align-items:center;">
+                        <span>Student Id:5454 </span>
+                        <span>Application No:4552 </span>
+                    </p>
+                </h4>
+
+                <form>
+                    <div class="section-card">
+                        <h3 class="section-heading">Personal Information</h3>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label">First Name</label>
+                                <input type="text" class="form-control" th:value="${tc.firstName}" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Middle Name</label>
+                                <input type="text" class="form-control" th:value="${tc.middleName}" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Last Name</label>
+                                <input type="text" class="form-control" th:value="${tc.lastName}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Mobile No</label>
+                                <input type="text" class="form-control" th:value="${tc.contactNo}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Alternate Mobile No</label>
+                                <input type="text" class="form-control" th:value="${tc.alternateNo}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Date of Birth</label>
+                                <input type="text" class="form-control" th:value="${tc.dob}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Date of Birth (In Words)</label>
+                                <input type="text" class="form-control" th:value="${tc.dobInWords}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Email Id</label>
+                                <input type="text" class="form-control" th:value="${tc.emailId}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Gender</label>
+                                <input type="text" class="form-control" th:value="${tc.gender}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <label class="form-label">Caste Category</label>
+                                <input type="text" class="form-control" th:value="${tc.casteCategory}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <label class="form-label">Permanent Address</label>
+                                <textarea class="form-control" readonly th:text="${tc.address}"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <h3 class="section-heading" class="text-primary">Previous Qualification Details</h3>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Department</label>
+                                <input type="text" class="form-control" th:value="${tc.department}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Course</label>
+                                <input type="text" class="form-control" th:value="${tc.course}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Class</label>
+                                <input type="text" class="form-control" th:value="${tc.lastClass}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label"> Semester</label>
+                                <input type="text" class="form-control" th:value="${tc.lastSem}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Examination Name</th>
+                                            <th>Examination Month</th>
+                                            <th>Examination Year</th>
+                                            <th>Seat No</th>
+                                            <th>Result</th>
+                                            <th>CGPA</th>
+                                            <th>Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastExamName}" readonly></td>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastExamMonth}" readonly></td>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastExamYear}" readonly></td>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastSeatNo}" readonly></td>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastResult}" readonly></td>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastCgpa}" readonly></td>
+                                            <td><input type="text" class="form-control" th:value="${tc.lastGrade}" readonly></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <h3 class="section-heading">New Admission Details</h3>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">New Course</label>
+                                <input type="text" class="form-control" th:value="${tc.newCourse}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">New College Name</label>
+                                <input type="text" class="form-control" th:value="${tc.collegeName}" readonly>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Affiliated University</label>
+                                <input type="text" class="form-control" th:value="${tc.universityName}" readonly>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">Admission Type</label>
+                                <input type="text" class="form-control" th:value="${tc.admissionType}" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <h3 class="section-heading">Uploaded Documents</h3>
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Document Type</th>
+                                                <th>Document Name</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Latest Passing Marksheet</td>
+                                                <td>marksheet name will fetch here!</td>
+                                                <td>
+                                                    <button type="button" class="custom-button" onclick="viewFile('latestMarksheet')">
+                                                        <i class="fa-solid fa-eye"></i> View
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Passing Certificate</td>
+                                                <td>passing certificate will be here</td>
+                                                <td>
+                                                    <button type="button" class="custom-button" onclick="viewFile('passingCertificate')">
+                                                        <i class="fa-solid fa-eye"></i> View
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Proof of New Admission</td>
+                                                <td>proof of new admission will be here</td>
+                                                <td>
+                                                    <button type="button" class="custom-button" onclick="viewFile('newAdmissionProof')">
+                                                        <i class="fa-solid fa-eye"></i> View
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Birth Date Proof</td>
+                                                <td>Birth Date Proof will be here</td>
+                                                <td>
+                                                    <button type="button" class="custom-button" onclick="viewFile('birthDateProof')">
+                                                        <i class="fa-solid fa-eye"></i> View
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Identity Proof</td>
+                                                <td>Identity Proof will be here</td>
+                                                <td>
+                                                    <button type="button" class="custom-button" onclick="viewFile('identityProof')">
+                                                        <i class="fa-solid fa-eye"></i> View
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-card">
+                        <h3 class="section-heading">Department Approvals</h3>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <label class="form-label">Account Department</label>
+                                <input type="text" class="form-control" value="Approved" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Library Department</label>
+                                <input type="text" class="form-control" value="Approved" readonly>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Scholarship Department</label>
+                                <input type="text" class="form-control" value="Approved" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-12 text-center buttons" class="button-container">
+                            <button type="button" onclick="generateCertificate()">
+                                <i class="fas fa-file"></i>
+                                <span>Generate Certificate</span>
+                            </button>
+                            <button type="button" onclick="rejectRequest()">
+                                <i class="fas fa-times"></i>
+                                <span>Reject Request</span>
+                            </button>
+                            <button type="button" onclick="goBack()">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <style>
+            .main {
+                max-width: 1200px;
+                margin: auto;
+                margin-bottom: 5px;
+                padding: 20px;
+                box-shadow: 0 0 10px rgba(30, 251, 100, 0.821);
+                border-radius: 8px;
+                background-color: #fff;
+            }
+
+            .section-card {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                transition: box-shadow 0.3s ease;
+            }
+
+            .section-card:hover {
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            }
+
+            .section-card h3 {
+                color: #fb0f33;
+            }
+
+            .section-heading {
+                color: #ff0000 !important;
+                font-size: 16px;
+                opacity: 0.8;
+                margin-bottom: 20px;
+                border-bottom: 2px solid #12d87869;
+                padding-bottom: 5px;
+                font-style: italic;
+            }
+
+            .form-label {
+                font-weight: bold;
+                color: #555;
+                margin-bottom: 5px;
+            }
+
+            .form-control {
+                width: 100%;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                margin-bottom: 10px;
+                background-color: #f9f9f9;
+                transition: border-color 0.3s ease;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            .table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 15px;
+            }
+
+            .table th,
+            .table td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .table th {
+                background-color: #f9f9f9;
+                font-weight: bold;
+            }
+
+            .table td {
+                background-color: #fff;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: 500;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .btn-success {
+                background: linear-gradient(45 deg, #28a745, #218838);
+                color: #fff;
+            }
+
+            .btn-danger {
+                background: linear-gradient(45deg, #dc3545, #c82333);
+                color: #fff;
+            }
+
+            .btn-secondary {
+                background: linear-gradient(45deg, #6c757d, #5a6268);
+                color: #fff;
+            }
+
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn:active {
+                transform: translateY(0);
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+
+            .custom-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                font-weight: 500;
+                cursor: pointer;
+                border: none;
+                border-radius: 5px;
+                background-color: #06bd19;
+                color: #fff;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+            }
+
+            .custom-button i {
+                font-size: 14px;
+            }
+
+            .custom-button:hover {
+                background-color: #3597ff;
+                transform: translateY(-2px);
+            }
+
+            .custom-button:active {
+                transform: translateY(0);
+            }
+
+            .buttons {
+                display: flex;
+                justify-content: space-evenly;
+                align-self: center;
+                gap: 10px;
+            }
+
+            .buttons button {
+                margin: 20px;
+                padding: 10px 20px;
+                font-size: 16px;
+                font-weight: 400;
+                cursor: pointer;
+                border: none;
+                border-radius: 8px;
+                background: linear-gradient(45deg, #fb0f33, #ff5858);
+                color: #fff;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .buttons button::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 300%;
+                height: 300%;
+                background: radial-gradient(circle, rgba(255, 255, 255, 0.132), rgba(255, 255, 255, 0));
+                transform: translate(-50%, -50%) scale(1);
+                transition: transform 0.5s ease;
+                border-radius: 50%;
+                opacity: 0;
+            }
+
+            .buttons button:hover::before {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            .buttons button:hover {
+                background: linear-gradient(45deg, #f14141, #ed1737);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+                transform: translateY(-2px);
+            }
+
+            .buttons button:active {
+                transform: translateY(0);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .buttons button i {
+                font-size: 18px;
+            }
+        </style>
+
+        <script>
+            function generateCertificate() {
+                console.log("Generating Certificate...");
+                alert("Certificate generated successfully!");
+                window.location.href = "adminTC.html"; 
+            }
+
+            function rejectRequest() {
+                console.log("Rejecting Request...");
+                const isConfirmed = confirm("Are you sure you want to reject this request?");
+                if (isConfirmed) {
+                    alert("Request rejected successfully!");
+                    window.location.href = "#"; 
+                } else {
+                    console.log("Rejection canceled.");
+                }
+            }
+
+            function goBack() {
+                window.history.back();
+            }
+        </script>
+    </div>
+    <footer class="footer py-3 bg-white border-top text-center">
+        @copyrights 2025 &nbsp;&nbsp;&nbsp; ajinkyadhavale9604@gmail.com
+    </footer>
+</div>
+
+
+            <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+            <script>
+                function handleColorTheme(e) {
+                    document.documentElement.setAttribute("data-color-theme", e);
+                }
+
+            </script>
+            <div class="dark-transparent sidebartoggler"></div>
+
+        </div>
+    </div>
+
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+    <!-- Import Js Files -->
+    <script
+        src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+    <!-- solar icons -->
+    <script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+    <script
+        src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>

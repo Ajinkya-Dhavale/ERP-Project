@@ -1,12 +1,16 @@
 package com.erp.student.entity;
 
+import java.util.Date;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Column;
-import java.util.Date;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tc")
@@ -15,7 +19,6 @@ public class TCEntity {
     public TCEntity() {
         this.paymentDate = new Date();
         this.applicationDate=new Date();
-        this.tcType="original";
     }
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +28,7 @@ public class TCEntity {
     private String studentId;
 
     @Column(name = "certificate_type")
-    private String certificateType="original";
+    private String certificateType;
 
     @Column(name = "tc_type")
     private String tcType;
@@ -143,8 +146,83 @@ public class TCEntity {
 
     @Column(name = "admin_approval")
     private Integer adminApproval=0;
+    
+    @Column(name = "issue_date")
+    private Date issueDate;
+    
+    
+    
+    @Transient
+    private MultipartFile latestMarksheetFile;
+    @Transient
+    private MultipartFile passingCertificateFile;
+    @Transient
+    private MultipartFile proofOfAdmissionFile;
+    @Transient
+    private MultipartFile birthDateProofFile;
+    @Transient
+    private MultipartFile identityProofFile;
+    
+    
 
-    //payment section
+    public MultipartFile getLatestMarksheetFile() {
+		return latestMarksheetFile;
+	}
+
+
+
+	public void setLatestMarksheetFile(MultipartFile latestMarksheetFile) {
+		this.latestMarksheetFile = latestMarksheetFile;
+	}
+
+
+
+	public MultipartFile getPassingCertificateFile() {
+		return passingCertificateFile;
+	}
+
+
+
+	public void setPassingCertificateFile(MultipartFile passingCertificateFile) {
+		this.passingCertificateFile = passingCertificateFile;
+	}
+
+
+
+	public MultipartFile getProofOfAdmissionFile() {
+		return proofOfAdmissionFile;
+	}
+
+
+
+	public void setProofOfAdmissionFile(MultipartFile proofOfAdmissionFile) {
+		this.proofOfAdmissionFile = proofOfAdmissionFile;
+	}
+
+
+
+	public MultipartFile getBirthDateProofFile() {
+		return birthDateProofFile;
+	}
+
+
+
+	public void setBirthDateProofFile(MultipartFile birthDateProofFile) {
+		this.birthDateProofFile = birthDateProofFile;
+	}
+
+
+
+	public MultipartFile getIdentityProofFile() {
+		return identityProofFile;
+	}
+
+
+
+	public void setIdentityProofFile(MultipartFile identityProofFile) {
+		this.identityProofFile = identityProofFile;
+	}
+	//payment section
     @Column(name = "payment_date")
     private Date paymentDate = new Date();
 
@@ -557,6 +635,19 @@ public class TCEntity {
         public void setTotalFee(Double totalFee) {
             this.totalFee = totalFee;
         }
+
+        
+
+
+		public Date getIssueDate() {
+			return issueDate;
+		}
+
+
+
+		public void setIssueDate(Date issueDate) {
+			this.issueDate = issueDate;
+		}
 
 
 
