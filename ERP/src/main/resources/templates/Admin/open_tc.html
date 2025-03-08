@@ -23,6 +23,314 @@
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+	
+	<style>
+	      .body-wrapper {
+	          font-family: Arial, sans-serif;
+	          line-height: 1.3;
+	          color: #000;
+	          
+	      }
+
+	      .main {
+	          max-width: 1200px;
+	          margin: auto auto;
+	          margin-bottom: 5px;
+	          padding: 20px;
+	          box-shadow: 0 0 10px rgba(13, 93, 38, 0.821);
+	          border-radius: 8px;
+	      }
+
+	     
+	      .header-top {
+	          display: flex;
+	          justify-content: center;
+	          align-items: center;
+	          border-bottom: 2px solid #00bcd4;
+	          padding-bottom: 5px;
+	          margin-bottom: 10px;
+	      }
+	      /* .card-body
+	      h4{
+	          color: #00ff40;
+	      } */
+
+	      .header-img {
+	          max-width: 100%;
+	          height: auto;
+	      }
+
+	      /* Certificate Number */
+	      .cert-no {
+	          text-align: left;
+	          margin-left: 50px;
+	          font-size: 14px;
+
+	      }
+
+	      /* Header Text */
+	      .header1 {
+	          text-align: center;
+	          margin-bottom: 20px;
+	      }
+
+	      .heading {
+	          font-size: 18px;
+	          font-weight: bold;
+	          color: #000;
+	          margin-bottom: 10px;
+	      }
+
+	      .ordinance-text {
+	          font-family: 'Times New Roman', serif;
+	          font-size: 14px;
+	          margin-bottom: 5px;
+
+	      }
+
+	      .certificate-text {
+
+	          margin-bottom: 20px;
+	      }
+
+	      .original-copy {
+	          margin-bottom: -10px;
+	      }
+
+	      .certificate {
+
+	          margin-bottom: 10px;
+	          font-size: 13px;
+	          text-align: left;
+	      }
+
+	      .indented {
+	          margin-left: 20px;
+	      }
+
+	      .cert-table {
+	          width: 100%;
+	          border-collapse: collapse;
+	          margin: 10px 0;
+	          table-layout: auto;
+	      }
+
+	      .cert-table,
+	      .table-header,
+	      .table-data {
+	          border: 1px solid #000;
+	      }
+
+	      .table-header,
+	      .table-data {
+	          padding: 9px;
+	          text-align: center;
+	      }
+
+	      .table-header {
+	          font-weight: bold;
+	          font-size: 12px;
+
+	      }
+
+	      .table-data {
+	          font-size: 12px;
+	      }
+
+	      .points {
+	          list-style: none;
+	          margin: 0;
+	          padding: 0;
+	          font-size: 14px;
+	      }
+
+	      .points li {
+	          margin-bottom: 5px;
+	      }
+
+	      .point-label {
+
+	          margin-right: 5px;
+	      }
+
+	      .indent {
+	          display: block;
+	          margin-left: 15px;
+	      }
+
+	      .footer-tc {
+	          margin-top: 10px;
+	          font-size: 14px;
+	          text-align: left;
+	          padding-top: 5px;
+	      }
+
+	      .footer-tc p {
+	          margin-bottom: 3px;
+	      }
+
+	      .endline {
+	          display: flex;
+	          justify-content: space-between;
+	          align-items: center;
+	          margin-top: 5px;
+	      }
+
+	                                          .buttons {
+	                                              display: flex;
+	                                              justify-content: space-evenly;
+	                                              align-self: center;
+	                                              gap: 10px;
+	                                          }
+	                                          
+	                                          .buttons button {
+	                                              margin: 20px;
+	                                              padding: 10px 20px;
+	                                              font-size: 16px;
+	                                              font-weight: 400;
+	                                              cursor: pointer;
+	                                              border: none;
+	                                              border-radius: 8px;
+	                                              background: linear-gradient(45deg, #fb0f33, #ff5858);
+	                                              color: #fff;
+	                                              transition: all 0.3s ease;
+	                                              display: flex;
+	                                              align-items: center;
+	                                              gap: 8px;
+	                                              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	                                              position: relative;
+	                                              overflow: hidden;
+	                                          }
+	                                          
+	                                          .buttons button::before {
+	                                              content: '';
+	                                              position: absolute;
+	                                              top: 50%;
+	                                              left: 50%;
+	                                              width: 300%;
+	                                              height: 300%;
+	                                              background: radial-gradient(circle, rgba(255, 255, 255, 0.132), rgba(255, 255, 255, 0));
+	                                              transform: translate(-50%, -50%) scale(1);
+	                                              transition: transform 0.5s ease;
+	                                              border-radius: 50%;
+	                                              opacity: 0;
+	                                          }
+	                                          
+	                                          .buttons button:hover::before {
+	                                              transform: translate(-50%, -50%) scale(1);
+	                                              opacity: 1;
+	                                          }
+	                                          
+	                                          .buttons button:hover {
+	                                              background: linear-gradient(45deg, #f14141, #ed1737);
+	                                              box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+	                                              transform: translateY(-2px);
+	                                          }
+	                                          
+	                                          .buttons button:active {
+	                                              transform: translateY(0);
+	                                              box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	                                          }
+	                                          
+	                                          .buttons button i {
+	                                              font-size: 18px;
+	                                          }
+
+
+	      /* Responsive Adjustments */
+	      @media (max-width: 768px) {
+	          .main {
+	              padding: 5px;
+	          }
+
+	          .heading {
+	              font-size: 16px;
+	              color: #000
+	          }
+
+	          .ordinance-text {
+	              font-size: 13px;
+	          }
+
+	          .certificate {
+	              font-size: 13px;
+	          }
+
+	          .table-header,
+	          .table-data {
+	              font-size: 12px;
+	              padding: 9px;
+	          }
+
+	          .points {
+	              font-size: 13px;
+	          }
+
+	          .footer-tc {
+	              font-size: 11px;
+	          }
+	      }
+
+	      @media print {
+	          @page {
+	              size: A4 portrait;
+	              margin: 10mm;
+	          }
+
+	          body-wrapper {
+	              margin: 0;
+	              padding: 0;
+	          }
+	          .preloader,
+	          .left-sidebar,
+	          .topbar,
+	          .buttons,
+	          .footer,.card-body {
+	              display: none;
+	          }
+
+	          .body-wrapper {
+	              margin: 0;
+	              padding: 0;
+	              width: 100%;
+	              height: 100%;
+	          }
+
+	          .main {
+	              border: none;
+	              margin: 0;
+	              padding: 0;
+	              max-width: none;
+	              box-shadow: none;
+	          }
+
+	          .heading {
+	              font-size: 18px;
+	              font-weight: bold;
+	              color: #000;
+	          }
+
+	          .cert-no {
+	              margin-left: 25px;
+	          }
+
+	          .ordinance-text,
+	          .certificate,
+	          .points {
+	              font-size: 14px;
+	          }
+
+	          .table-header,
+	          .table-data {
+	              font-size: 12px;
+	              padding: 9px;
+	          }
+
+	          .footer-tc {
+	              font-size: 14px;
+	          }
+	      }
+	  </style>
 </head>
 
 <body>
@@ -33,7 +341,7 @@
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
-		
+
 		<!--imported side bar here-->
 		<div th:replace="Admin/fragments/side_bar :: side_bar"></div>
 		<!--  Sidebar End -->
@@ -46,15 +354,210 @@
 
 			<div class="body-wrapper">
 				<div class="container-fluid">
-					<!-- Main Part -->
-
-					<h2>Here is our dashboard</h2>
 
 
-					<!-- End Main part -->
+					<div class="card-body">
+						<h4 class="card-title mb-3  text-success text-center"
+							style="font-size: 25px;font-weight:bolder; margin-top:-5px; color:#00ff40;">Transference
+							Certificate Created Successfully !</h4>
+					</div>
+					<div class="main" style="background: #fff;">
+						<!-- Header Section -->
+						<div class="header-top">
+							<img class="header-img" th:src="@{/public/h1.png}" alt="Fergusson College Document">
+
+						</div>
+
+						<!-- Certificate Number -->
+						<div class="cert-no">
+							<p>Certificate No:<strong th:text="'2025' + ${tc.id}"></strong></p>
+
+						</div>
+
+						<!-- Header Text -->
+						<div class="header1">
+							<h1 class="heading">TRANSFERENCE CERTIFICATE</h1>
+							<p class="ordinance-text">
+								<strong>(Under Ordinance Order 73 of the Savitribai Phule Pune University)</strong>
+							</p>
+							<!--if migration certificate then print certificate type otherwise no-->
+							<p class="original-copy"><strong th:text="*{#strings.toUpperCase(tc.tcType)}+' COPY'"></strong></p><br>
+						</div>
+
+						<!-- Certificate Content -->
+						<div class="certificate" id="certificate">
+							<p class="certificate-text indented">
+								Certified that <strong>
+									<span th:text="${tc.gender == 'Male' ? 'MR.' : 'MS.'} + ' ' + ${tc.firstName} + ' ' + ${tc.middleName} + ' ' + ${tc.lastName}"></span>
+
+								  </strong>								
+<br>
+								has been a student of the <strong>FERGUSSON COLLEGE(AUTONOMOUS), PUNE 411004</strong>.
+							</p>
+
+							<p>
+								<span class="point-label">(A)</span>
+								<span class="point-text"><span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> appeared for the following examination in this College
+									since <span th:text="${tc.gender == 'Male' ? 'him' : 'her'}"></span> last University Examination, with
+									<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the result shown against them:</span>
+							</p>
+
+							<!-- Examination Table -->
+							<table class="cert-table">
+								<tr>
+									<th class="table-header">Last Examination</th>
+									<th class="table-header">Result - Passed/Fail</th>
+									<th class="table-header">Class</th>
+									<th class="table-header">CGPA</th>
+									<th class="table-header">Grade</th>
+								</tr>
+								<tr>
+									<td class="table-data">
+										<span th:text="*{tc.lastExamMonth}"></span> <span th:text="*{tc.lastExamYear}"></span>
+									</td>
+									
+									<td class="table-data" th:text="*{tc.lastResult}"></td>
+									<td class="table-data">
+										<span th:text="*{tc.course}"></span><br>
+										<span th:text="*{tc.lastSem}"></span>
+									</td>
+									<td class="table-data" th:text="*{tc.lastCgpa}"></td>
+									<td class="table-data" th:text="*{tc.lastGrade}"></td>
+								</tr>
+							</table>
+
+							<!-- Certificate Points -->
+							<ul class="points">
+								<li>
+									<span class="point-label">(B)</span>
+									<span class="point-text"><span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> would have been in ___ class if <span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> had continued in
+										this College.</span>
+								</li>
+								<li>
+									<span class="point-label">(C)</span>
+									<span class="point-text"> has no books in <span th:text="${tc.gender == 'Male' ? 'him' : 'her'}"></span> possession belonging to this
+										College.</span>
+								</li>
+								<li>
+									<span class="point-label">(D)</span>
+									<span class="point-text">Nothing is owing by <span th:text="${tc.gender == 'Male' ? 'him' : 'her'}"></span> for College dues.</span>
+								</li>
+								<li>
+									<span class="point-label">(E)</span>
+									<span class="point-text">
+										<span th:text="${tc.gender == 'Male' ? 'him' : 'her'}"></span> birth date as entered in the college Register is<br>
+										<span class="indent">&nbsp;&nbsp;&nbsp;In Figures:
+<strong id="formattedDob" th:text="${tc.dob}"></strong></span>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let dobElement = document.getElementById("formattedDob");
+        let dobString = dobElement.innerText; // Get raw date string
+        if (dobString) {
+            let dateParts = dobString.split("-"); // Assuming yyyy-MM-dd format
+            if (dateParts.length === 3) {
+                dobElement.innerText = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`; // Convert to dd-MM-yyyy
+            }
+        }
+    });
+</script>
+										<span class="indent">&nbsp;&nbsp;&nbsp;In Words: <strong th:text="*{tc.dobInWords}"></strong></span>
+									</span>
+								</li>
+								<li>
+									<span class="point-label">(F)</span>
+									<span class="point-text"><span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> bears a good moral character.</span>
+								</li>
+								<li>
+									<span class="point-label">(G)</span>
+									<span class="point-text">
+										<span th:text="${tc.gender == 'Male' ? 'Him' : 'Her'}"></span> voluntary subject or group of subjects in which she attended the course of
+										instruction in this college<br>
+										<span class="indent">&nbsp;&nbsp;&nbsp;was <strong><u th:text="*{tc.course}"></u></strong></span>
+									</span>
+								</li>
+								<li>
+									<span class="point-label">(H)</span>
+									<span class="point-text"><span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> has satisfactorily kept laboratory journal of practical
+										work in Science done by <span th:text="${tc.gender == 'Male' ? 'him' : 'her'}"></span>.</span>
+								</li>
+								<li>
+									<span class="point-label">&nbsp;(I)</span>
+									<span class="point-text">
+										<span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> has satisfactorily gone through the course of physical training prescribed
+										by the university. <span th:text="${tc.gender == 'Male' ? 'He' : 'She'}"></span> was<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exempted from P.T. on medical ground / on
+										the ground of her being a member of N.C.C. / on the ground
+										<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;of his </span><span
+										class="point-text">active membership of a
+										recognized major games of the college team.
+									</span>
+								</li>
+							</ul>
+						</div>
+						<br>
+						<!-- Footer Section -->
+						<div class="footer-tc">
+							<p>Fergusson College (Autonomous), Pune 411004.</p>
+							<p>Date: 							<strong th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}"></strong>
+ </p>
+							<p>Forwarded with compliments to:</p>
+							<p>The Registrar,</p>
+							<p>Savitribai Phule Pune University - 411007</p>
+							<br>
+							<p>To,</p>
+							<p>The Principal</p>
+							<div class="endline">
+								<p>College <strong><u>Sri Balaji University, Pune</u></strong></p>
+								<p><strong>PRINCIPAL/REGISTRAR</strong></p>
+							</div>
+						</div>
+					</div>
+
+					<div class="buttons">
+
+						<button onclick="printCertificate()">
+							<i class="fas fa-print"></i>
+							<span>Print Certificate</span>
+						</button>
+						
+					</div>
+
+
+					<!-- Include jsPDF Library -->
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+					<script>
+						// Function to print the certificate
+						function printCertificate() {
+							window.print();
+						}
+
+						// Function to download the certificate as PDF
+						function downloadPDF() {
+							alert("generated ")
+							/*const {jsPDF} = window.jspdf;
+							const doc = new jsPDF();
+
+							// Add content to PDF
+							doc.html(document.getElementById("certificate"), {
+								callback: function (pdf) {
+									pdf.save("Transference_Certificate.pdf");
+								},
+								margin: [10, 10, 10, 10],
+								autoPaging: "text",
+								width: 190, // A4 width in mm
+								windowWidth: 800, // Adjust based on your content width
+							});*/
+						}
+
+
+
+
+					</script>
+
 				</div>
-				
-				
+
+
 				<!--import footer here-->
 				<div th:replace="Admin/fragments/footer :: footer"></div>
 			</div>

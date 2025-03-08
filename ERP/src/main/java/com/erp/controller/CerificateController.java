@@ -89,13 +89,19 @@ public class CerificateController {
 	}
 	
 	
-	@GetMapping("/open_tc")
-	public String openTC(Model model)
+	@GetMapping("/open_tc/{id}")
+	public String openTC(Model model,@PathVariable Long id)
 	{
-		List<TCEntity> tcEntities = repository.findByAdminApproval(0);
-        model.addAttribute("tcEntities", tcEntities);
+		TCEntity tcEntity=null;
+		Optional<TCEntity> tcEntities=repository.findById(id);
+		if(tcEntities.isPresent())
+		{
+			tcEntity=tcEntities.get();
+		}
+		
+        model.addAttribute("tc", tcEntity);
 
-		return "Admin/view_tc_certificate";
+		return "Admin/open_tc";
 	}
 
 

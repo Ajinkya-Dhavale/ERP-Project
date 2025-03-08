@@ -33,9 +33,9 @@
 										<select class="form-select" id="inputSelect1" name="certificate_type" required>
 											<option value="" disabled selected>Please Select Certificate</option>
 											<option value="Transference Certificate">Transference Certificate</option>
-											<th:block th:if="${tcPresent == null or !tcPresent}">
+											
 											<option value="Migration Certificate">Migration Certificate</option>		
-											</th:block>								
+																
 											<option value="Bonafide Certificate">Bonafide Certificate</option>
 											<option value="Attendance Certificate">Attendance Certificate</option>
 							s			</select>
@@ -59,7 +59,7 @@
 
 										<!-- Show "Duplicate" option if tcPresent is true -->
 										<th:block th:if="${tcPresent}">
-										    <div class="form-check">
+										    <div class="form-check mt-1">
 										        <input type="radio" value="duplicate" class="form-check-input" id="customControlValidation3" name="tc_type" />
 										        <label class="form-check-label" for="customControlValidation3">Duplicate</label>
 										    </div>
