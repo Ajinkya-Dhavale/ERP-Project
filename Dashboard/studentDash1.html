@@ -684,7 +684,7 @@
 
                 .student-card {
                     width: 100%;
-                    margin-top: -25px !important;
+                    margin-top: -15px !important;
                     background-color: #ffffff;
                     border-radius: 10px;
                     padding: 5px; box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
@@ -731,7 +731,6 @@
                     height: 150px; 
                 }
                 
-                
                 .card-header {
                     width: 100%;
                     display: flex;
@@ -773,105 +772,8 @@
                     color: rgb(85, 81, 81);
                 }
                
-        .pie-chart-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-evenly;
-            gap: 5px;
-            border-radius: 10px;
-            
-        }
-
-        .pie-chart-wrapper {
-            flex: 1;
-            max-width: 230px;
-            margin: 0 auto;
-            margin-top:-25px;
-        }
-
-        .pie-chart-text {
-            flex: 1;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            max-width: 300px; 
-            margin: 0 auto;
-            margin-top: -50px;
-            margin-left:-50px;
-        }
-
-        .pie-chart-text ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .pie-chart-text ul li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .pie-chart-text ul li span {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        .pie-chart-text ul li span.approved {
-            background-color: #4CAF50;
-        }
-
-        .pie-chart-text ul li span.pending {
-            background-color: #FFC107;
-        }
-
-        .pie-chart-text ul li span.rejected {
-            background-color: #F44336;
-        }
-
-        .pie-card-title {
-            text-align: center;
-            margin-bottom: 15px;
-        }
-
-        .pie-card-title hr {
-            width: 50%;
-            margin: 10px auto;
-            border: 1px solid #ddd;
-        }
-
-        .pie-additional-text {
-            text-align: center;
-            margin-top: 5px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .pie-chart-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .pie-chart-wrapper,
-            .pie-chart-text {
-                max-width: 100%;
-            }
-        }
               
-            .countcard
-            {
-                margin-top: -27px;
-               
-            }
-            .pie{
-                margin-top: -20px;
-            }
+            
               </style>
 
 
@@ -880,7 +782,7 @@
                     
                     
                   
-                    <div class="countcard">
+
                     <div class="row">
                       
                       <div class="col-md-6 col-lg-3">
@@ -891,7 +793,7 @@
                                     <h6 class="card-title mb-0">Total Certificate Request</h6>
                                 </div>
                                 <div class="card-count" style="text-align: center;">
-                                    <span class="count">4</span>
+                                    <span class="count">3</span>
                                 </div>
                             </div>
                         </div>
@@ -926,6 +828,7 @@
                             </div>
                         </div>
                     
+                        <!-- Attendance Certificates -->
                         <div class="col-md-6 col-lg-3">
                             <div class="card certificate-card bg-light-red">
                                 <div class="card-body">
@@ -934,117 +837,20 @@
                                         <h6 class="card-title mb-0">Total Rejected Certificates</h6>
                                     </div>
                                     <div class="card-count" style="text-align: center;">
-                                        <span class="count">1</span>
+                                        <span class="count">0</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                     
-                    <div class="pie">
-                    <div class="row mt-4">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="pie-card-title">Certificate Status Distribution
-                                        <div class="pie-additional-text">
-                                            <p>
-                                                This pie chart represents the distribution of certificate requests.
-                                             </p>
-                                        </div>
-    
-                                    </h5><hr>
-                                    <div class="pie-chart-container">
-                                     
-                                        <div class="pie-chart-wrapper">
-                                            <canvas id="pieChart"></canvas>
-                                        </div>
-
-                                       
-                                        <div class="pie-chart-text">
-                                            <ul>
-                                                <li>
-                                                    <span class="approved"></span>
-                                                    Total: 4
-                                                </li>
-                                                <li>
-                                                    <span class="approved"></span>
-                                                    Approved: 1
-                                                </li>
-                                                <li>
-                                                    <span class="pending"></span>
-                                                    Pending: 2
-                                                </li>
-                                                <li>
-                                                    <span class="rejected"></span>
-                                                    Rejected: 1
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                  
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
+                       
                    
                     
 
-                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>                   
-                    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
-
-                    <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                          
-                            const pieChartData = {
-                                labels: ['Approved', 'Pending', 'Rejected'],
-                                datasets: [{
-                                    data: [1, 2, 1], 
-                                    backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
-                                    hoverBackgroundColor: ['#45a049', '#ffb300', '#e53935']
-                                }]
-                            };
-                
-                            const pieChartConfig = {
-                                type: 'pie',
-                                data: pieChartData,
-                                options: {
-                                    responsive: true,
-                                    maintainAspectRatio: false,
-                                    plugins: {
-                                        legend: {
-                                            display: false, 
-                                        },
-                                        tooltip: {
-                                            enabled: true,
-                                        },
-                                        datalabels: {
-                                            color: '#fff', 
-                                            font: {
-                                                size: 14, 
-                                                weight: 'bold', 
-                                            },
-                                            formatter: (value, context) => {
-                                                
-                                                const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                                                const percentage = ((value / total) * 100).toFixed(1) + '%';
-                                                return percentage;
-                                            }
-                                        }
-                                    }
-                                },
-                                plugins: [ChartDataLabels] 
-                            };
-                
-                           
-                            const pieChartCtx = document.getElementById('pieChart').getContext('2d');
-                            new Chart(pieChartCtx, pieChartConfig);
-                        });
-                    </script>
+                     
 				</div>
-				
+				<!--import footer here-->
                 <footer class="footer py-3 bg-white border-top text-center">
                     @copyrights 2025   &nbsp;&nbsp;&nbsp; ajinkyadhavale9604@gmail.com 
                   </footer>

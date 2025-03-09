@@ -24,101 +24,199 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
 	
-	<style>
+     <style>
 
-	              .student-card {
-	                  width: 100%;
-	                  margin-top: -15px !important;
-	                  background-color: #ffffff;
-	                  border-radius: 10px;
-	                  padding: 5px; box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
-	                  margin: 10px 0;
-	              }
-	              
-	              .student-card .card-body {
-	                  display: flex;
-	                  align-items: center;
-	                  justify-content: space-between; 
-	                  background-color: #ffffff;
-	                  padding: 15px;
-	              }
-	              
-	              .student-icon {
-	                  font-size: 24px;
-	                  color: #3c32f7; 
-	                  margin-right: 10px;
-	              }
-	              
-	              .student-title {
-	                  font-size: 18px;
-	                  font-weight: bolder;
-	                  flex-grow: 1; 
-	              }
-	              
-	              .student-count {
-	                  font-size: 20px;
-	                  font-weight: bold;
-	                  text-align: right;
-	                  flex-shrink: 0; 
-	              }
-	              .certificate-card {
-	                  width: 100%;
-	                  background-color: #ffffff;
-	                  border-radius: 10px;
-	                  padding: 12px;
-	                  box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
-	                  margin: 10px 0;
-	                  text-align: center;
-	                  display: flex;
-	                  flex-direction: column;
-	                  justify-content: space-between;
-	                  height: 150px; 
-	              }
-	              
-	              .card-header {
-	                  width: 100%;
-	                  display: flex;
-	                  background-color:none;
-	                  align-items: center;
-	                  gap: 20px; 
-	                  padding-bottom: 5px;
-	                  margin-bottom: -5px;
-	                  margin-top: -10px;
-	              }
-	              
-	              .card-icon {
-	                  font-size: 25px;
-	                  color: #ff3a3a;
-	                  flex-shrink: 0;
-	                  display: flex;
-	                  align-items: center;
-	                  margin-bottom: 15px;
-	              }
-	              
-	              .card-title {
-	                  font-size: 14px;
-	                  font-weight: bold;
-	                  flex-grow: 1;
-	              
-	                  text-align: left;
-	                  line-height: 1.2;
-	                  max-width: 80%;
-	                  margin-top: -25px;
-	                  
-	              }
-	              
-	              .card-count {
-	                  font-size: 22px;
-	                  font-weight: bold;
-	                  margin-top: auto;
-	                  text-align: center;
-	                  margin-top:20px;
-	                  color: rgb(85, 81, 81);
-	              }
-	             
-	            
-	          
-	            </style>
+                .student-card {
+                    width: 100%;
+                    margin-top: -25px !important;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 5px; box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
+                    margin: 10px 0;
+                }
+                
+                .student-card .card-body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between; 
+                    background-color: #ffffff;
+                    padding: 15px;
+                }
+                
+                .student-icon {
+                    font-size: 24px;
+                    color: #3c32f7; 
+                    margin-right: 10px;
+                }
+                
+                .student-title {
+                    font-size: 18px;
+                    font-weight: bolder;
+                    flex-grow: 1; 
+                }
+                
+                .student-count {
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: right;
+                    flex-shrink: 0; 
+                }
+                .certificate-card {
+                    width: 100%;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 12px;
+                    box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
+                    margin: 10px 0;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 150px; 
+                }
+                
+                
+                .card-header {
+                    width: 100%;
+                    display: flex;
+                    background-color:none;
+                    align-items: center;
+                    gap: 20px; 
+                    padding-bottom: 5px;
+                    margin-bottom: -5px;
+                    margin-top: -10px;
+                }
+                
+                .card-icon {
+                    font-size: 25px;
+                    color: #ff3a3a;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+                
+                .card-title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    flex-grow: 1;
+                
+                    text-align: left;
+                    line-height: 1.2;
+                    max-width: 80%;
+                    margin-top: -25px;
+                    
+                }
+                
+                .card-count {
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-top: auto;
+                    text-align: center;
+                    margin-top:20px;
+                    color: rgb(85, 81, 81);
+                }
+               
+        .pie-chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            gap: 5px;
+            border-radius: 10px;
+            
+        }
+
+        .pie-chart-wrapper {
+            flex: 1;
+            max-width: 230px;
+            margin: 0 auto;
+            margin-top:-25px;
+        }
+
+        .pie-chart-text {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 300px; 
+            margin: 0 auto;
+            margin-top: -50px;
+            margin-left:-50px;
+        }
+
+        .pie-chart-text ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pie-chart-text ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .pie-chart-text ul li span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .pie-chart-text ul li span.approved {
+            background-color: #4CAF50;
+        }
+
+        .pie-chart-text ul li span.pending {
+            background-color: #FFC107;
+        }
+
+        .pie-chart-text ul li span.rejected {
+            background-color: #F44336;
+        }
+
+        .pie-card-title {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .pie-card-title hr {
+            width: 50%;
+            margin: 10px auto;
+            border: 1px solid #ddd;
+        }
+
+        .pie-additional-text {
+            text-align: center;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .pie-chart-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pie-chart-wrapper,
+            .pie-chart-text {
+                max-width: 100%;
+            }
+        }
+              
+            .countcard
+            {
+                margin-top: -27px;
+               
+            }
+            .pie{
+                margin-top: -20px;
+            }
+              </style>
 
 
 	
@@ -148,77 +246,177 @@
                     
                   
 
-                    <div class="row">
-                      
-                      <div class="col-md-6 col-lg-3">
-                        <div class="card certificate-card bg-light-red">
-                            <div class="card-body">
-                                <div class="card-header d-flex align-items-center">
-                                    <i class="fas fa-file-alt card-icon"></i>
-                                    <h6 class="card-title mb-0">Total Certificate Request</h6>
-                                </div>
-                                <div class="card-count" style="text-align: center;">
-                                    <span class="count">3</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                      
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card certificate-card bg-light-red">
-                                <div class="card-body">
-                                    <div class="card-header d-flex align-items-center">
-                                        <i class="fas fa-check-circle card-icon"></i>
-                                        <h6 class="card-title mb-0">Total Approved Certificates</h6>
-                                    </div>
-                                    <div class="card-count" style="text-align: center;">
-                                        <span class="count">1</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card certificate-card bg-light-orange">
-                                <div class="card-body">
-                                    <div class="card-header d-flex align-items-center">
-                                        <i class="fa fa-clock card-icon"></i>
-                                        <h6 class="card-title mb-0">Total Pending Certificates</h6>
-                                    </div>
-                                    <div class="card-count" style="text-align: center;">
-                                        <span class="count">2</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <!-- Attendance Certificates -->
-                        <div class="col-md-6 col-lg-3">
-                            <div class="card certificate-card bg-light-red">
-                                <div class="card-body">
-                                    <div class="card-header d-flex align-items-center">
-                                        <i class="fas fa-times-circle card-icon"></i>
-                                        <h6 class="card-title mb-0">Total Rejected Certificates</h6>
-                                    </div>
-                                    <div class="card-count" style="text-align: center;">
-                                        <span class="count">0</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     
                        
                    
-                    
+					<div class="countcard">
+					                <div class="row">
+					                  
+					                  <div class="col-md-6 col-lg-3">
+					                    <div class="card certificate-card bg-light-red">
+					                        <div class="card-body">
+					                            <div class="card-header d-flex align-items-center">
+					                                <i class="fas fa-file-alt card-icon"></i>
+					                                <h6 class="card-title mb-0">Total Certificate Request</h6>
+					                            </div>
+					                            <div class="card-count" style="text-align: center;">
+					                                <span class="count">4</span>
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					                
+					                  
+					                    <div class="col-md-6 col-lg-3">
+					                        <div class="card certificate-card bg-light-red">
+					                            <div class="card-body">
+					                                <div class="card-header d-flex align-items-center">
+					                                    <i class="fas fa-check-circle card-icon"></i>
+					                                    <h6 class="card-title mb-0">Total Approved Certificates</h6>
+					                                </div>
+					                                <div class="card-count" style="text-align: center;">
+					                                    <span class="count">1</span>
+					                                </div>
+					                            </div>
+					                        </div>
+					                    </div>
+
+					                    <div class="col-md-6 col-lg-3">
+					                        <div class="card certificate-card bg-light-orange">
+					                            <div class="card-body">
+					                                <div class="card-header d-flex align-items-center">
+					                                    <i class="fa fa-clock card-icon"></i>
+					                                    <h6 class="card-title mb-0">Total Pending Certificates</h6>
+					                                </div>
+					                                <div class="card-count" style="text-align: center;">
+					                                    <span class="count">2</span>
+					                                </div>
+					                            </div>
+					                        </div>
+					                    </div>
+					                
+					                    <div class="col-md-6 col-lg-3">
+					                        <div class="card certificate-card bg-light-red">
+					                            <div class="card-body">
+					                                <div class="card-header d-flex align-items-center">
+					                                    <i class="fas fa-times-circle card-icon"></i>
+					                                    <h6 class="card-title mb-0">Total Rejected Certificates</h6>
+					                                </div>
+					                                <div class="card-count" style="text-align: center;">
+					                                    <span class="count">1</span>
+					                                </div>
+					                            </div>
+					                        </div>
+					                    </div>
+					                    
+					                </div>
+					                
+					                <div class="pie">
+					                <div class="row mt-4">
+					                    <div class="col-md-12">
+					                        <div class="card">
+					                            <div class="card-body">
+					                                <h5 class="pie-card-title">Certificate Status Distribution
+					                                    <div class="pie-additional-text">
+					                                        <p>
+					                                            This pie chart represents the distribution of certificate requests.
+					                                         </p>
+					                                    </div>
+
+					                                </h5><hr>
+					                                <div class="pie-chart-container">
+					                                 
+					                                    <div class="pie-chart-wrapper">
+					                                        <canvas id="pieChart"></canvas>
+					                                    </div>
+
+					                                   
+					                                    <div class="pie-chart-text">
+					                                        <ul>
+					                                            <li>
+					                                                <span class="approved"></span>
+					                                                Total: 4
+					                                            </li>
+					                                            <li>
+					                                                <span class="approved"></span>
+					                                                Approved: 1
+					                                            </li>
+					                                            <li>
+					                                                <span class="pending"></span>
+					                                                Pending: 2
+					                                            </li>
+					                                            <li>
+					                                                <span class="rejected"></span>
+					                                                Rejected: 1
+					                                            </li>
+					                                        </ul>
+					                                    </div>
+					                                </div>
+					                              
+					                            </div>
+					                        </div>
+					                    </div>
+					                </div>
+					                </div>
+					               
+					                
+
+					                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>                   
+					                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+
+					                <script>
+					                    document.addEventListener("DOMContentLoaded", function () {
+					                      
+					                        const pieChartData = {
+					                            labels: ['Approved', 'Pending', 'Rejected'],
+					                            datasets: [{
+					                                data: [1, 2, 1], 
+					                                backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
+					                                hoverBackgroundColor: ['#45a049', '#ffb300', '#e53935']
+					                            }]
+					                        };
+					            
+					                        const pieChartConfig = {
+					                            type: 'pie',
+					                            data: pieChartData,
+					                            options: {
+					                                responsive: true,
+					                                maintainAspectRatio: false,
+					                                plugins: {
+					                                    legend: {
+					                                        display: false, 
+					                                    },
+					                                    tooltip: {
+					                                        enabled: true,
+					                                    },
+					                                    datalabels: {
+					                                        color: '#fff', 
+					                                        font: {
+					                                            size: 14, 
+					                                            weight: 'bold', 
+					                                        },
+					                                        formatter: (value, context) => {
+					                                            
+					                                            const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+					                                            const percentage = ((value / total) * 100).toFixed(1) + '%';
+					                                            return percentage;
+					                                        }
+					                                    }
+					                                }
+					                            },
+					                            plugins: [ChartDataLabels] 
+					                        };
+					            
+					                       
+					                        const pieChartCtx = document.getElementById('pieChart').getContext('2d');
+					                        new Chart(pieChartCtx, pieChartConfig);
+					                    });
+					                </script>
+								</div>
 
                      
-				</div>
-				<!--import footer here-->
-				<div th:replace="Student/fragments/footer :: footer"></div>  
-			            </div>
-
+				
+				
 						
 						<div th:replace="Student/fragments/footer :: footer"></div>
 
