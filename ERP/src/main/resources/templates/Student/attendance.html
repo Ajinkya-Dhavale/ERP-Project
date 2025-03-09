@@ -19,7 +19,7 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Admin Pannel</title>
+	<title>Attendence Certificate</title>
 
 
 	<!-- font awesome -->
@@ -30,8 +30,8 @@
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-			class="lds-ripple img-fluid" />
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
+							class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
@@ -569,9 +569,8 @@
 			        document.head.appendChild(style);
 			    
 			    </script>
-			        <footer class="footer py-3 bg-white border-top text-center">
-			            @copyrights 2025   &nbsp;&nbsp;&nbsp; ajinkyadhavale9604@gmail.com 
-			          </footer>
+				<div th:replace="Student/fragments/footer :: footer"></div>
+							
 			      </div>
 			      <script>
 			  function handleColorTheme(e) {

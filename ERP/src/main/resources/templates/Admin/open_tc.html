@@ -17,7 +17,7 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Admin Pannel</title>
+	<title>View TC</title>
 
 
 	<!-- font awesome -->
@@ -37,7 +37,7 @@
 	          margin: auto auto;
 	          margin-bottom: 5px;
 	          padding: 20px;
-	          box-shadow: 0 0 10px rgba(13, 93, 38, 0.821);
+	          box-shadow: 0 0 2px rgb(192, 192, 192);
 	          border-radius: 8px;
 	      }
 
@@ -336,8 +336,8 @@
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-			class="lds-ripple img-fluid" />
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
+					class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
@@ -357,9 +357,7 @@
 
 
 					<div class="card-body">
-						<h4 class="card-title mb-3  text-success text-center"
-							style="font-size: 25px;font-weight:bolder; margin-top:-5px; color:#00ff40;">Transference
-							Certificate Created Successfully !</h4>
+						
 					</div>
 					<div class="main" style="background: #fff;">
 						<!-- Header Section -->
@@ -380,15 +378,16 @@
 							<p class="ordinance-text">
 								<strong>(Under Ordinance Order 73 of the Savitribai Phule Pune University)</strong>
 							</p>
-							<!--if migration certificate then print certificate type otherwise no-->
-							<p class="original-copy"><strong th:text="*{#strings.toUpperCase(tc.tcType)}+' COPY'"></strong></p><br>
-						</div>
+							<p class="original-copy">
+							    <strong th:text="${#strings.equalsIgnoreCase(tc.certificateType, 'Migration Certificate') ? 'Migration Certificate' : tc.tcType}"></strong>
+							</p><br>
+</div>
 
 						<!-- Certificate Content -->
 						<div class="certificate" id="certificate">
 							<p class="certificate-text indented">
 								Certified that <strong>
-									<span th:text="${tc.gender == 'Male' ? 'MR.' : 'MS.'} + ' ' + ${tc.firstName} + ' ' + ${tc.middleName} + ' ' + ${tc.lastName}"></span>
+									<span th:text="${#strings.toUpperCase((tc.gender == 'Male' ? 'MR.' : 'MS.') + ' ' + tc.lastName + ' ' + tc.middleName + ' ' + tc.FirstName)}"></span>
 
 								  </strong>								
 <br>
@@ -508,7 +507,7 @@
 							<p>To,</p>
 							<p>The Principal</p>
 							<div class="endline">
-								<p>College <strong><u>Sri Balaji University, Pune</u></strong></p>
+								<p>College <strong th:text="*{tc.collegeName}"><u></u></strong></p>
 								<p><strong>PRINCIPAL/REGISTRAR</strong></p>
 							</div>
 						</div>
@@ -520,6 +519,10 @@
 							<i class="fas fa-print"></i>
 							<span>Print Certificate</span>
 						</button>
+						<button type="button" onclick="goBack()">
+																	<i class="fas fa-arrow-left"></i>
+																	<span>Back</span>
+																</button>
 						
 					</div>
 
@@ -531,6 +534,10 @@
 						function printCertificate() {
 							window.print();
 						}
+						
+						function goBack() {
+													window.history.back();
+												}
 
 						// Function to download the certificate as PDF
 						function downloadPDF() {

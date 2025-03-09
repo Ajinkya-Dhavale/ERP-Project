@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" href="style.css" />
+	<title>Account Panel</title>
+
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader">
+    <a href="#">
+		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
+			class="lds-ripple img-fluid" />
+    </a>
+	</div>
+    
+    <div id="main-wrapper">
+		<!-- Sidebar Start -->
+	
+
+
+		<!--imported side bar here-->
+        <aside class="left-sidebar with-vertical" th:fragment="side_bar">
+            <div><!-- ---------------------------------- -->
+                <!-- Start Vertical Layout Sidebar -->
+                <!-- ---------------------------------- -->
+                <!-- Sidebar scroll-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar>
+                    <ul id="sidebarnav">
+                        <!-----------Profile------------------>
+                        <li class="sidebar-item sidebar-profile pt-2">
+                            <a class="sidebar-link has-arrow opacity-100 gap-2" href="javascript:void(0)" aria-expanded="false">
+                                <span class="d-flex">
+                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                        class="rounded" width="30" alt="user" />
+                                </span>
+                                <span class="hide-menu fw-medium">James White </span>
+                            </a>
+                            <ul aria-expanded="false" class="collapse first-level">
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fa fa-user-circle" style="font-size: 16px;"></i>
+                                          </div>
+                                        <span class="hide-menu">My Profile</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="javascript:void(0)" class="sidebar-link sublink">
+                                        <div class="round-16 d-flex align-items-center justify-content-center">
+                                            <i class="fas fa-sign-out-alt" style="font-size: 16px;"></i>
+                                          </div>
+                                        <span class="hide-menu">Logout</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+        
+                        <!-- ---------------------------------- -->
+                        <!-- Home -->
+                        <!-- ---------------------------------- -->
+        
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" th:href="@{/admin/}" id="get-url">
+                                <i class="fa-solid fa-list" style="font-size: 22px;"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+        
+                      
+        
+        
+        
+        
+        
+        
+        
+                    </ul>
+                </nav>
+        
+                <!-- End Sidebar scroll-->
+            </div>
+        </aside>
+        <!--End side bar here--> 
+        
+        
+
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+            <div th:fragment="navbar">
+                <header class="topbar card rounded-0 border-0">
+                            <div class="with-vertical"><!-- ---------------------------------- -->
+                                <!-- Start Vertical Layout Header -->
+                                <!-- ---------------------------------- -->
+                                <nav class="navbar navbar-expand-lg px-0 py-0">
+                                    <div class="d-none d-lg-block">
+                                        <div class="brand-logo d-flex align-items-center justify-content-between">
+                                            <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                                <b class="logo-icon">
+                                                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                    <!-- Dark Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                        alt="homepage" class="light-logo" />
+                                                </b>
+                                                <!--End Logo icon -->
+                                                <!-- Logo text -->
+                                                <span class="logo-text">
+                                                    <!-- dark Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                        class="light-logo" alt="homepage" />
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+            
+                                    <ul class="navbar-nav align-items-center">
+            
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                            <a class="nav-link sidebartoggler" id="headerCollapse" href="javascript:void(0)">
+                                                <i class="fa-solid fa-bars-staggered"></i>
+                                            </a>
+                                        </li>
+                                        <!-- ------------------------------- -->
+                                        <!-- start notification Dropdown -->
+                                        <!-- ------------------------------- -->
+                                        <li class="nav-item dropdown nav-icon-hover-bg rounded-circle d-none d-lg-flex">
+                                            <a class="nav-link" href="#" id="drop2" role="button">
+                                                <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
+            
+                                            </a>
+            
+                                            <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
+                                                aria-labelledby="drop2">
+                                                <div class="py-3 px-4 bg-primary">
+                                                    <div class="fs-6 fw-bold text-white">Notifications</div>
+                                                    <div class="fs-2 fw-medium text-white">You have 4 Notifications</div>
+                                                </div>
+                                                <div class="message-body" data-simplebar>
+                                                    <a href="javascript:void(0)"
+                                                        class="p-3 d-flex align-items-center justify-content-between dropdown-item gap-3   justify-content-between border-bottom">
+                                                        <span
+                                                            class="flex-shrink-0 bg-secondary-subtle rounded round-40 d-flex align-items-center justify-content-center fs-6 text-secondary">
+                                                            <iconify-icon icon="solar:widget-3-line-duotone"></iconify-icon>
+                                                        </span>
+                                                        <div class="w-80">
+                                                            <div class="d-flex align-items-center justify-content-between">
+                                                                <h6 class="mb-0 ">Luanch Admin</h6>
+                                                                <span class="fs-2 text-nowrap d-block text-muted ">9:30 AM</span>
+                                                            </div>
+                                                            <span class="fs-3 d-block text-truncate text-muted">Just see the my new
+                                                                admin!</span>
+                                                        </div>
+                                                    </a>
+            
+                                                </div>
+            
+                                            </div>
+                                        </li>
+            
+            
+            
+                                    </ul>
+            
+                                    <div class="d-block d-lg-none">
+                                        <div class="brand-logo d-flex align-items-center justify-content-between">
+                                            <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                                <b class="logo-icon">
+                                                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                    <!-- Dark Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo icon -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                        alt="homepage" class="light-logo" />
+                                                </b>
+                                                <!--End Logo icon -->
+                                                <!-- Logo text -->
+                                                <span class="logo-text">
+                                                    <!-- dark Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                        alt="homepage" class="dark-logo" />
+                                                    <!-- Light Logo text -->
+                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                        class="light-logo" alt="homepage" />
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <a class="navbar-toggler p-0 border-0 nav-icon-hover-bg rounded-circle"
+                                        href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="p-2">
+                                            <i class="ti ti-dots fs-7"></i>
+                                        </span>
+                                    </a>
+                                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <ul
+                                                class="navbar-nav flex-row align-items-center justify-content-center d-flex d-lg-none">
+            
+                                                <li class="ml-4 nav-item dropdown nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <i class="fa-solid fa-bell"></i> <!-- Font Awesome bell icon -->
+            
+                                                        <!-- for blinks -->
+                                                        <div class="notify">
+                                                            <span class="heartbit"></span>
+                                                            <span class="point"></span>
+                                                        </div>
+                                                    </a>
+                                                    <div class="dropdown-menu dropdown-menu-start py-0 content-dd overflow-hidden"
+                                                        aria-labelledby="drop2">
+            
+            
+                                                        <div class="p-3">
+                                                            <a class="d-flex btn btn-primary rounded align-items-center justify-content-center gap-2"
+                                                                href="javascript:void(0);">
+                                                                <span>Check all Notifications</span>
+                                                                <iconify-icon icon="solar:alt-arrow-right-outline"
+                                                                    class="iconify-sm"></iconify-icon>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                                                <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                                                        <i class="fas fa-moon"></i> <!-- Font Awesome moon icon -->
+                                                    </a>
+                                                    <a class="nav-link sun light-layout" href="javascript:void(0)">
+                                                        <i class="fas fa-sun"></i> <!-- Font Awesome sun icon -->
+                                                    </a>
+                                                </li>
+                                                
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- end notification Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <!-- ------------------------------- -->
+                                                <!-- start profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                            alt="user" class="profile-pic rounded round-30" />
+                                                    </a>
+                                                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
+                                                        aria-labelledby="drop2">
+                                                        <div class="profile-dropdown position-relative" data-simplebar>
+                                                            <div class=" py-3 border-bottom">
+                                                                <div class="d-flex align-items-center px-3">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                                        class="rounded" width="50" height="50" alt="ample-img" />
+                                                                    <div class="ms-3">
+                                                                        <h5 class="mb-0 fs-4">James White</h5>
+                                                                        <p class="mb-0 d-flex align-items-center text-muted">
+                                                                            info@ampleadmin.com
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="message-body">
+                                                                <div class="px-3 pt-3">
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="#" class=" d-flex  align-items-center ">
+                                                                            My Profile
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="javascript:void(0)"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            Logout
+                                                                        </a>
+                                                                    </div>
+            
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </li>
+            
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- end profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                                <!-- ---------------------------------- -->
+                                <!-- End Vertical Layout Header -->
+                                <!-- ---------------------------------- -->
+            
+            
+                            </div>
+                            <div class="app-header with-horizontal">
+                                <nav class="navbar navbar-expand-xl container-fluid">
+                                    <ul class="navbar-nav align-items-center">
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle d-flex d-xl-none">
+                                            <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse" href="javascript:void(0)">
+                                                <iconify-icon icon="solar:hamburger-menu-line-duotone"></iconify-icon>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item d-none d-xl-block">
+                                            <div class="brand-logo d-flex align-items-center justify-content-between">
+                                                <a href="#" class="text-nowrap logo-img d-flex align-items-center gap-6">
+                                                    <b class="logo-icon">
+                                                        <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                                                        <!-- Dark Logo icon -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg"
+                                                            alt="homepage" class="dark-logo" />
+                                                        <!-- Light Logo icon -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-icon.svg"
+                                                            alt="homepage" class="light-logo" />
+                                                    </b>
+                                                    <!--End Logo icon -->
+                                                    <!-- Logo text -->
+                                                    <span class="logo-text">
+                                                        <!-- dark Logo text -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-text.svg"
+                                                            alt="homepage" class="dark-logo" />
+                                                        <!-- Light Logo text -->
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-light-text.svg"
+                                                            class="light-logo" alt="homepage" />
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                                            <div class="hover-dd">
+                                                <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                    <iconify-icon icon="solar:bell-bing-line-duotone"></iconify-icon>
+                                                    <div class="notify">
+                                                        <span class="heartbit"></span>
+                                                        <span class="point"></span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+            
+                                        <li class="nav-item nav-icon-hover-bg rounded-circle dropdown d-none d-lg-flex">
+                                            <div class="hover-dd">
+                                                <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                    <iconify-icon icon="solar:inbox-line-line-duotone"></iconify-icon>
+                                                    <div class="notify">
+                                                        <span class="heartbit"></span>
+                                                        <span class="point"></span>
+                                                    </div>
+                                                </a>
+                                                <div class="dropdown-menu py-0 content-dd dropdown-menu-start overflow-hidden"
+                                                    aria-labelledby="drop2">
+                                                    <div class="py-3 px-4 bg-secondary">
+                                                        <div class="fs-6 fw-bold text-white">Messages</div>
+                                                        <div class="fs-2 fw-medium text-white">You have 5 new messages</div>
+                                                    </div>
+                                                    <div class="message-body" data-simplebar>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-2.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Genelia Roshan</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just see the my
+                                                                    new admin!</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-3.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Bianca Anderson</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
+                                                                </div>
+            
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just a reminder
+                                                                    that you have event</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-4.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Andrew Johnson</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">You can
+                                                                    customize this template as you
+                                                                    want</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-5.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Mark Strokes</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:30 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just see the my
+                                                                    new admin!</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-6.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Mark, Stoinus & Rishvi..</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:10 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">Just a reminder
+                                                                    that you have event</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="javascript:void(0)"
+                                                            class="p-3 d-flex align-items-center dropdown-item gap-3 border-bottom">
+                                                            <span class="user-img position-relative d-inline-block">
+                                                                <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-7.jpg"
+                                                                    alt="user" class="rounded w-100 round-40" />
+                                                                <span
+                                                                    class="profile-status bg-success position-absolute rounded"></span>
+                                                            </span>
+                                                            <div class="w-80">
+                                                                <div class="d-flex align-items-center justify-content-between">
+                                                                    <h6 class="mb-0 lh-base">Settings</h6>
+                                                                    <span class="fs-2 text-nowrap d-block text-muted">9:08 AM</span>
+                                                                </div>
+                                                                <span class="fs-3 d-block text-truncate text-muted">You can
+                                                                    customize this template as you
+                                                                    want</span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="p-3">
+                                                        <a class="d-flex btn btn-secondary rounded align-items-center justify-content-center gap-2"
+                                                            href="javascript:void(0);">
+                                                            <span>Check all Messages</span>
+                                                            <iconify-icon icon="solar:alt-arrow-right-outline"
+                                                                class="iconify-sm"></iconify-icon>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+            
+            
+                                    </ul>
+            
+            
+                                    <a class="navbar-toggler nav-icon-hover-bg rounded-circle p-0 border-0"
+                                        href="javascript:void(0)" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="p-2">
+                                            <i class="ti ti-dots fs-7"></i>
+                                        </span>
+                                    </a>
+                                    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-center">
+                                                <li class="nav-item nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link moon dark-layout" href="javascript:void(0)">
+                                                        <i class="fas fa-moon"></i> <!-- Moon icon -->
+                                                    </a>
+                                                    <a class="nav-link sun light-layout" href="javascript:void(0)">
+                                                        <i class="far fa-sun"></i> <!-- Alternative sun icon -->
+                                                    </a>
+                                                </li>
+                                                
+            
+                                                <li class="nav-item nav-icon-hover-bg rounded-circle d-none d-lg-flex search-box">
+                                                    <a class="nav-link d-none d-md-flex" href="javascript:void(0)"
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                        <iconify-icon icon="solar:magnifer-linear"></iconify-icon>
+                                                    </a>
+                                                </li>
+                                                <!-- ------------------------------- -->
+                                                <!-- end notification Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <!-- ------------------------------- -->
+                                                <!-- start language Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <li class="nav-item dropdown nav-icon-hover-bg rounded-circle">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
+                                                            alt="ample-img" width="20px" height="20px" class="round-20" />
+                                                    </a>
+                                                    <div class="dropdown-menu pt-0 dropdown-menu-end" aria-labelledby="drop2">
+                                                        <div class="message-body">
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-en.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">English</p>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-cn.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">Chinese</p>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-fr.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">French</p>
+                                                            </a>
+                                                            <a href="javascript:void(0)"
+                                                                class="d-flex align-items-center gap-2 py-2 px-4 dropdown-item">
+                                                                <div class="position-relative">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/svgs/icon-flag-sa.svg"
+                                                                        alt="ample-img" width="20px" height="20px"
+                                                                        class="round-20" />
+                                                                </div>
+                                                                <p class="mb-0 fs-3">Arabic</p>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <!-- ------------------------------- -->
+                                                <!-- end language Dropdown -->
+                                                <!-- ------------------------------- -->
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- start profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                                <li class="nav-item dropdown">
+                                                    <a class="nav-link" href="javascript:void(0)" id="drop2" aria-expanded="false">
+                                                        <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                            alt="user" width="30" class="profile-pic rounded" />
+                                                    </a>
+                                                    <div class="dropdown-menu pt-0 content-dd overflow-hidden pt-0 dropdown-menu-end user-dd"
+                                                        aria-labelledby="drop2">
+                                                        <div class="profile-dropdown position-relative" data-simplebar>
+                                                            <div class=" py-3 border-bottom">
+                                                                <div class="d-flex align-items-center px-3">
+                                                                    <img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
+                                                                        class="rounded" width="50" height="50" alt="ample-img" />
+                                                                    <div class="ms-3">
+                                                                        <h5 class="mb-0 fs-4">James White</h5>
+                                                                        <p class="mb-0 d-flex align-items-center text-muted">
+                                                                            info@ampleadmin.com
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="message-body pb-3">
+                                                                <div class="px-3 pt-3">
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="#" class=" d-flex  align-items-center ">
+                                                                            My Profile
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="javascript:void(0)"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            My Projects
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/app-email.html"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            Inbox
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <div class="px-3">
+                                                                    <div
+                                                                        class="py-8 px-3 d-flex justify-content-between dropdown-item align-items-center h6 mb-0  rounded-2 link">
+                                                                        <a href="javascript:void(0)" class="">
+                                                                            Mode
+                                                                        </a>
+                                                                        <div>
+                                                                            <a class="moon dark-layout" href="javascript:void(0)">
+                                                                                <iconify-icon icon="solar:moon-line-duotone"
+                                                                                    class="moon"></iconify-icon>
+                                                                            </a>
+                                                                            <a class="sun light-layout" href="javascript:void(0)">
+                                                                                <iconify-icon icon="solar:sun-2-line-duotone"
+                                                                                    class="sun"></iconify-icon>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/page-account-settings.html"
+                                                                            class=" d-flex  align-items-center  ">
+                                                                            Account Settings
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="h6 mb-0 dropdown-item py-8 px-3 rounded-2 link">
+                                                                        <a href="https://bootstrapdemos.wrappixel.com/ample/dist/main/authentication-login.html"
+                                                                            class=" d-flex  align-items-center ">
+                                                                            Sign Out
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+            
+                                                <!-- ------------------------------- -->
+                                                <!-- end profile Dropdown -->
+                                                <!-- ------------------------------- -->
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </header>
+                        <!--  Header End -->
+            </div>
+			<!--  End navbar here -->
+			
+            
+   
+
+            <style>
+
+                .student-card {
+                    width: 100%;
+                    margin-top: -15px !important;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 5px; box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
+                    margin: 10px 0;
+                }
+                
+                .student-card .card-body {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between; 
+                    background-color:none;
+                    padding: 15px;
+                }
+                
+                .student-icon {
+                    font-size: 24px;
+                    color: #3c32f7; 
+                    margin-right: 10px;
+                }
+                
+                .student-title {
+                    font-size: 18px;
+                    font-weight: bolder;
+                    flex-grow: 1; 
+                }
+                
+                .student-count {
+                    font-size: 20px;
+                    font-weight: bold;
+                    text-align: right;
+                    flex-shrink: 0; 
+                }
+                .certificate-card {
+                    width: 100%;
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 12px;
+                    box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
+                    margin: 10px 0;
+                    text-align: center;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    height: 150px;
+                }
+                
+                .card-header {
+                    width: 100%;
+                    display: flex;
+                    background-color:none;
+                    align-items: center;
+                    gap: 20px; 
+                    padding-bottom: 5px;
+                    margin-bottom: -5px;
+                    margin-top: -10px;
+                }
+                
+                .card-icon {
+                    font-size: 25px;
+                    color: #ff3a3a;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                }
+                
+                .card-title {
+                    font-size: 14px;
+                    font-weight: bold;
+                    flex-grow: 1;
+                
+                    text-align: left;
+                    line-height: 1.2;
+                    max-width: 80%;
+                    margin-top: -25px;
+                    
+                }
+                
+                .card-count {
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-top: auto;
+                    text-align: center;
+                    margin-top:20px;
+                    color: rgb(85, 81, 81);
+                }
+                .typeTC
+                {
+                    font-size: 14px;
+                    color: rgb(54, 52, 52);
+
+                }
+                .original, .duplicate {
+                    font-size: 18px; 
+                    font-weight: bold; 
+                    margin: 2px 0;
+                    color: rgb(95, 92, 92);
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .chart1
+                {
+                    margin-bottom: 15px;
+                }
+                .doughnut-card {
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                    padding: 12px;
+                    box-shadow: 2px 2px 8px rgba(55, 134, 80, 0.2);
+                    text-align: center;
+                    transition: transform 0.3s ease-in-out;
+                  }
+            
+                  .doughnut-card:hover {
+                    transform: scale(1.03);
+                  }
+            
+                  h5 {
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #1f18ded3;
+                    margin-bottom: 4px;
+                  }
+            
+                  hr {
+                    margin: 8px 0;
+                    margin-bottom: -60px;
+                    border: 0;
+                    border-top: 1px solid rgba(0, 0, 0, 0.645);
+                  }
+            
+                  .chart-container {
+                    width: 120px;
+                    margin: auto;
+                    position: relative;
+                  }
+            
+                  .center-text {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 10px;
+                    font-weight: 600;
+                    color: #333;
+                    text-align: center;
+                    line-height: 1.4;
+                  }
+            
+                  .legend {
+                    display: flex;
+                    justify-content: center;
+                    gap: 8px;
+                    font-size: 10px;
+                    font-weight: 500;
+                    color: #333;
+                    margin-top: -60px;
+                  }
+            
+                  .legend div {
+                    display: flex;
+                    align-items: center;
+                  }
+            
+                  .legend div span {
+                    width: 8px;
+                    height: 8px;
+                    display: inline-block;
+                    margin-right: 4px;
+                    border-radius: 2px;
+                  }
+  
+              </style>
+
+
+			<div class="body-wrapper">
+				<div class="container-fluid">
+                    
+                    
+                    <div class="col-md-12">
+                        <div class="card student-card">
+                            <div class="card-body d-flex align-items-center">
+                                <i class="fas fa-user-graduate student-icon"></i>
+                                <h6 class="student-title mb-0">Total Admitted Students</h6>
+                                <h2 class="student-count mb-0">
+                                    500
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="row">
+                       
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card certificate-card bg-light-blue">
+                                <div class="card-body">
+                                    <div class="card-header d-flex align-items-center">
+                                        <i class="fas fa-file-alt card-icon"></i>
+                                        <h6 class="card-title mb-0">Total Transference Certificates</h6>
+                                    </div>
+                                    <div class="card-count">
+                                        <h6 class="original"><span class="typeTC">Original:</span> <span class="count">15</span></h6>
+                                        <h6 class="duplicate"><span class="typeTC">Duplicates:</span> <span class="count">4</span></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                       
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card certificate-card bg-light-red">
+                                <div class="card-body">
+                                    <div class="card-header d-flex align-items-center">
+                                        <i class="fas fa-exchange-alt card-icon"></i>
+                                        <h6 class="card-title mb-0">Total Migration Certificates</h6>
+                                    </div>
+                                    <div class="card-count" style="text-align: center;">
+                                        <span class="count">15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                       
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card certificate-card bg-light-orange">
+                                <div class="card-body">
+                                    <div class="card-header d-flex align-items-center">
+                                        <i class="fas fa-id-card card-icon"></i>
+                                        <h6 class="card-title mb-0">Total Bonafide Certificates</h6>
+                                    </div>
+                                    <div class="card-count" style="text-align: center;">
+                                        <span class="count">15</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        
+                        <div class="col-md-6 col-lg-3">
+                            <div class="card certificate-card bg-light-red">
+                                <div class="card-body">
+                                    <div class="card-header d-flex align-items-center">
+                                        <i class="fas fa-calendar-check card-icon"></i>
+                                        <h6 class="card-title mb-0">Total Attendance Certificates</h6>
+                                    </div>
+                                    <div class="card-count" style="text-align: center;">
+                                        <span class="count">50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                        <div class="chart1">
+                        <div class="row g-4">
+                          
+                          <div class="col-md-3 col-sm-6">
+                            <div class="doughnut-card">
+                              <h5>Transfererence Certificate</h5>
+                              <hr />
+                              <div class="chart-container">
+                                <canvas id="transferChart"></canvas>
+                                <div class="center-text" id="transfer-center-text"></div>
+                              </div>
+                              <div class="legend">
+                                <div><span style="background-color: #28a745"></span> Approved</div>
+                                <div><span style="background-color: #ffc107"></span> Pending</div>
+                                <div><span style="background-color: #dc3545"></span> Rejected</div>
+                              </div>
+                            </div>
+                          </div>
+                  
+                          
+                          <div class="col-md-3 col-sm-6">
+                            <div class="doughnut-card">
+                              <h5>Migration Certificate</h5>
+                              <hr />
+                              <div class="chart-container">
+                                <canvas id="migrationChart"></canvas>
+                                <div class="center-text" id="migration-center-text"></div>
+                              </div>
+                              <div class="legend">
+                                <div><span style="background-color: #28a745"></span> Approved</div>
+                                <div><span style="background-color: #ffc107"></span> Pending</div>
+                                <div><span style="background-color: #dc3545"></span> Rejected</div>
+                              </div>
+                            </div>
+                          </div>
+                  
+                          
+                          <div class="col-md-3 col-sm-6">
+                            <div class="doughnut-card">
+                              <h5>Bonafide Certificate</h5>
+                              <hr />
+                              <div class="chart-container">
+                                <canvas id="bonafideChart"></canvas>
+                                <div class="center-text" id="bonafide-center-text"></div>
+                              </div>
+                              <div class="legend">
+                                <div><span style="background-color: #28a745"></span> Approved</div>
+                                <div><span style="background-color: #ffc107"></span> Pending</div>
+                                <div><span style="background-color: #dc3545"></span> Rejected</div>
+                              </div>
+                            </div>
+                          </div>
+                  
+                         
+                          <div class="col-md-3 col-sm-6">
+                            <div class="doughnut-card">
+                              <h5>Attendance Certificate</h5>
+                              <hr />
+                              <div class="chart-container">
+                                <canvas id="attendanceChart"></canvas>
+                                <div class="center-text" id="attendance-center-text"></div>
+                              </div>
+                              <div class="legend">
+                                <div><span style="background-color: #28a745"></span> Approved</div>
+                                <div><span style="background-color: #ffc107"></span> Pending</div>
+                                <div><span style="background-color: #dc3545"></span> Rejected</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                   
+                    
+
+                      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                      <script>
+                        function createChart(canvasId, centerTextId, approved, pending, rejected) {
+                          let ctx = document.getElementById(canvasId).getContext("2d");
+                  
+                          new Chart(ctx, {
+                            type: "doughnut",
+                            data: {
+                              labels: ["Approved", "Pending", "Rejected"],
+                              datasets: [
+                                {
+                                  data: [approved, pending, rejected],
+                                  backgroundColor: ["#28a745", "#ffc107", "#dc3545"],
+                                  borderWidth: 2,
+                                },
+                              ],
+                            },
+                            options: {
+                              responsive: true,
+                              maintainAspectRatio: false,
+                              cutout: "88%",
+                              plugins: {
+                                legend: { display: false },
+                              },
+                            },
+                          });
+                  
+                          document.getElementById(centerTextId).innerHTML = `
+                              <span class="approved">Approved: ${approved}</span>
+                              <span class="pending">Pending: ${pending}</span>
+                              <span class="rejected">Rejected: ${rejected}</span>
+                          `;
+                        }
+                  
+                        createChart("bonafideChart", "bonafide-center-text", 7, 4, 2);
+                        createChart("transferChart", "transfer-center-text", 5, 3, 1);
+                        createChart("attendanceChart", "attendance-center-text", 5, 2, 0);
+                        createChart("migrationChart", "migration-center-text", 6, 5, 1);
+                      </script>
+				</div>
+				<!--import footer here-->
+                <footer class="footer py-3 bg-white border-top text-center">
+                    @copyrights 2025   &nbsp;&nbsp;&nbsp; ajinkyadhavale9604@gmail.com 
+                  </footer>
+            </div>
+
+			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+			<div class="dark-transparent sidebartoggler"></div>
+
+		</div>
+	</div>
+
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+	<!-- Import Js Files -->
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>

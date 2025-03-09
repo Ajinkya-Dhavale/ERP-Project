@@ -17,7 +17,7 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Admin Pannel</title>
+	<title>Rejected TC List</title>
 
 
 	<!-- font awesome -->
@@ -65,16 +65,17 @@
 			text-align: center !important;
 			color: white !important;
 		}
-		
+
 		.dataTables_wrapper .dataTables_filter input {
-		    width: 250px !important; /* Increase the width as needed */
-		    border: 0.5px solid darkgrey !important ;
-		    border-radius: 5px;
-		    padding: 5px;
+			width: 250px !important;
+			/* Increase the width as needed */
+			border: 0.5px solid darkgrey !important;
+			border-radius: 5px;
+			padding: 5px;
 			height: 35px !important;
 		}
-		
-		.dataTables_wrapper .dataTables_filter label{
+
+		.dataTables_wrapper .dataTables_filter label {
 			font-size: 15px !important;
 		}
 
@@ -119,9 +120,10 @@
 			text-decoration: none;
 		}
 
-		td{
+		td {
 			text-align: center;
 		}
+
 		.btn-view:hover {
 			background-color: #0056b3;
 		}
@@ -132,8 +134,7 @@
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-			class="lds-ripple img-fluid" />
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
@@ -152,45 +153,52 @@
 				<div class="container-fluid">
 					<!-- Main Part -->
 
-				
+
 					<div class="container p-4">
 
 
-											<div class="table-responsive " style="padding-top: 30px;">
-												<h2>Rejected Transfer Certificate List</h2>
-												<hr>
-												<table id="adminTable" class="table table-bordered table-striped table-hover">
-													<!-- Inside the <thead> section, add the new column header -->
-													<thead>
-													    <tr>
-													        <th>Application No</th>
-													        <th>Student Id</th>
-													        <th>Application Date</th>
-													        <th>Certificate Name</th>
-													        <th>TC Type</th>
-													        <th>Payment Status</th>
-															<th>Status</th>
-													    </tr>
-													</thead>
-													<tbody>
-													    <tr th:each="tcEntity : ${tcEntities}">
-													        <td th:text="'TC2025' + ${tcEntity.id}"></td>
-													        <td th:text="${tcEntity.studentId}"></td>
-													        <td th:text="${tcEntity.applicationDate}"></td>
-													        <td th:text="${tcEntity.certificateType}"></td>
-													        <td th:text="${tcEntity.tcType}"></td>
-													        <td th:text="${tcEntity.paymentStatus}"></td>
-													        <td> <i class="fas fa-times"></i></td>
-													    </tr>
-													</tbody>
+						<div class="table-responsive " style="padding-top: 30px;">
+							<h2>Rejected Transference Certificate List</h2>
+							<hr>
+							<table id="adminTable" class="table table-bordered table-striped table-hover">
+								<!-- Inside the <thead> section, add the new column header -->
+								<thead>
+									<tr>
+										<th>Application No</th>
+										<th>Student Id</th>
+										<th>Application Date</th>
+										<th>Certificate Name</th>
+										<th>TC Type</th>
+										<th>Payment Status</th>
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="tcEntity : ${tcEntities}">
+										<td th:text="'TC2025' + ${tcEntity.id}"></td>
+										<td th:text="${tcEntity.studentId}"></td>
+										<td th:text="${tcEntity.applicationDate}"></td>
+										<td th:text="${tcEntity.certificateType}"></td>
+										<td th:text="${tcEntity.tcType}"></td>
+										<td th:text="${tcEntity.paymentStatus}"></td>
+										<td> <i class="fas fa-times"></i></td>
+										<td>
+											<a th:href="@{/account/approved_tc/{id}(id=${tcEntity.id})}"
+												class="btn btn-success btn-sm" title="Approve">
+												<i class="fas fa-check"></i>
+											</a>
+										</td>
+									</tr>
+								</tbody>
 
 
-												</table>
-											</div>
-										</div>
+							</table>
+						</div>
+					</div>
 
-					
-					
+
+
 					<!-- ✅ Load jQuery -->
 					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 

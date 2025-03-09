@@ -17,7 +17,7 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Admin Pannel</title>
+	<title>Rejected TC List</title>
 
 
 	<!-- font awesome -->
@@ -65,16 +65,17 @@
 			text-align: center !important;
 			color: white !important;
 		}
-		
+
 		.dataTables_wrapper .dataTables_filter input {
-		    width: 250px !important; /* Increase the width as needed */
-		    border: 0.5px solid darkgrey !important ;
-		    border-radius: 5px;
-		    padding: 5px;
+			width: 250px !important;
+			/* Increase the width as needed */
+			border: 0.5px solid darkgrey !important;
+			border-radius: 5px;
+			padding: 5px;
 			height: 35px !important;
 		}
-		
-		.dataTables_wrapper .dataTables_filter label{
+
+		.dataTables_wrapper .dataTables_filter label {
 			font-size: 15px !important;
 		}
 
@@ -119,9 +120,10 @@
 			text-decoration: none;
 		}
 
-		td{
+		td {
 			text-align: center;
 		}
+
 		.btn-view:hover {
 			background-color: #0056b3;
 		}
@@ -132,8 +134,7 @@
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-			class="lds-ripple img-fluid" />
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
@@ -156,7 +157,7 @@
 
 
 						<div class="table-responsive " style="padding-top: 30px;">
-							<h2>Rejected Transfer Certificate</h2>
+							<h2>Rejected Transference Certificates</h2>
 							<hr>
 							<table id="adminTable" class="table table-bordered table-striped table-hover">
 								<thead>
@@ -167,8 +168,7 @@
 										<th>Certificate Name</th>
 										<th>TC Type</th>
 										<th>Payment Status</th>
-										<th>Issue Date</th>
-										<th>Status</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -179,21 +179,15 @@
 										<td th:text="${tcEntity.certificateType}"></td>
 										<td th:text="${tcEntity.tcType}"></td>
 										<td th:text="${tcEntity.paymentStatus}"></td>
-										<td th:text="${tcEntity.issueDate}"></td>
 										<td>
-											<span style="color:green;"
-												th:if="${tcEntity.accountApproval == 1 and tcEntity.libraryApproval == 1 
-																	                                and tcEntity.scholarshipApproval == 1 }" class="approved">
-												✔️
-											</span>
-
-											<span style="color:red;" th:if="${tcEntity.accountApproval == 0 or tcEntity.libraryApproval == 0 
-																	                                or tcEntity.scholarshipApproval == 0}"
-												class="not-approved">
-												❌
-											</span>
+											<a th:href="@{/admin/deleteTC/{id}(id=${tcEntity.id})}"
+												class="btn btn-danger btn-sm"
+												onclick="return confirm('Are you sure you want to delete this TC?');">
+												<i class="fa fa-trash"></i>
+											</a>
 										</td>
 									</tr>
+
 								</tbody>
 
 							</table>

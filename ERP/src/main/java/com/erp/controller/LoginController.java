@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.erp.admin.entity.AdminEntity;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class LoginController {
 	
@@ -14,5 +16,11 @@ public class LoginController {
 		model.addAttribute("loginForm",new AdminEntity());
         return "login";
     }	
+	
+	@GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate(); // Clears the session
+        return "redirect:/"; // Redirect to login page (or home page)
+    }
 	
 }

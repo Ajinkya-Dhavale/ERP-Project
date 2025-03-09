@@ -17,7 +17,7 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Admin Pannel</title>
+	<title>Rejected TC List</title>
 
 
 	<!-- font awesome -->
@@ -132,8 +132,8 @@
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
-			class="lds-ripple img-fluid" />
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
+					class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
@@ -157,7 +157,7 @@
 
 
 											<div class="table-responsive " style="padding-top: 30px;">
-												<h2>Rejected Transfer Certificate List</h2>
+												<h2>Rejected Transference Certificate List</h2>
 												<hr>
 												<table id="adminTable" class="table table-bordered table-striped table-hover">
 													<!-- Inside the <thead> section, add the new column header -->
@@ -170,6 +170,7 @@
 													        <th>TC Type</th>
 													        <th>Payment Status</th>
 															<th>Status</th>
+															<th>Action</th>
 													    </tr>
 													</thead>
 													<tbody>
@@ -181,6 +182,11 @@
 													        <td th:text="${tcEntity.tcType}"></td>
 													        <td th:text="${tcEntity.paymentStatus}"></td>
 													        <td> <i class="fas fa-times"></i></td>
+															<td>
+																<a th:href="@{/scholarship/approved_tc/{id}(id=${tcEntity.id})}" class="btn btn-success btn-sm" title="Approve">
+																												                <i class="fas fa-check"></i>
+																												            </a>
+															</td>
 													    </tr>
 													</tbody>
 

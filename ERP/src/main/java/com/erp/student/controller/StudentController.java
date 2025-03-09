@@ -31,7 +31,13 @@ public class StudentController {
 	private StudentService studentService;
 	
 	@GetMapping({ "/", "" })
-	public String getStudentAdminPannel() {
+	public String getStudentAdminPannel(HttpSession session,Model model) {
+	
+		if(session.getAttribute("student")==null)
+		{
+			return "redirect:/";
+		}
+		 
 		return "Student/index.html";
 	}
 
@@ -40,12 +46,12 @@ public class StudentController {
 	        @RequestParam("username") String username,
 	        @RequestParam("password") String password,
 	        Model model, RedirectAttributes redirectAttributes,HttpSession session) {
-		System.out.println("ajinkya");
+		//System.out.println("ajinkya");
 //		return "Student/index";
 
 	    Admission student = studentService.findByUsernameAndPassword(username, password);
 
-	    System.out.println(student);
+//	    System.out.println(student);
 	    
 	    if (student == null) {
 	        redirectAttributes.addFlashAttribute("error", "Invalid credentials.");

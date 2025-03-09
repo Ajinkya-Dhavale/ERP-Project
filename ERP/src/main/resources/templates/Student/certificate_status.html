@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Admin Panel</title>
+    <title>Certificate List</title>
 
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
     <!-- Favicon -->
@@ -126,6 +126,10 @@
 </head>
 
 <body>
+	<div class="preloader">
+			<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
+								class="lds-ripple img-fluid" />
+		</div>
     <div id="main-wrapper">
         <!-- Sidebar -->
         <div th:replace="Student/fragments/side_bar :: side_bar"></div>
@@ -136,7 +140,7 @@
 
             <div class="body-wrapper">
                 <div class="container-fluid">
-                    <h2>Transfer Certificate List</h2>
+                    <h2>Transference Certificate List</h2>
 
                     <div class="table-responsive">
                         <table id="studentTable" class="table table-bordered table-striped table-hover">
@@ -166,25 +170,25 @@
 							               <!-- Account Approval -->
 							               <td>
 							                   <span style="color:green;" th:if="${tcEntity.accountApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.accountApproval == 0}" class="not-approved">❌</span>
+							                   <span style="color:red;" th:if="${tcEntity.accountApproval != 1}" class="not-approved">❌</span>
 							                     </td>
 
 							               <!-- Library Approval -->
 							               <td>
 							                   <span style="color:green;" th:if="${tcEntity.libraryApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.libraryApproval == 0}" class="not-approved">❌</span>
+							                   <span style="color:red;" th:if="${tcEntity.libraryApproval != 1}" class="not-approved">❌</span>
 							                 </td>
 
 							               <!-- Scholarship Approval -->
 							               <td>
 							                   <span style="color:green;" th:if="${tcEntity.scholarshipApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.scholarshipApproval == 0}" class="not-approved">❌</span>
+							                   <span style="color:red;" th:if="${tcEntity.scholarshipApproval != 1}" class="not-approved">❌</span>
 							                   </td>
 
 							               <!-- Admin Approval -->
 							               <td>
 							                   <span style="color:green;" th:if="${tcEntity.adminApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.adminApproval == 0}" class="not-approved">❌</span>
+							                   <span style="color:red;" th:if="${tcEntity.adminApproval != 1}" class="not-approved">❌</span>
 							                   </td>
 
 							               <!-- Overall Status -->
@@ -195,8 +199,8 @@
 							                       ✔️
 							                   </span>
 
-							                   <span style="color:red;" th:if="${tcEntity.accountApproval == 0 or tcEntity.libraryApproval == 0 
-							                                or tcEntity.scholarshipApproval == 0 or tcEntity.adminApproval == 0}" 
+							                   <span style="color:red;" th:if="${tcEntity.accountApproval != 1 or tcEntity.libraryApproval != 1 
+							                                or tcEntity.scholarshipApproval != 1 or tcEntity.adminApproval != 1}" 
 							                         class="not-approved">
 							                       ❌
 							                   </span>
