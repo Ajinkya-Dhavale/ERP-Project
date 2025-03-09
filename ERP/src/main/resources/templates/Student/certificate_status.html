@@ -2,246 +2,305 @@
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Certificate List</title>
+	<title>Certificate List</title>
 
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png"
-        href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
 
-    <!-- DataTables CSS -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+	<!-- Custom Styles -->
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #f8f9fa;
+			color: #333;
+		}
 
-        .container-fluid {
-            padding: 20px;
-        }
+		.container-fluid {
+			padding: 20px;
+		}
 
-        h2 {
-            text-align: center;
-            font-weight: bold;
-            color: rgb(243, 75, 101);
-            margin-bottom: 20px;
-        }
+		h2 {
+			text-align: center;
+			font-weight: bold;
+			color: rgb(243, 75, 101);
+			margin-bottom: 20px;
+		}
 
-        .table-responsive {
-            background: white;
-            padding: 15px;
-            border-radius: 0px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+		.table-responsive {
+			background: white;
+			padding: 15px;
+			border-radius: 0px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
 
-        table {
-            width: 100%;
-            border-radius: 7px;
-            overflow: hidden;
+		table {
+			width: 100%;
+			border-radius: 7px;
+			overflow: hidden;
 			font-size: 12px;
-        }
+		}
 
-        thead {
-            background:  rgb(243, 75, 101);
-            color: white;
-            text-transform: uppercase;
-        }
-		
-		th{
+		thead {
+			background: rgb(243, 75, 101);
+			color: white;
+			text-transform: uppercase;
+		}
+
+		th {
 			color: white !important;
 			text-align: center !important;
 		}
 
-        th, td {
-            text-align: center;
-        }
+		th,
+		td {
+			text-align: center;
+		}
 
-        tbody tr:hover {
-            background: rgba(220, 53, 69, 0.1);
-            cursor: pointer;
-        }
+		tbody tr:hover {
+			background: rgba(220, 53, 69, 0.1);
+			cursor: pointer;
+		}
 
-        .dataTables_wrapper .dataTables_paginate .paginate_button {
-            padding: 8px 12px;
-            margin: 2px;
-            border-radius: 5px;
-            background: #dc3545;
-            color: white !important;
-            border: none;
-        }
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			padding: 8px 12px;
+			margin: 2px;
+			border-radius: 5px;
+			background: #dc3545;
+			color: white !important;
+			border: none;
+		}
 
-        .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
-            background: #c82333;
-        }
+		.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+			background: #c82333;
+		}
 
-        .dataTables_wrapper .dataTables_filter input {
-            border: 2px solid #dc3545;
-            border-radius: 5px;
-			
-            padding: 10px;
-        }
-
-        .dt-buttons .dt-button {
-            background: #dc3545 !important;
-            border-radius: 5px;
-            color: white !important;
-            padding: 8px 12px;
-            margin: 5px;
-            border: none;
-        }
-		
 		.dataTables_wrapper .dataTables_filter input {
-		    width: 250px !important; /* Increase the width as needed */
-		    border: 0.5px solid darkgrey !important ;
-		    border-radius: 5px;
-		    padding: 5px;
+			border: 2px solid #dc3545;
+			border-radius: 5px;
+
+			padding: 10px;
+		}
+
+		.dt-buttons .dt-button {
+			background: #dc3545 !important;
+			border-radius: 5px;
+			color: white !important;
+			padding: 8px 12px;
+			margin: 5px;
+			border: none;
+		}
+
+		.dataTables_wrapper .dataTables_filter input {
+			width: 250px !important;
+			/* Increase the width as needed */
+			border: 0.5px solid darkgrey !important;
+			border-radius: 5px;
+			padding: 5px;
 			height: 35px !important;
 		}
 
-		.dataTables_wrapper .dataTables_filter label{
+		.dataTables_wrapper .dataTables_filter label {
 			font-size: 15px !important;
 		}
 
-        .dt-buttons .dt-button:hover {
-            background: #c82333 !important;
-        }
-		
-		.approved { color: green; font-weight: bold; }
-		        .pending { color: orange; font-weight: bold; }
-		    
-    </style>
+		.dt-buttons .dt-button:hover {
+			background: #c82333 !important;
+		}
+
+		.approved {
+			color: green;
+			font-weight: bold;
+		}
+
+		.pending {
+			color: orange;
+			font-weight: bold;
+		}
+	</style>
 </head>
 
 <body>
 	<div class="preloader">
-			<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
-								class="lds-ripple img-fluid" />
-		</div>
-    <div id="main-wrapper">
-        <!-- Sidebar -->
-        <div th:replace="Student/fragments/side_bar :: side_bar"></div>
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar -->
+		<div th:replace="Student/fragments/side_bar :: side_bar"></div>
 
-        <div class="page-wrapper">
-            <!-- Navbar -->
-            <div th:replace="Student/fragments/navbar :: navbar"></div>
+		<div class="page-wrapper">
+			<!-- Navbar -->
+			<div th:replace="Student/fragments/navbar :: navbar"></div>
 
-            <div class="body-wrapper">
-                <div class="container-fluid">
-                    <h2>Transference Certificate List</h2>
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<h2>Transference Certificate List</h2>
 
-                    <div class="table-responsive">
-                        <table id="studentTable" class="table table-bordered table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Application No</th>
+					<div class="table-responsive">
+						<table id="studentTable" class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr>
+									<th>Application No</th>
 									<th>Application Date</th>
-                                    <th>Certificate Name</th>
-                                    <th>TC Type</th>
-                                    
+									<th>Certificate Name</th>
+									<th>TC Type</th>
+
 									<th>Payment Status</th>
-                                    <th>Account Approval</th>
-                                    <th>Library Approval</th>
-                                    <th>Scholarship Approval</th>
-                                    <th>Admin Approval</th>
-                                    <th>Status</th>
-                                </tr>
-                            </thead>
+									<th>Account Approval</th>
+									<th>Library Approval</th>
+									<th>Scholarship Approval</th>
+									<th>Admin Approval</th>
+									<th>Status</th>
+								</tr>
+							</thead>
 							<tbody>
-							           <tr th:each="tcEntity : ${tcEntities}">
-							               <td th:text="'TC2025' + ${tcEntity.id}"></td>
-										   <td th:text="${tcEntity.applicationDate}"></td>
-										   <td th:text="${tcEntity.certificateType}"></td>
-										   <td th:text="${tcEntity.tcType}"></td>
-										   <td th:text="${tcEntity.paymentStatus}"></td>
-										   
-							               <!-- Account Approval -->
-							               <td>
-							                   <span style="color:green;" th:if="${tcEntity.accountApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.accountApproval != 1}" class="not-approved">❌</span>
-							                     </td>
+								<tr th:each="tcEntity : ${tcEntities}">
+									<td th:text="'TC2025' + ${tcEntity.id}"></td>
+									<td th:text="${tcEntity.applicationDate}"></td>
+									<td th:text="${tcEntity.certificateType}"></td>
+									<td th:text="${tcEntity.tcType}"></td>
+									<td th:text="${tcEntity.paymentStatus}"></td>
 
-							               <!-- Library Approval -->
-							               <td>
-							                   <span style="color:green;" th:if="${tcEntity.libraryApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.libraryApproval != 1}" class="not-approved">❌</span>
-							                 </td>
+									<!-- Account Approval -->
+									<td>
+										<span style="color:green;" th:if="${tcEntity.accountApproval == 1}"
+											class="approved">✔️</span>
+										<span style="color:red;" th:if="${tcEntity.accountApproval != 1}"
+											class="not-approved">❌</span>
+									</td>
 
-							               <!-- Scholarship Approval -->
-							               <td>
-							                   <span style="color:green;" th:if="${tcEntity.scholarshipApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.scholarshipApproval != 1}" class="not-approved">❌</span>
-							                   </td>
+									<!-- Library Approval -->
+									<td>
+										<span style="color:green;" th:if="${tcEntity.libraryApproval == 1}"
+											class="approved">✔️</span>
+										<span style="color:red;" th:if="${tcEntity.libraryApproval != 1}"
+											class="not-approved">❌</span>
+									</td>
 
-							               <!-- Admin Approval -->
-							               <td>
-							                   <span style="color:green;" th:if="${tcEntity.adminApproval == 1}" class="approved">✔️</span>
-							                   <span style="color:red;" th:if="${tcEntity.adminApproval != 1}" class="not-approved">❌</span>
-							                   </td>
+									<!-- Scholarship Approval -->
+									<td>
+										<span style="color:green;" th:if="${tcEntity.scholarshipApproval == 1}"
+											class="approved">✔️</span>
+										<span style="color:red;" th:if="${tcEntity.scholarshipApproval != 1}"
+											class="not-approved">❌</span>
+									</td>
 
-							               <!-- Overall Status -->
-							               <td>
-							                   <span style="color:green;" th:if="${tcEntity.accountApproval == 1 and tcEntity.libraryApproval == 1 
-							                                and tcEntity.scholarshipApproval == 1 and tcEntity.adminApproval == 1}" 
-							                         class="approved">
-							                       ✔️
-							                   </span>
+									<!-- Admin Approval -->
+									<td>
+										<span style="color:green;" th:if="${tcEntity.adminApproval == 1}"
+											class="approved">✔️</span>
+										<span style="color:red;" th:if="${tcEntity.adminApproval != 1}"
+											class="not-approved">❌</span>
+									</td>
 
-							                   <span style="color:red;" th:if="${tcEntity.accountApproval != 1 or tcEntity.libraryApproval != 1 
-							                                or tcEntity.scholarshipApproval != 1 or tcEntity.adminApproval != 1}" 
-							                         class="not-approved">
-							                       ❌
-							                   </span>
-							               </td>
-							           </tr>
-							       </tbody>
-                        </table>
-                    </div>
-                </div>
+									<!-- Overall Status -->
+									<td>
+										<span style="color:green;" th:if="${tcEntity.accountApproval == 1 and tcEntity.libraryApproval == 1 
+							                                and tcEntity.scholarshipApproval == 1 and tcEntity.adminApproval == 1}"
+											class="approved">
+											✔️
+										</span>
 
-                <!-- Footer -->
-                <div th:replace="Student/fragments/footer :: footer"></div>
-            </div>
-        </div>
-    </div>
+										<span style="color:red;" th:if="${tcEntity.accountApproval != 1 or tcEntity.libraryApproval != 1 
+							                                or tcEntity.scholarshipApproval != 1 or tcEntity.adminApproval != 1}"
+											class="not-approved">
+											❌
+										</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 
-    <!-- ✅ Load jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    <!-- ✅ Load DataTables -->
-    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+					<h2 class="mt-4">Bonafide Certificate List</h2>
 
-    <!-- ✅ DataTables Initialization -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            $('#studentTable').DataTable({
-                responsive: true,
-                paging: true,
-                searching: true,
-                ordering: true
-            });
-        });
-    </script>
-	
-	
+					<div class="table-responsive mb-4">
+						<table id="studentTable1" class="table table-bordered table-striped table-hover">
+							<thead>
+								<tr>
+									<th>Application No</th>
+									<th>Application Date</th>
+									<th>Certificate Name</th>
+									<th>Application Fees</th>
+									<th>Payment Id</th>
+									<th>Payment Status</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:each="bonafide : ${bonafides}">
+									<td th:text="'BON2025' + ${bonafide.id}"></td>
+									<td th:text="${bonafide.applicationDate}"></td>
+									<td th:text="${bonafide.certificateType}"></td>
+									<td th:text="${bonafide.totalFees}"></td>
+									<td th:text="${bonafide.paymentId}"></td>
+									<td th:text="${bonafide.paymentStatus}"></td>
+
+									<!-- Admin Approval -->
+									<td>
+										<span style="color:green;" th:if="${bonafide.adminApproval == 1}"
+											class="approved">✔️</span>
+										<span style="color:red;" th:if="${bonafide.adminApproval != 1}"
+											class="not-approved">❌</span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				</div>
+
+				<!-- Footer -->
+				<div th:replace="Student/fragments/footer :: footer"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ✅ Load jQuery -->
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<!-- ✅ Load DataTables -->
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+	<!-- ✅ DataTables Initialization -->
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			$('#studentTable').DataTable({
+				responsive: true,
+				paging: true,
+				searching: true,
+				ordering: true
+			});
+			$('#studentTable1').DataTable({
+							responsive: true,
+							paging: true,
+							searching: true,
+							ordering: true
+						});
+		});
+	</script>
+
+
 	<script
 		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
@@ -259,4 +318,5 @@
 
 
 </body>
+
 </html>

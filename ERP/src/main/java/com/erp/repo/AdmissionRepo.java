@@ -16,6 +16,7 @@ public interface AdmissionRepo extends JpaRepository<Admission, Long> {
     @Query("SELECT COALESCE(MAX(a.id), 0) FROM Admission a")
     Long findLastAdmissionId();
     
-    Optional<Admission> findByEmail(String email);
+    Optional<Admission> findByEmail(String email);    
     
+    Optional<Admission> findByAdmissionId(String admissionId);
 }

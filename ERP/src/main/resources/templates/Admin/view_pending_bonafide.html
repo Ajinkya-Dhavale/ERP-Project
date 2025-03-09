@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
+	<title>Pending Bonafide Certificate List</title>
+
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+	<style>
+		body {
+			font-family: 'Arial', sans-serif;
+			background-color: #f8f9fa;
+		}
+
+		.container {
+			margin-top: 20px;
+		}
+
+		h2 {
+			text-align: center;
+			font-weight: bold;
+			color: #dc3545;
+			margin-bottom: 20px;
+		}
+
+		.table-responsive {
+			background: white;
+			padding: 15px;
+			border-radius: 10px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		thead {
+			background-color: rgb(243, 75, 101);
+
+		}
+
+		th {
+			align-items: center !important;
+			text-align: center !important;
+			color: white !important;
+		}
+		
+		.dataTables_wrapper .dataTables_filter input {
+		    width: 250px !important; /* Increase the width as needed */
+		    border: 0.5px solid darkgrey !important ;
+		    border-radius: 5px;
+		    padding: 5px;
+			height: 35px !important;
+		}
+		
+		.dataTables_wrapper .dataTables_filter label{
+			font-size: 15px !important;
+		}
+
+
+		.dataTables_wrapper .dataTables_paginate .paginate_button {
+			background: #dc3545;
+			color: white !important;
+			border: none;
+			padding: 5px 10px;
+		}
+
+		.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+			background: #c82333;
+		}
+
+		.dataTables_wrapper .dataTables_filter input {
+			border: 2px solid #dc3545;
+			border-radius: 5px;
+			padding: 5px;
+		}
+
+		.approved {
+			color: green;
+			font-weight: bold;
+		}
+
+		.pending {
+			color: orange;
+			font-weight: bold;
+		}
+
+		.not-approved {
+			color: red;
+			font-weight: bold;
+		}
+
+		.btn-view {
+			background-color: #007bff;
+			color: white;
+			border-radius: 5px;
+			padding: 5px 10px;
+			text-decoration: none;
+		}
+
+		td{
+			text-align: center;
+		}
+		.btn-view:hover {
+			background-color: #0056b3;
+		}
+	</style>
+
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
+					class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+
+		<!--imported side bar here-->
+		<div th:replace="Admin/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+			<div th:replace="Admin/fragments/navbar :: navbar"></div>
+
+
+
+
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<!-- Main Part -->
+
+					<div class="container p-4">
+
+
+						<div class="table-responsive " style="padding-top: 30px;">
+							<h2>Pending Bonafide Certificates</h2>
+							<hr>
+							<table id="adminTable" class="table table-bordered table-striped table-hover">
+								<thead>
+									<tr>
+										<th>Application No</th>
+										<th>Student Id</th>
+										<th>Application Date</th>
+										<th>Certificate Name</th>
+										<th>Payment Id</th>
+										<th>Payment Status</th>
+										
+										<th>Status</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="bonafide : ${bonafides}">
+										<td th:text="'BC2025' + ${bonafide.id}"></td>
+										<td th:text="${bonafide.studentId}"></td>
+										<td th:text="${bonafide.applicationDate}"></td>
+										<td th:text="${bonafide.certificateType}"></td>
+										<td th:text="${bonafide.paymentId}"></td>
+										<td th:text="${bonafide.paymentStatus}"></td>
+										<td>
+											<span style="color:green;"
+												th:if="${bonafide.adminApproval == 1 }" class="approved">
+												✔️
+											</span>
+
+											<span style="color:red;" th:if="${bonafide.adminApproval != 1 }"	class="not-approved">
+												❌
+											</span>
+										</td>
+
+										<td>
+											<a th:href="@{'/admin/view_bonafide_application/' + ${bonafide.id}}"
+												class="btn btn-sm btn-view">
+												<i class="fa fa-eye"></i>
+											</a>
+											
+										</td>
+									</tr>
+								</tbody>
+
+							</table>
+						</div>
+					</div>
+
+					<!-- ✅ Load jQuery -->
+					<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+					<!-- ✅ Load DataTables -->
+					<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+					<script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+					<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+					<script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+					<!-- ✅ DataTables Initialization -->
+					<script>
+						$(document).ready(function () {
+							$('#adminTable').DataTable({
+								dom: 'Bfrtip', // Adds export buttons
+								buttons: ['copy', 'csv', 'excel', 'pdf', 'print'],
+								responsive: true,
+								paging: true,
+								searching: true,
+								ordering: true
+							});
+						});
+					</script>
+
+
+
+					<!-- End Main part -->
+				</div>
+
+
+				<!--import footer here-->
+				<div th:replace="Admin/fragments/footer :: footer"></div>
+			</div>
+
+			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+			<div class="dark-transparent sidebartoggler"></div>
+
+		</div>
+	</div>
+
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
+	<title>Admin Pannel</title>
+
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+	<style>
+		.body-wrapper {
+			font-family: Arial, sans-serif;
+			line-height: 1.3;
+			color: #000;
+		}
+	
+		.main {
+			max-width: 1200px;
+			margin: auto;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(13, 93, 38, 0.821);
+			border-radius: 8px;
+			background: #fff;
+		}
+	
+		.header-top {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 2px solid #00bcd4;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+			margin-top: -30px;
+		}
+	
+		.header-img {
+			max-width: 100%;
+			height: auto;
+		}
+	
+		.cert-no {
+			text-align: left;
+			margin-left: 50px;
+			font-size: 14px;
+		}
+	
+		/* Header Text */
+		.header1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	
+		.header-title1 {
+			font-size: 20px;
+			font-weight: bold;
+			color: #000;
+			margin-bottom: 10px;
+		}
+	
+		.bonafide-certificate {
+			margin-bottom: 10px;
+			font-size: 13px;
+			text-align: left;
+		}
+	
+		.st-profile {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
+			flex-direction: column;
+		}
+	
+		.st-profile-photo img {
+			margin-top: 5px;
+			width: 100px;
+			height: auto;
+			border: none;
+		}
+	
+		.st-content {
+			font-size: 16px;
+			line-height: 1.6;
+			text-align: justify;
+			letter-spacing: 0.8px;
+		}
+	
+		.bold {
+			font-weight: bold;
+		}
+	
+		.st-address {
+			margin-top: 10px;
+		}
+	
+		.signature {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 105px;
+			font-weight: bold;
+		}
+	
+		.buttons {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-top: 20px;
+		}
+	
+		.buttons button {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			border: none;
+			border-radius: 8px;
+			background: linear-gradient(45deg, #fb0f33, #ff5858);
+			color: #fff;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			position: relative;
+			overflow: hidden;
+		}
+	
+		.buttons button:hover {
+			background: linear-gradient(45deg, #f14141, #ed1737);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+			transform: translateY(-2px);
+		}
+	
+		.buttons button:active {
+			transform: translateY(0);
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+	
+		@media (max-width: 1024px) {
+			.main {
+				max-width: 90%;
+				padding: 15px;
+			}
+	
+			.header-title1 {
+				font-size: 16px;
+			}
+	
+			.st-content {
+				font-size: 14px;
+			}
+	
+			.signature {
+				flex-direction: column;
+				text-align: center;
+				margin-top: 60px;
+			}
+		}
+	
+		@media (max-width: 768px) {
+			.main {
+				padding: 10px;
+			}
+	
+			.header-title1 {
+				font-size: 10px;
+			}
+	
+			.st-content {
+				font-size: 13px;
+				letter-spacing: 0.5px;
+			}
+	
+			.buttons {
+				flex-direction: column;
+				align-items: center;
+			}
+	
+			.buttons button {
+				width: 80%;
+				text-align: center;
+			}
+	
+			.signature {
+				flex-direction: column;
+				text-align: center;
+			}
+			.header-top {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-bottom: 2px solid #00bcd4;
+				padding-bottom: 5px;
+				margin-bottom: 10px;
+				margin-top: 10px;
+				width: auto;
+			}
+			.st-profile-photo img {
+				margin-top: 5px;
+				width: 50px;
+				height: auto;
+				border: none;
+			}
+		
+		}
+	
+		@media print {
+			@page {
+				size: A4 portrait;
+				margin: 20mm;
+			}
+	
+			body {
+				margin: 0;
+				padding: 0;
+				background: #fff;
+			}
+	
+			.body-wrapper {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+	
+			.main {
+				border: none;
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
+				box-shadow: none;
+			}
+			.header-top {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-bottom: 2px solid #00bcd4;
+				padding-bottom: 5px;
+				margin-bottom: 10px;
+				margin-top: -35px;
+			}
+		
+	
+			.cert-no {
+				margin-left: 25px;
+			}
+	
+			.buttons,
+			.preloader,
+			.left-sidebar,
+			.topbar,
+			.footer,
+			.card-body {
+				display: none !important;
+			}
+	
+			.header-title1 {
+				font-size: 20px;
+				font-weight: bold;
+				color: #000;
+				margin-bottom: 10px;
+			}
+	
+			.st-profile-photo img {
+				margin-top: 5px;
+				width: 110px;
+				height: auto;
+				border: none;
+			}
+	
+			.st-content {
+				font-size: 13px;
+				line-height: 1.6;
+				text-align: justify;
+				letter-spacing: 0.8px;
+			}
+	
+			.bold {
+				font-weight: bold;
+			}
+	
+			.signature {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 170px;
+				font-weight: bold;
+			}
+	
+			.asper {
+				margin-top: -5px;
+				margin-bottom: -10px;
+			}
+		}
+	</style>
+	
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/logo-icon.svg" alt="loader"
+			class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+
+		<!--imported side bar here-->
+		<div th:replace="Admin/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+			<div th:replace="Admin/fragments/navbar :: navbar"></div>
+
+
+
+
+			<div class="body-wrapper">
+				<div class="container-fluid">
+
+
+					<div class="card-body">
+						<h4 class="card-title mb-3  text-success text-center"
+							style="font-size: 25px;font-weight:bolder; margin-top:-5px; color:#00ff40;">Bonafide
+							Certificate Created Successfully !</h4>
+					</div>
+					<div class="main" style="background: #fff;">
+						<!-- Header Section -->
+						<div class="header-top">
+							<!-- <img class="header-img" th:src="@{/public/h1.png}" alt="Fergusson College Document"> -->
+							 <img class="header-img" src="src/header.png" alt="FC">
+						</div>
+
+						<!-- Certificate Number -->
+						<div class="cert-no">
+							<p>Certificate No:<strong th:text="'2025' + ${tc.id}"></strong>202512</p>
+
+						</div>
+
+						<div class="bonafide-certificate">
+							<div class="st-profile">
+							  <div class="st-profile-photo">
+								<img src="src/th (1).jpg" alt="Student Photo" />
+							  </div>
+							</div>
+					
+							<div class="header1">
+							  <h1 class="header-title1">BONAFIDE CERTIFICATE</h1>
+							</div>
+					
+							<div class="st-content">
+							  <div class="st-Academic-details">
+								This is to certify that
+								<span class="bold">Ms. Smita Ankita Aditya</span> is a student of our
+								college. She is studying in
+								<span class="bold">M.SC. COMPUTER SCIENCE</span> in the current
+								academic year <span class="bold">2024-2025</span>. Her Roll Number is
+								<span class="bold">246210</span> and she is in Division
+								<span class="bold">B</span>.
+								<br> <p>As per &nbsp;college &nbsp;records,&nbsp; her date of birth is
+								<span class="bold">01/01/2001</span> &nbsp;and her &nbsp;date of &nbsp;birth &nbsp;words is
+								<span class="bold" >FIFTEENTH JANUARY TWO THOUSAND NINE</span>.</p>
+								
+							  </div>
+					
+							  <br />
+					
+							  <p class="asper">As per our record her address :</p><br>
+					
+							  <div class="st-address">
+								<p><span class="bold">Permanent Address :</span></p>
+								<p>
+								  SR.NO. 116/5, SUS ROAD, PASHAN PUNE - 411021 ,ADDRESS WILL BE HERE
+								  IN UPPERCASE ONLY
+								</p>
+								<p><span class="bold">Local Address :</span></p>
+								<p>
+								  SR.NO. 116/5, SUS ROAD, PASHAN PUNE - 411021 ,ADDRESS WILL BE HERE
+								  IN UPPERCASE ONLY
+								</p>
+							  </div>
+					
+							  <br />
+					
+							  <p style="margin-top:-10px;">This document is issued on the request of the student.</p>
+					
+							  <div class="signature">
+								<div class="date">Date: 21/08/2024</div>
+								<p>Authorized Signature</p>
+							  </div>
+							</div>
+						  </div>
+
+						
+						
+					</div>
+
+					<div class="buttons">
+
+						<button onclick="printCertificate()">
+							<i class="fas fa-print"></i>
+							<span>Print Certificate</span>
+						</button>
+						
+					</div>
+
+
+					<!-- Include jsPDF Library -->
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+					<script>
+						// Function to print the certificate
+						function printCertificate() {
+							window.print();
+						}
+
+						// Function to download the certificate as PDF
+						function downloadPDF() {
+							alert("generated ")
+							/*const {jsPDF} = window.jspdf;
+							const doc = new jsPDF();
+
+							// Add content to PDF
+							doc.html(document.getElementById("certificate"), {
+								callback: function (pdf) {
+									pdf.save("Transference_Certificate.pdf");
+								},
+								margin: [10, 10, 10, 10],
+								autoPaging: "text",
+								width: 190, // A4 width in mm
+								windowWidth: 800, // Adjust based on your content width
+							});*/
+						}
+
+
+
+
+					</script>
+
+				</div>
+
+
+				<!--import footer here-->
+				<div th:replace="Admin/fragments/footer :: footer"></div>
+			</div>
+
+			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+			<div class="dark-transparent sidebartoggler"></div>
+
+		</div>
+	</div>
+
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+	<!-- Import Js Files -->
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>
