@@ -196,15 +196,18 @@
 
 										<td style="width: auto; white-space: nowrap;">
 											<a th:href="@{'/admin/open_bonafide/' + ${bonafide.id}}"
-												class="btn btn-sm btn-view">
+												class="btn btn-sm btn-success">
 												View
 											</a>
-											<a th:href="@{'/admin/issue_bonafide/' + ${bonafide.id}}"
-												class="btn btn-sm btn-view"
-												th:classappend="${bonafide.issueDate != null} ? 'disabled' : ''"
-												th:attr="onclick=${bonafide.issueDate != null} ? 'return false;' : ''">
-												Issued
+											<a id="btn_hover" 
+											   th:href="@{'/admin/issue_bonafide/' + ${bonafide.id}}"
+											   class="btn btn-sm btn-view"
+											   th:classappend="${bonafide.issueDate != null} ? 'disabled' : ''"
+											   th:attr="onclick=${bonafide.issueDate != null} ? 'return false;' : ''"
+											   th:text="${bonafide.issueDate != null} ? 'Issued' : 'Issue'">
 											</a>
+
+											
 
 
 									</tr>

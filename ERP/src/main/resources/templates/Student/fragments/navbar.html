@@ -119,9 +119,10 @@
 												<img src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/profile/user-1.jpg"
 													class="rounded" width="50" height="50" alt="ample-img" />
 												<div class="ms-3">
-													<h5 class="mb-0 fs-4" >Ajinkya</h5>
-													<p class="mb-0 d-flex align-items-center text-muted">
-													ajinkyadhavale9604@gmail.com
+													<h5 class="mb-0 fs-4" th:text="${session.student.firstName} + ' ' + ${session.student.lastName}"></h5>
+
+
+													<p class="mb-0 d-flex align-items-center text-muted" th:text="${session.student.email}">
 													</p>
 												</div>
 											</div>

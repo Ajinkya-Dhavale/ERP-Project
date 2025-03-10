@@ -87,8 +87,7 @@
 		}
 
 		.st-profile-photo img {
-			margin-top: 5px;
-			width: 100px;
+			width: 100%;
 			height: auto;
 			border: none;
 		}
@@ -213,7 +212,6 @@
 			}
 
 			.st-profile-photo img {
-				margin-top: 5px;
 				width: 50px;
 				height: auto;
 				border: none;
@@ -280,7 +278,6 @@
 			}
 
 			.st-profile-photo img {
-				margin-top: 5px;
 				width: 110px;
 				height: auto;
 				border: none;
@@ -373,7 +370,16 @@
 							<div class="bonafide-certificate">
 								<div class="st-profile">
 									<div class="st-profile-photo">
-										<img src="" />
+									
+										<th:block th:if="${document != null}">
+										    <img class="w-100 h-100" th:src="@{'/uploads/' + ${document.photo}}">
+										</th:block>
+										<th:block th:if="${document == null}">
+										    <img>
+										</th:block>
+
+	
+									
 									</div>
 								</div>
 
@@ -382,7 +388,7 @@
 								</div>
 
 								<div class="st-content">
-									<div class="st-Academic-details">
+									<div class="st-Academic-details ">
 										This is to certify that
 										<span class="bold"
 											th:text="${#strings.toUpperCase((bonafide.gender == 'Male' ? 'MR.' : 'MS.') + ' ' + bonafide.fullName)}"></span>
@@ -396,6 +402,7 @@
 										<span class="bold" th:text="*{bonafide.studentId}"></span> and <span
 											th:text="*{bonafide.gender == 'Male' ? 'He' : 'She'}"></span> is in Division
 										<span class="bold" th:text="*{bonafide.division}"></span>.
+										<br>
 										<br>
 										<p>As per &nbsp;college &nbsp;records,&nbsp; <span
 												th:text="*{bonafide.gender == 'Male' ? 'him' : 'her'}"></span> date of
@@ -428,11 +435,11 @@
 
 									<div class="st-address">
 										<p><span class="bold">Permanent Address :</span></p>
-										<p th:text="*{bonafide.permanentAddress}">
+										<p th:text="${#strings.toUpperCase(bonafide.permanentAddress)}">
 											
 										</p>
 										<p><span class="bold">Local Address :</span></p>
-										<p th:text="*{bonafide.localAddress}">
+										<p th:text="${#strings.toUpperCase(bonafide.localAddress)}">
 											
 										</p>
 									</div>

@@ -17,8 +17,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.erp.admin.entity.Admission;
 import com.erp.repo.AdmissionRepo;
 import com.erp.student.entity.BonafideEntity;
+import com.erp.student.entity.StudentDocument;
 import com.erp.student.entity.TCEntity;
 import com.erp.student.repo.BonafideRepository;
+import com.erp.student.repo.StudentDocumentRepository;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -36,6 +38,9 @@ public class BonafideController1 {
     @Autowired
     private AdmissionRepo admissionRepo;
 
+    @Autowired
+    private StudentDocumentRepository studentDocumentRepository;
+    
     @GetMapping("/view_pedding_bonafide")
     public String viewPendingBonafide(Model model) {
         List<BonafideEntity> bonafideEntities = bonafideRepository.findByAdminApproval(0);
@@ -127,19 +132,24 @@ public class BonafideController1 {
     }
     
     @GetMapping("/open_bonafide/{id}")
-	public String openBonafide(Model model,@PathVariable Long id)
-	{
-		BonafideEntity bonafideEntity=null;
-		Optional<BonafideEntity> Entities=bonafideRepository.findById(id);
-		if(Entities.isPresent())
-		{
-			bonafideEntity=Entities.get();
-		}
-		
-        model.addAttribute("bonafide", bonafideEntity);
+    public String openBonafide(Model model, @PathVariable Long id) {
+        Optional<BonafideEntity> entityOptional = bonafideRepository.findById(id);
+        
+        if (entityOptional.isPresent()) {
+            BonafideEntity bonafideEntity = entityOptional.get();
+            StudentDocument document = studentDocumentRepository.findByStudentId(bonafideEntity.getStudentId())
+                                                                .orElse(null); // Avoids null issues
+            
+            model.addAttribute("document", document);
+            model.addAttribute("bonafide", bonafideEntity);
+        } else {
+            model.addAttribute("error", "Bonafide record not found!");
+            return "redirect:/admin/bonafide_list"; // Redirect to listing page if not found
+        }
 
-		return "Admin/open_bonafide";
-	}
+        return "Admin/open_bonafide";
+    }
+
     
     @GetMapping("/reject_bonafide_certificate/{id}")
 	public String rejectCertificate(@PathVariable Long id) {

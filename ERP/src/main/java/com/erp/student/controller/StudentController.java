@@ -18,6 +18,7 @@ import com.erp.admin.entity.Admission;
 import com.erp.student.entity.AcademicDetails;
 import com.erp.student.entity.PersonalDetails;
 import com.erp.student.entity.StudentAddress;
+import com.erp.student.entity.StudentDocument;
 import com.erp.student.service.StudentService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -70,6 +71,11 @@ public class StudentController {
 
 		Admission student = (Admission) session.getAttribute("student");
 		
+		if(student==null)
+		{
+			return "redirect:/";
+		}
+		
 		PersonalDetails personalDetails1=studentService.getPersonalDetailByStudentId(student.getAdmissionId());
 		personalDetails1.setStudentId(student.getAdmissionId());
 		model.addAttribute("personal_details",personalDetails1);
@@ -103,6 +109,9 @@ public class StudentController {
     }
 	
 	
+	
+	
+	
 	@GetMapping({ "/address", "/address/" })
 	public String getAddress(HttpSession session,Model model) {
 		Admission student=(Admission)session.getAttribute("student");
@@ -120,10 +129,42 @@ public class StudentController {
     }
 	
 	@GetMapping({ "/photo_sign", "/photo_sign/" })
-	public String getPhotoAnsSign(Model model) {
+	public String getPhotoAnsSign(Model model,HttpSession session) {
+		
+		
 		model.addAttribute("fileTypes", "image/png, image/gif, image/jpeg");
+		
+		Admission admission=(Admission)session.getAttribute("student");
+		
+		 if (admission == null) {
+		        return "redirect:/"; // Redirect if no student is logged in
+		    }
+		StudentDocument document=studentService.getStudentDocumentByStudentId(admission.getAdmissionId());
+		
+		model.addAttribute("document",document);
+		
 		return "Student/photo_sign";
 	}
+	
+	 // Save Student Document
+    @PostMapping("/save_student_document")
+    public String saveStudentDocument(@ModelAttribute StudentDocument studentDocument,
+                                      HttpSession session,
+                                      RedirectAttributes redirectAttributes) {
+        try {
+            Admission admission=(Admission) session.getAttribute("student");
+            studentDocument.setStudentId(admission.getAdmissionId());
+
+            studentService.saveOrUpdateStudentDocument(studentDocument);
+
+            redirectAttributes.addFlashAttribute("successMessage", "Document uploaded successfully!");
+            return "redirect:/student/photo_sign";
+        } catch (IOException e) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Error uploading document: " + e.getMessage());
+            return "redirect:/student/photo_sign";
+        }
+    }
+
 	
 	
 	

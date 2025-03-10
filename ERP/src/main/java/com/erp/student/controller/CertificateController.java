@@ -184,7 +184,7 @@ public class CertificateController {
 				studentAddress1 = studentAddress.get();
 				academicDetails1=academicDetails.get();
 				
-				
+				bonafide.setDivision(academicDetails1.getSection());
 				bonafide.setAdminApproval(0);
 				bonafide.setApplicationDate(new Date());
 				bonafide.setGender(personalDetails1.getGender());
