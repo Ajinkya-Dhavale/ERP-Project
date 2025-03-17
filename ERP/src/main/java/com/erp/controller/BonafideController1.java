@@ -18,7 +18,6 @@ import com.erp.admin.entity.Admission;
 import com.erp.repo.AdmissionRepo;
 import com.erp.student.entity.BonafideEntity;
 import com.erp.student.entity.StudentDocument;
-import com.erp.student.entity.TCEntity;
 import com.erp.student.repo.BonafideRepository;
 import com.erp.student.repo.StudentDocumentRepository;
 
@@ -44,7 +43,6 @@ public class BonafideController1 {
     @GetMapping("/view_pedding_bonafide")
     public String viewPendingBonafide(Model model) {
         List<BonafideEntity> bonafideEntities = bonafideRepository.findByAdminApproval(0);
-        System.out.println("iudu");
         model.addAttribute("bonafides", bonafideEntities);
         return "Admin/view_pending_bonafide";
     }
@@ -113,7 +111,7 @@ public class BonafideController1 {
         String body = "<html><body>"
                 + "<h3>Dear " + fullName + ",</h3>"
                 + "<p>We are pleased to inform you that your Bonafide Certificate request has been approved.</p>"
-                + "<p><b>Application ID (Bonafide ID):</b> 2025" + id + "</p>" // ✅ Added Application ID
+                + "<p><b>Application ID (Bonafide ID):</b> BC2025" + id + "</p>" // ✅ Added Application ID
                 + "<p>Please visit <b>Office No. 3</b> at <b>Fergusson College (Autonomous), Pune</b> at your earliest convenience to collect it.</p>"
                 + "<p>For a smooth collection process, kindly ensure you bring your Student ID card as proof of identity.</p>"
                 + "<p>If you have any questions or need further assistance, please do not hesitate to contact our administrative office.</p>"
@@ -154,14 +152,55 @@ public class BonafideController1 {
     @GetMapping("/reject_bonafide_certificate/{id}")
 	public String rejectCertificate(@PathVariable Long id) {
 	   
-		bonafideRepository.findById(id).ifPresent(tc -> {
-            tc.setAdminApproval(2); // Set approval to 1 (Approved)
-            bonafideRepository.save(tc); // Save changes
+		bonafideRepository.findById(id).ifPresent(bonafide -> {
+			bonafide.setAdminApproval(2); 
+            bonafideRepository.save(bonafide); 
+            	
+            Optional<Admission> admission=admissionRepo.findByAdmissionId(bonafide.getStudentId());
+            
+            if(admission.isPresent())
+            {
+            	Admission student=admission.get();
+            	 try {
+            		 sendBonafideRejectionEmail(student.getEmail(), bonafide.getFullName(), bonafide.getId());
+                 } catch (MessagingException e) {
+                     e.printStackTrace(); // Log error if email fails
+                 }
+            }
+            
         });
 
-	     return "redirect:/admin/view_pending_bonafide"; // ✅ Redirect to view page
+	     return "redirect:/admin/view_pedding_bonafide"; 
 	    
 	}
+    
+    
+    public void sendBonafideRejectionEmail(String to, String fullName, Long id) throws MessagingException {
+        MimeMessage message = mailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message, true);
+
+        String subject = "Notification: Bonafide Certificate Request Rejected";
+
+        String body = "<html><body>"
+                + "<h3>Dear " + fullName + ",</h3>"
+                + "<p>We regret to inform you that your request for a Bonafide Certificate has been <b>rejected</b> due to some issues.</p>"
+                + "<p><b>Application ID:</b> BC2025" + id + "</p>" 
+                + "<p>There seems to be some incorrect information or missing details in your application.</p>"
+                + "<p>To resolve this, please visit <b>Office No. 3</b> at <b>Fergusson College (Autonomous), Pune</b> as soon as possible.</p>"
+                + "<p>Our administrative staff will guide you through the necessary corrections.</p>"
+                + "<p>If you have any questions, feel free to contact us.</p>"
+                + "<br>"
+                + "<p><b>Best regards,</b><br>"
+                + "Fergusson College (Autonomous), Pune<br>"
+                + "<i>office.fc@gmail.com</i></p>"
+                + "</body></html>";
+
+        helper.setTo(to);
+        helper.setSubject(subject);
+        helper.setText(body, true); // ✅ Enable HTML format
+
+        mailSender.send(message); // ✅ Send email
+    }
 	
     @GetMapping("/issue_bonafide/{id}")
     public String issueTC(@PathVariable Long id) {

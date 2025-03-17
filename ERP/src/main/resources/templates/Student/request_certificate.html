@@ -14,6 +14,99 @@
 			<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
 								class="lds-ripple img-fluid" />
 		</div>
+		
+		
+		<!--toast message is start-->
+								<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+								<style>
+								    /* Custom Toast Styles */
+								    .swal2-popup {
+								        width: 240px !important; /* Smaller width */
+								        font-size: 14px !important; /* Smaller font size */
+								        border-radius: 6px !important;
+								        text-align: left;
+								        padding: 9px;
+								        margin-top: 52px;
+								        margin-right: 18px;
+								    }
+
+								    /* Success Toast */
+								    .swal2-toast-success {
+								        background-color: #28a745 !important; /* Green */
+								        color: white !important;
+								    }
+
+								    /* Error Toast */
+								    .swal2-toast-error {
+								        background-color: #dc3545 !important; /* Red */
+								        color: white !important;
+								    }
+
+								    /* Icon and text color */
+								    .swal2-toast-success .swal2-title,
+								    .swal2-toast-error .swal2-title {
+								        color: white !important;
+								    }
+
+								    /* Force change success icon to white */
+								    .swal2-icon.swal2-success [class^="swal2-success-line"] {
+								        background-color: white !important;
+								    }
+								    .swal2-icon.swal2-success .swal2-success-ring {
+								        border-color: white !important;
+								    }
+
+								    /* Force change error icon to white */
+								    .swal2-icon.swal2-error [class^="swal2-error-x-mark"] {
+								        background-color: white !important;
+								    }
+								    .swal2-icon.swal2-error {
+								        border-color: white !important;
+								    }
+
+								    /* Pagination Line (Timer Progress) */
+								    .swal2-timer-progress-bar {
+								        height: 3px !important; /* Thinner line */
+								        background-color: white !important; /* White progress line */
+								    }
+								</style>
+
+								<script>
+								    // Function to show Toast with backend message
+								    function showToast(type, message) {
+								        Swal.fire({
+								            toast: true,
+								            position: 'top-right',
+								            icon: type, // 'success' or 'error'
+								            title: message,
+								            showConfirmButton: false,
+								            timer: 2000, // Toast disappears after 3 seconds
+								            timerProgressBar: true,
+								            customClass: {
+								                popup: type === 'success' ? 'swal2-toast-success' : 'swal2-toast-error'
+								            }
+								        });
+								    }
+
+								    // Get messages from backend (Assuming backend sends 'success' or 'error' key)
+								    document.addEventListener("DOMContentLoaded", function () {
+								        let successMessage = `[[${success}]]`; // Get success message
+								        let errorMessage = `[[${error}]]`; // Get error message
+
+								        if (successMessage && successMessage !== 'null') {
+								            showToast('success', successMessage);
+								        }
+
+								        if (errorMessage && errorMessage !== 'null') {
+								            showToast('error', errorMessage);
+								        }
+								    });
+								</script>
+
+								<!--toast message is end-->
+		
+		
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
 		<div th:replace="Student/fragments/side_bar :: side_bar"></div>
@@ -53,7 +146,7 @@
 										<!-- Show "Original" option if tcPresent is NOT true -->
 										<th:block th:if="${tcPresent == null or !tcPresent}">
 										    <div class="form-check">
-										        <input type="radio" value="original" class="form-check-input" id="customControlValidation2" name="tc_type" />
+										        <input type="radio" value="Original" class="form-check-input" id="customControlValidation2" name="tc_type" />
 										        <label class="form-check-label" for="customControlValidation2">Original</label>
 										    </div>
 										</th:block>
@@ -61,8 +154,8 @@
 										<!-- Show "Duplicate" option if tcPresent is true -->
 										<th:block th:if="${tcPresent}">
 										    <div class="form-check mt-1">
-										        <input type="radio" value="duplicate" class="form-check-input" id="customControlValidation3" name="tc_type" />
-										        <label class="form-check-label" for="customControlValidation3">Duplicate</label>
+										        <input type="radio" value="Dublicate" class="form-check-input" id="customControlValidation3" name="tc_type" />
+										        <label class="form-check-label" for="customControlValidation3">Dublicate</label>
 										    </div>
 										    <div class="invalid-feedback">Please select a certificate type.</div>
 										</th:block>

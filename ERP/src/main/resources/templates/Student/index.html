@@ -241,14 +241,7 @@
 
 
 	<div class="body-wrapper">
-				<div class="container-fluid">
-                    
-                    
-                  
-
-                    
-                       
-                   
+				<div class="container-fluid">                   
 					<div class="countcard">
 					                <div class="row">
 					                  
@@ -260,7 +253,7 @@
 					                                <h6 class="card-title mb-0">Total Certificate Request</h6>
 					                            </div>
 					                            <div class="card-count" style="text-align: center;">
-					                                <span class="count">4</span>
+					                                <span class="count" th:text="*{totalCount}"></span>
 					                            </div>
 					                        </div>
 					                    </div>
@@ -275,7 +268,7 @@
 					                                    <h6 class="card-title mb-0">Total Approved Certificates</h6>
 					                                </div>
 					                                <div class="card-count" style="text-align: center;">
-					                                    <span class="count">1</span>
+					                                    <span class="count"  th:text="*{approvedCount}"></span>
 					                                </div>
 					                            </div>
 					                        </div>
@@ -289,7 +282,7 @@
 					                                    <h6 class="card-title mb-0">Total Pending Certificates</h6>
 					                                </div>
 					                                <div class="card-count" style="text-align: center;">
-					                                    <span class="count">2</span>
+					                                    <span class="count"  th:text="*{peddingCount}"></span>
 					                                </div>
 					                            </div>
 					                        </div>
@@ -303,7 +296,7 @@
 					                                    <h6 class="card-title mb-0">Total Rejected Certificates</h6>
 					                                </div>
 					                                <div class="card-count" style="text-align: center;">
-					                                    <span class="count">1</span>
+					                                    <span class="count"  th:text="*{rejectedCount}"></span>
 					                                </div>
 					                            </div>
 					                        </div>
@@ -335,19 +328,19 @@
 					                                        <ul>
 					                                            <li>
 					                                                <span class="approved"></span>
-					                                                Total: 4
+					                                                Total
 					                                            </li>
 					                                            <li>
 					                                                <span class="approved"></span>
-					                                                Approved: 1
+					                                                Approved
 					                                            </li>
 					                                            <li>
 					                                                <span class="pending"></span>
-					                                                Pending: 2
+					                                                Pending
 					                                            </li>
 					                                            <li>
 					                                                <span class="rejected"></span>
-					                                                Rejected: 1
+					                                                Rejected
 					                                            </li>
 					                                        </ul>
 					                                    </div>
@@ -364,17 +357,22 @@
 					                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>                   
 					                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 
-					                <script>
+					                <script th:inline="javascript">
 					                    document.addEventListener("DOMContentLoaded", function () {
 					                      
-					                        const pieChartData = {
-					                            labels: ['Approved', 'Pending', 'Rejected'],
-					                            datasets: [{
-					                                data: [1, 2, 1], 
-					                                backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
-					                                hoverBackgroundColor: ['#45a049', '#ffb300', '#e53935']
-					                            }]
-					                        };
+											const totalApproved = "[[${approvedCount}]]";
+											    const totalPending = "[[${peddingCount}]]";
+											    const totalRejected = "[[${rejectedCount}]]";
+
+											    // Corrected Pie Chart Data
+											    const pieChartData = {
+											        labels: ["Approved", "Pending", "Rejected"],
+											        datasets: [{
+											            data: [totalApproved, totalPending, totalRejected],
+											            backgroundColor: ['#4CAF50', '#FFC107', '#F44336'],
+											            hoverBackgroundColor: ['#45a049', '#ffb300', '#e53935']
+											        }]
+											    };
 					            
 					                        const pieChartConfig = {
 					                            type: 'pie',

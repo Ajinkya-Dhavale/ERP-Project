@@ -39,10 +39,10 @@ public class BonafideController {
             bonafide.setBirthProofPath(saveFile(birthProof));
             bonafide.setFeeReceiptPath(saveFile(feeReceipt));
 
-            System.out.println("Identity Proof Path: " + bonafide.getIdentityProofPath());
-            System.out.println("Birth Proof Path: " + bonafide.getBirthProofPath());
-            System.out.println("Fee Receipt Path: " + bonafide.getFeeReceiptPath());
-            // Save Bonafide Application to DB
+//            System.out.println("Identity Proof Path: " + bonafide.getIdentityProofPath());
+//            System.out.println("Birth Proof Path: " + bonafide.getBirthProofPath());
+//            System.out.println("Fee Receipt Path: " + bonafide.getFeeReceiptPath());
+//            // Save Bonafide Application to DB
             bonafideRepository.save(bonafide);
 
             

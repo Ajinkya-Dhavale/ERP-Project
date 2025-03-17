@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
+	<title>Attendance Application Form</title>
+
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+	<style>
+		.body-wrapper {
+			font-family: Arial, sans-serif;
+			line-height: 1.3;
+			color: #000;
+
+		}
+
+		.main {
+			max-width: 1200px;
+			margin: auto auto;
+			margin-bottom: 5px;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(13, 93, 38, 0.821);
+			border-radius: 8px;
+		}
+
+		.header-top {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 2px solid #00bcd4;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+		}
+
+
+		.header-img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.cert-no {
+			text-align: left;
+			margin-left: 50px;
+			font-size: 14px;
+
+		}
+
+		.header1 {
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		.heading {
+			font-size: 18px;
+			font-weight: bold;
+			color: #000;
+			margin-bottom: 10px;
+		}
+
+		.ordinance-text {
+			font-family: 'Times New Roman', serif;
+			font-size: 14px;
+			margin-bottom: 5px;
+
+		}
+
+		.certificate-text {
+
+			margin-bottom: -85px;
+		}
+
+		.original-copy {
+			margin-bottom: -10px;
+		}
+
+		.certificate {
+
+			margin-bottom: 10px;
+			font-size: 13px;
+			text-align: left;
+		}
+
+		.indented {
+			margin-left: 20px;
+		}
+
+
+		.cert-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin: 10px 0;
+			table-layout: auto;
+		}
+
+		.cert-table,
+		.table-header,
+		.table-data {
+			border: 1px solid #000;
+		}
+
+		.table-header,
+		.table-data {
+			padding: 9px;
+			text-align: center;
+		}
+
+		.table-header {
+			font-weight: bold;
+			font-size: 12px;
+
+		}
+
+		.table-data {
+			font-size: 12px;
+		}
+
+
+		/* Certificate Points */
+		.points {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			font-size: 14px;
+		}
+
+		.points li {
+			margin-bottom: 5px;
+		}
+
+		.point-label {
+
+			margin-right: 5px;
+		}
+
+		.indent {
+			display: block;
+			margin-left: 15px;
+		}
+
+		/* Footer Section */
+		.footer-tc {
+			margin-top: 10px;
+			font-size: 14px;
+			text-align: left;
+			padding-top: 5px;
+		}
+
+		.footer-tc p {
+			margin-bottom: 3px;
+		}
+
+		.endline {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 5px;
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: space-evenly;
+			align-self: center;
+			gap: 10px;
+		}
+
+		.buttons button {
+			margin: 20px;
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: 400;
+			cursor: pointer;
+			border: none;
+			border-radius: 8px;
+			background: linear-gradient(45deg, #fb0f33, #ff5858);
+			color: #fff;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.buttons button::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 300%;
+			height: 300%;
+			background: radial-gradient(circle, rgba(255, 255, 255, 0.132), rgba(255, 255, 255, 0));
+			transform: translate(-50%, -50%) scale(1);
+			transition: transform 0.5s ease;
+			border-radius: 50%;
+			opacity: 0;
+		}
+
+		.buttons button:hover::before {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+		}
+
+		.buttons button:hover {
+			background: linear-gradient(45deg, #f14141, #ed1737);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+			transform: translateY(-2px);
+		}
+
+		.buttons button:active {
+			transform: translateY(0);
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.buttons button i {
+			font-size: 18px;
+		}
+
+
+		/* Responsive Adjustments */
+		@media (max-width: 768px) {
+			.main {
+				padding: 5px;
+			}
+
+			.heading {
+				font-size: 16px;
+				color: #000
+			}
+
+			.ordinance-text {
+				font-size: 13px;
+			}
+
+			.certificate {
+				font-size: 13px;
+			}
+
+			.table-header,
+			.table-data {
+				font-size: 12px;
+				padding: 9px;
+			}
+
+			.points {
+				font-size: 13px;
+			}
+
+			.footer-tc {
+				font-size: 11px;
+			}
+		}
+
+		/* Print Settings */
+		@media print {
+			@page {
+				size: A4 portrait;
+				margin: 10mm;
+			}
+
+			body-wrapper {
+				margin: 0;
+				padding: 0;
+			}
+
+			/* Hide unnecessary elements */
+			.preloader,
+			.left-sidebar,
+			.topbar,
+			.buttons,
+			.footer,
+			.card-body {
+				display: none;
+			}
+
+			/* Ensure the body-wrapper content fits on one page */
+			.body-wrapper {
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+
+			.main {
+				border: none;
+				margin: 0;
+				padding: 0;
+				max-width: none;
+				box-shadow: none;
+			}
+
+			/* Adjust font sizes and spacing for print */
+			.heading {
+				font-size: 18px;
+				font-weight: bold;
+				color: #000;
+			}
+
+			.cert-no {
+				margin-left: 25px;
+			}
+
+			.ordinance-text,
+			.certificate,
+			.points {
+				font-size: 14px;
+			}
+
+			.table-header,
+			.table-data {
+				font-size: 12px;
+				padding: 9px;
+			}
+
+			.footer-tc {
+				font-size: 14px;
+			}
+		}
+
+		.main {
+			max-width: 1200px;
+			margin: auto;
+			margin-bottom: 5px;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(30, 251, 100, 0.821);
+			border-radius: 8px;
+			background-color: #fff;
+		}
+
+		.section-card {
+			background-color: #fff;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			padding: 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s ease;
+		}
+
+		.section-card:hover {
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+		}
+
+		.section-card h3 {
+			color: #fb0f33;
+		}
+
+		.section-heading {
+			color: #ff0000 !important;
+			font-size: 16px;
+			opacity: 0.8;
+			margin-bottom: 20px;
+			border-bottom: 2px solid #12d87869;
+			padding-bottom: 5px;
+			font-style: italic;
+		}
+
+		.form-label {
+			font-weight: bold;
+			color: #555;
+			margin-bottom: 5px;
+		}
+
+		.form-control {
+			width: 100%;
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			margin-bottom: 10px;
+			background-color: #f9f9f9;
+			transition: border-color 0.3s ease;
+		}
+
+		.button-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%;
+		}
+
+		.table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 15px;
+		}
+
+		.table th,
+		.table td {
+			border: 1px solid #ddd;
+			padding: 10px;
+			text-align: left;
+		}
+
+		.table th {
+			background-color: #f9f9f9;
+			font-weight: bold;
+		}
+
+		.table td {
+			background-color: #fff;
+		}
+
+		.btn {
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: 500;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.btn-success {
+			background: linear-gradient(45 deg, #28a745, #218838);
+			color: #fff;
+		}
+
+		.btn-danger {
+			background: linear-gradient(45deg, #dc3545, #c82333);
+			color: #fff;
+		}
+
+		.btn-secondary {
+			background: linear-gradient(45deg, #6c757d, #5a6268);
+			color: #fff;
+		}
+
+		.btn:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		}
+
+		.btn:active {
+			transform: translateY(0);
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.custom-button {
+			padding: 6px 12px;
+			font-size: 14px;
+			font-weight: 500;
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+			background-color: #06bd19;
+			color: #fff;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 5px;
+		}
+
+		.custom-button i {
+			font-size: 14px;
+		}
+
+		.custom-button:hover {
+			background-color: #3597ff;
+			transform: translateY(-2px);
+		}
+
+		.custom-button:active {
+			transform: translateY(0);
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: space-evenly;
+			align-self: center;
+			gap: 10px;
+		}
+
+		.buttons button {
+			margin: 20px;
+			padding: 10px 20px;
+			font-size: 16px;
+			font-weight: 400;
+			cursor: pointer;
+			border: none;
+			border-radius: 8px;
+			background: linear-gradient(45deg, #fb0f33, #ff5858);
+			color: #fff;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.buttons button::before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 300%;
+			height: 300%;
+			background: radial-gradient(circle, rgba(255, 255, 255, 0.132), rgba(255, 255, 255, 0));
+			transform: translate(-50%, -50%) scale(1);
+			transition: transform 0.5s ease;
+			border-radius: 50%;
+			opacity: 0;
+		}
+
+		.buttons button:hover::before {
+			transform: translate(-50%, -50%) scale(1);
+			opacity: 1;
+		}
+
+		.buttons button:hover {
+			background: linear-gradient(45deg, #f14141, #ed1737);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+			transform: translateY(-2px);
+		}
+
+		.buttons button:active {
+			transform: translateY(0);
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+		.buttons button i {
+			font-size: 18px;
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+
+		<!--imported side bar here-->
+		<div th:replace="Admin/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+			<div th:replace="Admin/fragments/navbar :: navbar"></div>
+
+
+
+
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<div class="card">
+						<div class="card-body">
+							<h4 class="card-title mb-3 text-center text-success"
+								style="font-size: 25px;font-weight:bolder;">
+								Attendance Certificate Application
+							</h4>
+							<h4 class="card-title mb-3 text-center" style="font-size: 15px;font-weight:bolder;">
+								<p style="display:flex;justify-content:space-evenly;align-items:center;">
+									<span>Student Id : <span th:text="*{tc.studentId}"></span></span>
+
+									<span>Application No: AC2025<span th:text="*{tc.id}"></span> </span>
+								</p>
+							</h4>
+
+							<form>
+								<div class="section-card">
+									<h3 class="section-heading">Personal Information</h3>
+
+									<div class="row mb-4">
+										<div class="col-md-6">
+											<label class="form-label">Full Name</label>
+											<input type="text" class="form-control" th:field="*{tc.fullName}" readonly>
+										</div>
+										<div class="col-md-6">
+											<label class="form-label">Gender</label>
+											<input type="text" class="form-control" th:field="*{tc.gender}" readonly>
+										</div>
+
+									</div>
+
+									
+
+									<div class="row mb-4">
+										<div class="col-md-12">
+											<label class="form-label">Purpose of Certificate</label>
+											<textarea class="form-control" th:text="*{tc.certificateReason}"
+												readonly></textarea>
+										</div>
+									</div>
+								</div>
+						</div>
+
+
+						<div class="section-card">
+							<h3 class="section-heading text-primary">Current Qualification Details</h3>
+
+							<div class="row mb-4">
+								<div class="col-md-6">
+									<label class="form-label">Department</label>
+									<input type="text" class="form-control" readonly th:field="*{tc.department}">
+								</div>
+								<div class="col-md-6">
+									<label class="form-label">Course</label>
+									<input type="text" class="form-control" readonly th:field="*{tc.course}">
+								</div>
+
+
+							</div>
+
+
+							<div class="row mb-4">
+
+								<div class="col-md-4">
+									<label class="form-label">Year</label>
+									<input type="text" class="form-control" readonly th:field="*{tc.year}">
+								</div>
+
+								<div class="col-md-4">
+									<label class="form-label">Roll No</label>
+									<input type="text" class="form-control" th:field="*{tc.studentId}" readonly>
+								</div>
+
+								<div class="col-md-4">
+									<label class="form-label">Division</label>
+									<input type="text" class="form-control" th:field="*{tc.division}" readonly>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="section-card">
+							<h3 class="section-heading">Uploaded Documents</h3>
+							<div class="row mb-4">
+								<div class="col-md-12">
+									<div class="table-responsive">
+										<table class="table">
+											<thead>
+												<tr>
+													<th>Document Type</th>
+													<th>Document Name</th>
+													<th>Action</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Identity Proof</td>
+													<td th:text="${tc.identityProofPath}">Identity Proof will be here</td>
+													<td>
+														<button type="button" class="custom-button"
+															th:attr="data-file=${tc.identityProofPath}"
+															onclick="viewFile(this)">
+															<i class="fa-solid fa-eye"></i> View
+														</button>
+													</td>
+												</tr>
+
+												<tr>
+													<td>Teacher Verified Letter</td>
+													<td th:text="${tc.verificationLetterPath}">Teacher Verified Letter will be here
+													</td>
+													<td>
+														<button type="button" class="custom-button"
+															th:attr="data-file=${tc.verificationLetterPath}"
+															onclick="viewFile(this)">
+															<i class="fa-solid fa-eye"></i> View
+														</button>
+													</td>
+												</tr>
+
+												<tr>
+													<td>Fee Reciept</td>
+													<td th:text="${tc.feeReciptPath}">proof of new admission will be
+														here</td>
+													<td>
+														<button type="button" class="custom-button"
+															th:attr="data-file=${tc.feeReciptPath}"
+															onclick="viewFile(this)">
+															<i class="fa-solid fa-eye"></i> View
+														</button>
+													</td>
+												</tr>
+											</tbody>
+
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+
+
+						<div class="row mb-4">
+							<div class="col-md-12 text-center buttons button-container">
+								<button type="button" onclick="generateCertificate()">
+									<i class="fas fa-file"></i>
+									<span>Generate Certificate</span>
+								</button>
+
+
+								<button type="button" onclick="rejectRequest()">
+									<i class="fas fa-times"></i>
+									<span>Reject Request</span>
+								</button>
+								<button type="button" onclick="goBack()">
+									<i class="fas fa-arrow-left"></i>
+									<span>Back</span>
+								</button>
+							</div>
+						</div>
+
+						<input type="hidden" id="tc_id" th:field="*{tc.id}">
+
+						</form>
+
+					</div>
+				</div>
+
+
+				<script>
+					function generateCertificate() {
+						alert("Certificate generated successfully!");
+						let id = document.getElementById('tc_id').value;
+						window.location.href = "/admin/verify_attendance_certificate/" + id;
+					}
+
+					function rejectRequest() {
+						const isConfirmed = confirm("Are you sure you want to reject this request?");
+						if (isConfirmed) {
+							let id = document.getElementById('tc_id').value;
+							window.location.href = "/admin/reject_attendance_certificate/" + id;
+						} else {
+							console.log("Rejection canceled.");
+						}
+					}
+
+					function goBack() {
+						window.history.back();
+					}
+
+					function viewFile(button) {
+						const fileName = button.getAttribute("data-file");
+
+						if (!fileName || fileName.trim() === "") {
+							alert("No document uploaded.");
+							return;
+						}
+
+						// Assuming files are stored in `/uploads/`
+						const fileURL = `/uploads/${fileName}`;
+						const fileExtension = fileName.split('.').pop().toLowerCase();
+
+						// If the file is an image, open it in a popup
+						if (["jpg", "jpeg", "png", "gif"].includes(fileExtension)) {
+							const popupWidth = 600;
+							const popupHeight = 500;
+							const screenWidth = window.screen.width;
+							const screenHeight = window.screen.height;
+							const left = (screenWidth - popupWidth) / 2;
+							const top = (screenHeight - popupHeight) / 2;
+
+							const popup = window.open(
+								"",
+								"ImagePreview",
+								);
+
+							if (popup) {
+								popup.document.write(`
+								                <html>
+								                <head>
+								                    <title>Image Preview</title>
+								                    <style>
+								                        body {
+								                            text-align: center; font-family: Arial, sans-serif;
+								                            margin: 0; padding: 20px; background-color: #f4f4f4;
+								                        }
+								                        .container {
+								                            display: flex;
+								                            flex-direction: column;
+								                            align-items: center;
+								                            justify-content: center;
+								                            height: 100vh;
+								                        }
+								                        .image-box {
+								                            background: white;
+								                            padding: 15px;
+								                            border-radius: 8px;
+								                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+								                            max-width: 100%;
+								                            max-height: 80vh;
+								                            display: flex;
+								                            flex-direction: column;
+								                            justify-content: center;
+								                            align-items: center;
+								                        }
+								                        img {
+								                            max-width: 100%;
+								                            max-height: 70vh;
+								                            border-radius: 8px;
+								                        }
+								                        button {
+								                            margin-top: 15px; padding: 10px 16px; background-color: red;
+								                            color: white; border: none; border-radius: 5px; cursor: pointer;
+								                            font-size: 16px;
+								                        }
+								                        button:hover {
+								                            background-color: darkred;
+								                        }
+								                    </style>
+								                </head>
+								                <body>
+								                    <div class="container">
+								                        <div class="image-box">
+								                            <img src="${fileURL}" alt="Uploaded Image">
+								                        </div>
+								                        <button onclick="window.close()">Close</button>
+								                    </div>
+								                </body>
+								                </html>
+								            `);
+								popup.document.close();
+							} else {
+								alert("Popup blocked! Please allow popups for this site.");
+							}
+						} else {
+							// If not an image, open in a new tab
+							window.open(fileURL, "_blank");
+						}
+					}
+
+
+				</script>
+			</div>
+
+			<!--import footer here-->
+			<div th:replace="Admin/fragments/footer :: footer"></div>
+		</div>
+
+		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+		<script>
+			function handleColorTheme(e) {
+				document.documentElement.setAttribute("data-color-theme", e);
+			}
+		</script>
+		<div class="dark-transparent sidebartoggler"></div>
+
+	</div>
+	</div>
+
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+	<!-- Import Js Files -->
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.erp.repo.AdmissionRepo;
 import com.erp.student.entity.TCEntity;
 import com.erp.student.repo.TCRepository;
 
@@ -29,8 +30,24 @@ public class LibraryController {
 	@Autowired
 	private JavaMailSender mailSender;
 	
+	@Autowired
+	private AdmissionRepo admissionRepo;
+	
 	@GetMapping({"","/"})
-	public String openAccount() {
+	public String openAccount(Model model) {
+		
+long totalStudent=admissionRepo.count();
+		
+		long totalTC=repository.count();
+		long totalA=repository.countByLibraryApproval(1);
+		long totalP=repository.countByLibraryApproval(0);
+		long totalR=repository.countByLibraryApproval(2);
+		
+		model.addAttribute("totalStudent",totalStudent);
+		model.addAttribute("totalA",totalA);
+		model.addAttribute("totalP",totalP);
+		model.addAttribute("totalR",totalR);	
+		model.addAttribute("totalTC",totalTC);
 		return "Library/index";
 	}
 	

@@ -11,15 +11,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.erp.admin.entity.Admission;
 import com.erp.student.entity.AcademicDetails;
+import com.erp.student.entity.AttendanceEntity;
 import com.erp.student.entity.BonafideEntity;
 import com.erp.student.entity.PersonalDetails;
 import com.erp.student.entity.StudentAddress;
 import com.erp.student.entity.TCEntity;
 import com.erp.student.repo.AcademicDetailsRepo;
 import com.erp.student.repo.AddressRepo;
+import com.erp.student.repo.AttendanceEntityRepo;
 import com.erp.student.repo.BonafideRepository;
 import com.erp.student.repo.PersonalDetailRepository;
 import com.erp.student.repo.TCRepository;
@@ -45,6 +48,9 @@ public class CertificateController {
 	
 	@Autowired 
 	private BonafideRepository bonafideRepository;
+	
+	@Autowired 
+	private AttendanceEntityRepo attendanceEntityRepo;
 
 	@GetMapping("/request_certificate")
 	public String openCertificatePage(HttpSession session, Model model) {
@@ -56,7 +62,7 @@ public class CertificateController {
 		}
 
 		Optional<TCEntity> tcEntity = tcRepository.findByStudentIdAndTcTypeAndCertificateType(student.getAdmissionId(),
-				"original", "Transference Certificate");
+				"Original", "Transference Certificate");
 
 		if (tcEntity.isPresent()) {
 			model.addAttribute("tcPresent", true);
@@ -68,7 +74,9 @@ public class CertificateController {
 	@PostMapping("/check_certificate_type")
 	public String CheckCertificate(HttpServletRequest request, HttpSession httpSession, Model model,
 			@RequestParam("certificate_type") String certficateType,
-			@RequestParam("certificate_reason") String certificateReason) {
+			@RequestParam("certificate_reason") String certificateReason,
+			RedirectAttributes redirectAttributes
+			) {
 
 		Admission admission = (Admission) httpSession.getAttribute("student");
 
@@ -104,6 +112,11 @@ public class CertificateController {
 				tcEntity.setCasteCategory(personalDetails1.getCaste());
 
 			}
+			else {
+			    redirectAttributes.addFlashAttribute("error", "Please Fill Personal Details");
+			    return "redirect:/student/request_certificate";
+			}
+
 
 			tcEntity.setStudentId(studentId);
 
@@ -143,6 +156,11 @@ public class CertificateController {
 				tcEntity.setCasteCategory(personalDetails1.getCaste());
 
 			}
+			else {
+			    redirectAttributes.addFlashAttribute("error", "Please Fill Personal Details");
+			    return "redirect:/student/request_certificate";
+			}
+
 
 			tcEntity.setStudentId(studentId);
 
@@ -193,9 +211,51 @@ public class CertificateController {
 				bonafide.setLocalAddress(studentAddress1.getTemporaryAddress());
 				bonafide.setPermanentAddress(studentAddress1.getPermanentAddress());
 			}
+			
+			else {
+			    redirectAttributes.addFlashAttribute("error", "Please Fill Personal Details");
+			    return "redirect:/student/request_certificate";
+			}
+
+			
 			model.addAttribute("bonafide", bonafide);
 			return "Student/bonafide";
 		} else {
+			
+			AttendanceEntity attendanceEntity=new AttendanceEntity();
+			
+			Optional<PersonalDetails> personalDetail = personalDetailRepository.findByStudentId(studentId);
+			Optional<AcademicDetails> academicDetails = academicDetailsRepo.findByStudentId(studentId);
+			
+			
+			PersonalDetails personalDetails1 = null;
+			AcademicDetails academicDetails1=null;
+			
+			attendanceEntity.setCertificateReason(certificateReason);
+			attendanceEntity.setCertificateType(certficateType);
+			attendanceEntity.setStudentId(studentId);
+			attendanceEntity.setFullName(admission.getLastName()+ " "+admission.getFirstName()+" "+admission.getMiddleName());
+			
+			
+			if(personalDetail.isPresent())
+			{
+				personalDetails1=personalDetail.get();
+				academicDetails1=academicDetails.get();
+				attendanceEntity.setDivision(academicDetails1.getSection());
+				attendanceEntity.setAdminApproval(0);
+				attendanceEntity.setApplicationDate(new Date());
+				attendanceEntity.setGender(personalDetails1.getGender());
+				attendanceEntity.setCourse(academicDetails1.getCourse());
+				attendanceEntity.setDepartment(academicDetails1.getDepartment());
+			}
+			else {
+			    redirectAttributes.addFlashAttribute("error", "Please Fill Personal Details");
+			    return "redirect:/student/request_certificate";
+			}
+
+			
+			model.addAttribute("attendance",attendanceEntity);
+			
 			return "Student/attendance";
 		}
 
@@ -208,9 +268,12 @@ public class CertificateController {
 			// Fetch certificates using studentId
 			List<TCEntity> certificates = tcRepository.findByStudentId(student.getAdmissionId());
 			List<BonafideEntity> bonafideEntities=bonafideRepository.findByStudentId(student.getAdmissionId());
+			List<AttendanceEntity> attendanceEntities=attendanceEntityRepo.findByStudentId(student.getAdmissionId());
+			
 			// Add certificates to the model
 			model.addAttribute("tcEntities", certificates);
 			model.addAttribute("bonafides",bonafideEntities);
+			model.addAttribute("attendances",attendanceEntities);
 		} else {
 			return "redirect:/";
 		}

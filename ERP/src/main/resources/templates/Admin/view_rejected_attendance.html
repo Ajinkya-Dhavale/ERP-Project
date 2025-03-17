@@ -17,7 +17,7 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Approved Bonafide Certificates</title>
+	<title>Rejected Attendance Certificate List</title>
 
 
 	<!-- font awesome -->
@@ -157,7 +157,7 @@
 
 
 						<div class="table-responsive " style="padding-top: 30px;">
-							<h2>Bonafide Certificates</h2>
+							<h2>Rejected Attendance Certificates</h2>
 							<hr>
 							<table id="adminTable" class="table table-bordered table-striped table-hover">
 								<thead>
@@ -166,50 +166,37 @@
 										<th>Student Id</th>
 										<th>Application Date</th>
 										<th>Certificate Name</th>
-										<th>Payment Status</th>
-										<th>Issue Date</th>
 
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="bonafide : ${bonafides}">
-										<td th:text="'BC2025' + ${bonafide.id}"></td>
-										<td th:text="${bonafide.studentId}"></td>
-										<td th:text="${bonafide.applicationDate}"></td>
-										<td th:text="${bonafide.certificateType}"></td>
-										
-										<td th:text="${bonafide.paymentStatus}"></td>
-										<td th:text="*{bonafide.issueDate}"></td>
+									<tr th:each="attendance : ${attendanceEntities}">
+										<td th:text="'AC2025' + ${attendance.id}"></td>
+										<td th:text="${attendance.studentId}"></td>
+										<td th:text="${attendance.applicationDate}"></td>
+										<td th:text="${attendance.certificateType}"></td>
 										<td>
-											<span style="color:green;" th:if="${bonafide.adminApproval == 1 }"
+											<span style="color:green;" th:if="${attendance.adminApproval == 1 }"
 												class="approved">
 												✔️
 											</span>
 
-											<span style="color:red;" th:if="${bonafide.adminApproval != 1 }"
+											<span style="color:red;" th:if="${attendance.adminApproval != 1 }"
 												class="not-approved">
 												❌
 											</span>
 										</td>
 
-										<td style="width: auto; white-space: nowrap;">
-											<a th:href="@{'/admin/open_bonafide/' + ${bonafide.id}}"
-												class="btn btn-sm btn-success">
-												View
+										<td>
+											<a th:href="@{/admin/delete_attendance/{id}(id=${attendance.id})}"
+												class="btn btn-danger btn-sm"
+												onclick="return confirm('Are you sure you want to delete this attendance?');">
+												<i class="fa fa-trash"></i>
 											</a>
-											<a id="btn_hover" 
-											   th:href="@{'/admin/issue_bonafide/' + ${bonafide.id}}"
-											   class="btn btn-sm btn-view"
-											   th:classappend="${bonafide.issueDate != null} ? 'disabled' : ''"
-											   th:attr="onclick=${bonafide.issueDate != null} ? 'return false;' : ''"
-											   th:text="${bonafide.issueDate != null} ? 'Issued' : 'Issue'">
-											</a>
-
-											
-
-
+										</td>
+										</td>
 									</tr>
 								</tbody>
 

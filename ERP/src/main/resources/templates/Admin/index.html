@@ -23,194 +23,196 @@
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-	
+
 	<style>
+		.student-card {
+			width: 100%;
+			margin-top: -15px !important;
+			background-color: #ffffff;
+			border-radius: 10px;
+			padding: 5px;
+			box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
+			margin: 10px 0;
+		}
 
-	               .student-card {
-	                   width: 100%;
-	                   margin-top: -15px !important;
-	                   background-color: #ffffff;
-	                   border-radius: 10px;
-	                   padding: 5px; box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
-	                   margin: 10px 0;
-	               }
-	               
-	               .student-card .card-body {
-	                   display: flex;
-	                   align-items: center;
-	                   justify-content: space-between; 
-	                   background-color:none;
-	                   padding: 15px;
-	               }
-	               
-	               .student-icon {
-	                   font-size: 24px;
-	                   color: #3c32f7; 
-	                   margin-right: 10px;
-	               }
-	               
-	               .student-title {
-	                   font-size: 18px;
-	                   font-weight: bolder;
-	                   flex-grow: 1; 
-	               }
-	               
-	               .student-count {
-	                   font-size: 20px;
-	                   font-weight: bold;
-	                   text-align: right;
-	                   flex-shrink: 0; 
-	               }
-	               .certificate-card {
-	                   width: 100%;
-	                   background-color: #ffffff;
-	                   border-radius: 10px;
-	                   padding: 12px;
-	                   box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
-	                   margin: 10px 0;
-	                   text-align: center;
-	                   display: flex;
-	                   flex-direction: column;
-	                   justify-content: space-between;
-	                   height: 150px;
-	               }
-	               
-	               .card-header {
-	                   width: 100%;
-	                   display: flex;
-	                   background-color:none;
-	                   align-items: center;
-	                   gap: 20px; 
-	                   padding-bottom: 5px;
-	                   margin-bottom: -5px;
-	                   margin-top: -10px;
-	               }
-	               
-	               .card-icon {
-	                   font-size: 25px;
-	                   color: #ff3a3a;
-	                   flex-shrink: 0;
-	                   display: flex;
-	                   align-items: center;
-	                   margin-bottom: 15px;
-	               }
-	               
-	               .card-title {
-	                   font-size: 14px;
-	                   font-weight: bold;
-	                   flex-grow: 1;
-	               
-	                   text-align: left;
-	                   line-height: 1.2;
-	                   max-width: 80%;
-	                   margin-top: -25px;
-	                   
-	               }
-	               
-	               .card-count {
-	                   font-size: 22px;
-	                   font-weight: bold;
-	                   margin-top: auto;
-	                   text-align: center;
-	                   margin-top:20px;
-	                   color: rgb(85, 81, 81);
-	               }
-	               .typeTC
-	               {
-	                   font-size: 14px;
-	                   color: rgb(54, 52, 52);
+		.student-card .card-body {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background-color: none;
+			padding: 15px;
+		}
 
-	               }
-	               .original, .duplicate {
-	                   font-size: 18px; 
-	                   font-weight: bold; 
-	                   margin: 2px 0;
-	                   color: rgb(95, 92, 92);
-	                   display: flex;
-	                   justify-content: space-between;
-	               }
-	               .chart1
-	               {
-	                   margin-bottom: 15px;
-	               }
-	               .doughnut-card {
-	                   background-color: #ffffff;
-	                   border-radius: 10px;
-	                   padding: 12px;
-	                   box-shadow: 2px 2px 8px rgba(55, 134, 80, 0.2);
-	                   text-align: center;
-	                   transition: transform 0.3s ease-in-out;
-	                 }
-	           
-	                 .doughnut-card:hover {
-	                   transform: scale(1.03);
-	                 }
-	           
-	                 h5 {
-	                   font-size: 14px;
-	                   font-weight: 600;
-	                   color: #1f18ded3;
-	                   margin-bottom: 4px;
-	                 }
-	           
-	                 hr {
-	                   margin: 8px 0;
-	                   margin-bottom: -60px;
-	                   border: 0;
-	                   border-top: 1px solid rgba(0, 0, 0, 0.645);
-	                 }
-	           
-	                 .chart-container {
-	                   width: 120px;
-	                   margin: auto;
-	                   position: relative;
-	                 }
-	           
-	                 .center-text {
-	                   position: absolute;
-	                   top: 50%;
-	                   left: 50%;
-	                   transform: translate(-50%, -50%);
-	                   font-size: 10px;
-	                   font-weight: 600;
-	                   color: #333;
-	                   text-align: center;
-	                   line-height: 1.4;
-	                 }
-	           
-	                 .legend {
-	                   display: flex;
-	                   justify-content: center;
-	                   gap: 8px;
-	                   font-size: 10px;
-	                   font-weight: 500;
-	                   color: #333;
-	                   margin-top: -60px;
-	                 }
-	           
-	                 .legend div {
-	                   display: flex;
-	                   align-items: center;
-	                 }
-	           
-	                 .legend div span {
-	                   width: 8px;
-	                   height: 8px;
-	                   display: inline-block;
-	                   margin-right: 4px;
-	                   border-radius: 2px;
-	                 }
-	 
-	             </style>
-	
+		.student-icon {
+			font-size: 24px;
+			color: #3c32f7;
+			margin-right: 10px;
+		}
+
+		.student-title {
+			font-size: 18px;
+			font-weight: bolder;
+			flex-grow: 1;
+		}
+
+		.student-count {
+			font-size: 20px;
+			font-weight: bold;
+			text-align: right;
+			flex-shrink: 0;
+		}
+
+		.certificate-card {
+			width: 100%;
+			background-color: #ffffff;
+			border-radius: 10px;
+			padding: 12px;
+			box-shadow: 2px 2px 10px rgba(55, 134, 80, 0.395);
+			margin: 10px 0;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 150px;
+		}
+
+		.card-header {
+			width: 100%;
+			display: flex;
+			background-color: none;
+			align-items: center;
+			gap: 20px;
+			padding-bottom: 5px;
+			margin-bottom: -5px;
+			margin-top: -10px;
+		}
+
+		.card-icon {
+			font-size: 25px;
+			color: #ff3a3a;
+			flex-shrink: 0;
+			display: flex;
+			align-items: center;
+			margin-bottom: 15px;
+		}
+
+		.card-title {
+			font-size: 14px;
+			font-weight: bold;
+			flex-grow: 1;
+
+			text-align: left;
+			line-height: 1.2;
+			max-width: 80%;
+			margin-top: -25px;
+
+		}
+
+		.card-count {
+			font-size: 22px;
+			font-weight: bold;
+			margin-top: auto;
+			text-align: center;
+			margin-top: 20px;
+			color: rgb(85, 81, 81);
+		}
+
+		.typeTC {
+			font-size: 14px;
+			color: rgb(54, 52, 52);
+
+		}
+
+		.original,
+		.duplicate {
+			font-size: 18px;
+			font-weight: bold;
+			margin: 2px 0;
+			color: rgb(95, 92, 92);
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.chart1 {
+			margin-bottom: 15px;
+		}
+
+		.doughnut-card {
+			background-color: #ffffff;
+			border-radius: 10px;
+			padding: 12px;
+			box-shadow: 2px 2px 8px rgba(55, 134, 80, 0.2);
+			text-align: center;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.doughnut-card:hover {
+			transform: scale(1.03);
+		}
+
+		h5 {
+			font-size: 14px;
+			font-weight: 600;
+			color: #1f18ded3;
+			margin-bottom: 4px;
+		}
+
+		hr {
+			margin: 8px 0;
+			margin-bottom: -60px;
+			border: 0;
+			border-top: 1px solid rgba(0, 0, 0, 0.645);
+		}
+
+		.chart-container {
+			width: 120px;
+			margin: auto;
+			position: relative;
+		}
+
+		.center-text {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 10px;
+			font-weight: 600;
+			color: #333;
+			text-align: center;
+			line-height: 1.4;
+		}
+
+		.legend {
+			display: flex;
+			justify-content: center;
+			gap: 8px;
+			font-size: 10px;
+			font-weight: 500;
+			color: #333;
+			margin-top: -60px;
+		}
+
+		.legend div {
+			display: flex;
+			align-items: center;
+		}
+
+		.legend div span {
+			width: 8px;
+			height: 8px;
+			display: inline-block;
+			margin-right: 4px;
+			border-radius: 2px;
+		}
+	</style>
+
 </head>
 
 <body>
 	<!-- Preloader -->
 	<div class="preloader">
-			<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
-								class="lds-ripple img-fluid" />
-		</div>
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
+	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
 
@@ -225,216 +227,240 @@
 
 
 			<div class="body-wrapper">
-						<div class="container-fluid">
-			                
-			                
-			                <div class="col-md-12">
-			                    <div class="card student-card">
-			                        <div class="card-body d-flex align-items-center">
-			                            <i class="fas fa-user-graduate student-icon"></i>
-			                            <h6 class="student-title mb-0">Total Admitted Students</h6>
-			                            <h2 class="student-count mb-0">
-			                                500
-			                            </h2>
-			                        </div>
-			                    </div>
-			                </div>
-			                
+				<div class="container-fluid">
 
-			                <div class="row">
-			                   
-			                    <div class="col-md-6 col-lg-3">
-			                        <div class="card certificate-card bg-light-blue">
-			                            <div class="card-body">
-			                                <div class="card-header d-flex align-items-center">
-			                                    <i class="fas fa-file-alt card-icon"></i>
-			                                    <h6 class="card-title mb-0">Total Transference Certificates</h6>
-			                                </div>
-			                                <div class="card-count">
-			                                    <h6 class="original"><span class="typeTC">Original:</span> <span class="count">15</span></h6>
-			                                    <h6 class="duplicate"><span class="typeTC">Duplicates:</span> <span class="count">4</span></h6>
-			                                </div>
-			                            </div>
-			                        </div>
-			                    </div>
-			                
-			                   
-			                    <div class="col-md-6 col-lg-3">
-			                        <div class="card certificate-card bg-light-red">
-			                            <div class="card-body">
-			                                <div class="card-header d-flex align-items-center">
-			                                    <i class="fas fa-exchange-alt card-icon"></i>
-			                                    <h6 class="card-title mb-0">Total Migration Certificates</h6>
-			                                </div>
-			                                <div class="card-count" style="text-align: center;">
-			                                    <span class="count">15</span>
-			                                </div>
-			                            </div>
-			                        </div>
-			                    </div>
-			                
-			                   
-			                    <div class="col-md-6 col-lg-3">
-			                        <div class="card certificate-card bg-light-orange">
-			                            <div class="card-body">
-			                                <div class="card-header d-flex align-items-center">
-			                                    <i class="fas fa-id-card card-icon"></i>
-			                                    <h6 class="card-title mb-0">Total Bonafide Certificates</h6>
-			                                </div>
-			                                <div class="card-count" style="text-align: center;">
-			                                    <span class="count">15</span>
-			                                </div>
-			                            </div>
-			                        </div>
-			                    </div>
-			                
-			                    
-			                    <div class="col-md-6 col-lg-3">
-			                        <div class="card certificate-card bg-light-red">
-			                            <div class="card-body">
-			                                <div class="card-header d-flex align-items-center">
-			                                    <i class="fas fa-calendar-check card-icon"></i>
-			                                    <h6 class="card-title mb-0">Total Attendance Certificates</h6>
-			                                </div>
-			                                <div class="card-count" style="text-align: center;">
-			                                    <span class="count">50</span>
-			                                </div>
-			                            </div>
-			                        </div>
-			                    </div>
-			                </div>
-			                
-			                    <div class="chart1">
-			                    <div class="row g-4">
-			                      
-			                      <div class="col-md-3 col-sm-6">
-			                        <div class="doughnut-card">
-			                          <h5>Transfererence Certificate</h5>
-			                          <hr />
-			                          <div class="chart-container">
-			                            <canvas id="transferChart"></canvas>
-			                            <div class="center-text" id="transfer-center-text"></div>
-			                          </div>
-			                          <div class="legend">
-			                            <div><span style="background-color: #28a745"></span> Approved</div>
-			                            <div><span style="background-color: #ffc107"></span> Pending</div>
-			                            <div><span style="background-color: #dc3545"></span> Rejected</div>
-			                          </div>
-			                        </div>
-			                      </div>
-			              
-			                      
-			                      <div class="col-md-3 col-sm-6">
-			                        <div class="doughnut-card">
-			                          <h5>Migration Certificate</h5>
-			                          <hr />
-			                          <div class="chart-container">
-			                            <canvas id="migrationChart"></canvas>
-			                            <div class="center-text" id="migration-center-text"></div>
-			                          </div>
-			                          <div class="legend">
-			                            <div><span style="background-color: #28a745"></span> Approved</div>
-			                            <div><span style="background-color: #ffc107"></span> Pending</div>
-			                            <div><span style="background-color: #dc3545"></span> Rejected</div>
-			                          </div>
-			                        </div>
-			                      </div>
-			              
-			                      
-			                      <div class="col-md-3 col-sm-6">
-			                        <div class="doughnut-card">
-			                          <h5>Bonafide Certificate</h5>
-			                          <hr />
-			                          <div class="chart-container">
-			                            <canvas id="bonafideChart"></canvas>
-			                            <div class="center-text" id="bonafide-center-text"></div>
-			                          </div>
-			                          <div class="legend">
-			                            <div><span style="background-color: #28a745"></span> Approved</div>
-			                            <div><span style="background-color: #ffc107"></span> Pending</div>
-			                            <div><span style="background-color: #dc3545"></span> Rejected</div>
-			                          </div>
-			                        </div>
-			                      </div>
-			              
-			                     
-			                      <div class="col-md-3 col-sm-6">
-			                        <div class="doughnut-card">
-			                          <h5>Attendance Certificate</h5>
-			                          <hr />
-			                          <div class="chart-container">
-			                            <canvas id="attendanceChart"></canvas>
-			                            <div class="center-text" id="attendance-center-text"></div>
-			                          </div>
-			                          <div class="legend">
-			                            <div><span style="background-color: #28a745"></span> Approved</div>
-			                            <div><span style="background-color: #ffc107"></span> Pending</div>
-			                            <div><span style="background-color: #dc3545"></span> Rejected</div>
-			                          </div>
-			                        </div>
-			                      </div>
-			                    </div>
-			                  </div>
-			                  </div>
-			               
-			                
 
-			                  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-			                  <script>
-			                    function createChart(canvasId, centerTextId, approved, pending, rejected) {
-			                      let ctx = document.getElementById(canvasId).getContext("2d");
-			              
-			                      new Chart(ctx, {
-			                        type: "doughnut",
-			                        data: {
-			                          labels: ["Approved", "Pending", "Rejected"],
-			                          datasets: [
-			                            {
-			                              data: [approved, pending, rejected],
-			                              backgroundColor: ["#28a745", "#ffc107", "#dc3545"],
-			                              borderWidth: 2,
-			                            },
-			                          ],
-			                        },
-			                        options: {
-			                          responsive: true,
-			                          maintainAspectRatio: false,
-			                          cutout: "88%",
-			                          plugins: {
-			                            legend: { display: false },
-			                          },
-			                        },
-			                      });
-			              
-			                      document.getElementById(centerTextId).innerHTML = `
+					<div class="col-md-12">
+						<div class="card student-card">
+							<div class="card-body d-flex align-items-center">
+								<i class="fas fa-user-graduate student-icon"></i>
+								<h6 class="student-title mb-0">Total Admitted Students</h6>
+								<h2 class="student-count mb-0" th:text="*{totalStudent}">
+								</h2>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="row">
+
+						<div class="col-md-6 col-lg-3">
+							<div class="card certificate-card bg-light-blue">
+								<div class="card-body">
+									<div class="card-header d-flex align-items-center">
+										<i class="fas fa-file-alt card-icon"></i>
+										<h6 class="card-title mb-0">Total Transference Certificates</h6>
+									</div>
+									<div class="card-count">
+										<h6 class="original"><span class="typeTC">Original:</span> <span class="count"
+												th:text="*{totalOrginal}"></span></h6>
+										<h6 class="duplicate"><span class="typeTC">Duplicates:</span> <span
+												class="count" th:text="*{totaldublicate}" </span></h6>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-6 col-lg-3">
+							<div class="card certificate-card bg-light-red">
+								<div class="card-body">
+									<div class="card-header d-flex align-items-center">
+										<i class="fas fa-exchange-alt card-icon"></i>
+										<h6 class="card-title mb-0">Total Migration Certificates</h6>
+									</div>
+									<div class="card-count" style="text-align: center;">
+										<span class="count" th:text="*{migrationCertificate}"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-6 col-lg-3">
+							<div class="card certificate-card bg-light-orange">
+								<div class="card-body">
+									<div class="card-header d-flex align-items-center">
+										<i class="fas fa-id-card card-icon"></i>
+										<h6 class="card-title mb-0">Total Bonafide Certificates</h6>
+									</div>
+									<div class="card-count" style="text-align: center;">
+										<span class="count" th:text="*{totalBonafide}"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-6 col-lg-3">
+							<div class="card certificate-card bg-light-red">
+								<div class="card-body">
+									<div class="card-header d-flex align-items-center">
+										<i class="fas fa-calendar-check card-icon"></i>
+										<h6 class="card-title mb-0">Total Attendance Certificates</h6>
+									</div>
+									<div class="card-count" style="text-align: center;">
+										<span class="count" th:text="*{totalAttendance}"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="chart1">
+						<div class="row g-4">
+
+							<div class="col-md-3 col-sm-6">
+								<div class="doughnut-card">
+									<h5>Transfererence Certificate</h5>
+									<hr />
+									<div class="chart-container">
+										<canvas id="transferChart"></canvas>
+										<div class="center-text" id="transfer-center-text"></div>
+									</div>
+									<div class="legend">
+										<div><span style="background-color: #28a745"></span> Approved</div>
+										<div><span style="background-color: #ffc107"></span> Pending</div>
+										<div><span style="background-color: #dc3545"></span> Rejected</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-3 col-sm-6">
+								<div class="doughnut-card">
+									<h5>Migration Certificate</h5>
+									<hr />
+									<div class="chart-container">
+										<canvas id="migrationChart"></canvas>
+										<div class="center-text" id="migration-center-text"></div>
+									</div>
+									<div class="legend">
+										<div><span style="background-color: #28a745"></span> Approved</div>
+										<div><span style="background-color: #ffc107"></span> Pending</div>
+										<div><span style="background-color: #dc3545"></span> Rejected</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-3 col-sm-6">
+								<div class="doughnut-card">
+									<h5>Bonafide Certificate</h5>
+									<hr />
+									<div class="chart-container">
+										<canvas id="bonafideChart"></canvas>
+										<div class="center-text" id="bonafide-center-text"></div>
+									</div>
+									<div class="legend">
+										<div><span style="background-color: #28a745"></span> Approved</div>
+										<div><span style="background-color: #ffc107"></span> Pending</div>
+										<div><span style="background-color: #dc3545"></span> Rejected</div>
+									</div>
+								</div>
+							</div>
+
+
+							<div class="col-md-3 col-sm-6">
+								<div class="doughnut-card">
+									<h5>Attendance Certificate</h5>
+									<hr />
+									<div class="chart-container">
+										<canvas id="attendanceChart"></canvas>
+										<div class="center-text" id="attendance-center-text"></div>
+									</div>
+									<div class="legend">
+										<div><span style="background-color: #28a745"></span> Approved</div>
+										<div><span style="background-color: #ffc107"></span> Pending</div>
+										<div><span style="background-color: #dc3545"></span> Rejected</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+				<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+				<script>
+					function createChart(canvasId, centerTextId, approved, pending, rejected) {
+						let ctx = document.getElementById(canvasId).getContext("2d");
+
+						new Chart(ctx, {
+							type: "doughnut",
+							data: {
+								labels: ["Approved", "Pending", "Rejected"],
+								datasets: [
+									{
+										data: [approved, pending, rejected],
+										backgroundColor: ["#28a745", "#ffc107", "#dc3545"],
+										borderWidth: 2,
+									},
+								],
+							},
+							options: {
+								responsive: true,
+								maintainAspectRatio: false,
+								cutout: "88%",
+								plugins: {
+									legend: {display: false},
+								},
+							},
+						});
+
+						document.getElementById(centerTextId).innerHTML = `
 			                          <span class="approved">Approved: ${approved}</span>
 			                          <span class="pending">Pending: ${pending}</span>
 			                          <span class="rejected">Rejected: ${rejected}</span>
 			                      `;
-			                    }
-			              
-			                    createChart("bonafideChart", "bonafide-center-text", 7, 4, 2);
-			                    createChart("transferChart", "transfer-center-text", 5, 3, 1);
-			                    createChart("attendanceChart", "attendance-center-text", 5, 2, 0);
-			                    createChart("migrationChart", "migration-center-text", 6, 5, 1);
-			                  </script>
-						</div>
-						</div>
-						
-						
-						<div th:replace="Admin/fragments/footer :: footer"></div>
-
-			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+					}
 
 
-			<script>
-				function handleColorTheme(e) {
-					document.documentElement.setAttribute("data-color-theme", e);
-				}
-			</script>
-			<div class="dark-transparent sidebartoggler"></div>
+				</script>
 
+				<script th:inline="javascript">
+					var tcApproved = "[[${tcApproved}]]";
+					var tcPending = "[[${tcPendding}]]";
+					var tcRejected = "[[${tcRejected}]]";
+
+					const mcApproved = "[[${mcApproved}]]";
+					const mcPending = "[[${mcPendding}]]";
+					const mcRejected = "[[${mcRejected}]]";
+
+
+					const bApproved = "[[${approvedBonafide}]]";
+					const bPending = "[[${pendingBonafide}]]";
+					const bRejected = "[[${rejectedBonafide}]]";
+
+					const aApproved = "[[${approvedAttendance}]]";
+					const aPending = "[[${pendingAttendance}]]";
+					const aRejected = "[[${rejectedAttendance}]]";
+
+
+					createChart("bonafideChart", "bonafide-center-text", bApproved, bPending, bRejected);
+					createChart("attendanceChart", "attendance-center-text", aApproved, aPending, aRejected);
+					createChart("migrationChart", "migration-center-text", mcApproved, mcPending, mcRejected);
+					createChart("transferChart", "transfer-center-text", tcApproved, tcPending, tcRejected);
+				</script>
+
+			</div>
 		</div>
+
+
+		<div th:replace="Admin/fragments/footer :: footer"></div>
+
+		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+		<script>
+			function handleColorTheme(e) {
+				document.documentElement.setAttribute("data-color-theme", e);
+			}
+		</script>
+		<div class="dark-transparent sidebartoggler"></div>
+
+	</div>
 	</div>
 
 	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>

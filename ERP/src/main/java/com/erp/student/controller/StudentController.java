@@ -19,6 +19,9 @@ import com.erp.student.entity.AcademicDetails;
 import com.erp.student.entity.PersonalDetails;
 import com.erp.student.entity.StudentAddress;
 import com.erp.student.entity.StudentDocument;
+import com.erp.student.repo.AttendanceEntityRepo;
+import com.erp.student.repo.BonafideRepository;
+import com.erp.student.repo.TCRepository;
 import com.erp.student.service.StudentService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,13 +34,38 @@ public class StudentController {
 	@Autowired
 	private StudentService studentService;
 	
-	@GetMapping({ "/", "" })
+	@Autowired
+	private TCRepository tcRepository;
+	
+	@Autowired
+	private BonafideRepository bonafideRepository;
+	
+	@Autowired
+	private AttendanceEntityRepo attendanceEntityRepo;
+	
+	@GetMapping("/")
 	public String getStudentAdminPannel(HttpSession session,Model model) {
 	
 		if(session.getAttribute("student")==null)
 		{
 			return "redirect:/";
 		}
+		
+		Admission student=(Admission)session.getAttribute("student");
+		
+		int approvedCount=tcRepository.countAdminApproval(student.getAdmissionId())+bonafideRepository.countAdminApproval(student.getAdmissionId())+attendanceEntityRepo.countAdminApproval(student.getAdmissionId());
+		int peddingCount=tcRepository.countAdminPending(student.getAdmissionId())+bonafideRepository.countAdminPending(student.getAdmissionId())+attendanceEntityRepo.countAdminPending(student.getAdmissionId());
+		int rejectedCount=tcRepository.countAdminRejected(student.getAdmissionId())+bonafideRepository.countAdminRejected(student.getAdmissionId())+attendanceEntityRepo.countAdminRejected(student.getAdmissionId());
+		int totalCount=tcRepository.count(student.getAdmissionId())+bonafideRepository.count(student.getAdmissionId())+attendanceEntityRepo.count(student.getAdmissionId());
+//		System.out.println(approvedCount);
+//		System.out.println(peddingCount);
+//		System.out.println(rejectedCount);
+//		System.out.println(totalCount);
+		
+		model.addAttribute("approvedCount",approvedCount);
+		model.addAttribute("peddingCount",peddingCount);
+		model.addAttribute("rejectedCount",rejectedCount);
+		model.addAttribute("totalCount",totalCount);
 		 
 		return "Student/index.html";
 	}
@@ -61,8 +89,7 @@ public class StudentController {
 
 	    
 	    session.setAttribute("student", student);
-	    model.addAttribute("student", student); 
-	    return "Student/index"; 
+	    return "redirect:/student/"; 
 	}
 
 	

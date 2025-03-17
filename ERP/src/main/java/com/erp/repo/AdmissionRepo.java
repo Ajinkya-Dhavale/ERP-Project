@@ -19,4 +19,7 @@ public interface AdmissionRepo extends JpaRepository<Admission, Long> {
     Optional<Admission> findByEmail(String email);    
     
     Optional<Admission> findByAdmissionId(String admissionId);
+    
+    @Query("select count(*) from Admission")
+    int totalStudent();
 }

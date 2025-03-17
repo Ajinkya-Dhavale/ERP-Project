@@ -53,6 +53,141 @@
 					<!-- student form -->
 					<div class="card">
 						<div class="border-bottom title-part-padding">
+							<div class="loader" id="loader">
+													  <span class="loader-text">Mail Sending...</span>
+													    <!--<span class="load"></span>-->
+													</div>
+
+													<style>
+														.loader {
+														  width: 80px;
+														  height: 50px;
+														  position: absolute;
+														  display: none;
+														  
+														}
+
+														.loader-text {
+														  position: absolute;
+														  top: 0;
+														  padding: 0;
+														  right: 0;
+														  float: right;
+														  margin: 0;
+														  color:#f33e5a;
+														  animation: text_713 3.5s ease both infinite;
+														  font-size: 14px;
+														  font-weight: bold;
+														  letter-spacing: 1px;
+														}
+
+														.load {
+														  background-color: #9A79FF;
+														  border-radius: 50px;
+														  display: block;
+														  height: 16px;
+														  width: 16px;
+														  bottom: 0;
+														  position: absolute;
+														  transform: translateX(64px);
+														  animation: loading_713 3.5s ease both infinite;
+														}
+
+														.load::before {
+														  position: absolute;
+														  content: "";
+														  width: 100%;
+														  height: 100%;
+														  background-color: #D1C2FF;
+														  border-radius: inherit;
+														  animation: loading2_713 3.5s ease both infinite;
+														}
+
+														@keyframes text_713 {
+														  0% {
+														    letter-spacing: 1px;
+														    transform: translateX(0px);
+														  }
+
+														  40% {
+														    letter-spacing: 2px;
+														    transform: translateX(26px);
+														  }
+
+														  80% {
+														    letter-spacing: 1px;
+														    transform: translateX(32px);
+														  }
+
+														  90% {
+														    letter-spacing: 2px;
+														    transform: translateX(0px);
+														  }
+
+														  100% {
+														    letter-spacing: 1px;
+														    transform: translateX(0px);
+														  }
+														}
+
+														@keyframes loading_713 {
+														  0% {
+														    width: 16px;
+														    transform: translateX(0px);
+														  }
+
+														  40% {
+														    width: 100%;
+														    transform: translateX(0px);
+														  }
+
+														  80% {
+														    width: 16px;
+														    transform: translateX(64px);
+														  }
+
+														  90% {
+														    width: 100%;
+														    transform: translateX(0px);
+														  }
+
+														  100% {
+														    width: 16px;
+														    transform: translateX(0px);
+														  }
+														}
+
+														@keyframes loading2_713 {
+														  0% {
+														    transform: translateX(0px);
+														    width: 16px;
+														  }
+
+														  40% {
+														    transform: translateX(0%);
+														    width: 80%;
+														  }
+
+														  80% {
+														    width: 100%;
+														    transform: translateX(0px);
+														  }
+
+														  90% {
+														    width: 80%;
+														    transform: translateX(15px);
+														  }
+
+														  100% {
+														    transform: translateX(0px);
+														    width: 16px;
+														  }
+														}
+														 
+													</style>
+
+
+
 							<h4 class="card-title mb-0 text-center text-danger "
 								style="font-size: 23px;font-weight: bold;">Student
 								Admission</h4>
@@ -157,6 +292,9 @@
 						<!--toast message is end-->
 						
 						<div class="card-body">
+							
+							
+							
 							<form class="needs-validation" th:action="@{/admin/admission}" th:object="${admission}" method="post" novalidate>
 								<div class="row border-bottom">
 									<div class="col-md-4 mb-3">
@@ -225,9 +363,10 @@
 								</div>
 							</form>
 						</div>
-
-
 						
+						
+
+												
 
 						<!-- JavaScript Validation -->
 						<script>
@@ -283,8 +422,10 @@
 
 									// Submit form if all fields are valid
 									if (isValid) {
-										form.submit();
+									    document.getElementById("loader").style.display = "block"; // Correct way to show loader
+									    form.submit(); // Submit the form
 									}
+
 								});
 							});
 						</script>

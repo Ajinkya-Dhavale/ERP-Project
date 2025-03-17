@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Red_Theme" data-layout="vertical">
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:12 GMT -->
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Favicon icon-->
+	<link rel="shortcut icon" type="image/png"
+		href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/images/logos/favicon.png" />
+
+	<!-- Core Css -->
+	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
+	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
+	<title>Open Attendance Certificate</title>
+
+
+	<!-- font awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+	<style>
+		.body-wrapper {
+			font-family: Arial, sans-serif;
+			line-height: 1.3;
+			color: #000;
+		}
+
+		.main {
+			max-width: 1200px;
+			margin: auto;
+			padding: 20px;
+			box-shadow: 0 0 10px rgba(13, 93, 38, 0.821);
+			border-radius: 8px;
+			background: #fff;
+		}
+
+		.header-top {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-bottom: 2px solid #00bcd4;
+			padding-bottom: 5px;
+			margin-bottom: 10px;
+			margin-top: -30px;
+		}
+
+		.header-img {
+			max-width: 100%;
+			height: auto;
+		}
+
+		.cert-no {
+			text-align: left;
+			margin-left: 50px;
+			font-size: 14px;
+		}
+
+
+		.header1 {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.header-title1 {
+			font-size: 25px;
+			font-weight: bold;
+			color: #000;
+			margin-bottom: 40px;
+			margin-top: 40px;
+		}
+
+		.attendence-certificate {
+			margin-bottom: 10px;
+			font-size: 13px;
+			text-align: left;
+		}
+
+
+
+
+		.st-content {
+			font-size: 16px;
+			line-height: 1.6;
+			text-align: justify;
+			letter-spacing: 0.8px;
+		}
+
+		.bold {
+			font-weight: bold;
+		}
+
+
+		.signature {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 105px;
+			font-weight: bold;
+		}
+
+		.buttons {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+			margin-top: 20px;
+		}
+
+		.buttons button {
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			border: none;
+			border-radius: 8px;
+			background: linear-gradient(45deg, #fb0f33, #ff5858);
+			color: #fff;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			position: relative;
+			overflow: hidden;
+		}
+
+		.buttons button:hover {
+			background: linear-gradient(45deg, #f14141, #ed1737);
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+			transform: translateY(-2px);
+		}
+
+		.buttons button:active {
+			transform: translateY(0);
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+		}
+
+
+
+		@media print {
+			@page {
+				size: A4 portrait;
+				margin: 25mm;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+				background: #fff;
+			}
+
+			.body-wrapper {
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				margin: 0;
+			}
+
+			.main {
+				border: none;
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
+				box-shadow: none;
+			}
+
+			.header-top {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				border-bottom: 2px solid #00bcd4;
+				padding-bottom: 5px;
+				margin-bottom: 10px;
+				margin-top: -35px;
+			}
+
+
+			.cert-no {
+				margin-left: 25px;
+			}
+
+			.buttons,
+			.preloader,
+			.left-sidebar,
+			.topbar,
+			.footer,
+			.card-body {
+				display: none !important;
+			}
+
+			.header-title1 {
+				font-size: 22px;
+				font-weight: bold;
+				color: #000;
+				margin-bottom: 40px;
+				margin-top: 40px;
+			}
+
+
+
+			.st-content {
+				font-size: 13px;
+				line-height: 1.6;
+				text-align: justify;
+				letter-spacing: 0.8px;
+			}
+
+			.bold {
+				font-weight: bold;
+			}
+
+			.signature {
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 220px;
+				font-weight: bold;
+			}
+
+		}
+	</style>
+
+
+
+</head>
+
+<body>
+	<!-- Preloader -->
+	<div class="preloader">
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
+	</div>
+	<div id="main-wrapper">
+		<!-- Sidebar Start -->
+
+		<!--imported side bar here-->
+		<div th:replace="Admin/fragments/side_bar :: side_bar"></div>
+		<!--  Sidebar End -->
+		<div class="page-wrapper">
+			<!--  imported navbar here -->
+			<div th:replace="Admin/fragments/navbar :: navbar"></div>
+
+
+
+
+			<div class="body-wrapper">
+				<div class="container-fluid">
+					<!-- Main Part -->
+
+
+					<div class="main" style="background: #fff;">
+
+						<div class="header-top">
+							<img class="header-img" th:src="@{/public/h1.png}" alt="FC">
+						</div>
+
+						<div class="cert-no">
+							<p>Certificate No:<strong th:text="'AC2025' + ${tc.id}"></strong></p>
+
+						</div>
+
+						<div class="attendence-certificate">
+							<div class="header1">
+								<h1 class="header-title1">ATTENDANCE CERTIFICATE</h1>
+							</div>
+
+							<div class="st-content">
+								<div class="Academic-details">
+									<p>
+										This is to certify that
+										<span class="bold"
+											th:text="${#strings.toUpperCase((tc.gender == 'Male' ? 'MR.' : 'MS.') + ' ' + tc.fullName)}"></span>
+										is a student of our
+										college. <span th:text="*{tc.gender == 'Male' ? 'He' : 'She'}"></span> is
+										studying in
+										<span class="bold" th:text="*{tc.course}"></span> in the academic year
+										<span class="bold" th:text="*{tc.year}"></span>. <span
+											th:text="*{tc.gender == 'Male' ? 'Him' : 'Her'}"></span> Roll Number is
+										<span class="bold" th:text="*{tc.studentId}"></span> and <span
+											th:text="*{tc.gender == 'Male' ? 'he' : 'she'}"></span> is in Division
+										<span class="bold" th:text="*{tc.division}"></span>.
+									</p>
+
+									<BR>
+									<p>
+										As per the attendance records maintained by the college, <span
+											th:text="*{tc.gender == 'Male' ? 'He' : 'She'}"></span> has
+										attended classes from
+										<span id="fromDate" class="bold" th:text="*{tc.fromDate}"></span> to
+										<span class="bold" id="toDate" th:text="*{tc.toDate}"></span>. <span
+											th:text="*{tc.gender == 'Male' ? 'He' : 'She'}"></span> has fulfilled the
+										minimum
+										attendance requirements prescribed by the institution. This
+										certificate serves as proof of <span
+											th:text="*{tc.gender == 'Male' ? 'him' : 'her'}"></span> consistent
+										attendance and
+										commitment to academic excellence.
+									</p>
+
+									<script>
+										document.addEventListener("DOMContentLoaded", function () {
+											let dobElement = document.getElementById("fromDate");
+											let dobString = dobElement.innerText; // Get raw date string
+											if (dobString) {
+												let dateParts = dobString.split("-"); // Assuming yyyy-MM-dd format
+												if (dateParts.length === 3) {
+													dobElement.innerText = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`; // Convert to dd-MM-yyyy
+												}
+											}
+										});
+
+										document.addEventListener("DOMContentLoaded", function () {
+											let dobElement = document.getElementById("toDate");
+											let dobString = dobElement.innerText; // Get raw date string
+											if (dobString) {
+												let dateParts = dobString.split("-"); // Assuming yyyy-MM-dd format
+												if (dateParts.length === 3) {
+													dobElement.innerText = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`; // Convert to dd-MM-yyyy
+												}
+											}
+										});
+									</script>
+
+									<br />
+									<p>
+										This certificate is issued upon the request of the student for
+										<span class="bold"><u th:text="*{tc.certificateReason}"></u></span>
+									</p>
+								</div>
+							</div>
+							<br>
+							<div class="verifiedBy">
+								<p><strong>Verified By:</strong></p>
+								<p>Teacher Name: <span th:text="*{tc.teacherName}"></span></p>
+								<p>Department Name: <span th:text="*{tc.department}"></span></p>
+								<p>Verified Date: <span id="verifiedDate" th:text="*{tc.teacherVerifiedDate}"></span>
+								</p>
+							</div>
+
+							<script>
+								document.addEventListener("DOMContentLoaded", function () {
+									let dobElement = document.getElementById("verifiedDate");
+									let dobString = dobElement.innerText; // Get raw date string
+									if (dobString) {
+										let dateParts = dobString.split("-"); // Assuming yyyy-MM-dd format
+										if (dateParts.length === 3) {
+											dobElement.innerText = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`; // Convert to dd-MM-yyyy
+										}
+									}
+								});
+							</script>
+
+							<div class="signature">
+								<p>Issued Date: <span
+										th:text="${#dates.format(#dates.createNow(), 'dd/MM/yyyy')}"></span></p>
+								<p><strong>Authorized Signatory</strong></p>
+
+
+							</div>
+						</div>
+
+
+
+					</div>
+
+					<div class="buttons mb-4">
+
+						<button onclick="printCertificate()">
+							<i class="fas fa-print"></i>
+							<span>Print Certificate</span>
+						</button>
+						<button type="button" onclick="goBack()">
+							<i class="fas fa-arrow-left"></i>
+							<span>Back</span>
+						</button>
+
+					</div>
+
+
+					<!-- Include jsPDF Library -->
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+					<script>
+						// Function to print the certificate
+						function printCertificate() {
+							window.print();
+						}
+
+						// Function to download the certificate as PDF
+						function downloadPDF() {
+							alert("generated ")
+							/*const {jsPDF} = window.jspdf;
+							const doc = new jsPDF();
+
+							// Add content to PDF
+							doc.html(document.getElementById("certificate"), {
+								callback: function (pdf) {
+									pdf.save("Transference_Certificate.pdf");
+								},
+								margin: [10, 10, 10, 10],
+								autoPaging: "text",
+								width: 190, // A4 width in mm
+								windowWidth: 800, // Adjust based on your content width
+							});*/
+						}
+
+
+						function goBack() {
+							window.history.back();
+						}
+
+
+					</script>
+
+				</div>
+
+
+				<!--import footer here-->
+				<div th:replace="Admin/fragments/footer :: footer"></div>
+			</div>
+
+			<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+
+			<script>
+				function handleColorTheme(e) {
+					document.documentElement.setAttribute("data-color-theme", e);
+				}
+			</script>
+			<div class="dark-transparent sidebartoggler"></div>
+
+		</div>
+	</div>
+
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
+	<!-- Import Js Files -->
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/simplebar/dist/simplebar.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.init.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/theme.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/app.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/sidebarmenu.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/theme/feather.min.js"></script>
+
+	<!-- solar icons -->
+	<script src="../../../../cdn.jsdelivr.net/npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+	<script
+		src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+	<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/dashboards/dashboard1.js"></script>
+</body>
+
+
+<!-- Mirrored from bootstrapdemos.wrappixel.com/ample/dist/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 05 Feb 2025 08:52:13 GMT -->
+
+</html>

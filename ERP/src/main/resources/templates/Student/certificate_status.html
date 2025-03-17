@@ -261,6 +261,39 @@
 							</tbody>
 						</table>
 					</div>
+					
+					
+					<h2 class="mt-4">Attendance Certificate List</h2>
+
+										<div class="table-responsive mb-4">
+											<table id="studentTable2" class="table table-bordered table-striped table-hover">
+												<thead>
+													<tr>
+														<th>Application No</th>
+														<th>Application Date</th>
+														<th>Student Id</th>
+														<th>Certificate Name</th>
+														<th>Status</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr th:each="attendance : ${attendances}">
+														<td th:text="'AC2025' + ${attendance.id}"></td>
+														<td th:text="${attendance.applicationDate}"></td>
+														<td th:text="${attendance.studentId}"></td>
+														<td th:text="${attendance.certificateType}"></td>
+
+														<!-- Admin Approval -->
+														<td>
+															<span style="color:green;" th:if="${attendance.adminApproval == 1}"
+																class="approved">✔️</span>
+															<span style="color:red;" th:if="${attendance.adminApproval != 1}"
+																class="not-approved">❌</span>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
 
 				</div>
 
@@ -297,6 +330,13 @@
 							searching: true,
 							ordering: true
 						});
+						
+						$('#studentTable2').DataTable({
+													responsive: true,
+													paging: true,
+													searching: true,
+													ordering: true
+												});
 		});
 	</script>
 

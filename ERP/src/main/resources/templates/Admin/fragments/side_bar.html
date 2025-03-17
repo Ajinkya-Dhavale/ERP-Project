@@ -6,7 +6,7 @@
 		<nav class="sidebar-nav scroll-sidebar" data-simplebar>
 			<ul id="sidebarnav">
 				<!-----------Profile------------------>
-								<!-- ---------------------------------- -->
+				<!-- ---------------------------------- -->
 				<!-- Home -->
 				<!-- ---------------------------------- -->
 
@@ -81,7 +81,7 @@
 						<li class="sidebar-item">
 							<a th:href="@{/admin/view_approved_tc}" class="sidebar-link sublink">
 								<div class="round-16 d-flex align-items-center justify-content-center">
-									
+
 									<i class="fas fa-check-circle" style="font-size: 18px;"></i>
 								</div>
 								<span class="hide-menu">Approved Certificate</span>
@@ -115,7 +115,7 @@
 						<span class="hide-menu">Bonafide Certificate</span>
 					</a>
 					<ul aria-expanded="false" class="collapse first-level">
-						
+
 
 						<li class="sidebar-item">
 							<a th:href="@{/admin/view_pedding_bonafide}" class="sidebar-link sublink">
@@ -126,13 +126,13 @@
 							</a>
 						</li>
 						<li class="sidebar-item">
-													<a th:href="@{/admin/view_approved_bonafide}" class="sidebar-link sublink">
-														<div class="round-16 d-flex align-items-center justify-content-center">
-															<i class="fas fa-check-circle" style="font-size: 18px;"></i>
-														</div>
-														<span class="hide-menu">Approved Certificate</span>
-													</a>
-												</li>
+							<a th:href="@{/admin/view_approved_bonafide}" class="sidebar-link sublink">
+								<div class="round-16 d-flex align-items-center justify-content-center">
+									<i class="fas fa-check-circle" style="font-size: 18px;"></i>
+								</div>
+								<span class="hide-menu">Approved Certificate</span>
+							</a>
+						</li>
 						<li class="sidebar-item">
 							<a th:href="@{/admin/view_rejected_bonafide}" class="sidebar-link sublink">
 								<div class="round-16 d-flex align-items-center justify-content-center">
@@ -160,16 +160,7 @@
 					</a>
 					<ul aria-expanded="false" class="collapse first-level">
 						<li class="sidebar-item">
-							<a href="#" class="sidebar-link sublink">
-								<div class="round-16 d-flex align-items-center justify-content-center">
-									<i class="fas fa-check-circle" style="font-size: 18px;"></i>
-								</div>
-								<span class="hide-menu">Approved Certificate</span>
-							</a>
-						</li>
-
-						<li class="sidebar-item">
-							<a href="#" class="sidebar-link sublink">
+							<a th:href="@{/admin/view_pedding_attendance}" class="sidebar-link sublink">
 								<div class="round-16 d-flex align-items-center justify-content-center">
 									<i class="fa fa-clock" style="font-size: 18px;"></i>
 								</div>
@@ -177,7 +168,15 @@
 							</a>
 						</li>
 						<li class="sidebar-item">
-							<a href="#" class="sidebar-link sublink">
+							<a th:href="@{/admin/view_approved_attendance}" class="sidebar-link sublink">
+								<div class="round-16 d-flex align-items-center justify-content-center">
+									<i class="fas fa-check-circle" style="font-size: 18px;"></i>
+								</div>
+								<span class="hide-menu">Approved Certificate</span>
+							</a>
+						</li>
+						<li class="sidebar-item">
+							<a th:href="@{/admin/view_rejected_attendance}" class="sidebar-link sublink">
 								<div class="round-16 d-flex align-items-center justify-content-center">
 									<i class="fas fa-times-circle" style="font-size: 18px;"></i>
 								</div>
