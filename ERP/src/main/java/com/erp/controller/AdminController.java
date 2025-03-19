@@ -65,9 +65,9 @@ public class AdminController {
         model.addAttribute("totalStudent",totalCount);
         
         
-        int totaldublicate=tcRepository.countTCType("duplicate","Transference Certificate");
-        int totalOrginal=tcRepository.countTCType("original","Transference Certificate");
-        int migrationCertificate=tcRepository.countTCType("original","Migration Certificate");
+        int totaldublicate=tcRepository.countTCType("Duplicate","Transference Certificate");
+        int totalOrginal=tcRepository.countTCType("Original","Transference Certificate");
+        int migrationCertificate=tcRepository.countTCType("Original","Migration Certificate");
         model.addAttribute("totaldublicate",totaldublicate);
         model.addAttribute("totalOrginal",totalOrginal);
         model.addAttribute("migrationCertificate",migrationCertificate);
@@ -113,39 +113,33 @@ public class AdminController {
             @RequestParam("username") String username,
             @RequestParam("password") String password,
             @RequestParam("role") String role,
-            HttpServletResponse response,HttpSession session, Model model, RedirectAttributes redirectAttributes) throws IOException {
-
-//        System.out.println("Username: " + username);
-//        System.out.println("Password: " + password);
-//        System.out.println("Role: " + role);
-
+            HttpSession session, RedirectAttributes redirectAttributes) {
+    
         // Check if admin exists
         AdminEntity admin = adminRepo.findByUsernameAndPasswordAndRole(username, password, role);
-//        System.out.println(admin);
-
+    
         if (admin == null) {
-        	 redirectAttributes.addFlashAttribute("error", "Invalid credentials.");
+            redirectAttributes.addFlashAttribute("error", "Invalid credentials.");
             return "redirect:/";  
-        } else if(role.equals("account")) {
-        	session.setAttribute("account", admin.getUsername());
-            return "redirect:/account/";  
         }
-        else if(role.equals("library"))
-        {
-        	session.setAttribute("library", admin.getUsername());
-        	return "redirect:/library/";
+    
+        // Set session attribute based on role
+        session.setAttribute(role, admin.getUsername());
+    
+        // Redirect based on role
+        switch (role) {
+            case "admin":
+                return "redirect:/admin/";
+            case "account":
+                return "redirect:/account/";
+            case "library":
+                return "redirect:/library/";
+            case "scholarship":
+                return "redirect:/scholarship/";
+            default:
+                redirectAttributes.addFlashAttribute("error", "Unauthorized role.");
+                return "redirect:/";
         }
-        else if(role.equals("scholarship"))
-        {
-        	session.setAttribute("scholarship", admin.getUsername());
-        	return "redirect:/scholarship/";
-        }
-        else if(role.equals("admin"))
-        {
-        	session.setAttribute("admin", admin.getUsername());
-        	return "redirect:/admin/";
-        }
-        return "redirect:/"; 
     }
 
 

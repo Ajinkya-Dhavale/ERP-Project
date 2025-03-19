@@ -56,11 +56,6 @@ public class CertificateController {
 	public String openCertificatePage(HttpSession session, Model model) {
 		Admission student = (Admission) session.getAttribute("student");
 		model.addAttribute("student", student);
-
-		if (student == null) {
-			return "redirect:/"; // Redirect if session expired or student not found
-		}
-
 		Optional<TCEntity> tcEntity = tcRepository.findByStudentIdAndTcTypeAndCertificateType(student.getAdmissionId(),
 				"Original", "Transference Certificate");
 
@@ -165,7 +160,7 @@ public class CertificateController {
 			tcEntity.setStudentId(studentId);
 
 			tcEntity.setCertificateType(certficateType);
-			tcEntity.setTcType("original");
+			tcEntity.setTcType("Original");
 			tcEntity.setCertificateReason(certificateReason);
 			tcEntity.setFirstName(admission.getFirstName());
 			tcEntity.setMiddleName(admission.getMiddleName());

@@ -6,10 +6,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import com.erp.student.entity.TCEntity;
 
-
+@Repository
 public interface TCRepository extends JpaRepository<TCEntity, Long> {
 	Optional<TCEntity> findByStudentIdAndTcTypeAndCertificateType(String studentId,String tcType,String certificateType);
 
