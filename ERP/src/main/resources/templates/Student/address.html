@@ -57,6 +57,7 @@
 						<div class="card-body">
 							<form class="needs-validation" th:object="${address}" novalidate method="post" th:action="@{/student/save_address}" >
 								<h5>PERMANENT ADDRESS</h5>
+								<input type="hidden" th:field="*{id}">
 								<div class="row">
 									<input type="hidden" th:field="*{studentId}"> 
 									<div class="col-md-4 mb-3">
@@ -185,11 +186,12 @@
 					<script>
 						document.addEventListener("DOMContentLoaded", function () {
 							const form = document.querySelector(".needs-validation");
-
+							const checkbox = document.getElementById("sameAsPermanent");
+						
 							function validateField(field, pattern, isRequired = true) {
-								const value = field.value.trim();
+								const value = field.value; // No trim() used
 								let isValid = true;
-
+						
 								if (isRequired && !value) {
 									isValid = false;
 									field.classList.add("is-invalid");
@@ -205,131 +207,116 @@
 									field.classList.add("is-valid");
 									field.setCustomValidity("");
 								}
-
+						
 								return isValid;
 							}
-
+						
 							function checkPermanentAddressFilled() {
 								const requiredFields = [
 									"permanentCountry", "permanentState", "permanentDistrict",
-									"permanentCity", "permanentPincode", "permanentAddress"
+									"permanentCity", "permanentTaluka", "permanentPincode", "permanentAddress"
 								];
+						
 								const allFilled = requiredFields.every(id => {
 									const field = document.getElementById(id);
-									return field.value.trim() !== "";
+									return field.value !== ""; // No trim() used
 								});
-								const checkbox = document.getElementById('sameAsPermanent');
-								checkbox.disabled = !allFilled;
+						
+								checkbox.disabled = !allFilled; // Enable only if all fields are filled
 								if (!allFilled) {
 									checkbox.checked = false;
+									copyPermanentAddress(); // Clear temporary fields if unchecked
 								}
 							}
-
-							window.copyPermanentAddress = function () {
-								const isChecked = document.getElementById('sameAsPermanent').checked;
-								if (isChecked) {
-									document.getElementById('temporaryCountry').value = document.getElementById('permanentCountry').value;
-									document.getElementById('temporaryState').value = document.getElementById('permanentState').value;
-									document.getElementById('temporaryDistrict').value = document.getElementById('permanentDistrict').value;
-									document.getElementById('temporaryCity').value = document.getElementById('permanentCity').value;
-									document.getElementById('temporaryTaluka').value = document.getElementById('permanentTaluka').value;
-									document.getElementById('temporaryAddress').value = document.getElementById('permanentAddress').value;
-									document.getElementById('temporaryPincode').value = document.getElementById('permanentPincode').value;
-
-									const temporaryFields = [
-										"temporaryCountry", "temporaryState", "temporaryDistrict", "temporaryCity",
-										"temporaryTaluka", "temporaryPincode", "temporaryAddress"
-									];
-									temporaryFields.forEach(id => {
-										const field = document.getElementById(id);
-										field.classList.remove("is-invalid");
-										field.classList.add("is-valid");
-									});
-								} else {
-									const temporaryFields = [
-										"temporaryCountry", "temporaryState", "temporaryDistrict", "temporaryCity",
-										"temporaryTaluka", "temporaryPincode", "temporaryAddress"
-									];
-									temporaryFields.forEach(id => {
-										const field = document.getElementById(id);
-										field.value = '';
-										field.classList.remove("is-valid");
-									});
-								}
-							};
-
+						
+							function copyPermanentAddress() {
+								const isChecked = checkbox.checked;
+						
+								const fieldPairs = [
+									["permanentCountry", "temporaryCountry"],
+									["permanentState", "temporaryState"],
+									["permanentDistrict", "temporaryDistrict"],
+									["permanentCity", "temporaryCity"],
+									["permanentTaluka", "temporaryTaluka"],
+									["permanentAddress", "temporaryAddress"],
+									["permanentPincode", "temporaryPincode"]
+								];
+						
+								fieldPairs.forEach(([permanentId, temporaryId]) => {
+									const permanentField = document.getElementById(permanentId);
+									const temporaryField = document.getElementById(temporaryId);
+						
+									if (isChecked) {
+										temporaryField.value = permanentField.value;
+										temporaryField.classList.remove("is-invalid");
+										temporaryField.classList.add("is-valid");
+									} else {
+										temporaryField.value = "";
+										temporaryField.classList.remove("is-valid");
+									}
+								});
+							}
+						
 							function capitalizeFirstLetter(field) {
-								const value = field.value.trim();
+								const value = field.value;
 								if (value) {
-									field.value = value.charAt(0).toUpperCase() + value.slice(1);
+									field.value = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
 								}
 							}
-
-							const addressTextareas = ["permanentAddress", "temporaryAddress"];
-							addressTextareas.forEach(id => {
+						
+							// List of fields to validate
+							const fields = [
+								{ id: "permanentCountry", pattern: /^[A-Za-z\s]+$/, required: true },
+								{ id: "permanentState", pattern: /^[A-Za-z\s]+$/, required: true },
+								{ id: "permanentDistrict", pattern: /^[A-Za-z\s]+$/, required: true },
+								{ id: "permanentCity", pattern: /^[A-Za-z\s]+$/, required: true },
+								{ id: "permanentTaluka", pattern: /^[A-Za-z\s]+$/, required: true },
+								{ id: "permanentPincode", pattern: /^\d{6}$/, required: true },
+								{ id: "permanentAddress", pattern: /^[a-zA-Z0-9\s,/.]+$/, required: true },
+								{ id: "temporaryCountry", pattern: /^[A-Za-z\s]*$/, required: true },
+								{ id: "temporaryState", pattern: /^[A-Za-z\s]*$/, required: true },
+								{ id: "temporaryDistrict", pattern: /^[A-Za-z\s]*$/, required: true },
+								{ id: "temporaryCity", pattern: /^[A-Za-z\s]*$/, required: true },
+								{ id: "temporaryTaluka", pattern: /^[A-Za-z\s]*$/, required: true },
+								{ id: "temporaryPincode", pattern: /^\d{6}$/, required: true },
+								{ id: "temporaryAddress", pattern: /^[a-zA-Z0-9\s,/.]+$/, required: true }
+							];
+						
+							fields.forEach(({ id, pattern, required }) => {
 								const field = document.getElementById(id);
-								field.addEventListener("keydown", function (event) {
-									if (event.key === "Tab") {
-										return;
+								field.addEventListener("input", function () {
+									capitalizeFirstLetter(field); // Capitalize first letter only
+									validateField(field, pattern, required);
+									if (id.startsWith("permanent")) {
+										checkPermanentAddressFilled();
 									}
 								});
 							});
-
-							const fields = [
-								{id: "permanentCountry", pattern: /^[A-Za-z\s]+$/, required: true},
-								{id: "permanentState", pattern: /^[A-Za-z\s]+$/, required: true},
-								{id: "permanentDistrict", pattern: /^[A-Za-z\s]+$/, required: true},
-								{id: "permanentCity", pattern: /^[A-Za-z\s]+$/, required: true},
-								{id: "permanentTaluka", pattern: /^[A-Za-z\s]*$/, required: true},
-								{id: "permanentPincode", pattern: /^\d{6}$/, required: true},
-								{id: "temporaryCountry", pattern: /^[A-Za-z\s]*$/, required: true},
-								{id: "temporaryState", pattern: /^[A-Za-z\s]*$/, required: true},
-								{id: "temporaryDistrict", pattern: /^[A-Za-z\s]*$/, required: true},
-								{id: "temporaryCity", pattern: /^[A-Za-z\s]*$/, required: true},
-								{id: "temporaryTaluka", pattern: /^[A-Za-z\s]*$/, required: true},
-								{id: "temporaryPincode", pattern: /^\d{6}$/, required: true},
-								{id: "temporaryAddress", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/, required: true},
-								{id: "permanentAddress", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/, required: true}
-							];
-
-							fields.forEach(({id, pattern, required}) => {
-								const field = document.getElementById(id);
-								field.addEventListener("input", function () {
-									capitalizeFirstLetter(field);
-									validateField(field, pattern, required);
-									checkPermanentAddressFilled();
-								});
-							});
-
-							document.getElementById('sameAsPermanent').disabled = true;
-
+						
+							checkbox.addEventListener("change", copyPermanentAddress);
+							checkbox.disabled = true;
+						
 							form.addEventListener("submit", function (event) {
 								event.preventDefault();
 								event.stopPropagation();
-
+						
 								let isValid = true;
-
-								fields.forEach(({id, pattern, required}) => {
+								fields.forEach(({ id, pattern, required }) => {
 									const field = document.getElementById(id);
 									if (!validateField(field, pattern, required)) {
 										isValid = false;
 									}
 								});
-
+						
 								if (isValid) {
 									alert("Form submitted successfully!");
 									form.submit();
 								} else {
-									alert("Please fill the empty fields.");
-									fields.forEach(({id}) => {
-										const field = document.getElementById(id);
-										if (field.classList.contains("is-invalid")) {
-											field.focus();
-										}
-									});
+									alert("Please fill all required fields correctly.");
 								}
 							});
 						});
+						
 					</script>
 
 

@@ -19,12 +19,25 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Attendence Certificate</title>
+	<title>Student Attendance Application</title>
 
 
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+	<style>
+		.disabled-look {
+			background-color: #e9ecef;
+			/* Light gray background like disabled input */
+			cursor: not-allowed;
+			/* Cursor indicates disabled state */
+			pointer-events: none;
+			/* Prevent input interaction */
+			color: black;
+			opacity: 0.65;
+			/* Slight transparency */
+		}
+	</style>
 </head>
 
 <body>
@@ -101,21 +114,24 @@
 						<div class="card-body wizard-content">
 							<h4 class="card-title mb-1 text-center text-danger"
 								style="font-size: 25px;font-weight:bolder;">Attendance Certificate Application</h4>
-							<form id="form_attendance" th:action="@{/student/save_attendance_certificate}" th:object="${attendance}" class="tab-wizard wizard-circle" method="post" enctype="multipart/form-data">
+							<form id="form_attendance" th:action="@{/student/save_attendance_certificate}"
+								th:object="${attendance}" class="tab-wizard wizard-circle" method="post"
+								enctype="multipart/form-data">
 								<!-- Step 1: Personal Information -->
 								<h6>Personal Information</h6>
 								<section>
 									<div class="row mb-3">
 										<div class="col-md-6">
 											<label class="form-label">Full Name</label>
-											<input th:field="*{fullName}" type="text" class="form-control" id="fullName"
-												placeholder="Full Name" required readonly>
+											<input th:field="*{fullName}" type="text" class="form-control disabled-look"
+												id="fullName" placeholder="Full Name" required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid full name.</div>
 										</div>
 										<div class="col-md-6">
 											<label class="form-label">Roll Number</label>
-											<input th:field="*{studentId}" type="text" class="form-control" id="rollNumber"
+											<input th:field="*{studentId}" type="text"
+												class="disabled-look form-control" id="rollNumber"
 												placeholder="Enter Roll No." required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid roll no.</div>
@@ -124,30 +140,49 @@
 									<div class="row mb-3">
 										<div class="col-md-6">
 											<label class="form-label">Gender</label>
-											<input type="text" th:field="*{gender}" class="form-control" id="gender" required readonly/>
-												
+											<input type="text" th:field="*{gender}" class="form-control disabled-look"
+												id="gender" required readonly />
+
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select a valid gender.</div>
 										</div>
-										<div class="col-md-6">
+										<div class="col-md-4">
 											<label class="form-label">Year</label>
-											<select th:field="*{year}"  class="form-control" id="yearRangeSelect" required>
-												<option value="">Select Year Range</option>
+											<select th:field="*{year}" class="form-control disabled-look" id="yearRangeSelect"
+												required readonly>
+												<option value="" selected disabled>Select Year Range</option>
 											</select>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select a valid year range.</div>
 										</div>
+										<script>
+											document.addEventListener("DOMContentLoaded", function () {
+												const currentYear = new Date().getFullYear();
+												const previousYear = currentYear - 1;
+
+												const yearRange = `${previousYear}-${currentYear}`;
+
+												const yearDropdown = document.getElementById("yearRangeSelect");
+
+												const option = document.createElement("option");
+												option.value = yearRange;
+												option.textContent = yearRange;
+												yearDropdown.appendChild(option);
+											});
+										</script>
 									</div>
 									<div class="row mb-3">
 										<div class="col-md-6">
 											<label class="form-label">Department Name</label>
-											<input th:field="*{department}" type="text" class="form-control" id="department" required readonly>
+											<input th:field="*{department}" type="text" class="form-control disabled-look"
+												id="department" required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid department.</div>
 										</div>
 										<div class="col-md-6">
 											<label class="form-label">Course Name</label>
-											<input th:field="*{course}" type="text" class="form-control" id="course" required readonly>
+											<input th:field="*{course}" type="text" class="form-control  disabled-look" id="course"
+												required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid course.</div>
 										</div>
@@ -157,14 +192,16 @@
 									<div class="row mb-3">
 										<div class="col-md-6">
 											<label class="form-label">Attendance Period (From)</label>
-											<input th:field="*{fromDate}" type="date" class="form-control" id="attendanceFrom" required>
+											<input th:field="*{fromDate}" type="date" class="form-control"
+												id="attendanceFrom" required>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select period.</div>
 
 										</div>
 										<div class="col-md-6">
 											<label class="form-label">Attendance Period (To)</label>
-											<input th:field="*{toDate}" type="date" class="form-control" id="attendanceTo" required>
+											<input th:field="*{toDate}" type="date" class="form-control"
+												id="attendanceTo" required>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select period.</div>
 
@@ -172,8 +209,8 @@
 									</div>
 									<div class="mb-3">
 										<label class="form-label">Purpose of Certificate</label>
-										<textarea th:field="*{certificateReason}" class="form-control" id="purposeOfCertificate" rows="3"
-											required></textarea>
+										<textarea th:field="*{certificateReason}" class="form-control"
+											id="purposeOfCertificate" rows="3" required></textarea>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a valid purpose.</div>
 									</div>
@@ -185,8 +222,8 @@
 									<div class="mb-3">
 										<label for="identityProof" class="form-label">Identity Proof</label>
 										<div class="input-group">
-											<input type="file" name="identityProofFile" class="form-control" id="identityProof"
-												accept=".jpeg, .jpg, .png" required>
+											<input type="file" name="identityProofFile" class="form-control"
+												id="identityProof" accept=".jpeg, .jpg, .png" required>
 											<button type="button" class="btn btn-secondary"
 												onclick="editFile('identityProof')">
 												<i class="fa-solid fa-pen"></i>
@@ -232,10 +269,10 @@
 										</ol>
 										<div class="input-group">
 											<a th:href="@{/public/attendance.pdf}" download class="btn btn-success">
-											    Download Letter
+												Download Letter
 											</a>
-											<input type="file" name="verificationLetterFile" class="form-control" id="verifiedLetter"
-												accept=".jpeg, .jpg, .png" required>
+											<input type="file" name="verificationLetterFile" class="form-control"
+												id="verifiedLetter" accept=".jpeg, .jpg, .png" required>
 											<button type="button" class="btn btn-secondary"
 												onclick="editFile('verifiedLetter')">
 												<i class="fa-solid fa-pen"></i>
@@ -257,18 +294,21 @@
 										<h5 class="mt-3">Verification Details</h5>
 										<div class="col-md-6">
 											<label class="form-label">Teacher Name</label>
-											<input th:field="*{teacherName}" type="text" placeholder="format: MR./MRS Teacher Name" class="form-control" id="teacher_name" required>
+											<input th:field="*{teacherName}" type="text"
+												placeholder="format: MR./MRS Teacher Name" class="form-control"
+												id="teacher_name" required>
 											<div class="valid-feedback">Looks good!</div>
-											<div class="invalid-feedback">Please enter a valid course.</div>
+											<div class="invalid-feedback">Please enter correct name.</div>
 										</div>
 
 										<div class="col-md-6">
 											<label class="form-label">Teacher Verify Date</label>
-											<input type="date" th:field="*{teacherVerifiedDate}" class="form-control" id="teacher_verify_date" required>
+											<input type="date" th:field="*{teacherVerifiedDate}" class="form-control"
+												id="teacher_verify_date" required>
 											<div class="valid-feedback">Looks good!</div>
-											<div class="invalid-feedback">Please enter a valid course.</div>
+											<div class="invalid-feedback">Please enter a correct date.</div>
 										</div>
-										
+
 										<input type="hidden" th:field="*{certificateType}">
 										<input type="hidden" th:field="*{division}">
 									</div>
@@ -282,25 +322,35 @@
 
 
 			<script>
+				function swal() {
+				    // Select all input fields that are not disabled-looking and are required
+				    const requiredFields = document.querySelectorAll('#form_attendance input:not(.disabled-look)[required], textarea[required], select[required]');
+				    let isValid = true;
 
-				function swal()
-				{
-					alert("Are you sure to submit form");
-					
-					document.getElementById("form_attendance").submit();
-					
+				    // Loop through fields to check validation
+				    requiredFields.forEach(field => {
+				        if (!field.value.trim()) {
+				            isValid = false;
+				            field.classList.add('is-invalid');
+				            field.classList.remove('is-valid');
+				        } else {
+				            field.classList.add('is-valid');
+				            field.classList.remove('is-invalid');
+				        }
+				    });
+
+				    if (!isValid) {
+				        alert("Please fill in all required fields.");
+				        return; // Stop form submission
+				    }
+
+				    // Confirmation and form submission
+				    if (confirm("Are you sure to submit form?")) {
+				        document.getElementById("form_attendance").submit();
+				    }
 				}
-				
+
 				document.addEventListener("DOMContentLoaded", function () {
-					// Populate the year range dropdown
-					const currentYear = new Date().getFullYear();
-					const previousYear = currentYear - 1;
-					const yearRange = `${previousYear}-${currentYear}`;
-					const yearDropdown = document.getElementById("yearRangeSelect");
-					const option = document.createElement("option");
-					option.value = yearRange;
-					option.textContent = yearRange;
-					yearDropdown.appendChild(option);
 
 					function showToast(message, type = "error") {
 						const toast = document.createElement("div");
@@ -340,19 +390,22 @@
 					}
 
 					const fields = [
-						{id: "fullName", pattern: /^[a-zA-Z\s]+$/, required: true},
-						{id: "rollNumber", pattern: /^\d+$/, required: true},
-						{id: "course", pattern: /^[a-zA-Z\s]+$/, required: true},
-						{id: "yearRangeSelect", pattern: null, required: true},
-						{id: "department", pattern: /^[a-zA-Z\s]+$/, required: true},
-						{id: "gender", pattern: null, required: true},
-						{id: "purposeOfCertificate", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true},
-						{id: "identityProof", pattern: null, required: true},
-						{id: "feeReceipt", pattern: null, required: true},
-						{id: "verifiedLetter", pattern: null, required: true},
-						{id: "attendanceFrom", pattern: null, required: true},
-						{id: "attendanceTo", pattern: null, required: true}
+					    {id: "fullName", pattern: /^[a-zA-Z\s]+$/, required: true},
+					    {id: "rollNumber", pattern: /^\d+$/, required: true},
+					    {id: "course", pattern: /^[a-zA-Z\s]+$/, required: true},
+					    {id: "yearRangeSelect", pattern: null, required: true},
+					    {id: "department", pattern: /^[a-zA-Z\s]+$/, required: true},
+					    {id: "gender", pattern: null, required: true},
+					    {id: "purposeOfCertificate", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true},
+					    {id: "identityProof", pattern: null, required: true},
+					    {id: "feeReceipt", pattern: null, required: true},
+					    {id: "verifiedLetter", pattern: null, required: true},
+					    {id: "attendanceFrom", pattern: null, required: true},
+					    {id: "attendanceTo", pattern: null, required: true},
+					    {id: "teacher_name", pattern: /^[a-zA-Z0-9\s,.-]+$/, required: true},
+					    {id: "teacher_verify_date", pattern: /^\d{4}-\d{2}-\d{2}$/, required: true} // YYYY-MM-DD
 					];
+
 
 
 					fields.forEach(({id, pattern, required}) => {
@@ -387,7 +440,7 @@
 						});
 					});
 
-					
+
 					/*
 					function validateAttendancePeriods() {
 						const fromDate = new Date(document.getElementById("attendanceFrom").value);
@@ -467,7 +520,7 @@
 
 					fileInput.addEventListener("change", function () {
 						if (fileInput.files.length > 0) {
-							showToast("File attached successfully!", "success");
+							showSuccessMessage("File attached successfully!", "success");
 						}
 					});
 				}
@@ -475,7 +528,7 @@
 				function cancelFile(inputId) {
 					const fileInput = document.getElementById(inputId);
 					fileInput.value = '';
-					showToast("File attachment cancelled.", "success");
+					showSuccessMessage("File attachment cancelled.", "success");
 				}
 
 				function viewFile(inputId) {

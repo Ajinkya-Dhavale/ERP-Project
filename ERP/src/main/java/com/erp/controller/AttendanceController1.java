@@ -17,10 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.erp.admin.entity.Admission;
 import com.erp.repo.AdmissionRepo;
 import com.erp.student.entity.AttendanceEntity;
-import com.erp.student.entity.BonafideEntity;
-import com.erp.student.entity.StudentDocument;
 import com.erp.student.repo.AttendanceEntityRepo;
-import com.erp.student.repo.BonafideRepository;
 
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;

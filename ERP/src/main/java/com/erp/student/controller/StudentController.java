@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.erp.admin.entity.AdminEntity;
 import com.erp.admin.entity.Admission;
 import com.erp.student.entity.AcademicDetails;
 import com.erp.student.entity.PersonalDetails;
@@ -24,7 +23,6 @@ import com.erp.student.repo.BonafideRepository;
 import com.erp.student.repo.TCRepository;
 import com.erp.student.service.StudentService;
 
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -151,7 +149,7 @@ public class StudentController {
 	
 	@PostMapping("/save_address")
     public String saveAddress(@ModelAttribute StudentAddress studentAddress) {
-        studentService.saveOrUpdateStudentAddress(studentAddress);
+		 studentService.saveOrUpdateStudentAddress(studentAddress);
         return "redirect:/student/address";  // Redirect after saving
     }
 	
@@ -168,6 +166,8 @@ public class StudentController {
 		    }
 		StudentDocument document=studentService.getStudentDocumentByStudentId(admission.getAdmissionId());
 		
+		System.out.println(document.getPhoto());
+
 		model.addAttribute("document",document);
 		
 		return "Student/photo_sign";

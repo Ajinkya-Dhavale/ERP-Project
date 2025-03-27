@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.erp.admin.entity.Admission;
 
-import java.util.List;
 
 @Repository
 public interface StundentRepo extends JpaRepository<Admission, Long> {

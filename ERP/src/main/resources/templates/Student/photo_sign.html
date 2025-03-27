@@ -62,7 +62,9 @@
 							            <label><strong>Student Photo</strong></label><br>
 							            <input type="file" id="photoInput" name="studentPhoto" accept="image/*" onchange="previewImage(event, 'photoPreview')">
 							            <br>
-							            <img id="photoPreview" src="#" alt="Photo Preview" style="display: none; max-width: 150px; height: auto; margin-top: 10px;">
+										<img id="hide_photo">
+
+										<img id="photoPreview" src="#" alt="Photo Preview" style="display: none; max-width: 150px; height: auto; margin-top: 10px;">
 							        </div>
 
 							        <!-- Student Signature Upload -->
@@ -81,6 +83,7 @@
 							    function previewImage(event, previewId) {
 							        const input = event.target;
 							        const preview = document.getElementById(previewId);
+									document.getElementById("hide_photo").style.display = "none";
 
 							        if (input.files && input.files[0]) {
 							            const reader = new FileReader();

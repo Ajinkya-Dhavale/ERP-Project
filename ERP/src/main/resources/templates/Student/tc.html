@@ -16,14 +16,26 @@
 
 	<!-- Core Css -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Ample Template by WrapPixel</title>
+	<title>Tc Application Form</title>
+	<style>
+		.disabled-look {
+			background-color: #e9ecef;
+			/* Light gray background like disabled input */
+			cursor: not-allowed;
+			/* Cursor indicates disabled state */
+			pointer-events: none;
+			/* Prevent input interaction */
+			color: black;
+			opacity: 0.65;
+			/* Slight transparency */
+		}
+	</style>
 </head>
 
 <body class="link-sidebar">
 	<!-- Preloader -->
 	<div class="preloader">
-		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader"
-										class="lds-ripple img-fluid" />
+		<img th:src="@{/public/logo.png}" style="width:200px;" alt="loader" class="lds-ripple img-fluid" />
 	</div>
 	<div id="main-wrapper">
 		<!-- Sidebar Start -->
@@ -57,30 +69,32 @@
 							<h4 class="card-title mb-1 text-center text-danger"
 								style="font-size: 25px;font-weight:bolder;">Transference Certificate Application</h4>
 							<h6 class="card-subtitle mb-3"></h6>
-							<form enctype="multipart/form-data" th:action="@{/student/save_tc}" id="abra" th:object="${tc}"
-								class="tab-wizard wizard-circle" method="post">
+							<form enctype="multipart/form-data" th:action="@{/student/save_tc}" id="abra"
+								th:object="${tc}" class="tab-wizard wizard-circle" method="post">
 								<!-- Step 1 -->
 								<h6>Personal Information</h6>
 								<section>
 									<div class="row mb-3">
 										<div class="col-md-4">
 											<label class="form-label" for="validationCustom01">First Name</label>
-											<input type="text" class="form-control" id="validationCustom01"
-												placeholder="First name" th:field="*{firstName}" required readonly />
+											<input type="text" class="form-control disabled-look"
+												id="validationCustom01" placeholder="First name" th:field="*{firstName}"
+												required readonly />
 
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid first name.</div>
 										</div>
 										<div class="col-md-4">
 											<label class="form-label" for="validationCustom02">Middle Name</label>
-											<input type="text" class="form-control" id="validationCustom02"
-												placeholder="Middle name" th:field="*{middleName}" required readonly />
+											<input type="text" class="form-control disabled-look"
+												id="validationCustom02" placeholder="Middle name"
+												th:field="*{middleName}" required readonly />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid middle name.</div>
 										</div>
 										<div class="col-md-4">
 											<label class="form-label" for="validationCustom03">Last Name</label>
-											<input type="text" class="form-control" th:field="*{lastName}"
+											<input type="text" class="form-control disabled-look" th:field="*{lastName}"
 												id="validationCustom03" placeholder="Last name" required readonly />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid last name.</div>
@@ -93,9 +107,10 @@
 												<span class="input-group-text" id="inputGroupPrepend1">
 													<i class="fa-solid fa-phone" style="font-size: 20px;"></i>
 												</span>
-												<input th:field="*{contactNo}" type="text" class="form-control"
-													id="contactNo" placeholder="Enter Mobile No."
-													aria-describedby="inputGroupPrepend" required readonly />
+												<input th:field="*{contactNo}" type="text"
+													class="form-control  disabled-look" id="contactNo"
+													placeholder="Enter Mobile No." aria-describedby="inputGroupPrepend"
+													required readonly />
 												<div class="valid-feedback">Looks good!</div>
 												<div class="invalid-feedback">Please enter a valid contact number.</div>
 											</div>
@@ -108,7 +123,7 @@
 												</span>
 												<input type="text" th:field="*{alternateNo}" class="form-control"
 													id="alternateNo" placeholder="Enter Alternate No."
-													aria-describedby="inputGroupPrepend" required />
+													aria-describedby="inputGroupPrepend" />
 												<div class="valid-feedback">Looks good!</div>
 												<div class="invalid-feedback">Please enter a valid alternate number.
 												</div>
@@ -118,16 +133,16 @@
 									<div class="row mb-3 mt-3">
 										<div class="col-md-6">
 											<label class="form-label" for="dob">Date of Birth</label>
-											<input type="date" th:field="*{dob}" class="form-control" id="dob"
-												placeholder="Choose Date of Birth" required />
+											<input type="date" th:field="*{dob}" class="form-control disabled-look"
+												id="dob" placeholder="Choose Date of Birth" required />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid date.</div>
 										</div>
 										<div class="col-md-6">
 											<label class="form-label" for="dobInWords">Date of Birth In Words</label>
-											<input type="text" th:field="*{dobInWords}" class="form-control"
-												id="dobInWords" placeholder="Date of Birth in words" required
-												readonly />
+											<input type="text" th:field="*{dobInWords}"
+												class="form-control disabled-look" id="dobInWords"
+												placeholder="Date of Birth in words" required readonly />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid date in words.</div>
 										</div>
@@ -139,32 +154,33 @@
 												<span class="input-group-text" id="inputGroupPrepend2">
 													<i class="fa-solid fa-envelope" style="font-size: 20px;"></i>
 												</span>
-												<input th:field="*{emailId}" type="text" class="form-control"
-													placeholder="Enter Email" aria-describedby="inputGroupPrepend"
-													required readonly />
+												<input th:field="*{emailId}" type="text"
+													class="form-control disabled-look" placeholder="Enter Email"
+													aria-describedby="inputGroupPrepend" required readonly />
 												<div class="valid-feedback">Looks good!</div>
 												<div class="invalid-feedback">Please enter a valid email.</div>
 											</div>
 										</div>
 										<div class="col-md-6 mb-3">
 											<label class="form-label" for="gender">Gender:</label>
-											<input th:field="*{gender}" type="text" class="form-control" id="gender"
-												placeholder="Enter Gender" aria-describedby="inputGroupPrepend" required
-												readonly />
+											<input th:field="*{gender}" type="text" class="form-control disabled-look"
+												id="gender" placeholder="Enter Gender"
+												aria-describedby="inputGroupPrepend" required readonly />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select a gender.</div>
 										</div>
 									</div>
 									<div class="mb-3">
 										<label class="form-label" for="casteCategory">Enter Cast</label>
-										<input th:field="*{casteCategory}" type="text" class="form-control"
-											id="casteCategory" placeholder="Enter Caste Category" required readonly />
+										<input th:field="*{casteCategory}" type="text"
+											class="form-control disabled-look" id="casteCategory"
+											placeholder="Enter Caste Category" required readonly />
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please select a caste.</div>
 									</div>
 									<div class="col-md-12 mb-3">
 										<label class="form-label" for="Address">Permanent Address </label>
-										<textarea th:field="*{address}" class="form-control" id="Address"
+										<textarea th:field="*{address}" class="form-control disabled-look" id="Address"
 											placeholder="Enter your Address" rows="3" required readonly></textarea>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a valid address.</div>
@@ -185,7 +201,7 @@
 
 											<select class="form-control" id="department" th:field="*{department}"
 												required>
-												<option value="" disabled selected>Select Department</option>
+												<option value="Select Department" selected disabled>Select Department</option>
 												<option value="Agriculture & Allied Sciences">Agriculture & Allied
 													Sciences</option>
 												<option value="Anthropology">Anthropology</option>
@@ -945,12 +961,12 @@
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please Select Document.</div>
 
-										
+
 									</div>
 								</section>
-								
+
 								<!--Hidden input values-->
-								
+
 								<input type="hidden" th:field="*{studentId}">
 								<input type="hidden" id="totalFee" th:field="*{totalFee}">
 								<input type="hidden" th:field="*{processingFee}">
@@ -990,8 +1006,9 @@
 												<input type="hidden" id="paymentId" th:field="*{paymentId}"
 													name="payment_id" required value="">
 
-												<button id="payment-button" class="btn btn-primary w-100" type="button">Proceed to
-													Payment</button>	
+												<button id="payment-button" class="btn btn-primary w-100"
+													type="button">Proceed to
+													Payment</button>
 												<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 												<!--Integrate online payment-->
@@ -1545,29 +1562,6 @@
 			</script>
 
 			<script>
-				// Convert a numeric year to words (supports numbers up to 9999)
-				function convertYearToWords(year) {
-					const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-					const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-					const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-					if (year < 10) return ones[year];
-					else if (year < 20) return teens[year - 10];
-					else if (year < 100) {
-						return tens[Math.floor(year / 10)] + (year % 10 !== 0 ? " " + ones[year % 10] : "");
-					} else if (year < 1000) {
-						let rem = year % 100;
-						let result = ones[Math.floor(year / 100)] + " hundred";
-						if (rem > 0) result += " " + convertYearToWords(rem);
-						return result;
-					} else if (year < 10000) {
-						let rem = year % 1000;
-						let result = convertYearToWords(Math.floor(year / 1000)) + " thousand";
-						if (rem > 0) result += " " + convertYearToWords(rem);
-						return result;
-					}
-					return year;
-				}
-
 				document.addEventListener("DOMContentLoaded", function () {
 					const dobInput = document.getElementById("dob");
 					const dobInWordsInput = document.getElementById("dobInWords");
@@ -1578,8 +1572,31 @@
 					];
 					const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 
-					dobInput.addEventListener("change", function () {
-						const dobValue = this.value; // Expected format: YYYY-MM-DD
+					function convertYearToWords(year) {
+						const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+						const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+						const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+						if (year < 10) return ones[year];
+						else if (year < 20) return teens[year - 10];
+						else if (year < 100) {
+							return tens[Math.floor(year / 10)] + (year % 10 !== 0 ? " " + ones[year % 10] : "");
+						} else if (year < 1000) {
+							let rem = year % 100;
+							let result = ones[Math.floor(year / 100)] + " hundred";
+							if (rem > 0) result += " " + convertYearToWords(rem);
+							return result;
+						} else if (year < 10000) {
+							let rem = year % 1000;
+							let result = convertYearToWords(Math.floor(year / 1000)) + " thousand";
+							if (rem > 0) result += " " + convertYearToWords(rem);
+							return result;
+						}
+						return year;
+					}
+
+					function convertDOBToWords() {
+						const dobValue = dobInput.value; // Expected format: YYYY-MM-DD
 						if (dobValue) {
 							const parts = dobValue.split("-");
 							const year = parseInt(parts[0], 10);
@@ -1590,33 +1607,76 @@
 							const yearWord = convertYearToWords(year);
 							let DOB = dayWord + " " + monthWord + " " + yearWord;
 							dobInWordsInput.value = DOB.toUpperCase();
-						}
-					});
-				});
-				
-				
-			</script>
-			
-			
-		<script>
-			/*
-			let index = 1;
-			document.addEventListener("click", function (event) {
-			    if (event.target.matches('a[href="#next"]')) {
-			        event.preventDefault();
-					index
-			    }
-			});
 
-			*/
-				
-				function swal(){
-					
-					let form = document.getElementById("abra")
-					form.submit()
-				}
+							// Add validation classes
+							dobInWordsInput.classList.remove("is-invalid");
+							dobInWordsInput.classList.add("is-valid");
+						} else {
+							dobInWordsInput.value = "";
+							dobInWordsInput.classList.remove("is-valid");
+							dobInWordsInput.classList.add("is-invalid");
+						}
+					}
+
+					// Convert on page load if DOB exists
+					if (dobInput.value) {
+						convertDOBToWords();
+					}
+				});
+
 			</script>
-			
+
+
+			<script>
+				/*
+				let index = 1;
+				document.addEventListener("click", function (event) {
+					if (event.target.matches('a[href="#next"]')) {
+						event.preventDefault();
+						index
+					}
+				});
+	
+				*/
+				function swal() {
+				    const requiredFields = document.querySelectorAll('#abra input:not([type="hidden"]):not(.disabled-look)[required], textarea[required], select[required]');
+				    let isValid = true;
+
+				    requiredFields.forEach(field => {
+				        if (!field.value.trim()) {
+				            isValid = false;
+				            field.classList.add('is-invalid');
+				            field.classList.remove('is-valid');
+				        } else {
+				            field.classList.remove('is-invalid');
+
+				            // Avoid adding 'is-valid' for fields inside tbody
+				            if (!field.closest('tbody')) {
+				                field.classList.add('is-valid');
+				            }
+				        }
+				    });
+
+				    if (!isValid) {
+				        alert("Please fill in all required fields.");
+				        return; // Stop form submission
+				    }
+
+				    // Validate Payment
+				    const paymentId = document.getElementById("payment-button");
+				    if (!paymentId.disabled) {
+				        alert("Payment is Required.");
+				        return;
+				    }
+
+				    // Confirmation and form submission
+				    if (confirm("Are you sure to submit form?")) {
+				        document.getElementById("abra").submit();
+				    }
+				}
+
+			</script>
+
 			<div class="dark-transparent sidebartoggler"></div>
 			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/vendor.min.js"></script>
 
@@ -1636,10 +1696,10 @@
 				src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
 			<script
 				src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/libs/jquery-validation/dist/jquery.validate.min.js"></script>
-		
-				<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/forms/form-wizard.js"></script>
-						
-			</div>
+
+			<script src="https://bootstrapdemos.wrappixel.com/ample/dist/assets/js/forms/form-wizard.js"></script>
+
+		</div>
 	</div>
 </body>
 

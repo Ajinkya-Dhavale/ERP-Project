@@ -167,7 +167,6 @@
 										<th>Certificate Name</th>
 										<th>TC Type</th>
 										<th>Payment Status</th>
-										<th>Issue Date</th>
 										<th>Status</th>
 										<th>Action</th>
 									</tr>
@@ -180,7 +179,6 @@
 										<td th:text="${tcEntity.certificateType}"></td>
 										<td th:text="${tcEntity.tcType}"></td>
 										<td th:text="${tcEntity.paymentStatus}"></td>
-										<td th:text="${tcEntity.issueDate}"></td>
 										<td>
 											<span style="color:green;"
 												th:if="${tcEntity.accountApproval == 1 and tcEntity.libraryApproval == 1 

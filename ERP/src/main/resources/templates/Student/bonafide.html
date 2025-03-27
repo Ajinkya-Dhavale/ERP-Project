@@ -17,12 +17,26 @@
 	<!-- Core Css -->
 	<!-- <link rel="stylesheet" href="https://bootstrapdemos.wrappixel.com/ample/dist/assets/css/styles.css" /> -->
 	<link rel="stylesheet" th:href="@{/admin_pannel.css}" />
-	<title>Bonafide Certificate</title>
+	<title>Student Bonafide Application</title>
 
 
 	<!-- font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+
+	<style>
+		.disabled-look {
+			background-color: #e9ecef;
+			/* Light gray background like disabled input */
+			cursor: not-allowed;
+			/* Cursor indicates disabled state */
+			pointer-events: none;
+			/* Prevent input interaction */
+			color: black;
+			opacity: 0.65;
+			/* Slight transparency */
+		}
+	</style>
 </head>
 
 <body>
@@ -71,22 +85,23 @@
 							<h4 class="card-title mb-1 text-center text-danger"
 								style="font-size: 25px;font-weight:bolder;">Bonafide Certificate Application</h4>
 							<h6 class="card-subtitle mb-3"></h6>
-							<form th:method="post" th:action="@{/student/save_bonafide}" enctype="multipart/form-data" id="abra" th:object="${bonafide}" class="tab-wizard wizard-circle">
+							<form th:method="post" th:action="@{/student/save_bonafide}" enctype="multipart/form-data"
+								id="abra" th:object="${bonafide}" class="tab-wizard wizard-circle">
 								<!-- Step 1 -->
 								<h6>Personal Information</h6>
 								<section>
 									<div class="row mb-3">
 										<div class="col-md-6">
 											<label class="form-label">Full Name</label>
-											<input type="text" th:field="*{fullName}" class="form-control" id="fullName"
-												readonly>
+											<input type="text" th:field="*{fullName}" class="form-control disabled-look"
+												id="fullName" readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid full name.</div>
 										</div>
 										<div class="col-md-6">
 											<label class="form-label">Gender</label>
-											<input type="text" th:field="*{gender}" class="form-control" id="gender"
-												readonly>
+											<input type="text" th:field="*{gender}" class="form-control disabled-look"
+												id="gender" readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select a valid gender.</div>
 										</div>
@@ -96,16 +111,16 @@
 									<div class="row mb-3 mt-3">
 										<div class="col-md-6">
 											<label class="form-label" for="dob">Date of Birth</label>
-											<input type="date" th:field="*{dob}" class="form-control" id="dob"
-												placeholder="Choose Date of Birth" required />
+											<input type="date" th:field="*{dob}" class="form-control disabled-look"
+												id="dob" placeholder="Choose Date of Birth" required />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid date.</div>
 										</div>
 										<div class="col-md-6">
 											<label class="form-label" for="dobInWords">Date of Birth In Words</label>
-											<input type="text" th:field="*{dobInWords}" class="form-control"
-												id="dobInWords" placeholder="Date of Birth in words" required
-												readonly />
+											<input type="text" th:field="*{dobInWords}"
+												class="form-control disabled-look" id="dobInWords"
+												placeholder="Date of Birth in words" required readonly />
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid date in words.</div>
 										</div>
@@ -116,17 +131,19 @@
 									<div class="row mb-3">
 										<div class="col-md-4">
 											<label class="form-label">Roll Number</label>
-											<input type="text" th:field="*{studentId}" class="form-control"
-												id="rollNumber" placeholder="Enter Roll No" required readonly>
+											<input type="text" th:field="*{studentId}"
+												class="form-control disabled-look" id="rollNumber"
+												placeholder="Enter Roll No" required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid roll number.</div>
 										</div>
 
 										<div class="col-md-4">
 											<label class="form-label">Division</label>
-											<input th:field="*{division}" class="form-control" id="division" required readonly>
-											
-		
+											<input th:field="*{division}" class="form-control disabled-look"
+												id="division" required readonly>
+
+
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please select a valid gender.</div>
 										</div>
@@ -152,15 +169,15 @@
 									<div class="row mb-3">
 										<div class="col-md-6">
 											<label class="form-label">Department</label>
-											<input th:field="*{department}" type="text" class="form-control"
-												id="department" required readonly>
+											<input th:field="*{department}" type="text"
+												class="disabled-look form-control" id="department" required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid department.</div>
 										</div>
 										<div class="col-md-6">
 											<label class="form-label">Course</label>
-											<input th:field="*{course}" type="text" class="form-control" id="course"
-												required readonly>
+											<input th:field="*{course}" type="text" class="form-control disabled-look"
+												id="course" required readonly>
 											<div class="valid-feedback">Looks good!</div>
 											<div class="invalid-feedback">Please enter a valid course.</div>
 										</div>
@@ -170,9 +187,9 @@
 
 									<div class="mb-3">
 										<label class="form-label">Purpose of Certificate</label>
-										<textarea th:text="*{certificateReason}"
-											class="form-control" id="purposeOfCertificate"
-											placeholder="Write Reason for Certificate" rows="3" required>
+										<textarea th:text="*{certificateReason}" class="form-control"
+											id="purposeOfCertificate" placeholder="Write Reason for Certificate"
+											rows="3" required>
 
 							</textarea>
 										<div class="valid-feedback">Looks good!</div>
@@ -181,15 +198,16 @@
 
 									<div class="mb-3">
 										<label class="form-label">Local Address</label>
-										<textarea th:field="*{localAddress}" class="form-control" id="localAddress"
-											rows="3" placeholder="Enter temporary Address" required readonly></textarea>
+										<textarea th:field="*{localAddress}" class="form-control disabled-look"
+											id="localAddress" rows="3" placeholder="Enter temporary Address" required
+											readonly></textarea>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a valid local address.</div>
 									</div>
 
 									<div class="mb-3">
 										<label class="form-label">Permanent Address</label>
-										<textarea th:field="*{permanentAddress}" class="form-control"
+										<textarea th:field="*{permanentAddress}" class="form-control disabled-look"
 											id="permanentAddress" placeholder="Enter Permanant Address" rows="3"
 											required readonly></textarea>
 										<div class="valid-feedback">Looks good!</div>
@@ -198,62 +216,75 @@
 								</section>
 
 								<!-- Step 2: Documents -->
-			<h6>Documents</h6>
-<section>
-    <div class="mb-3">
-        <label for="identityProof" class="form-label">Identity Proof</label>
-        <div class="input-group">
-            <input type="file" class="form-control" id="identityProof" name="identityProofFile" accept=".jpeg, .jpg, .png" required>
-            <button type="button" class="btn btn-secondary" onclick="editFile('identityProof')">
-                <i class="fa-solid fa-pen"></i>
-            </button>
-            <button type="button" class="btn btn-danger" onclick="cancelFile('identityProof')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <button type="button" class="btn btn-info" onclick="viewFile('identityProof')">
-                <i class="fa-solid fa-eye"></i>
-            </button>
-        </div>
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">Please upload a valid identity proof.</div>
-    </div>
+								<h6>Documents</h6>
+								<section>
+									<div class="mb-3">
+										<label for="identityProof" class="form-label">Identity Proof</label>
+										<div class="input-group">
+											<input type="file" class="form-control" id="identityProof"
+												name="identityProofFile" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('identityProof')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('identityProof')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('identityProof')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please upload a valid identity proof.</div>
+									</div>
 
-    <div class="mb-3">
-        <label for="latestMarksheet" class="form-label">Birth Proof (Birth Certificate, Aadhar Card)</label>
-        <div class="input-group">
-            <input type="file" class="form-control" id="latestMarksheet" name="latestMarksheetFile" accept=".jpeg, .jpg, .png" required>
-            <button type="button" class="btn btn-secondary" onclick="editFile('latestMarksheet')">
-                <i class="fa-solid fa-pen"></i>
-            </button>
-            <button type="button" class="btn btn-danger" onclick="cancelFile('latestMarksheet')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <button type="button" class="btn btn-info" onclick="viewFile('latestMarksheet')">
-                <i class="fa-solid fa-eye"></i>
-            </button>
-        </div>
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">Please upload a valid birth proof.</div>
-    </div>
+									<div class="mb-3">
+										<label for="latestMarksheet" class="form-label">Birth Proof (Birth Certificate,
+											Aadhar Card)</label>
+										<div class="input-group">
+											<input type="file" class="form-control" id="latestMarksheet"
+												name="latestMarksheetFile" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('latestMarksheet')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('latestMarksheet')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('latestMarksheet')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please upload a valid birth proof.</div>
+									</div>
 
-    <div class="mb-3">
-        <label for="proofOfAdmission" class="form-label">Fee Receipt</label>
-        <div class="input-group">
-            <input type="file" class="form-control" id="proofOfAdmission" name="proofOfAdmissionFile" accept=".jpeg, .jpg, .png" required>
-            <button type="button" class="btn btn-secondary" onclick="editFile('proofOfAdmission')">
-                <i class="fa-solid fa-pen"></i>
-            </button>
-            <button type="button" class="btn btn-danger" onclick="cancelFile('proofOfAdmission')">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <button type="button" class="btn btn-info" onclick="viewFile('proofOfAdmission')">
-                <i class="fa-solid fa-eye"></i>
-            </button>
-        </div>
-        <div class="valid-feedback">Looks good!</div>
-        <div class="invalid-feedback">Please upload a valid fee receipt.</div>
-    </div>
-</section>
+									<div class="mb-3">
+										<label for="proofOfAdmission" class="form-label">Fee Receipt</label>
+										<div class="input-group">
+											<input type="file" class="form-control" id="proofOfAdmission"
+												name="proofOfAdmissionFile" accept=".jpeg, .jpg, .png" required>
+											<button type="button" class="btn btn-secondary"
+												onclick="editFile('proofOfAdmission')">
+												<i class="fa-solid fa-pen"></i>
+											</button>
+											<button type="button" class="btn btn-danger"
+												onclick="cancelFile('proofOfAdmission')">
+												<i class="fa-solid fa-xmark"></i>
+											</button>
+											<button type="button" class="btn btn-info"
+												onclick="viewFile('proofOfAdmission')">
+												<i class="fa-solid fa-eye"></i>
+											</button>
+										</div>
+										<div class="valid-feedback">Looks good!</div>
+										<div class="invalid-feedback">Please upload a valid fee receipt.</div>
+									</div>
+								</section>
 
 
 								<!-- Step 3: Payment -->
@@ -282,13 +313,14 @@
 											<div class="card p-3">
 												<h4>Select Payment Method</h4>
 												<hr>
-												<button id="payment-button" type="submit" class="btn btn-primary w-100">Proceed to
+												<button id="payment-button" type="submit"
+													class="btn btn-primary w-100">Proceed to
 													Payment</button>
 
 											</div>
 										</div>
 
-										
+
 										<input type="hidden" id="totalFee" th:field="*{totalFees}">
 										<input type="hidden" th:field="*{certificateReason}">
 										<input type="hidden" th:field="*{certificateType}">
@@ -493,29 +525,6 @@
 					</script>
 
 					<script>
-						// Convert a numeric year to words (supports numbers up to 9999)
-						function convertYearToWords(year) {
-							const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
-							const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-							const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
-							if (year < 10) return ones[year];
-							else if (year < 20) return teens[year - 10];
-							else if (year < 100) {
-								return tens[Math.floor(year / 10)] + (year % 10 !== 0 ? " " + ones[year % 10] : "");
-							} else if (year < 1000) {
-								let rem = year % 100;
-								let result = ones[Math.floor(year / 100)] + " hundred";
-								if (rem > 0) result += " " + convertYearToWords(rem);
-								return result;
-							} else if (year < 10000) {
-								let rem = year % 1000;
-								let result = convertYearToWords(Math.floor(year / 1000)) + " thousand";
-								if (rem > 0) result += " " + convertYearToWords(rem);
-								return result;
-							}
-							return year;
-						}
-
 						document.addEventListener("DOMContentLoaded", function () {
 							const dobInput = document.getElementById("dob");
 							const dobInWordsInput = document.getElementById("dobInWords");
@@ -526,8 +535,31 @@
 							];
 							const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 
-							dobInput.addEventListener("change", function () {
-								const dobValue = this.value; // Expected format: YYYY-MM-DD
+							function convertYearToWords(year) {
+								const ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
+								const teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+								const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+								if (year < 10) return ones[year];
+								else if (year < 20) return teens[year - 10];
+								else if (year < 100) {
+									return tens[Math.floor(year / 10)] + (year % 10 !== 0 ? " " + ones[year % 10] : "");
+								} else if (year < 1000) {
+									let rem = year % 100;
+									let result = ones[Math.floor(year / 100)] + " hundred";
+									if (rem > 0) result += " " + convertYearToWords(rem);
+									return result;
+								} else if (year < 10000) {
+									let rem = year % 1000;
+									let result = convertYearToWords(Math.floor(year / 1000)) + " thousand";
+									if (rem > 0) result += " " + convertYearToWords(rem);
+									return result;
+								}
+								return year;
+							}
+
+							function convertDOBToWords() {
+								const dobValue = dobInput.value; // Expected format: YYYY-MM-DD
 								if (dobValue) {
 									const parts = dobValue.split("-");
 									const year = parseInt(parts[0], 10);
@@ -539,7 +571,6 @@
 									let DOB = dayWord + " " + monthWord + " " + yearWord;
 									dobInWordsInput.value = DOB.toUpperCase();
 
-
 									// Add validation classes
 									dobInWordsInput.classList.remove("is-invalid");
 									dobInWordsInput.classList.add("is-valid");
@@ -548,11 +579,14 @@
 									dobInWordsInput.classList.remove("is-valid");
 									dobInWordsInput.classList.add("is-invalid");
 								}
-							});
+							}
 
-
-
+							// Convert on page load if DOB exists
+							if (dobInput.value) {
+								convertDOBToWords();
+							}
 						});
+
 					</script>
 
 
@@ -712,13 +746,47 @@
 						document.head.appendChild(style);
 
 					</script>
-					
+
 					<!--to save form-->
 					<script>
-						function swal(){		
-							let form = document.getElementById("abra")
-							form.submit()
+						function swal() {
+							let form = document.getElementById("abra");
+							let paymentId = document.getElementById("payment-button");
+
+							// Select fields that are required, not hidden, and don't have the disabled-look class
+							let requiredFields = document.querySelectorAll('#abra input:not(.disabled-look):not([type="hidden"])[required], #abra select:not(.disabled-look):not([type="hidden"])[required], #abra textarea:not(.disabled-look):not([type="hidden"])[required]');
+							let isValid = true;
+
+							// Validate required fields
+							requiredFields.forEach(field => {
+								if (!field.value.trim()) {
+									isValid = false;
+									field.classList.add('is-invalid');
+									field.classList.remove('is-valid');
+								} else {
+									field.classList.remove('is-invalid');
+									field.classList.add('is-valid');
+								}
+							});
+
+							if (!isValid) {
+								alert("Please fill in all required fields.");
+								return;
+							}
+
+							// Validate Payment
+							if (!paymentId.disabled) {
+								alert("Payment is Required.");
+								return;
+							}
+
+							// Final Confirmation
+							if (confirm("Are you sure to submit the form?")) {
+								form.submit();
+							}
 						}
+
+
 					</script>
 				</div>
 

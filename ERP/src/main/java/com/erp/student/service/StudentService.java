@@ -3,7 +3,6 @@ package com.erp.student.service;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -22,7 +21,6 @@ import com.erp.student.repo.PersonalDetailRepository;
 import com.erp.student.repo.StudentDocumentRepository;
 import com.erp.student.repo.StundentRepo;
 
-import jakarta.persistence.criteria.Path;
 
 @Service
 public class StudentService {
@@ -77,7 +75,7 @@ public class StudentService {
 
         if (existingRecord.isPresent()) {
             AcademicDetails existingDetails = existingRecord.get();
-            BeanUtils.copyProperties(existingRecord, existingDetails, "id"); // Copy all fields except "id"
+            BeanUtils.copyProperties(academicDetails, existingDetails, "id"); // Copy all fields except "id"
             academicDetailsRepo.save(existingDetails); // Update existing record
         } else {
             academicDetailsRepo.save(academicDetails); // Insert new record
@@ -96,7 +94,8 @@ public class StudentService {
 
         if (existingRecord.isPresent()) {
             StudentAddress existingDetails = existingRecord.get();
-            BeanUtils.copyProperties(existingRecord, existingDetails, "id"); // Copy all fields except "id"
+            BeanUtils.copyProperties(studentAddress, existingDetails, "id"); // Copy all fields except "id"
+
             addressRepo.save(existingDetails); // Update existing record
         } else {
             addressRepo.save(studentAddress); // Insert new record

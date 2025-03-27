@@ -96,15 +96,20 @@ public class CertificateController {
 
 			PersonalDetails personalDetails1 = null;
 			StudentAddress studentAddress1 = null;
+			AcademicDetails academicDetails2=null;
 
 			if (personalDetail.isPresent() && academicDetails.isPresent() && studentAddress.isPresent()) {
 				personalDetails1 = personalDetail.get();
 				studentAddress1 = studentAddress.get();
+				academicDetails2=academicDetails.get();
 				tcEntity.setAddress(studentAddress1.getPermanentAddress());
 				tcEntity.setContactNo(personalDetails1.getMobile());
 
 				tcEntity.setGender(personalDetails1.getGender());
 				tcEntity.setCasteCategory(personalDetails1.getCaste());
+				tcEntity.setDob(personalDetails1.getDob());
+				tcEntity.setDepartment(academicDetails2.getDepartment());
+				tcEntity.setCourse(academicDetails2.getCourse());
 
 			}
 			else {
@@ -149,6 +154,7 @@ public class CertificateController {
 				tcEntity.setContactNo(personalDetails1.getMobile());
 				tcEntity.setGender(personalDetails1.getGender());
 				tcEntity.setCasteCategory(personalDetails1.getCaste());
+				tcEntity.setDob(personalDetails1.getDob());
 
 			}
 			else {
@@ -205,6 +211,7 @@ public class CertificateController {
 				bonafide.setDepartment(academicDetails1.getDepartment());
 				bonafide.setLocalAddress(studentAddress1.getTemporaryAddress());
 				bonafide.setPermanentAddress(studentAddress1.getPermanentAddress());
+				bonafide.setDob(personalDetails1.getDob());
 			}
 			
 			else {

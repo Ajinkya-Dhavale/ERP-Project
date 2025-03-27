@@ -67,16 +67,19 @@
 
 									<div class="col-md-4 mb-3">
 										<label class="form-label" for="session">Session</label>
-										<input type="text" th:field="*{session}" class="form-control" id="session"
-											placeholder="Session (e.g., 2023-2024)" required />
+										<select class="form-control" th:field="*{session}" id="session" required>
+											<option value="">Select Session</option>
+											<!-- The dynamic session option will be added here -->
+										</select>
 										<div class="valid-feedback">Looks good!</div>
-										<div class="invalid-feedback">Please enter a valid session.</div>
+										<div class="invalid-feedback">Please select a valid session (e.g., 2025-2026).</div>
 									</div>
 
 									<div class="col-md-4 mb-3">
 										<label class="form-label" for="admissionYear">Admission Year</label>
-										<input type="text" th:field="*{admissionYear}" readonly class="form-control" id="admissionYear"
-											placeholder="Admission Year (e.g., 2023)" required />
+										<input type="text" th:field="*{admissionYear}" readonly class="form-control"
+											placeholder="Admission Year (e.g., 2023)" 
+											disabled/>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a valid admission year.</div>
 									</div>
@@ -84,9 +87,8 @@
 									<!-- Department Select -->
 									<div class="col-md-4 mb-3">
 										<label class="form-label" for="department">Department</label>
-										<select class="form-control" th:field="*{department}" id="department" required>
-											<option value="Select Department" disabled selected>Select Department
-											</option>
+										<select class="form-control" th:field="*{department}" id="department" required >
+											<option value="" selected>Select Department</option>
 											<option value="Agriculture & Allied Sciences">Agriculture & Allied Sciences
 											</option>
 											<option value="Anthropology">Anthropology</option>
@@ -157,11 +159,13 @@
 
 									<div class="col-md-4 mb-3">
 										<label class="form-label" for="studentId">Student ID</label>
-										<input type="text" th:field="*{studentId}" class="form-control" id="studentId" placeholder="Student ID"
-											required readonly />
+										<input type="text" th:field="*{studentId}" class="form-control" placeholder="Student ID" disabled />
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a valid student ID.</div>
 									</div>
+
+									<input type="hidden" th:field="*{studentId}" />
+									<input type="hidden" th:field="*{admissionYear}" />
 
 									<div class="col-md-4 mb-3">
 										<label class="form-label"  for="medium">Medium</label>
@@ -200,82 +204,75 @@
 										<label class="form-label" for="previousCourse">Previous Course</label>
 										<select class="form-control" th:field="*{preCourseName}" id="previousCourse" required>
 											<option value="">Select Previous Course</option>
+											<!-- B.Sc Courses -->
 											<option value="B.Sc. Physics">B.Sc. Physics</option>
 											<option value="B.Sc. Chemistry">B.Sc. Chemistry</option>
 											<option value="B.Sc. Mathematics">B.Sc. Mathematics</option>
 											<option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
-											<option value="B.Sc. Information Technology">B.Sc. Information Technology
-											</option>
+											<option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
 											<option value="B.Sc. Biotechnology">B.Sc. Biotechnology</option>
 											<option value="B.Sc. Microbiology">B.Sc. Microbiology</option>
 											<option value="B.Sc. Zoology">B.Sc. Zoology</option>
 											<option value="B.Sc. Botany">B.Sc. Botany</option>
-											<option value="B.Sc. Environmental Science">B.Sc. Environmental Science
-											</option>
+											<option value="B.Sc. Environmental Science">B.Sc. Environmental Science</option>
 											<option value="B.Sc. Forensic Science">B.Sc. Forensic Science</option>
 											<option value="B.Sc. Statistics">B.Sc. Statistics</option>
 											<option value="B.Sc. Data Science">B.Sc. Data Science</option>
 											<option value="B.Sc. Electronics">B.Sc. Electronics</option>
 											<option value="B.Sc. Agriculture">B.Sc. Agriculture</option>
 											<option value="B.Sc. Geology">B.Sc. Geology</option>
-											<option value="B.Sc. Nutrition & Dietetics">B.Sc. Nutrition & Dietetics
-											</option>
+											<option value="B.Sc. Nutrition & Dietetics">B.Sc. Nutrition & Dietetics</option>
 											<option value="B.Sc. Food Technology">B.Sc. Food Technology</option>
 											<option value="B.Sc. Biomedical Science">B.Sc. Biomedical Science</option>
 											<option value="B.Sc. Genetics">B.Sc. Genetics</option>
-											<option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology &
-												Imaging Technology</option>
+											<option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology & Imaging Technology</option>
+									
+											<!-- M.Sc Courses -->
 											<option value="M.Sc. Physics">M.Sc. Physics</option>
 											<option value="M.Sc. Chemistry">M.Sc. Chemistry</option>
 											<option value="M.Sc. Mathematics">M.Sc. Mathematics</option>
 											<option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
-											<option value="M.Sc. Information Technology">M.Sc. Information Technology
-											</option>
+											<option value="M.Sc. Information Technology">M.Sc. Information Technology</option>
 											<option value="M.Sc. Biotechnology">M.Sc. Biotechnology</option>
 											<option value="M.Sc. Microbiology">M.Sc. Microbiology</option>
 											<option value="M.Sc. Zoology">M.Sc. Zoology</option>
 											<option value="M.Sc. Botany">M.Sc. Botany</option>
-											<option value="M.Sc. Environmental Science">M.Sc. Environmental Science
-											</option>
+											<option value="M.Sc. Environmental Science">M.Sc. Environmental Science</option>
 											<option value="M.Sc. Forensic Science">M.Sc. Forensic Science</option>
 											<option value="M.Sc. Statistics">M.Sc. Statistics</option>
 											<option value="M.Sc. Data Science">M.Sc. Data Science</option>
 											<option value="M.Sc. Electronics">M.Sc. Electronics</option>
 											<option value="M.Sc. Agriculture">M.Sc. Agriculture</option>
 											<option value="M.Sc. Geology">M.Sc. Geology</option>
-											<option value="M.Sc. Nutrition & Dietetics">M.Sc. Nutrition & Dietetics
-											</option>
+											<option value="M.Sc. Nutrition & Dietetics">M.Sc. Nutrition & Dietetics</option>
 											<option value="M.Sc. Food Technology">M.Sc. Food Technology</option>
 											<option value="M.Sc. Biomedical Science">M.Sc. Biomedical Science</option>
 											<option value="M.Sc. Genetics">M.Sc. Genetics</option>
-											<option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology &
-												Imaging Technology</option>
+											<option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology & Imaging Technology</option>
+									
+											<!-- B.Com Courses -->
 											<option value="B.Com. General">B.Com. General</option>
-											<option value="B.Com. Accounting & Finance">B.Com. Accounting & Finance
-											</option>
-											<option value="B.Com. Banking & Insurance">B.Com. Banking & Insurance
-											</option>
+											<option value="B.Com. Accounting & Finance">B.Com. Accounting & Finance</option>
+											<option value="B.Com. Banking & Insurance">B.Com. Banking & Insurance</option>
 											<option value="B.Com. Financial Markets">B.Com. Financial Markets</option>
 											<option value="B.Com. Taxation">B.Com. Taxation</option>
 											<option value="B.Com. Business Analytics">B.Com. Business Analytics</option>
-											<option value="B.Com. International Business">B.Com. International Business
-											</option>
+											<option value="B.Com. International Business">B.Com. International Business</option>
 											<option value="B.Com. E-Commerce">B.Com. E-Commerce</option>
-											<option value="B.Com. Cost & Management Accounting">B.Com. Cost & Management
-												Accounting</option>
+											<option value="B.Com. Cost & Management Accounting">B.Com. Cost & Management Accounting</option>
+									
+											<!-- M.Com Courses -->
 											<option value="M.Com. General">M.Com. General</option>
-											<option value="M.Com. Accounting & Finance">M.Com. Accounting & Finance
-											</option>
-											<option value="M.Com. Banking & Insurance">M.Com. Banking & Insurance
-											</option>
+											<option value="M.Com. Accounting & Finance">M.Com. Accounting & Finance</option>
+											<option value="M.Com. Banking & Insurance">M.Com. Banking & Insurance</option>
 											<option value="M.Com. Financial Markets">M.Com. Financial Markets</option>
 											<option value="M.Com. Taxation">M.Com. Taxation</option>
 											<option value="M.Com. Business Analytics">M.Com. Business Analytics</option>
-											<option value="M.Com. International Business">M.Com. International Business
-											</option>
+											<option value="M.Com. International Business">M.Com. International Business</option>
 											<option value="M.Com. E-Commerce">M.Com. E-Commerce</option>
-											<option value="M.Com. Cost & Management Accounting">M.Com. Cost & Management
-												Accounting</option>
+											<option value="M.Com. Cost & Management Accounting">M.Com. Cost & Management Accounting</option>
+									
+											<!-- BA Courses -->
 											<option value="B.A. English Literature">B.A. English Literature</option>
 											<option value="B.A. History">B.A. History</option>
 											<option value="B.A. Political Science">B.A. Political Science</option>
@@ -283,10 +280,8 @@
 											<option value="B.A. Sociology">B.A. Sociology</option>
 											<option value="B.A. Philosophy">B.A. Philosophy</option>
 											<option value="B.A. Economics">B.A. Economics</option>
-											<option value="B.A. Public Administration">B.A. Public Administration
-											</option>
-											<option value="B.A. Journalism & Mass Communication">B.A. Journalism & Mass
-												Communication</option>
+											<option value="B.A. Public Administration">B.A. Public Administration</option>
+											<option value="B.A. Journalism & Mass Communication">B.A. Journalism & Mass Communication</option>
 											<option value="B.A. Geography">B.A. Geography</option>
 											<option value="B.A. Anthropology">B.A. Anthropology</option>
 											<option value="B.A. Linguistics">B.A. Linguistics</option>
@@ -294,9 +289,10 @@
 											<option value="B.A. Music & Dance">B.A. Music & Dance</option>
 											<option value="B.A. Performing Arts">B.A. Performing Arts</option>
 											<option value="B.A. Archaeology">B.A. Archaeology</option>
-											<option value="B.A. International Relations">B.A. International Relations
-											</option>
+											<option value="B.A. International Relations">B.A. International Relations</option>
 											<option value="B.A. Gender Studies">B.A. Gender Studies</option>
+									
+											<!-- MA Courses -->
 											<option value="M.A. English Literature">M.A. English Literature</option>
 											<option value="M.A. History">M.A. History</option>
 											<option value="M.A. Political Science">M.A. Political Science</option>
@@ -304,10 +300,8 @@
 											<option value="M.A. Sociology">M.A. Sociology</option>
 											<option value="M.A. Philosophy">M.A. Philosophy</option>
 											<option value="M.A. Economics">M.A. Economics</option>
-											<option value="M.A. Public Administration">M.A. Public Administration
-											</option>
-											<option value="M.A. Journalism & Mass Communication">M.A. Journalism & Mass
-												Communication</option>
+											<option value="M.A. Public Administration">M.A. Public Administration</option>
+											<option value="M.A. Journalism & Mass Communication">M.A. Journalism & Mass Communication</option>
 											<option value="M.A. Geography">M.A. Geography</option>
 											<option value="M.A. Anthropology">M.A. Anthropology</option>
 											<option value="M.A. Linguistics">M.A. Linguistics</option>
@@ -315,85 +309,52 @@
 											<option value="M.A. Music & Dance">M.A. Music & Dance</option>
 											<option value="M.A. Performing Arts">M.A. Performing Arts</option>
 											<option value="M.A. Archaeology">M.A. Archaeology</option>
-											<option value="M.A. International Relations">M.A. International Relations
-											</option>
+											<option value="M.A. International Relations">M.A. International Relations</option>
 											<option value="M.A. Gender Studies">M.A. Gender Studies</option>
-											<option value="Bachelor of Business Administration (BBA)">Bachelor of
-												Business Administration (BBA)</option>
-											<option value="Bachelor of Management Studies (BMS)">Bachelor of Management
-												Studies (BMS)</option>
-											<option value="Bachelor of International Business (BIB)">Bachelor of
-												International Business (BIB)</option>
-											<option value="Master of Business Administration (MBA)">Master of Business
-												Administration (MBA)</option>
-											<option value="Master of Management Studies (MMS)">Master of Management
-												Studies (MMS)</option>
-											<option value="Master of International Business (MIB)">Master of
-												International Business (MIB)</option>
-											<option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer
-												Applications (BCA)</option>
-											<option value="Master of Computer Applications (MCA)">Master of Computer
-												Applications (MCA)</option>
+									
+											<!-- Other Courses -->
+											<option value="Bachelor of Business Administration (BBA)">Bachelor of Business Administration (BBA)</option>
+											<option value="Bachelor of Management Studies (BMS)">Bachelor of Management Studies (BMS)</option>
+											<option value="Bachelor of International Business (BIB)">Bachelor of International Business (BIB)</option>
+											<option value="Master of Business Administration (MBA)">Master of Business Administration (MBA)</option>
+											<option value="Master of Management Studies (MMS)">Master of Management Studies (MMS)</option>
+											<option value="Master of International Business (MIB)">Master of International Business (MIB)</option>
+											<option value="Bachelor of Computer Applications (BCA)">Bachelor of Computer Applications (BCA)</option>
+											<option value="Master of Computer Applications (MCA)">Master of Computer Applications (MCA)</option>
 											<option value="B.Sc. Computer Science">B.Sc. Computer Science</option>
-											<option value="B.Sc. Information Technology">B.Sc. Information Technology
-											</option>
+											<option value="B.Sc. Information Technology">B.Sc. Information Technology</option>
 											<option value="M.Sc. Computer Science">M.Sc. Computer Science</option>
-											<option value="M.Sc. Information Technology">M.Sc. Information Technology
-											</option>
-											<option value="Undergraduate (UG) Bachelor of Laws (LLB)">Undergraduate (UG)
-												Bachelor of Laws (LLB)</option>
-											<option value="Postgraduate (PG) Master of Laws (LLM)">Postgraduate (PG)
-												Master of Laws (LLM)</option>
-											<option value="Bachelor of Education (B.Ed.)">Bachelor of Education (B.Ed.)
-											</option>
-											<option value="Bachelor of Physical Education (B.P.Ed.)">Bachelor of
-												Physical Education (B.P.Ed.)</option>
-											<option value="Master of Education (M.Ed.)">Master of Education (M.Ed.)
-											</option>
-											<option value="Master of Physical Education (M.P.Ed.)">Master of Physical
-												Education (M.P.Ed.)</option>
-											<option value="MBBS (Bachelor of Medicine & Surgery)">MBBS (Bachelor of
-												Medicine & Surgery)</option>
-											<option value="BDS (Bachelor of Dental Surgery)">BDS (Bachelor of Dental
-												Surgery)</option>
+											<option value="M.Sc. Information Technology">M.Sc. Information Technology</option>
+											<option value="Undergraduate (UG) Bachelor of Laws (LLB)">Undergraduate (UG) Bachelor of Laws (LLB)</option>
+											<option value="Postgraduate (PG) Master of Laws (LLM)">Postgraduate (PG) Master of Laws (LLM)</option>
+											<option value="Bachelor of Education (B.Ed.)">Bachelor of Education (B.Ed.)</option>
+											<option value="Bachelor of Physical Education (B.P.Ed.)">Bachelor of Physical Education (B.P.Ed.)</option>
+											<option value="Master of Education (M.Ed.)">Master of Education (M.Ed.)</option>
+											<option value="Master of Physical Education (M.P.Ed.)">Master of Physical Education (M.P.Ed.)</option>
+											<option value="MBBS (Bachelor of Medicine & Surgery)">MBBS (Bachelor of Medicine & Surgery)</option>
+											<option value="BDS (Bachelor of Dental Surgery)">BDS (Bachelor of Dental Surgery)</option>
 											<option value="BAMS (Ayurveda)">BAMS (Ayurveda)</option>
 											<option value="BHMS (Homeopathy)">BHMS (Homeopathy)</option>
 											<option value="BPT (Physiotherapy)">BPT (Physiotherapy)</option>
 											<option value="B.Sc. Nursing">B.Sc. Nursing</option>
-											<option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology &
-												Imaging Technology</option>
-											<option value="B.Sc. Medical Laboratory Technology">B.Sc. Medical Laboratory
-												Technology</option>
+											<option value="B.Sc. Radiology & Imaging Technology">B.Sc. Radiology & Imaging Technology</option>
+											<option value="B.Sc. Medical Laboratory Technology">B.Sc. Medical Laboratory Technology</option>
 											<option value="MD (Doctor of Medicine)">MD (Doctor of Medicine)</option>
-											<option value="MDS (Master of Dental Surgery)">MDS (Master of Dental
-												Surgery)</option>
-											<option value="MPT (Master of Physiotherapy)">MPT (Master of Physiotherapy)
-											</option>
+											<option value="MDS (Master of Dental Surgery)">MDS (Master of Dental Surgery)</option>
+											<option value="MPT (Master of Physiotherapy)">MPT (Master of Physiotherapy)</option>
 											<option value="M.Sc. Nursing">M.Sc. Nursing</option>
-											<option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology &
-												Imaging Technology</option>
-											<option value="M.Sc. Medical Laboratory Technology">M.Sc. Medical Laboratory
-												Technology</option>
-											<option value="Bachelor of Technology (B.Tech.)">Bachelor of Technology
-												(B.Tech.)</option>
-											<option value="Bachelor of Engineering (B.E.)">Bachelor of Engineering
-												(B.E.)</option>
-											<option value="Master of Technology (M.Tech.)">Master of Technology
-												(M.Tech.)</option>
-											<option value="Master of Engineering (M.E.)">Master of Engineering (M.E.)
-											</option>
-											<option value="Diploma in Computer Applications">Diploma in Computer
-												Applications</option>
-											<option value="Diploma in Hotel Management">Diploma in Hotel Management
-											</option>
-											<option value="Diploma in Fashion Designing">Diploma in Fashion Designing
-											</option>
-											<option value="Diploma in Event Management">Diploma in Event Management
-											</option>
-											<option value="Diploma in Journalism & Mass Communication">Diploma in
-												Journalism & Mass Communication</option>
-											<option value="Diploma in Animation & Multimedia">Diploma in Animation &
-												Multimedia</option>
+											<option value="M.Sc. Radiology & Imaging Technology">M.Sc. Radiology & Imaging Technology</option>
+											<option value="M.Sc. Medical Laboratory Technology">M.Sc. Medical Laboratory Technology</option>
+											<option value="Bachelor of Technology (B.Tech.)">Bachelor of Technology (B.Tech.)</option>
+											<option value="Bachelor of Engineering (B.E.)">Bachelor of Engineering (B.E.)</option>
+											<option value="Master of Technology (M.Tech.)">Master of Technology (M.Tech.)</option>
+											<option value="Master of Engineering (M.E.)">Master of Engineering (M.E.)</option>
+											<option value="Diploma in Computer Applications">Diploma in Computer Applications</option>
+											<option value="Diploma in Hotel Management">Diploma in Hotel Management</option>
+											<option value="Diploma in Fashion Designing">Diploma in Fashion Designing</option>
+											<option value="Diploma in Event Management">Diploma in Event Management</option>
+											<option value="Diploma in Journalism & Mass Communication">Diploma in Journalism & Mass Communication</option>
+											<option value="Diploma in Animation & Multimedia">Diploma in Animation & Multimedia</option>
 										</select>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please select a previous course.</div>
@@ -409,13 +370,16 @@
 									</div>
 
 									<div class="col-md-4 mb-3">
-										<label class="form-label" for="previousPercentage">Previous Year
-											Percentage</label>
-										<input type="text" th:field="*{preYearPercentage}" class="form-control" id="previousPercentage"
-											placeholder="Percentage" required />
+										<label class="form-label" for="previousPercentage">Previous Year Percentage</label>
+										<div class="input-group">
+											<input type="text" th:field="*{preYearPercentage}" class="form-control" id="previousPercentage"
+												placeholder="Percentage" required />
+											<span class="input-group-text">%</span>
+										</div>
 										<div class="valid-feedback">Looks good!</div>
 										<div class="invalid-feedback">Please enter a valid percentage.</div>
 									</div>
+									
 								</div>
 
 								<div class="row">
@@ -429,8 +393,45 @@
 						</div>
 
 						<script>
-
-							const departmentCourses = {
+							document.addEventListener("DOMContentLoaded", function () {
+							 
+							  const form = document.querySelector(".needs-validation");
+							
+							  function capitalizeFirstLetter(field) {
+								field.value = field.value.replace(/(^|\s)\S/g, function(letter) {
+								  return letter.toUpperCase();
+								});
+							  }
+							
+							  function validateField(field, pattern, isRequired = true, customValidation = null) {
+								const value = field.value;
+								let isValid = true;
+							
+								if (isRequired && value === "") {
+								  isValid = false;
+								  field.classList.add("is-invalid");
+								  field.classList.remove("is-valid");
+								  field.setCustomValidity("This field is required.");
+								} else if (pattern && !pattern.test(value)) {
+								  isValid = false;
+								  field.classList.add("is-invalid");
+								  field.classList.remove("is-valid");
+								  field.setCustomValidity("Invalid input.");
+								} else if (customValidation && !customValidation(value)) {
+								  isValid = false;
+								  field.classList.add("is-invalid");
+								  field.classList.remove("is-valid");
+								  field.setCustomValidity("Custom validation failed.");
+								} else {
+								  field.classList.remove("is-invalid");
+								  field.classList.add("is-valid");
+								  field.setCustomValidity("");
+								}
+								return isValid;
+							  }
+							
+							  // Department and Course Mapping (unchanged)
+							  const departmentCourses = {
 								"Agriculture & Allied Sciences": ["B.Sc. Agriculture", "M.Sc. Horticulture", "B.Sc. Forestry"],
 								"Anthropology": ["B.A. Anthropology", "M.A. Anthropology"],
 								"Architecture & Planning": ["B.Arch", "M.Arch"],
@@ -439,50 +440,49 @@
 								"Business Administration & Management": ["BBA", "MBA"],
 								"Chemistry": ["B.Sc. Chemistry", "M.Sc. Chemistry"],
 								"Commerce & Accounting": ["B.Com", "M.Com"],
-								"Computer Science & Applications": ["B.Sc.Computer Scinece", "M.Sc.Computer Scinece", "BCA", "MCA"],
+								"Computer Science & Applications": ["B.Sc. Computer Science", "M.Sc. Computer Science", "BCA", "MCA"],
 								"Data Science & Artificial Intelligence": ["B.Sc. Data Science", "M.Sc. Data Science"],
 								"Defence & Strategic Studies": ["B.A. Defence Studies", "M.A. Defence Studies"],
 								"Design (Fashion, Interior, Graphic, Industrial)": ["B.Des", "M.Des"],
 								"Economics": ["B.A. Economics", "M.A. Economics"],
 								"Education & Teaching": ["B.Ed", "M.Ed"],
-								"Engineering": [
-									"B.Tech in Mechanical",
-									"B.Tech in Civil",
-									"B.Tech in Electrical",
-									"B.Tech in Electronics",
-									"B.Tech in Computer Science",
-									"B.Tech in Information Technology",
-									"B.Tech in Chemical",
-									"B.Tech in Aerospace",
-									"B.Tech in Biotechnology",
-									"B.Tech in Structural Engineering",
-									"B.Tech in Environmental Engineering",
-									"B.Tech in Mining Engineering",
-									"B.Tech in Petroleum Engineering",
-									"B.Tech in Robotics",
-									"B.Tech in Software Engineering",
-									"B.Tech in Agricultural Engineering",
-									"B.Tech in Marine Engineering",
-									"B.Tech in Metallurgical Engineering",
-									"B.Tech in Civil Engineering (Construction Management)",
-									"B.Tech in Electrical Engineering (Power Systems)",
-									"M.Tech in Structural Engineering",
-									"M.Tech in Environmental Engineering",
-									"M.Tech in Computer Science",
-									"M.Tech in Software Engineering",
-									"M.Tech in VLSI Design",
-									"M.Tech in Power Systems",
-									"M.Tech in Thermal Engineering",
-									"M.Tech in Data Science",
-									"M.Tech in Robotics",
-									"M.Tech in Information Technology",
-									"M.Tech in Chemical Engineering",
-									"M.Tech in Biotechnology",
-									"M.Tech in Construction Management",
-									"M.Tech in Aerospace Engineering",
-									"M.Tech in Manufacturing Engineering"
+								"Engineering (Mechanical, Civil, Electrical, etc.)": [
+								  "B.Tech in Mechanical",
+								  "B.Tech in Civil",
+								  "B.Tech in Electrical",
+								  "B.Tech in Electronics",
+								  "B.Tech in Computer Science",
+								  "B.Tech in Information Technology",
+								  "B.Tech in Chemical",
+								  "B.Tech in Aerospace",
+								  "B.Tech in Biotechnology",
+								  "B.Tech in Structural Engineering",
+								  "B.Tech in Environmental Engineering",
+								  "B.Tech in Mining Engineering",
+								  "B.Tech in Petroleum Engineering",
+								  "B.Tech in Robotics",
+								  "B.Tech in Software Engineering",
+								  "B.Tech in Agricultural Engineering",
+								  "B.Tech in Marine Engineering",
+								  "B.Tech in Metallurgical Engineering",
+								  "B.Tech in Civil Engineering (Construction Management)",
+								  "B.Tech in Electrical Engineering (Power Systems)",
+								  "M.Tech in Structural Engineering",
+								  "M.Tech in Environmental Engineering",
+								  "M.Tech in Computer Science",
+								  "M.Tech in Software Engineering",
+								  "M.Tech in VLSI Design",
+								  "M.Tech in Power Systems",
+								  "M.Tech in Thermal Engineering",
+								  "M.Tech in Data Science",
+								  "M.Tech in Robotics",
+								  "M.Tech in Information Technology",
+								  "M.Tech in Chemical Engineering",
+								  "M.Tech in Biotechnology",
+								  "M.Tech in Construction Management",
+								  "M.Tech in Aerospace Engineering",
+								  "M.Tech in Manufacturing Engineering"
 								],
-
 								"English & Literature": ["B.A. English", "M.A. English"],
 								"Environmental Science": ["B.Sc. Environmental Science", "M.Sc. Environmental Science"],
 								"Fine Arts & Performing Arts": ["BFA", "MFA"],
@@ -508,275 +508,138 @@
 								"Public Administration": ["B.A. Public Administration", "M.A. Public Administration"],
 								"Sociology & Social Work": ["B.A. Sociology", "M.A. Social Work"],
 								"Zoology": ["B.Sc. Zoology", "M.Sc. Zoology"]
-							};
-
-
-
-							// Listen for changes on the department dropdown
-							document.getElementById('department').addEventListener('change', function () {
-								const selectedDept = this.value;
-								const courseSelect = document.getElementById('course');
-
-								// Clear any existing course options
-								courseSelect.innerHTML = '';
-
-								// Create and append the default option
-								const defaultOption = document.createElement('option');
-								defaultOption.value = '';
-								defaultOption.text = 'Select Course';
-								courseSelect.appendChild(defaultOption);
-
-								// Check if the selected department has a mapping
-								if (departmentCourses[selectedDept]) {
-									departmentCourses[selectedDept].forEach(function (course) {
-										const option = document.createElement('option');
-										option.value = course;
-										option.text = course;
-										courseSelect.appendChild(option);
+							  };
+							
+							  const departmentDropdown = document.getElementById("department");
+							  const courseDropdown = document.getElementById("course");
+							
+							  if (departmentDropdown && courseDropdown) {
+								departmentDropdown.addEventListener("change", function () {
+								  const selectedDepartment = this.value;
+								  courseDropdown.innerHTML = '<option value="">Select Course</option>';
+								  if (departmentCourses[selectedDepartment]) {
+									departmentCourses[selectedDepartment].forEach(course => {
+									  const option = document.createElement("option");
+									  option.value = course;
+									  option.text = course;
+									  courseDropdown.appendChild(option);
 									});
-								} else {
-									// Optionally, if no mapping exists, you can either leave the dropdown empty or
-									// repopulate it with all courses or a message like "No courses available."
-								}
-							});
-						</script>
-						<script>
-							document.addEventListener("DOMContentLoaded", function () {
-								const form = document.querySelector(".needs-validation");
-
-								function validateField(field, pattern, isRequired = true, customValidation = null) {
-									const value = field.value.trim();
-									let isValid = true;
-
-									if (isRequired && !value) {
-										isValid = false;
-										field.classList.add("is-invalid");
-										field.classList.remove("is-valid");
-										field.setCustomValidity("This field is required.");
-									} else if (pattern && !pattern.test(value)) {
-										isValid = false;
-										field.classList.add("is-invalid");
-										field.classList.remove("is-valid");
-										field.setCustomValidity("Invalid input.");
-									} else if (customValidation && !customValidation(value)) {
-										isValid = false;
-										field.classList.add("is-invalid");
-										field.classList.remove("is-valid");
-										field.setCustomValidity("Custom validation failed.");
-									} else {
-										field.classList.remove("is-invalid");
-										field.classList.add("is-valid");
-										field.setCustomValidity("");
-									}
-
-									return isValid;
-								}
-
-
-								function capitalizeFirstLetter(field) {
-									const value = field.value.trim();
-									if (value) {
-										field.value = value.charAt(0).toUpperCase() + value.slice(1);
-									}
-								}
-
-								const currentYear = new Date().getFullYear();
-
-								const fields = [
-									{id: "fullName", pattern: /^[a-zA-Z]+(?:\s[a-zA-Z]+)?$/, required: true},
-									{id: "session", pattern: /^(19|20)\d{2}-(19|20)\d{2}$/, required: true},
-									{id: "admissionYear", pattern: /^\d{4}$/, required: true, customValidation: (value) => value == currentYear},
-									{id: "course", pattern: null, required: true},
-									{id: "department", pattern: null, required: true},
-									{id: "previousCourse", pattern: null, required: true},
-									{id: "studentId", pattern: /^\d{1,10}$/, required: true},
-									{id: "rollNo", pattern: /^\d{1,10}$/, required: true},
-									{id: "medium", pattern: null, required: true},
-									{id: "section", pattern: null, required: true},
-									{id: "previousCollege", pattern: /^[a-zA-Z\s]+$/, required: true},
-									{id: "previousPassingYear", pattern: /^\d{4}$/, required: true, customValidation: (value) => value <= currentYear && value > 2000},
-									{
-										id: "previousPercentage", pattern: /^[0-9]{1,2}(\.[0-9]+)?%?$/, required: true, customValidation: (value) => {
-											const numValue = parseFloat(value);
-											return numValue <= 100;
-										}
-									}
-								];
-								fields.forEach(({id, pattern, required, customValidation}) => {
-									const field = document.getElementById(id);
-									field.addEventListener("input", function () {
-										capitalizeFirstLetter(field);
-										validateField(field, pattern, required, customValidation);
-									});
+								  }
 								});
-
-								const selectFields = ["course", "previousCourse", "medium", "section", "department"];
-								selectFields.forEach(id => {
-									const field = document.getElementById(id);
-									field.addEventListener("change", function () {
-										validateField(field, null, true);
-									});
-								});
-
-								form.addEventListener("submit", function (event) {
-									event.preventDefault();
-									event.stopPropagation();
-
-									let isValid = true;
-
-									fields.forEach(({id, pattern, required, customValidation}) => {
-										const field = document.getElementById(id);
-										if (!validateField(field, pattern, required, customValidation)) {
-											isValid = false;
-										}
-									});
-
-									const sessionField = document.getElementById("session");
-									const sessionValue = sessionField.value.trim();
-									const sessionYears = sessionValue.split('-');
-									if (sessionYears.length === 2) {
-										const startYear = parseInt(sessionYears[0], 10);
-										const endYear = parseInt(sessionYears[1], 10);
-										if (startYear > currentYear || endYear !== startYear + 1) {
-											isValid = false;
-											sessionField.classList.add("is-invalid");
-											sessionField.classList.remove("is-valid");
-											sessionField.setCustomValidity("Session must be in the format YYYY-YYYY and valid.");
-										}
-									}
-
-									if (isValid) {
-										alert("Form submitted successfully!");
-										form.submit();
-									} else {
-										alert("Please fill Empty Fields.");
-									}
-								});
-							});
-						</script>
-
-					</div>
-
-					<script>
-						document.addEventListener("DOMContentLoaded", function () {
-							const form = document.querySelector(".needs-validation");
-
-							function validateField(field, pattern, isRequired = true, customValidation = null) {
-								const value = field.value.trim();
-								let isValid = true;
-
-								if (isRequired && !value) {
-									isValid = false;
-									field.classList.add("is-invalid");
-									field.classList.remove("is-valid");
-									field.setCustomValidity("This field is required.");
-								} else if (pattern && !pattern.test(value)) {
-									isValid = false;
-									field.classList.add("is-invalid");
-									field.classList.remove("is-valid");
-									field.setCustomValidity("Invalid input.");
-								} else if (customValidation && !customValidation(value)) {
-									isValid = false;
-									field.classList.add("is-invalid");
-									field.classList.remove("is-valid");
-									field.setCustomValidity("Custom validation failed.");
-								} else {
-									field.classList.remove("is-invalid");
-									field.classList.add("is-valid");
-									field.setCustomValidity("");
-								}
-
-								return isValid;
-							}
-
-
-							function capitalizeFirstLetter(field) {
-								const value = field.value.trim();
-								if (value) {
-									field.value = value.charAt(0).toUpperCase() + value.slice(1);
-								}
-							}
-
-							const currentYear = new Date().getFullYear();
-
-							const fields = [
-								{id: "fullName", pattern: /^[a-zA-Z\s]+$/, required: true},
-								{id: "session", pattern: /^(19|20)\d{2}-(19|20)\d{2}$/, required: true},
-								{id: "admissionYear", pattern: /^\d{4}$/, required: true, customValidation: (value) => value == currentYear},
-								{id: "course", pattern: null, required: true},
-								{id: "department", pattern: null, required: true},
-								{id: "previousCourse", pattern: null, required: true},
-								{id: "studentId", pattern: /^\d{1,10}$/, required: true},
-								{id: "rollNo", pattern: /^\d{1,10}$/, required: true},
-								{id: "medium", pattern: null, required: true},
-								{id: "section", pattern: null, required: true},
-								{id: "previousCollege", pattern: /^[a-zA-Z\s]+$/, required: true},
-								{id: "previousPassingYear", pattern: /^\d{4}$/, required: true, customValidation: (value) => value <= currentYear && value > 2000},
-								{
-									id: "previousPercentage", pattern: /^[0-9]{1,2}(\.[0-9]+)?%?$/, required: true, customValidation: (value) => {
-										const numValue = parseFloat(value);
-										return numValue <= 100;
-									}
-								}
-							];
-							fields.forEach(({id, pattern, required, customValidation}) => {
+							  }
+							
+							  const currentYear = new Date().getFullYear();
+							
+							  const fields = [
+								{ id: "fullName", pattern: /^[a-zA-Z\s]+$/, required: true },
+								{ id: "session", pattern: /^(19|20)\d{2}-(19|20)\d{2}$/, required: true },
+								{ id: "admissionYear", pattern: /^\d{4}$/, required: true, customValidation: (value) => value == currentYear },
+								{ id: "course", pattern: null, required: true },
+								{ id: "department", pattern: null, required: true },
+								{ id: "previousCourse", pattern: null, required: true },
+								{ id: "studentId", pattern: /^\d{1,10}$/, required: true },
+								{ id: "medium", pattern: null, required: true },
+								{ id: "section", pattern: null, required: true },
+								{ id: "previousCollege", pattern: /^[a-zA-Z0-9\s,\.]+$/, required: true },
+								{ id: "previousPassingYear", pattern: /^\d{4}$/, required: true, customValidation: (value) => value <= currentYear && value > 1990 },
+								{ id: "previousPercentage", pattern: /^[0-9]{1,2}(\.[0-9]+)?%?$/, required: true, customValidation: (value) => parseFloat(value) <= 100 }
+							  ];
+							
+							  fields.forEach(({ id, pattern, required, customValidation }) => {
 								const field = document.getElementById(id);
-								field.addEventListener("input", function () {
+								if (field) {
+								  field.addEventListener("keydown", function(event) {
+									if (event.key === "Tab") {
+									  event.preventDefault();
+									  const start = field.selectionStart;
+									  const end = field.selectionEnd;
+									  field.value = field.value.substring(0, start) + "\t" + field.value.substring(end);
+									  field.selectionStart = field.selectionEnd = start + 1;
+									}
+								  });
+								  field.addEventListener("input", function () {
 									capitalizeFirstLetter(field);
 									validateField(field, pattern, required, customValidation);
-								});
-							});
-
-							const selectFields = ["course", "previousCourse", "medium", "section", "department"];
-							selectFields.forEach(id => {
+								  });
+								}
+							  });
+							
+							  const selectFields = ["course", "previousCourse", "medium", "section", "department"];
+							  selectFields.forEach(id => {
 								const field = document.getElementById(id);
-								field.addEventListener("change", function () {
+								if (field) {
+								  field.addEventListener("change", function () {
 									validateField(field, null, true);
-								});
-							});
-
-							form.addEventListener("submit", function (event) {
-								event.preventDefault();
-								event.stopPropagation();
-
-								let isValid = true;
-
-								fields.forEach(({id, pattern, required, customValidation}) => {
-									const field = document.getElementById(id);
-									if (!validateField(field, pattern, required, customValidation)) {
-										isValid = false;
-									}
-								});
-
-								const sessionField = document.getElementById("session");
-								const sessionValue = sessionField.value.trim();
-								const sessionYears = sessionValue.split('-');
-								if (sessionYears.length === 2) {
-									const startYear = parseInt(sessionYears[0], 10);
-									const endYear = parseInt(sessionYears[1], 10);
-									if (startYear > currentYear || endYear !== startYear + 1) {
-										isValid = false;
-										sessionField.classList.add("is-invalid");
-										sessionField.classList.remove("is-valid");
-										sessionField.setCustomValidity("Session must be in the format YYYY-YYYY and valid.");
-									}
+								  });
+								}
+							  });
+							
+							  const sessionSelect = document.getElementById("session");
+								if (sessionSelect) {
+									const currentYear = new Date().getFullYear();
+									const nextYear = currentYear + 1;
+							
+									const sessionOption = `${currentYear}-${nextYear}`;
+							
+									const option = document.createElement("option");
+									option.value = sessionOption;
+									option.text = sessionOption;
+									sessionSelect.appendChild(option);
+							
+									sessionSelect.addEventListener("change", function () {
+										if (this.value === sessionOption) {
+											this.classList.remove("is-invalid");
+											this.classList.add("is-valid");
+										} else {
+											this.classList.remove("is-valid");
+											this.classList.add("is-invalid");
+										}
+									});
+							
+									form.addEventListener("submit", function (event) {
+										if (sessionSelect.value !== sessionOption) {
+											sessionSelect.classList.add("is-invalid");
+											event.preventDefault(); // Prevent form submission
+											
+										}
+									});
 								}
 
+							  form.addEventListener("submit", function (event) {
+								event.preventDefault();
+								event.stopPropagation();
+								let isValid = true;
+								fields.forEach(({ id, pattern, required, customValidation }) => {
+								  const field = document.getElementById(id);
+								  if (field && !validateField(field, pattern, required, customValidation)) {
+									isValid = false;
+								  }
+								});
+								
 								if (isValid) {
 									alert("Form submitted successfully!");
 									form.submit();
 								} else {
-									alert("Please fill Empty Fields.");
+									alert("Please fill the empty fields.");
+									fields.forEach(({id}) => {
+										const field = document.getElementById(id);
+										if (field.classList.contains("is-invalid")) {
+											field.focus();
+										}
+									});
 								}
+							  });
 							});
-						});
-					</script>
+							</script>
+							
+							
+							
 
-					<!-- End Main part -->
-				</div>
+							<!-- End Main part -->
+						</div>
 
 
-				<!--import footer here-->
+					<!--import footer here-->
 				<div th:replace="Student/fragments/footer :: footer"></div>
 			</div>
 

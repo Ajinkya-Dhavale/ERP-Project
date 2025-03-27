@@ -1,6 +1,5 @@
 package com.erp.student.entity;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
